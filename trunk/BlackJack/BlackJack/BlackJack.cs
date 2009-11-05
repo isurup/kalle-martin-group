@@ -5,10 +5,11 @@ using System.Text;
 
 namespace BlackJack
 {
-    class Program
+    class BlackJack
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
