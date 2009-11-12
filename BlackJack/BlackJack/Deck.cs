@@ -16,7 +16,8 @@ namespace BlackJack
         {
             Card SpadeAce = new Card(SpadeAce, 11, true, true);
             Card SpadeTwo = new Card(SpadeTwo, 2, true, false);
-            Card SpadeThree = new Card(SpadeAce, 3, true, false);
+            Card SpadeThree = new Card(SpadeThree, 3, true, false);
+            Card SpadeFour = new Card(SpadeFour, 4, true, false);
         }
         static void random()
         {
