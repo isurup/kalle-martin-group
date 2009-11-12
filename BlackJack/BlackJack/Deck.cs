@@ -26,6 +26,10 @@ namespace BlackJack
             int Num2;
             Num1 = generator.Next(4);
             Num2 = generator.Next(13);
+
+            SpadeAce.PlayCard();
+
+            SpadeAce.ReturnCard();
         }
     }
 }
