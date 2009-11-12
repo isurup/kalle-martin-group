@@ -12,6 +12,12 @@ namespace BlackJack
 {
     class Deck
     {
+        public Deck()
+        {
+            Card SpadeAce = new Card(SpadeAce, 11, true, true);
+            Card SpadeTwo = new Card(SpadeTwo, 2, true, false);
+            Card SpadeThree = new Card(SpadeAce, 3, true, false);
+        }
         static void random()
         {
 
