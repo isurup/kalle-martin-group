@@ -15,7 +15,7 @@ namespace BlackJack
     class BlackJack
     {
         //-----------------------------------------------
-        //
+        // The Main Method
         //-----------------------------------------------
         static void Main(string[] args)
         {
