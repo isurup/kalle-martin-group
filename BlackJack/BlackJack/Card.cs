@@ -12,10 +12,31 @@ namespace BlackJack
 {
     class Card
     {
+        private int CardNr;
         private String Name;
         private int Value;
         private bool InDeck;
         private bool Ace;
+
+        public void InitCard(String Name, int Value, bool InDeck, bool Ace)
+        {
+
+        }
+
+        public void PlayCard(String Name)
+        {
+
+        }
+
+        public void ReturnCard(int Nr)
+        {
+
+        }
+
+        public void ReturnCard(String Name)
+        {
+
+        }
 
     }
 }
