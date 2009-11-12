@@ -33,15 +33,5 @@ namespace BlackJack
 
         }
 
-        public void ReturnCard(int Nr)
-        {
-
-        }
-
-        public void ReturnCard(String Name)
-        {
-
-        }
-
     }
 }
