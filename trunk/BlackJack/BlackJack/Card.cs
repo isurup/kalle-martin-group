@@ -15,6 +15,7 @@ namespace BlackJack
         private CardType cardType;
         private Suits cardSuit;
         private int value;
+        private int trueValue;
 
         public enum CardType
         {
@@ -50,6 +51,26 @@ namespace BlackJack
             if (trueValue >= 10)
                 trueValue = 10;
         }
+
+        public int Value
+        {
+            get { return value; }
+        }
+
+        public int TrueValue
+        {
+            get { return trueValue; }
+        }
+
+        public CardType FaceValue
+        {
+            get { return cardType; }
+        }
+
+        public Suits Suit
+        {
+            get { return cardSuit; }
+        }	
 
     }
 }
