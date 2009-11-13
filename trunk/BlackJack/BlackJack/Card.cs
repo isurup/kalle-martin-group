@@ -46,10 +46,9 @@ namespace BlackJack
             cardSuit = suit;
             cardType = type;
             value = ((int)suit * 13) + (int)cardType + 1;
-            trueValue = (int)cardType;
-            if (trueValue > 9)
-                trueValue = 9;
-
+            trueValue = (int)cardType + 1;
+            if (trueValue >= 10)
+                trueValue = 10;
         }
 
     }
