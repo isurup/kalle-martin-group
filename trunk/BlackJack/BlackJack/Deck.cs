@@ -24,11 +24,11 @@ namespace BlackJack
             {
                 for (int j = 0; j < 4; j++)
                 {
-                    Card.Add(new Card(i,j));
+                    Card.Add(new Card(i, j));
                 }
             }
-
         }
+
         //-----------------------------------------------
         // Throws a random Card; using a random generator
         //-----------------------------------------------
@@ -44,6 +44,7 @@ namespace BlackJack
 
             SpadeAce.ReturnCard();
         }
+
         //-----------------------------------------------
         // Put all the card back in the decks
         //-----------------------------------------------
