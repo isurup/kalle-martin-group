@@ -2,7 +2,7 @@
 //  BlackJack console appliaction 
 //  Kalle Grafstöm and Martin Moghadam 
 //
-//  This class contains the Cards
+//  This class contains the Card
 using System;
 using System.Collections.Generic;
 using System.Linq;
