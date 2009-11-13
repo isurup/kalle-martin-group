@@ -14,12 +14,18 @@ namespace BlackJack
     {
         public Deck()
         {
-            Card SpadeAce = new Card(SpadeAce, 11, true, true);
-            Card SpadeTwo = new Card(SpadeTwo, 2, true, false);
-            Card SpadeThree = new Card(SpadeThree, 3, true, false);
-            Card SpadeFour = new Card(SpadeFour, 4, true, false);
+            List<Card> cards = new List<Card>();
+
+            for (int i = 0; i < 13; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    cards.Add(new Card Card(i, j));
+                }
+            }
+
         }
-        static void random()
+        static Card ThrowCard()
         {
 
             System.Random generator = new Random(DateTime.Now.Millisecond);

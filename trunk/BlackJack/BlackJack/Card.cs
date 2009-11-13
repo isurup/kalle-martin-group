@@ -12,24 +12,43 @@ namespace BlackJack
 {
     class Card
     {
-        private int CardNr;
-        private String Name;
-        private int Value;
-        private bool InDeck;
-        private bool Ace;
+        private CardType cardType;
+        private Suits cardSuit;
+        private int value;
 
-        public Card(String Name, int Value, bool InDeck, bool Ace)
+        public enum CardType
         {
-
+            Ace = 0,
+            Two = 1,
+            Three = 2,
+            Four = 3,
+            Five = 4,
+            Six = 5,
+            Seven = 6,
+            Eight = 7,
+            Nine = 8,
+            Ten = 9,
+            Jack = 10,
+            Queen = 11,
+            King = 12
         }
 
-        public void PlayCard(String Name)
+        public enum Suits
         {
-
+            Clubs = 0,
+            Diamonds = 1,
+            Hearts = 2,
+            Spades = 3
         }
 
-        public void ReturnCard()
+        public Card(CardType type, Suits suit)
         {
+            cardSuit = suit;
+            cardType = type;
+            value = ((int)suit * 13) + (int)cardType + 1;
+            trueValue = (int)cardType;
+            if (trueValue > 9)
+                trueValue = 9;
 
         }
 
