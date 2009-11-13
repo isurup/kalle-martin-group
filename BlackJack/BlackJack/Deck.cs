@@ -18,7 +18,7 @@ namespace BlackJack
         //-----------------------------------------------
         public Deck()
         {
-            List<Card> cards = new List<Card>();
+            List<Card> deck = new List<Card>();
 
             for (int i = 0; i < 13; i++)
             {
@@ -40,9 +40,7 @@ namespace BlackJack
             Num1 = generator.Next(4);
             Num2 = generator.Next(13);
 
-            SpadeAce.PlayCard();
 
-            SpadeAce.ReturnCard();
         }
 
         //-----------------------------------------------
