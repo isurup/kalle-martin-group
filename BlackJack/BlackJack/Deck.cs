@@ -24,7 +24,7 @@ namespace BlackJack
             {
                 for (int j = 0; j < 4; j++)
                 {
-                    Card.Add(new Card(i, j));
+                    deck.Add(new Card(i, j));
                 }
             }
         }
