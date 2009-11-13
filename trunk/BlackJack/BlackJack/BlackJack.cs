@@ -2,7 +2,9 @@
 //  BlackJack console appliaction 
 //  Kalle Grafstöm and Martin Moghadam 
 //
-//      Description: A simple BlackJack console application, with the computer being the dealer and the user being the player
+//      Description: A simple BlackJack console application, with the computer
+//      being the dealer and the user being the player.
+//      The game consist of only one deck.
 //
 //  This class contains the main method
 using System;
