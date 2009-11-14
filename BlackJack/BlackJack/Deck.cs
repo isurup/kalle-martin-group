@@ -12,7 +12,7 @@ namespace BlackJack
 {
     class Deck
     {
-        public List<Card> CardDeck = new List<Card>();
+        public List<Card> DeckOfCards = new List<Card>();
         //-----------------------------------------------
         // Constructor; creates a deck of card;
         // using the card class
@@ -23,7 +23,7 @@ namespace BlackJack
             {
                 for (int j = 0; j < 4; j++)
                 {
-                    CardDeck.Add(new Card(i, j));
+                    DeckOfCards.Add(new Card(i, j));
                 }
             }
         }
