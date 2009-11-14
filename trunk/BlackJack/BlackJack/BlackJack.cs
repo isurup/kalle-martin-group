@@ -23,6 +23,7 @@ namespace BlackJack
         {
             
             Console.Out.WriteLine("♠Ace ♣King ♥Queen ♦Jack");
+
             while (true)
             {
 
