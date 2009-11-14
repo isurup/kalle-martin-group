@@ -12,19 +12,18 @@ namespace BlackJack
 {
     class Deck
     {
+        public List<Card> CardDeck = new List<Card>();
         //-----------------------------------------------
         // Constructor; creates a deck of card;
         // using the card class
         //-----------------------------------------------
         public Deck()
         {
-            List<Card> deck = new List<Card>();
-
             for (int i = 0; i < 13; i++)
             {
                 for (int j = 0; j < 4; j++)
                 {
-                    deck.Add(new Card(i, j));
+                    CardDeck.Add(new Card(i, j));
                 }
             }
         }
@@ -39,8 +38,6 @@ namespace BlackJack
             int Num2;
             Num1 = generator.Next(4);
             Num2 = generator.Next(13);
-
-
         }
 
         //-----------------------------------------------
