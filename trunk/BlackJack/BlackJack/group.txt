@@ -1,0 +1,4 @@
+﻿// Kalle Grafström
+// Martin Moghadam
+//
+// BlackJack Console Aplication Semster Project 1
