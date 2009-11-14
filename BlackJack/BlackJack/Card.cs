@@ -15,7 +15,7 @@ namespace BlackJack
         private CardType cardType;
         private Suits cardSuit;
         private int cardId;
-        private int value;
+        private int cardValue;
 
         public enum CardType
         {
@@ -47,7 +47,7 @@ namespace BlackJack
             cardSuit = suit;
             cardType = type;
             cardId = ((int)suit * 13) + (int)cardType + 1;
-            value = (int)cardType + 1;
+            cardValue = (int)cardType + 1;
             if (trueValue > 10)
                 trueValue = 10;
         }
@@ -59,7 +59,7 @@ namespace BlackJack
 
         public int Value
         {
-            get { return value; }
+            get { return cardValue; }
         }
 
         public CardType Face
