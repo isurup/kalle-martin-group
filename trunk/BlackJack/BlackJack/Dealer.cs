@@ -12,5 +12,9 @@ namespace BlackJack
 {
     class Dealer
     {
+        public void Stand()
+        {
+
+        }
     }
 }
