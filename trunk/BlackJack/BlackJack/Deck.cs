@@ -24,7 +24,7 @@ namespace BlackJack
             {
                 for (int i = 0; i < 13; i++)
                 {
-                    DeckOfCards.Add(new Card(i, j));
+                    DeckOfCards.Add(new Card((Card.CardType)j, (Card.Suits)i));
                 }
             }
         }
@@ -35,8 +35,22 @@ namespace BlackJack
         public Card ThrowCard()
         {
             System.Random generator = new Random(DateTime.Now.Millisecond);
-            int Num;
-            Num = generator.Next(52);
+
+            do
+            {
+                int Num;
+                Num = generator.Next(DeckOfCards.Count());
+
+                foreach (Card i in DeckOfCards)
+                {
+                    if (i.CardID() == Num)
+                    {
+                        Card temp = i;
+                        DeckOfCards.Remove(i);
+                        return temp;
+                    }
+                }
+            } while (true);
         }
 
         //-----------------------------------------------
@@ -50,7 +64,7 @@ namespace BlackJack
             {
                 for (int i = 0; i < 13; i++)
                 {
-                    DeckOfCards.Add(new Card(i, j));
+                    DeckOfCards.Add(new Card((Card.CardType)j, (Card.Suits)i));
                 }
             }
         }

@@ -14,8 +14,8 @@ namespace BlackJack
     {
         private CardType cardType;
         private Suits cardSuit;
-        private int cardId;
-        private int cardValue;
+        private int Id;
+        private int Value;
 
         public enum CardType
         {
@@ -46,20 +46,20 @@ namespace BlackJack
         {
             cardSuit = suit;
             cardType = type;
-            cardId = ((int)suit * 13) + (int)cardType + 1;
-            cardValue = (int)cardType + 1;
-            if (trueValue > 10)
-                trueValue = 10;
+            Id = ((int)suit * 13) + (int)cardType + 1;
+            Value = (int)cardType + 1;
+            if (Value > 10)
+                Value = 10;
         }
 
         public int CardID
         {
-            get { return cardId; }
+            get { return Id; }
         }
 
-        public int Value
+        public int CardValue
         {
-            get { return cardValue; }
+            get { return Value; }
         }
 
         public CardType Face
@@ -74,7 +74,28 @@ namespace BlackJack
 
         public override string ToString()
         {
-            return (cardType.ToString() + cardSuit.ToString());
+            string tmp;
+            if (cardSuit == Suits.Clubs)
+            {
+                tmp = "♣ ";
+            }
+            else if (cardSuit == Suits.Diamonds)
+            {
+                tmp = "♦ ";
+            }
+            else if (cardSuit == Suits.Hearts)
+            {
+                tmp = "♥ ";
+            }
+            else if (cardSuit == Suits.Spades)
+            {
+                tmp = "♠ ";
+            }
+            else
+            {
+                tmp = "exec";
+            }
+            return (tmp + cardType.ToString());
         }
 
     }

@@ -16,6 +16,13 @@ namespace BlackJack
 {
     class BlackJack
     {
+        public static Deck player = new Deck();
+
+        public BlackJack()
+        {
+            
+        }
+
         //-----------------------------------------------
         // The Main Method
         //-----------------------------------------------
@@ -24,6 +31,7 @@ namespace BlackJack
             
             Console.Out.WriteLine("♠Ace ♣King ♥Queen ♦Jack");
 
+            Console.Out.WriteLine(player.ThrowCard());
             while (true)
             {
 
