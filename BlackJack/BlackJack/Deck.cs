@@ -13,6 +13,7 @@ namespace BlackJack
     class Deck
     {
         public List<Card> DeckOfCards = new List<Card>();
+
         //-----------------------------------------------
         // Constructor; creates a deck of card;
         // using the card class
@@ -34,10 +35,8 @@ namespace BlackJack
         public Card ThrowCard()
         {
             System.Random generator = new Random(DateTime.Now.Millisecond);
-            int Num1;
-            int Num2;
-            Num1 = generator.Next(4);
-            Num2 = generator.Next(13);
+            int Num;
+            Num = generator.Next(52);
         }
 
         //-----------------------------------------------
@@ -45,7 +44,15 @@ namespace BlackJack
         //-----------------------------------------------
         public void ShuffleDeck()
         {
+            DeckOfCards.Clear();
 
+            for (int i = 0; i < 13; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    DeckOfCards.Add(new Card(i, j));
+                }
+            }
         }
     }
 }
