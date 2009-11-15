@@ -12,6 +12,10 @@ namespace BlackJack
 {
     class Dealer
     {
+        //-----------------------------------------------
+        // The dealer responds to a stand;
+        // by trying to get 17 of above
+        //-----------------------------------------------
         public void Stand()
         {
 
