@@ -20,9 +20,9 @@ namespace BlackJack
         //-----------------------------------------------
         public Deck()
         {
-            for (int i = 0; i < 13; i++)
+            for (int j = 0; j < 4; j++)
             {
-                for (int j = 0; j < 4; j++)
+                for (int i = 0; i < 13; i++)
                 {
                     DeckOfCards.Add(new Card(i, j));
                 }
@@ -46,9 +46,9 @@ namespace BlackJack
         {
             DeckOfCards.Clear();
 
-            for (int i = 0; i < 13; i++)
+            for (int j = 0; j < 4; j++)
             {
-                for (int j = 0; j < 4; j++)
+                for (int i = 0; i < 13; i++)
                 {
                     DeckOfCards.Add(new Card(i, j));
                 }
