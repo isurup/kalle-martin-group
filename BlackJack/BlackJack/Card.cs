@@ -85,7 +85,7 @@ namespace BlackJack
         }
 
         //-----------------------------------------------
-        // ToString override use to write the card name
+        // ToString override used to write the card name
         //      eg. "♠ Ace" 
         //-----------------------------------------------
         public override string ToString()
