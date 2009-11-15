@@ -70,7 +70,12 @@ namespace BlackJack
         public Suits Suit
         {
             get { return cardSuit; }
-        }	
+        }
+
+        public override string ToString()
+        {
+            return (cardType.ToString() + cardSuit.ToString());
+        }
 
     }
 }
