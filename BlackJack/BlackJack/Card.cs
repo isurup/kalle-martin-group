@@ -49,7 +49,7 @@ namespace BlackJack
         }
 
         //-----------------------------------------------
-        // Construster sets the card value and id
+        // Constructor sets the card value and id
         //-----------------------------------------------
         public Card(CardType type, Suits suit)
         {
