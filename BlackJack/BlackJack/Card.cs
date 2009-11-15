@@ -17,6 +17,9 @@ namespace BlackJack
         private int Id;
         private int Value;
 
+        //-----------------------------------------------
+        // Card from Ace to King
+        //-----------------------------------------------
         public enum CardType
         {
             Ace = 0,
@@ -34,6 +37,9 @@ namespace BlackJack
             King = 12
         }
 
+        //-----------------------------------------------
+        // The different suits
+        //-----------------------------------------------
         public enum Suits
         {
             Clubs = 0,
@@ -42,6 +48,9 @@ namespace BlackJack
             Spades = 3
         }
 
+        //-----------------------------------------------
+        // Construster sets the card value and id
+        //-----------------------------------------------
         public Card(CardType type, Suits suit)
         {
             cardSuit = suit;
@@ -52,6 +61,9 @@ namespace BlackJack
                 Value = 10;
         }
 
+        //-----------------------------------------------
+        // Get methods
+        //-----------------------------------------------
         public int CardID
         {
             get { return Id; }
@@ -72,6 +84,10 @@ namespace BlackJack
             get { return cardSuit; }
         }
 
+        //-----------------------------------------------
+        // ToString override use to write the card name
+        //      eg. "♠ Ace" 
+        //-----------------------------------------------
         public override string ToString()
         {
             string tmp;
