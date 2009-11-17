@@ -123,9 +123,9 @@ namespace BlackJack
         {
             int tmpDealer = 0;
             DealerCards.Clear();
+
             do
             {
-                
                 DealerCards.Add(myThrowCard());
                 
                 foreach (Card i in DealerCards)
@@ -141,7 +141,7 @@ namespace BlackJack
                         }
                     }
                 }
-            } while (tmpDealer > 17);
+            } while (tmpDealer < 17);
 
             if (tmpDealer == 21)
             {
