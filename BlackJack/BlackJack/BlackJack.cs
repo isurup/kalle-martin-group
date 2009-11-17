@@ -34,17 +34,17 @@ namespace BlackJack
         static void Main(string[] args)
         {
             // Test--------------------
-            Console.Out.WriteLine("♠Ace ♣King ♥Queen ♦Jack");
-            Console.Out.WriteLine("Random Throw Card: " + GameDeck.ThrowCard() + "\n");
-            Console.Out.WriteLine("Output of the current DeckOfCards: \n");
-            foreach (Card i in GameDeck.DeckOfCards)
-            {
-                Console.Out.WriteLine(i.ToString());
-            }
-            Console.Out.WriteLine("Notice that the random card is no longer part of the deck\n");
-            Console.Out.WriteLine(GameDeck.DeckOfCards[12] + " Card Value: " + GameDeck.DeckOfCards[12].CardValue + "\n");
-            Console.Out.WriteLine(GameDeck.DeckOfCards[13] + " Card Value: " + GameDeck.DeckOfCards[13].CardValue + "\n");
-            Console.Out.WriteLine("Notice that the card values are correct");
+            //Console.Out.WriteLine("♠Ace ♣King ♥Queen ♦Jack");
+            //Console.Out.WriteLine("Random Throw Card: " + GameDeck.ThrowCard() + "\n");
+            //Console.Out.WriteLine("Output of the current DeckOfCards: \n");
+            //foreach (Card i in GameDeck.DeckOfCards)
+            //{
+            //    Console.Out.WriteLine(i.ToString());
+            //}
+            //Console.Out.WriteLine("Notice that the random card is no longer part of the deck\n");
+            //Console.Out.WriteLine(GameDeck.DeckOfCards[12] + " Card Value: " + GameDeck.DeckOfCards[12].CardValue + "\n");
+            //Console.Out.WriteLine(GameDeck.DeckOfCards[13] + " Card Value: " + GameDeck.DeckOfCards[13].CardValue + "\n");
+            //Console.Out.WriteLine("Notice that the card values are correct");
             ////////////////////////////////////////////////////////////
 
             int readIn;
