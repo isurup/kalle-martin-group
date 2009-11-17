@@ -35,6 +35,7 @@ namespace BlackJack
             {
                 Console.Out.WriteLine(i.ToString());
             }
+            Console.Out.WriteLine("Notice that the random card is no longer part of the deck");
             while (true)
             {
 
