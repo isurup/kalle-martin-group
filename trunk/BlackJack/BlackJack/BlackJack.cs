@@ -30,18 +30,15 @@ namespace BlackJack
         {
             // Test--------------------
             Console.Out.WriteLine("♠Ace ♣King ♥Queen ♦Jack");
-            Console.Out.WriteLine("Random Throw Card: " + player.ThrowCard());
-            Console.Out.WriteLine("Output of the current DeckOfCards: ");
+            Console.Out.WriteLine("Random Throw Card: " + player.ThrowCard() + "\n");
+            Console.Out.WriteLine("Output of the current DeckOfCards: \n");
             foreach (Card i in player.DeckOfCards)
             {
                 Console.Out.WriteLine(i.ToString());
             }
-            Console.Out.WriteLine("Notice that the random card is no longer part of the deck");
-            Console.Out.WriteLine();
-            Console.Out.WriteLine(player.DeckOfCards[10].ToString() + " Card Value: " + player.DeckOfCards[10].CardValue);
-            Console.Out.WriteLine();
-            Console.Out.WriteLine(player.DeckOfCards[12].ToString() + " Card Value: " + player.DeckOfCards[12].CardValue);
-            Console.Out.WriteLine();
+            Console.Out.WriteLine("Notice that the random card is no longer part of the deck\n");
+            Console.Out.WriteLine(player.DeckOfCards[10].ToString() + " Card Value: " + player.DeckOfCards[10].CardValue + "\n");
+            Console.Out.WriteLine(player.DeckOfCards[12].ToString() + " Card Value: " + player.DeckOfCards[12].CardValue + "\n");
             Console.Out.WriteLine("Notice that the card values are correct");
 
             while (true)
