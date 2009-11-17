@@ -24,7 +24,7 @@ namespace BlackJack
             {
                 for (int i = 0; i < 13; i++)
                 {
-                    DeckOfCards.Add(new Card((Card.CardType)j, (Card.Suits)i));
+                    DeckOfCards.Add(new Card((Card.CardType)i, (Card.Suits)j));
                 }
             }
         }
@@ -54,7 +54,7 @@ namespace BlackJack
         }
 
         //-----------------------------------------------
-        // Put all the card back in the decks
+        // Shuffles the deck, clears the DeckOfCards list and reinitilzes the list
         //-----------------------------------------------
         public void ShuffleDeck()
         {
@@ -64,7 +64,7 @@ namespace BlackJack
             {
                 for (int i = 0; i < 13; i++)
                 {
-                    DeckOfCards.Add(new Card((Card.CardType)j, (Card.Suits)i));
+                    DeckOfCards.Add(new Card((Card.CardType)i, (Card.Suits)j));
                 }
             }
         }
