@@ -37,8 +37,8 @@ namespace BlackJack
                 Console.Out.WriteLine(i.ToString());
             }
             Console.Out.WriteLine("Notice that the random card is no longer part of the deck\n");
-            Console.Out.WriteLine(player.DeckOfCards[10].ToString() + " Card Value: " + player.DeckOfCards[10].CardValue + "\n");
             Console.Out.WriteLine(player.DeckOfCards[12].ToString() + " Card Value: " + player.DeckOfCards[12].CardValue + "\n");
+            Console.Out.WriteLine(player.DeckOfCards[13].ToString() + " Card Value: " + player.DeckOfCards[13].CardValue + "\n");
             Console.Out.WriteLine("Notice that the card values are correct");
 
             while (true)
