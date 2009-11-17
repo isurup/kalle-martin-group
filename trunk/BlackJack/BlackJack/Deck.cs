@@ -39,7 +39,7 @@ namespace BlackJack
             do
             {
                 int Num;
-                Num = generator.Next(52);
+                Num = generator.Next(53);
 
                 foreach (Card i in DeckOfCards)
                 {
