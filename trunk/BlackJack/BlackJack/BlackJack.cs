@@ -16,16 +16,16 @@ namespace BlackJack
 {
     class BlackJack
     {
-        public static Deck player = new Deck();
+        public static Deck GameDeck = new Deck();
         public static List<Card> PlayerCards = new List<Card>();
         public static List<Card> DealerCards = new List<Card>();
         public static int playerScore;
-        public static int playerScoreAce;
+        public static int playerScoreAce; // Needed because of Ace Duality
 
 
         public BlackJack()
         {
-            
+
         }
 
         //-----------------------------------------------
@@ -35,15 +35,15 @@ namespace BlackJack
         {
             // Test--------------------
             Console.Out.WriteLine("♠Ace ♣King ♥Queen ♦Jack");
-            Console.Out.WriteLine("Random Throw Card: " + player.ThrowCard() + "\n");
+            Console.Out.WriteLine("Random Throw Card: " + GameDeck.ThrowCard() + "\n");
             Console.Out.WriteLine("Output of the current DeckOfCards: \n");
-            foreach (Card i in player.DeckOfCards)
+            foreach (Card i in GameDeck.DeckOfCards)
             {
                 Console.Out.WriteLine(i.ToString());
             }
             Console.Out.WriteLine("Notice that the random card is no longer part of the deck\n");
-            Console.Out.WriteLine(player.DeckOfCards[12] + " Card Value: " + player.DeckOfCards[12].CardValue + "\n");
-            Console.Out.WriteLine(player.DeckOfCards[13] + " Card Value: " + player.DeckOfCards[13].CardValue + "\n");
+            Console.Out.WriteLine(GameDeck.DeckOfCards[12] + " Card Value: " + GameDeck.DeckOfCards[12].CardValue + "\n");
+            Console.Out.WriteLine(GameDeck.DeckOfCards[13] + " Card Value: " + GameDeck.DeckOfCards[13].CardValue + "\n");
             Console.Out.WriteLine("Notice that the card values are correct");
             ////////////////////////////////////////////////////////////
 
@@ -53,7 +53,7 @@ namespace BlackJack
             //Console.Clear();
             while (true)
             {
-                
+
                 Console.Out.Write("\n1:Hit\n2:Stand\nInput: ");
                 readIn = int.Parse(Console.In.ReadLine());
 
@@ -80,7 +80,7 @@ namespace BlackJack
         //-----------------------------------------------
         private static void Hit()
         {
-            PlayerCards.Add(player.ThrowCard());
+            PlayerCards.Add(GameDeck.ThrowCard());
             int tmp = 0;
             foreach (Card i in PlayerCards)
             {
@@ -112,26 +112,27 @@ namespace BlackJack
         //-----------------------------------------------
         private static void Stand()
         {
-            int tmpDealer = 0;
-            foreach (Card i in DealerCards)
+            do
             {
-                Console.Out.WriteLine(i + " + ");
-                tmpDealer += i.CardValue;
-                if (i.Face == Card.CardType.Ace)
+                DealerCards.Add(GameDeck.ThrowCard());
+                int tmpDealer = 0;
+                DealerCards.Clear();
+                foreach (Card i in DealerCards)
                 {
-                    if (tmpDealer+10 == 21)
+                    Console.Out.WriteLine(i + " + ");
+                    tmpDealer += i.CardValue;
+                    if (i.Face == Card.CardType.Ace)
                     {
-                        Console.Out.WriteLine("Dealer gets BlackJack! Dealer Wins!");
-                        DealerCards.Clear();
+                        if (tmpDealer + 10 == 21)
+                        {
+                            Console.Out.WriteLine("Dealer gets BlackJack! Dealer Wins!");
+                            DealerCards.Clear();
+                        }
                     }
                 }
-            }
-            if (tmpDealer > 17)
-            {
-                Console.Out.WriteLine("Dealer stands on: " + tmpDealer);
-                DealerCards.Clear();
-            }
-            else if (tmpDealer == 21)
+            } while (tmpDealer > 17);
+
+            if (tmpDealer == 21)
             {
                 Console.Out.WriteLine("Dealer gets BlackJack! Dealer Wins!");
                 DealerCards.Clear();
@@ -140,9 +141,10 @@ namespace BlackJack
             {
                 Console.Out.WriteLine("Dealer gets Highest! Dealer Wins!");
             }
-            if (tmpDealer > playerScoreAce)
+            else
             {
-                Console.Out.WriteLine("Dealer gets Highest! Dealer Wins!");
+                Console.Out.WriteLine("Dealer stands on: " + tmpDealer);
+
             }
         }
 
@@ -158,15 +160,30 @@ namespace BlackJack
                 Console.Out.Write(i);
                 tmpAce += i.CardValue;
             }
-            if (tmpAce+10 == 21)
+            if (tmpAce + 10 == 21)
             {
                 Console.Out.WriteLine("BlackJack! Player Wins!");
                 PlayerCards.Clear();
             }
             else
             {
-                playerScoreAce = tmpAce;
+                if (tmpAce < 21)
+                {
+                    playerScoreAce = tmpAce;
+                }
+                else
+                {
+                    playerScoreAce = 0;
+                }
             }
+        }
+
+        //-----------------------------------------------
+        // Checks if the deck is empty and needs shuffeling 
+        //-----------------------------------------------
+        private static void IsDeckEmpty()
+        {
+
         }
     }
 }
