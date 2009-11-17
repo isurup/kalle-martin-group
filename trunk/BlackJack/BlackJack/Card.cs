@@ -90,7 +90,7 @@ namespace BlackJack
         //-----------------------------------------------
         public override string ToString()
         {
-            string tmp = "exec";
+            string tmp = "suit exception";
             if (cardSuit == Suits.Clubs)
             {
                 tmp = "♣ ";

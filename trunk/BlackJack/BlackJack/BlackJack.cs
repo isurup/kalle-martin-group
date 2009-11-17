@@ -30,7 +30,7 @@ namespace BlackJack
         {
             
             Console.Out.WriteLine("♠Ace ♣King ♥Queen ♦Jack");
-
+            Console.Out.WriteLine("Random Throw Card: " + player.ThrowCard());
             foreach (Card i in player.DeckOfCards)
             {
                 Console.Out.WriteLine(i.ToString());
