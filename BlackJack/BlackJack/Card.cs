@@ -62,7 +62,7 @@ namespace BlackJack
         }
 
         //-----------------------------------------------
-        // Get methods
+        // Get properties
         //-----------------------------------------------
         public int CardID
         {
