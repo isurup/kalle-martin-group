@@ -43,7 +43,7 @@ namespace BlackJack
 
                 foreach (Card i in DeckOfCards)
                 {
-                    if (i.CardID() == Num)
+                    if (i.CardID == Num)
                     {
                         Card temp = i;
                         DeckOfCards.Remove(i);
