@@ -46,5 +46,10 @@ namespace BlackJack
 
             }
         }
+
+        private static void AceDuality()
+        {
+
+        }
     }
 }
