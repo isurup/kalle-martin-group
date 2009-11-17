@@ -35,7 +35,7 @@ namespace BlackJack
         public Card ThrowCard()
         {
             System.Random generator = new Random(DateTime.Now.Millisecond);
-            int deckCountTmp = DeckOfCards.Count+1;
+            int deckCountTmp = DeckOfCards.Count + 1;
 
             do
             {
