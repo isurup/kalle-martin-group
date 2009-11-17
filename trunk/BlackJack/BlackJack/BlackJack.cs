@@ -40,10 +40,27 @@ namespace BlackJack
             Console.Out.WriteLine(player.DeckOfCards[12].ToString() + " Card Value: " + player.DeckOfCards[12].CardValue + "\n");
             Console.Out.WriteLine(player.DeckOfCards[13].ToString() + " Card Value: " + player.DeckOfCards[13].CardValue + "\n");
             Console.Out.WriteLine("Notice that the card values are correct");
+            //
+            int readIn;
 
+            Console.Out.WriteLine("♠ ♣ ♥ ♦ BlackJack:\n");
             while (true)
             {
+                Console.Out.Write("1:Hit\n2:Stand\nInput: ");
+                readIn = int.Parse(Console.In.ReadLine());
 
+                switch (readIn)
+                {
+                    case 1:
+                        Console.Out.WriteLine("Hit ME!");
+                        break;
+                    case 2:
+                        Console.Out.WriteLine("Standing!");
+                        break;
+                    default:
+                        Console.Out.WriteLine("Incorrect input try again");
+                        break;
+                }
             }
         }
 
