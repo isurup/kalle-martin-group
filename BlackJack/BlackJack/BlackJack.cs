@@ -80,7 +80,8 @@ namespace BlackJack
         //-----------------------------------------------
         private static void Hit()
         {
-            PlayerCards.Add(GameDeck.ThrowCard());
+            PlayerCards.Add(myThrowCard());
+
             int tmp = 0;
             foreach (Card i in PlayerCards)
             {
@@ -114,7 +115,9 @@ namespace BlackJack
         {
             do
             {
-                DealerCards.Add(GameDeck.ThrowCard());
+                
+                DealerCards.Add(myThrowCard());
+                
                 int tmpDealer = 0;
                 DealerCards.Clear();
                 foreach (Card i in DealerCards)
@@ -178,17 +181,19 @@ namespace BlackJack
             }
         }
 
-        //-----------------------------------------------
-        // Checks if the deck is empty and needs shuffeling 
-        //-----------------------------------------------
-        private static void IsDeckEmpty(bool empty)
+        private static Card myThrowCard()
         {
-            if (empty)
+            Card x = GameDeck.ThrowCard();
+            if (x == null)
             {
-                Console.Out.WriteLine("Game Deck is empty, shuffling and clearing game.");
+                Console.Out.WriteLine("Game Deck is empty, shuffling and clearing the game.");
                 PlayerCards.Clear();
                 DealerCards.Clear();
                 GameDeck.ShuffleDeck();
+            }
+            else
+            {
+                return x;
             }
         }
     }
