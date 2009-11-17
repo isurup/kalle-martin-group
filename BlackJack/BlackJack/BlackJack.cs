@@ -17,6 +17,8 @@ namespace BlackJack
     class BlackJack
     {
         public static Deck player = new Deck();
+        public static List<Card> CardUp = new List<Card>();
+
 
         public BlackJack()
         {
@@ -37,22 +39,25 @@ namespace BlackJack
                 Console.Out.WriteLine(i.ToString());
             }
             Console.Out.WriteLine("Notice that the random card is no longer part of the deck\n");
-            Console.Out.WriteLine(player.DeckOfCards[12].ToString() + " Card Value: " + player.DeckOfCards[12].CardValue + "\n");
-            Console.Out.WriteLine(player.DeckOfCards[13].ToString() + " Card Value: " + player.DeckOfCards[13].CardValue + "\n");
+            Console.Out.WriteLine(player.DeckOfCards[12] + " Card Value: " + player.DeckOfCards[12].CardValue + "\n");
+            Console.Out.WriteLine(player.DeckOfCards[13] + " Card Value: " + player.DeckOfCards[13].CardValue + "\n");
             Console.Out.WriteLine("Notice that the card values are correct");
-            //
+            ////////////////////////////////////////////////////////////
+
             int readIn;
 
             Console.Out.WriteLine("♠ ♣ ♥ ♦ BlackJack:\n");
+            //Console.Clear();
             while (true)
             {
-                Console.Out.Write("1:Hit\n2:Stand\nInput: ");
+                
+                Console.Out.Write("\n1:Hit\n2:Stand\nInput: ");
                 readIn = int.Parse(Console.In.ReadLine());
 
                 switch (readIn)
                 {
                     case 1:
-                        Console.Out.WriteLine("Hit ME!");
+                        Console.Out.WriteLine("Cards Dealt: ");
                         Hit();
                         break;
                     case 2:
@@ -72,7 +77,25 @@ namespace BlackJack
         //-----------------------------------------------
         private static void Hit()
         {
-            throw new NotImplementedException();
+            CardUp.Add(player.ThrowCard());
+            int tmp = 0;
+            foreach (Card i in CardUp)
+            {
+                Console.Out.WriteLine(i);
+                tmp += i.CardValue;
+                if (i.Face == Card.CardType.Ace)
+                    AceDuality();
+            }
+            if (tmp > 21)
+            {
+                Console.Out.WriteLine("Bust! Dealer Wins!");
+                CardUp.Clear();
+            }
+            if (tmp == 21)
+            {
+                Console.Out.WriteLine("BlackJack! Player Wins!");
+                CardUp.Clear();
+            }
         }
 
         //-----------------------------------------------
@@ -81,12 +104,31 @@ namespace BlackJack
         //-----------------------------------------------
         private static void Stand()
         {
-            throw new NotImplementedException();
+
         }
 
+        //-----------------------------------------------
+        // Ace count as two values 1 and 11;
+        // The method check the cards dealt if ace counts as 11
+        //-----------------------------------------------
         private static void AceDuality()
         {
-
+            int tmpAce = 0;
+            foreach (Card i in CardUp)
+            {
+                Console.Out.WriteLine(i);
+                tmpAce += i.CardValue;
+            }
+            if (tmpAce+10 > 21)
+            {
+                Console.Out.WriteLine("Bust! Dealer Wins!");
+                CardUp.Clear();
+            }
+            if (tmpAce+10 == 21)
+            {
+                Console.Out.WriteLine("BlackJack! Player Wins!");
+                CardUp.Clear();
+            }
         }
     }
 }
