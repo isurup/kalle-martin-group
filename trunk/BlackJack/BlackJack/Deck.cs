@@ -31,6 +31,7 @@ namespace BlackJack
 
         //-----------------------------------------------
         // Throws a random Card; using a random generator
+        // if there are no more cards in the deck the method returns null
         //-----------------------------------------------
         public Card ThrowCard()
         {
