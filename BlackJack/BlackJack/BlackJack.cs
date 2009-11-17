@@ -55,7 +55,15 @@ namespace BlackJack
             {
 
                 Console.Out.Write("\n1:Hit\n2:Stand\nInput: ");
-                readIn = int.Parse(Console.In.ReadLine());
+
+                try
+                {
+                    readIn = int.Parse(Console.In.ReadLine());
+                }
+                catch (FormatException)
+                {
+                    readIn = 0;
+                }
 
                 switch (readIn)
                 {
@@ -147,7 +155,6 @@ namespace BlackJack
             else
             {
                 Console.Out.WriteLine("Dealer stands on: " + tmpDealer);
-
             }
         }
 
