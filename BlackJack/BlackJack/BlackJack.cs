@@ -17,7 +17,10 @@ namespace BlackJack
     class BlackJack
     {
         public static Deck player = new Deck();
-        public static List<Card> CardUp = new List<Card>();
+        public static List<Card> PlayerCards = new List<Card>();
+        public static List<Card> DealerCards = new List<Card>();
+        public static int playerScore;
+        public static int playerScoreAce;
 
 
         public BlackJack()
@@ -61,7 +64,7 @@ namespace BlackJack
                         Hit();
                         break;
                     case 2:
-                        Console.Out.WriteLine("Standing!");
+                        Console.Out.WriteLine("Dealer: ");
                         Stand();
                         break;
                     default:
@@ -77,9 +80,9 @@ namespace BlackJack
         //-----------------------------------------------
         private static void Hit()
         {
-            CardUp.Add(player.ThrowCard());
+            PlayerCards.Add(player.ThrowCard());
             int tmp = 0;
-            foreach (Card i in CardUp)
+            foreach (Card i in PlayerCards)
             {
                 Console.Out.WriteLine(i);
                 tmp += i.CardValue;
@@ -89,13 +92,18 @@ namespace BlackJack
             if (tmp > 21)
             {
                 Console.Out.WriteLine("Bust! Dealer Wins!");
-                CardUp.Clear();
+                PlayerCards.Clear();
             }
-            if (tmp == 21)
+            else if (tmp == 21)
             {
                 Console.Out.WriteLine("BlackJack! Player Wins!");
-                CardUp.Clear();
+                PlayerCards.Clear();
             }
+            else
+            {
+                playerScore = tmp;
+            }
+
         }
 
         //-----------------------------------------------
@@ -104,7 +112,22 @@ namespace BlackJack
         //-----------------------------------------------
         private static void Stand()
         {
-
+            int tmpDealer = 0;
+            foreach (Card i in DealerCards)
+            {
+                Console.Out.WriteLine(i + " + ");
+                tmpDealer += i.CardValue;
+            }
+            if (tmpDealer > 17)
+            {
+                Console.Out.WriteLine("Dealer stands on: " + tmpDealer);
+                DealerCards.Clear();
+            }
+            else if (tmpDealer == 21)
+            {
+                Console.Out.WriteLine("Dealer gets BlackJack! Dealer Wins!");
+                DealerCards.Clear();
+            }
         }
 
         //-----------------------------------------------
@@ -114,20 +137,19 @@ namespace BlackJack
         private static void AceDuality()
         {
             int tmpAce = 0;
-            foreach (Card i in CardUp)
+            foreach (Card i in PlayerCards)
             {
-                Console.Out.WriteLine(i);
+                Console.Out.Write(i);
                 tmpAce += i.CardValue;
-            }
-            if (tmpAce+10 > 21)
-            {
-                Console.Out.WriteLine("Bust! Dealer Wins!");
-                CardUp.Clear();
             }
             if (tmpAce+10 == 21)
             {
                 Console.Out.WriteLine("BlackJack! Player Wins!");
-                CardUp.Clear();
+                PlayerCards.Clear();
+            }
+            else
+            {
+                playerScoreAce = tmpAce;
             }
         }
     }
