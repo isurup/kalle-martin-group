@@ -34,6 +34,12 @@ namespace BlackJack
         //-----------------------------------------------
         public Card ThrowCard()
         {
+            //checks if deck is empty and returns null
+            if (DeckOfCards.Count() == 0)
+            {
+                return null;
+            }
+            //
             System.Random generator = new Random(DateTime.Now.Millisecond);
             int deckCountTmp = DeckOfCards.Count + 1;
 
