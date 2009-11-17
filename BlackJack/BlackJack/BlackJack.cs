@@ -185,7 +185,9 @@ namespace BlackJack
         {
             if (empty)
             {
-                Console.Out.WriteLine("Game Deck is empty, shuffling ");
+                Console.Out.WriteLine("Game Deck is empty, shuffling and clearing game.");
+                PlayerCards.Clear();
+                DealerCards.Clear();
                 GameDeck.ShuffleDeck();
             }
         }
