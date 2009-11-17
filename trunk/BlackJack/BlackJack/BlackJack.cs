@@ -181,9 +181,13 @@ namespace BlackJack
         //-----------------------------------------------
         // Checks if the deck is empty and needs shuffeling 
         //-----------------------------------------------
-        private static void IsDeckEmpty()
+        private static void IsDeckEmpty(bool empty)
         {
-
+            if (empty)
+            {
+                Console.Out.WriteLine("Game Deck is empty, shuffling ");
+                GameDeck.ShuffleDeck();
+            }
         }
     }
 }
