@@ -117,6 +117,14 @@ namespace BlackJack
             {
                 Console.Out.WriteLine(i + " + ");
                 tmpDealer += i.CardValue;
+                if (i.Face == Card.CardType.Ace)
+                {
+                    if (tmpDealer+10 == 21)
+                    {
+                        Console.Out.WriteLine("Dealer gets BlackJack! Dealer Wins!");
+                        DealerCards.Clear();
+                    }
+                }
             }
             if (tmpDealer > 17)
             {
@@ -127,6 +135,14 @@ namespace BlackJack
             {
                 Console.Out.WriteLine("Dealer gets BlackJack! Dealer Wins!");
                 DealerCards.Clear();
+            }
+            if (tmpDealer > playerScore && tmpDealer > playerScoreAce)
+            {
+                Console.Out.WriteLine("Dealer gets Highest! Dealer Wins!");
+            }
+            if (tmpDealer > playerScoreAce)
+            {
+                Console.Out.WriteLine("Dealer gets Highest! Dealer Wins!");
             }
         }
 
