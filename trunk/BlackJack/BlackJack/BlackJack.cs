@@ -113,13 +113,13 @@ namespace BlackJack
         //-----------------------------------------------
         private static void Stand()
         {
+            int tmpDealer = 0;
+            DealerCards.Clear();
             do
             {
                 
                 DealerCards.Add(myThrowCard());
                 
-                int tmpDealer = 0;
-                DealerCards.Clear();
                 foreach (Card i in DealerCards)
                 {
                     Console.Out.WriteLine(i + " + ");
@@ -181,15 +181,20 @@ namespace BlackJack
             }
         }
 
+        //-----------------------------------------------
+        // Check if the deck has cards and returns a card
+        // if the deck is empty the cards are shuffled
+        //-----------------------------------------------
         private static Card myThrowCard()
         {
             Card x = GameDeck.ThrowCard();
             if (x == null)
             {
-                Console.Out.WriteLine("Game Deck is empty, shuffling and clearing the game.");
+                Console.Out.WriteLine("Game Deck is empty, shuffling and clearing the game.\n New Game:\n");
                 PlayerCards.Clear();
                 DealerCards.Clear();
                 GameDeck.ShuffleDeck();
+                return GameDeck.ThrowCard();
             }
             else
             {
