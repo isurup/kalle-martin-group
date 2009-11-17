@@ -36,7 +36,7 @@ namespace BlackJack
         public Card ThrowCard()
         {
             //checks if deck is empty and returns null
-            //if (DeckOfCards. == 0)
+            //if (DeckOfCards.Count == 0)
             //{
             //    return null;
             //}
