@@ -56,9 +56,9 @@ namespace BlackJack
             cardSuit = suit;
             cardType = type;
             Id = ((int)suit * 13) + (int)cardType + 1;
-            Value = (int)cardType + 1;
-            if (Value > 10)
-                Value = 10;
+            Value = (int)cardType;
+            if (Value > 9)
+                Value = 9;
         }
 
         //-----------------------------------------------
@@ -90,7 +90,7 @@ namespace BlackJack
         //-----------------------------------------------
         public override string ToString()
         {
-            string tmp;
+            string tmp = "exec";
             if (cardSuit == Suits.Clubs)
             {
                 tmp = "♣ ";
@@ -106,10 +106,6 @@ namespace BlackJack
             else if (cardSuit == Suits.Spades)
             {
                 tmp = "♠ ";
-            }
-            else
-            {
-                tmp = "exec";
             }
             return (tmp + cardType.ToString());
         }

@@ -31,7 +31,10 @@ namespace BlackJack
             
             Console.Out.WriteLine("♠Ace ♣King ♥Queen ♦Jack");
 
-            Console.Out.WriteLine(player.ThrowCard().ToString());
+            foreach (Card i in player.DeckOfCards)
+            {
+                Console.Out.WriteLine(i.ToString());
+            }
             while (true)
             {
 
