@@ -53,15 +53,35 @@ namespace BlackJack
                 {
                     case 1:
                         Console.Out.WriteLine("Hit ME!");
+                        Hit();
                         break;
                     case 2:
                         Console.Out.WriteLine("Standing!");
+                        Stand();
                         break;
                     default:
                         Console.Out.WriteLine("Incorrect input try again");
                         break;
                 }
             }
+        }
+
+        //-----------------------------------------------
+        // The dealer responds to a Hit:
+        // Give the player a card form the deck
+        //-----------------------------------------------
+        private static void Hit()
+        {
+            throw new NotImplementedException();
+        }
+
+        //-----------------------------------------------
+        // The dealer responds to a stand;
+        // by trying to get 17 of above
+        //-----------------------------------------------
+        private static void Stand()
+        {
+            throw new NotImplementedException();
         }
 
         private static void AceDuality()
