@@ -53,7 +53,6 @@ namespace BlackJack
             //Console.Clear();
             while (true)
             {
-
                 Console.Out.Write("\n1:Hit\n2:Stand\nInput: ");
 
                 try
