@@ -45,12 +45,18 @@ namespace BlackJack
             //Console.Out.WriteLine(GameDeck.DeckOfCards[12] + " Card Value: " + GameDeck.DeckOfCards[12].CardValue + "\n");
             //Console.Out.WriteLine(GameDeck.DeckOfCards[13] + " Card Value: " + GameDeck.DeckOfCards[13].CardValue + "\n");
             //Console.Out.WriteLine("Notice that the card values are correct");
+            //Console.Clear();
             ////////////////////////////////////////////////////////////
 
             int readIn;
 
             Console.Out.WriteLine("♠ ♣ ♥ ♦ BlackJack:\n");
-            //Console.Clear();
+
+            //-----------------------------------------------
+            // The while ture loop creates the console output,
+            // reads input from the user and calls the methods
+            // Hit() and Stand()
+            //-----------------------------------------------
             while (true)
             {
                 Console.Out.Write("\n1:Hit\n2:Stand\nInput: ");
@@ -59,9 +65,9 @@ namespace BlackJack
                 {
                     readIn = int.Parse(Console.In.ReadLine());
                 }
-                catch (FormatException)
+                catch (Exception) // the Parse has; null,format and overflow expections
                 {
-                    readIn = 0;
+                    readIn = 0; // switchs to the default case, and writes "Incorrect input try again"
                 }
 
                 switch (readIn)
@@ -71,7 +77,7 @@ namespace BlackJack
                         Hit();
                         break;
                     case 2:
-                        Console.Out.WriteLine("Dealer: ");
+                        Console.Out.WriteLine("Dealer plays: ");
                         Stand();
                         break;
                     default:
@@ -116,7 +122,7 @@ namespace BlackJack
 
         //-----------------------------------------------
         // The dealer responds to a stand;
-        // by trying to get 17 of above
+        // by trying to get 17 or above
         //-----------------------------------------------
         private static void Stand()
         {
@@ -140,14 +146,19 @@ namespace BlackJack
                         }
                     }
                 }
-            } while (tmpDealer < 17);
+            } while (tmpDealer < 16); // stops at 17 or above
 
-            if (tmpDealer == 21)
+            if (tmpDealer > 21)
+            {
+                Console.Out.WriteLine("Dealer Busts! Player Wins!");
+                DealerCards.Clear();
+            }
+            else if (tmpDealer == 21)
             {
                 Console.Out.WriteLine("Dealer gets BlackJack! Dealer Wins!");
                 DealerCards.Clear();
             }
-            if (tmpDealer > playerScore && tmpDealer > playerScoreAce)
+            else if (tmpDealer > playerScore && tmpDealer > playerScoreAce)
             {
                 Console.Out.WriteLine("Dealer gets Highest! Dealer Wins!");
             }
@@ -188,8 +199,11 @@ namespace BlackJack
         }
 
         //-----------------------------------------------
-        // Check if the deck has cards and returns a card
-        // if the deck is empty the cards are shuffled
+        // Check if the deck has cards and returns a card,
+        // if the deck is empty the cards are shuffled.
+        // -The Deck Class has a ThrowCard method that returns null
+        // if the deck no longer has any cards, and a suffle class
+        // that reinitilizes the deck. 
         //-----------------------------------------------
         private static Card myThrowCard()
         {
