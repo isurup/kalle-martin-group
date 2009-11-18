@@ -131,21 +131,18 @@ namespace BlackJack
 
             do
             {
-                DealerCards.Add(myThrowCard());
-                
-                foreach (Card i in DealerCards)
+                Card newCard = myThrowCard();
+                DealerCards.Add(newCard);
+                tmpDealer += newCard.CardValue;
+                if (newCard.Face == Card.CardType.Ace)
                 {
-                    Console.Out.WriteLine(i + " + ");
-                    tmpDealer += i.CardValue;
-                    if (i.Face == Card.CardType.Ace)
+                    if (tmpDealer + 10 == 21)
                     {
-                        if (tmpDealer + 10 == 21)
-                        {
-                            Console.Out.WriteLine("Dealer gets BlackJack! Dealer Wins!");
-                            DealerCards.Clear();
-                        }
+                        Console.Out.WriteLine("Dealer gets BlackJack! Dealer Wins!");
+                        DealerCards.Clear();
                     }
                 }
+                Console.Out.WriteLine(newCard + " + ");
             } while (tmpDealer < 16); // stops at 17 or above
 
             if (tmpDealer > 21)
@@ -165,6 +162,15 @@ namespace BlackJack
             else
             {
                 Console.Out.WriteLine("Dealer stands on: " + tmpDealer);
+                if (tmpDealer < playerScore || tmpDealer < playerScoreAce)
+                {
+                    Console.Out.WriteLine("Player has highst, Player Wins! ");
+                }
+                else
+                {
+                    Console.Out.WriteLine("Dealer wins!");
+                }
+
             }
         }
 
