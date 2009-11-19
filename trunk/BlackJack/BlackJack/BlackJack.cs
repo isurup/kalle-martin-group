@@ -53,7 +53,7 @@ namespace BlackJack
             Console.Out.WriteLine("♠ ♣ ♥ ♦ BlackJack:\n");
 
             //-----------------------------------------------
-            // The while ture loop creates the console output,
+            // The while true loop creates the console output,
             // reads input from the user and calls the methods
             // Hit() and Stand()
             //-----------------------------------------------
