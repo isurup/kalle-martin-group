@@ -33,21 +33,6 @@ namespace BlackJack
         //-----------------------------------------------
         static void Main(string[] args)
         {
-            // Test--------------------
-            //Console.Out.WriteLine("♠Ace ♣King ♥Queen ♦Jack");
-            //Console.Out.WriteLine("Random Throw Card: " + GameDeck.ThrowCard() + "\n");
-            //Console.Out.WriteLine("Output of the current DeckOfCards: \n");
-            //foreach (Card i in GameDeck.DeckOfCards)
-            //{
-            //    Console.Out.WriteLine(i.ToString());
-            //}
-            //Console.Out.WriteLine("Notice that the random card is no longer part of the deck\n");
-            //Console.Out.WriteLine(GameDeck.DeckOfCards[12] + " Card Value: " + GameDeck.DeckOfCards[12].CardValue + "\n");
-            //Console.Out.WriteLine(GameDeck.DeckOfCards[13] + " Card Value: " + GameDeck.DeckOfCards[13].CardValue + "\n");
-            //Console.Out.WriteLine("Notice that the card values are correct");
-            //Console.Clear();
-            ////////////////////////////////////////////////////////////
-
             int readIn;
 
             Console.Out.WriteLine("♠ ♣ ♥ ♦ BlackJack:\n");
@@ -96,12 +81,31 @@ namespace BlackJack
             PlayerCards.Add(myThrowCard());
 
             int tmp = 0;
+            int tmpAce = 0;
             foreach (Card i in PlayerCards)
             {
                 Console.Out.WriteLine(i);
                 tmp += i.CardValue;
                 if (i.Face == Card.CardType.Ace)
-                    AceDuality();
+                {
+                    if (tmpAce + 10 == 21)
+                    {
+                        Console.Out.WriteLine("BlackJack! Player Wins!");
+                        PlayerCards.Clear();
+                        tmpAce += i.CardValue;
+                    }
+                    else
+                    {
+                        if (tmpAce < 21)
+                        {
+                            playerScoreAce = tmpAce;
+                        }
+                        else
+                        {
+                            playerScoreAce = 0;
+                        }
+                    }
+                }
             }
             if (tmp > 21)
             {
@@ -178,37 +182,6 @@ namespace BlackJack
                     Console.Out.WriteLine("Dealer wins!");
                     PlayerCards.Clear();
                     DealerCards.Clear();
-                }
-
-            }
-        }
-
-        //-----------------------------------------------
-        // Ace count as two values 1 and 11;
-        // The method check the cards dealt if ace counts as 11
-        //-----------------------------------------------
-        private static void AceDuality()
-        {
-            int tmpAce = 0;
-            foreach (Card i in PlayerCards)
-            {
-                Console.Out.Write(i);
-                tmpAce += i.CardValue;
-            }
-            if (tmpAce + 10 == 21)
-            {
-                Console.Out.WriteLine("BlackJack! Player Wins!");
-                PlayerCards.Clear();
-            }
-            else
-            {
-                if (tmpAce < 21)
-                {
-                    playerScoreAce = tmpAce;
-                }
-                else
-                {
-                    playerScoreAce = 0;
                 }
             }
         }
