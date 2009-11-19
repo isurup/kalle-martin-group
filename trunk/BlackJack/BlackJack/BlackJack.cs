@@ -139,6 +139,7 @@ namespace BlackJack
                     if (tmpDealer + 10 == 21)
                     {
                         Console.Out.WriteLine("Dealer gets BlackJack! Dealer Wins!");
+                        PlayerCards.Clear();
                         DealerCards.Clear();
                     }
                 }
@@ -148,16 +149,20 @@ namespace BlackJack
             if (tmpDealer > 21)
             {
                 Console.Out.WriteLine("Dealer Busts! Player Wins!");
+                PlayerCards.Clear();
                 DealerCards.Clear();
             }
             else if (tmpDealer == 21)
             {
                 Console.Out.WriteLine("Dealer gets BlackJack! Dealer Wins!");
+                PlayerCards.Clear();
                 DealerCards.Clear();
             }
             else if (tmpDealer > playerScore && tmpDealer > playerScoreAce)
             {
                 Console.Out.WriteLine("Dealer gets Highest! Dealer Wins!");
+                PlayerCards.Clear();
+                DealerCards.Clear();
             }
             else
             {
@@ -165,10 +170,14 @@ namespace BlackJack
                 if (tmpDealer < playerScore || tmpDealer < playerScoreAce)
                 {
                     Console.Out.WriteLine("Player has highst, Player Wins! ");
+                    PlayerCards.Clear();
+                    DealerCards.Clear();
                 }
                 else
                 {
                     Console.Out.WriteLine("Dealer wins!");
+                    PlayerCards.Clear();
+                    DealerCards.Clear();
                 }
 
             }
