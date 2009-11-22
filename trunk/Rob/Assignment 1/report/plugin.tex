@@ -1,0 +1,15 @@
+
+\section{RobWorkStudio Plugin}
+
+The calculation algorithm basically consists of two functions: updateAngles and updateRotation.\\
+
+The function updateAngles get values from the rotation matrix and calculates the RPY rotation angles according to the selected angleset convention (eg. Euler XYZ or Fixed ZYX). The function updateAngles calculates the angles much as shown in section \ref{sec:calc}, also taking care of the mentioned special cases. The angle sliders are then updated with these new values and the graphical representation is updated.\\
+This function is called when the user presses the \textit{solve}-button.\\
+
+The function updateRotation does the inverse of updateAngles, that is, it updates the rotation matrix from the values of the angle sliders. Depending on angles RPY, the function will calculate the values of the rotation matrix representing the chosen angleset (e.g. Euler XYZ of Fixed ZYX). \\
+First the sine and cosine values of $\alpha$, $\beta$ and  $\gamma$ are calculated. Depending on the chosen convention the matrix values are then calculated similar to equation \eqref{eq:eq0} and the graphical representation is updated.\\
+This function is called every time the slider values change.\\
+
+In addition, the plugin has been modified to disable input when an unimplemented angleset convention is selected.\\
+
+To get the plugin to work, the plugin must be compiled using the Visual Studio solution file provided with this journal. The plugin must be extracted to a folder called \textit{(workspace)}/RobWorkApp/ClassProjects/Rob01ex1\_2009 before compiling, and the \textit{RobWorkStudio.ini} file must be placed in the output folder of RobWorkStudio \footnote{typically \textit{(workspace)}/RobWorkStudio/projects/VisualStudio2005/RobWorkStudio/Debug} before running RobWorkStudio.
