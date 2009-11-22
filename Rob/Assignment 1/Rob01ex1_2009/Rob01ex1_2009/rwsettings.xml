@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<PropertyMap>
+
+  <Property>
+    <Name>CheckForCollision</Name>
+    <Description></Description>
+    <Value>
+      <Boolean>true</Boolean>
+    </Value>
+  </Property>
+
+  <Property>
+    <Name>PluginArea_Jog</Name>
+    <Description></Description>
+    <Value>
+      <Integer>1</Integer>
+    </Value>
+  </Property>
+
+  <Property>
+    <Name>PluginArea_Log</Name>
+    <Description></Description>
+    <Value>
+      <Integer>8</Integer>
+    </Value>
+  </Property>
+
+  <Property>
+    <Name>PluginArea_PlayBack</Name>
+    <Description></Description>
+    <Value>
+      <Integer>8</Integer>
+    </Value>
+  </Property>
+
+  <Property>
+    <Name>PluginArea_PropertyView</Name>
+    <Description></Description>
+    <Value>
+      <Integer>1</Integer>
+    </Value>
+  </Property>
+
+  <Property>
+    <Name>PluginArea_TreeView</Name>
+    <Description></Description>
+    <Value>
+      <Integer>1</Integer>
+    </Value>
+  </Property>
+
+  <Property>
+    <Name>PluginFloating_Jog</Name>
+    <Description></Description>
+    <Value>
+      <Boolean>false</Boolean>
+    </Value>
+  </Property>
+
+  <Property>
+    <Name>PluginFloating_Log</Name>
+    <Description></Description>
+    <Value>
+      <Boolean>false</Boolean>
+    </Value>
+  </Property>
+
+  <Property>
+    <Name>PluginFloating_PlayBack</Name>
+    <Description></Description>
+    <Value>
+      <Boolean>false</Boolean>
+    </Value>
+  </Property>
+
+  <Property>
+    <Name>PluginFloating_PropertyView</Name>
+    <Description></Description>
+    <Value>
+      <Boolean>false</Boolean>
+    </Value>
+  </Property>
+
+  <Property>
+    <Name>PluginFloating_TreeView</Name>
+    <Description></Description>
+    <Value>
+      <Boolean>false</Boolean>
+    </Value>
+  </Property>
+
+  <Property>
+    <Name>PluginVisible_Jog</Name>
+    <Description></Description>
+    <Value>
+      <Boolean>false</Boolean>
+    </Value>
+  </Property>
+
+  <Property>
+    <Name>PluginVisible_Log</Name>
+    <Description></Description>
+    <Value>
+      <Boolean>false</Boolean>
+    </Value>
+  </Property>
+
+  <Property>
+    <Name>PluginVisible_PlayBack</Name>
+    <Description></Description>
+    <Value>
+      <Boolean>false</Boolean>
+    </Value>
+  </Property>
+
+  <Property>
+    <Name>PluginVisible_PropertyView</Name>
+    <Description></Description>
+    <Value>
+      <Boolean>false</Boolean>
+    </Value>
+  </Property>
+
+  <Property>
+    <Name>PluginVisible_TreeView</Name>
+    <Description></Description>
+    <Value>
+      <Boolean>false</Boolean>
+    </Value>
+  </Property>
+
+  <Property>
+    <Name>PreviousOpenDirectory</Name>
+    <Description></Description>
+    <Value>
+      <String>D:\RobWork\workspace\RobWorkStudio\projects\VisualStudio2005\RobWorkStudio\</String>
+    </Value>
+  </Property>
+
+  <Property>
+    <Name>WindowHeight</Name>
+    <Description></Description>
+    <Value>
+      <Integer>800</Integer>
+    </Value>
+  </Property>
+
+  <Property>
+    <Name>WindowPosX</Name>
+    <Description></Description>
+    <Value>
+      <Integer>22</Integer>
+    </Value>
+  </Property>
+
+  <Property>
+    <Name>WindowPosY</Name>
+    <Description></Description>
+    <Value>
+      <Integer>29</Integer>
+    </Value>
+  </Property>
+
+  <Property>
+    <Name>WindowWidth</Name>
+    <Description></Description>
+    <Value>
+      <Integer>1024</Integer>
+    </Value>
+  </Property>
+
+</PropertyMap>

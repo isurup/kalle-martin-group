@@ -1,0 +1,12 @@
+#ifndef ROB01EX1_2009_GLOBAL_H
+#define ROB01EX1_2009_GLOBAL_H
+
+#include <Qt/qglobal.h>
+
+#ifdef ROB01EX1_2009_LIB
+# define ROB01EX1_2009_EXPORT Q_DECL_EXPORT
+#else
+# define ROB01EX1_2009_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // ROB01EX1_2009_GLOBAL_H
