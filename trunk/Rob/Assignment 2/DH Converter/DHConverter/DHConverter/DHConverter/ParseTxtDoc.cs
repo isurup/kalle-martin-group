@@ -40,7 +40,7 @@ namespace DHConverter
                         if (joint != null) {  template.AddJoint(joint); }//ADD joint
                         joint = new Joint();//Create new Joint
                     }
-                    joint = TryAddJointValues(joint, name, value, Id);
+                        joint = TryAddJointValues(joint, name, value, Id);
 
                 }
             }
@@ -48,6 +48,7 @@ namespace DHConverter
             {//ADD joint
                  template.AddJoint(joint); 
             }
+            
     }
 
 
@@ -59,8 +60,7 @@ namespace DHConverter
             {
                 case "joint"://joint1 = revolute
                     {
-                        joint.type = value;
-                        joint.joint = Id;
+                        joint.joint = value;
                         break;
                     }
 
