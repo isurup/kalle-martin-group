@@ -1,0 +1,17 @@
+\section{DH$\rightarrow$RW device file converter program}
+\label{sec:program}
+
+\paragraph{Motivation why C\#}
+DH converter is an application based on C\# programming language. C\# was chosen for couple of the reasons. C\# is object oriented language let us easier manage objects, of course C\# has huge libraries. For instance, Regular expressions and Xml libraries, allow us easier to build such kind of application.
+Basically application consists of two parts one part responsible of data parsing from text file and another part responsible of creating xml file relative to parsed text.
+
+\paragraph{Functionality}
+Application has two text boxes and two buttons.
+In the text box called ''Path:'' we entering path where text file exist. If file does not exist (or some other failure reasons), then application produce error message. If file parsed successfully then another button called ''Save XML'' will enable. On the push ''Save XML'' file will be saved where application placed. For instance, if place of ''DH Converter 1.1v'' is on ''C:/'', then ''DH\_File.Xml'' will be saved on place: ''C:/DH\_File.Xml''.
+
+\paragraph{Inside Structure}
+As mentioned before application basically divided into two parts:
+\begin{enumerate}
+	\item Text parser part. Text parser has class called ''ParseTxtDoc.cs'' responsible of creation structure of joints. This class base is Regular expression and created rules to parse text file.\\
+	\item Xml template part. Xml part has class called ''CreateXmlDoc.cs'' it responsible for creation of xml document. Here created template let us easily modify, expand values.
+\end{enumerate}
