@@ -1,0 +1,17 @@
+DOF=3
+(Robotica requires a line between DOF and joint1)
+joint1 = revolute
+a1 = 2
+alpha1 = 0
+d1 = 0
+theta1 = q1
+joint2 = revolute
+a2 = 1
+alpha2 = 0
+d2 = 0
+theta2 = q2
+joint3 = revolute
+a3 = 0.5
+alpha3 = 0
+d3 = 0
+theta3 = q3
