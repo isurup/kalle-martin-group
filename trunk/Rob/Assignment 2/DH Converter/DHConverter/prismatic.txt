@@ -1,0 +1,12 @@
+DOF=2
+(Robotica requires a line between DOF and joint1)
+joint1 = revolute
+a1 = 1
+alpha1 = 90
+d1 = 0.2
+theta1 = q1
+joint2 = prismatic
+a2 = 0.8
+alpha2 = 0
+d2 = 0
+theta2 = q2
