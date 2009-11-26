@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml;
-using System.Globalization;
 
 namespace DHConverter
 {
@@ -24,20 +23,24 @@ namespace DHConverter
 
             xmlSerialDevice = xmlDoc.DocumentElement;
             xmlSerialDevice = xmlDoc.CreateElement("", "SerialDevice", "");
-            xmlSerialDevice.SetAttribute("name", "Simple Planar Link");
+            xmlSerialDevice.SetAttribute("name", "Simple Plannar Link");
             xmlWorkCell.AppendChild(xmlSerialDevice);
 
             //-------------------------------------------------------------------------
             //Here Adding Joints and Frames
             //-------------------------------------------------------------------------
-
+                    
+                    
+                    if (template.jId >= 1)
+                    {
+                        int joint = 0;
+                        while (template.jId > joint)
+                        {
+                            XmlCreateJoint(xmlDoc, xmlSerialDevice, template.j[joint++]);
+                        }
+                    }
+            
             XmlCreateFrame(xmlDoc, xmlSerialDevice);
-            for (int joint = 1; joint <= template.jId; joint++)
-            {
-                //System.Windows.Forms.MessageBox.Show("joint: " + joint.ToString());
-                //System.Windows.Forms.MessageBox.Show("test: " + template.j[joint].joint.ToString());
-                XmlCreateJoint(xmlDoc, xmlSerialDevice, template, joint);
-            }
             //-------------------------------------------------------------------------
             //-------------------------------------------------------------------------
 
@@ -84,49 +87,25 @@ namespace DHConverter
             //</Frame>          
         }
 
-        public void XmlCreateJoint(XmlDocument xmlDoc, XmlElement root, Template template, int id)
+        public void XmlCreateJoint(XmlDocument xmlDoc, XmlElement root, Joint joint)
         {
             XmlElement xmlDHJoint, Drawable, PosLimit, Cylinder, RPY, Box, Pos;
             XmlText xmlText;
-            Joint prevjoint = template.j[id - 1];
-            Joint joint = template.j[id];
-            Joint nextjoint = template.j[id + 1];
-            //System.Windows.Forms.MessageBox.Show("prev: " + prevjoint.joint);
-            //System.Windows.Forms.MessageBox.Show("joint: " + joint.joint);
-            //System.Windows.Forms.MessageBox.Show("next: " + nextjoint.joint);
-            xmlDHJoint = xmlDoc.CreateElement("", "DHJoint", "");
             
+            xmlDHJoint = xmlDoc.CreateElement("", "DHJoint", "");
 
             //name="Joint1" alpha="0" a="0" d="0.2" offset="0"
-            xmlDHJoint.SetAttribute("name", "", "joint" + joint.joint);//xmlDHJoint.SetAttribute("name", "", "Joint1");
-            xmlDHJoint.SetAttribute("alpha", "", prevjoint.alpha);//xmlDHJoint.SetAttribute("alpha", "", "0");
-            
-            if (String.Compare(joint.type, "prismatic", true) == 0)
-            {
-                xmlDHJoint.SetAttribute("a", "", "0");
-                xmlDHJoint.SetAttribute("theta", "", "0");
-                xmlDHJoint.SetAttribute("offset", "", "0.6");
-            }
-            else
-            {
-                xmlDHJoint.SetAttribute("a", "", prevjoint.a);//xmlDHJoint.SetAttribute("a", "", "0");
-                xmlDHJoint.SetAttribute("d", "", joint.d);//xmlDHJoint.SetAttribute("d", "", "0.2");
-                xmlDHJoint.SetAttribute("offset", "", "0");
-            }
+            xmlDHJoint.SetAttribute("name", "", joint.joint);//xmlDHJoint.SetAttribute("name", "", "Joint1");
+            xmlDHJoint.SetAttribute("alpha", "", joint.alpha);//xmlDHJoint.SetAttribute("alpha", "", "0");
+            xmlDHJoint.SetAttribute("a", "", joint.a);//xmlDHJoint.SetAttribute("a", "", "0");
+            xmlDHJoint.SetAttribute("d", "", joint.d);//xmlDHJoint.SetAttribute("d", "", "0.2");
+            xmlDHJoint.SetAttribute("offset", "", "0");
             root.AppendChild(xmlDHJoint);
 
             //<PosLimit min="-180" max="180" />
             PosLimit = xmlDoc.CreateElement("", "PosLimit", "");
-            if (String.Compare(joint.type, "prismatic", true) == 0)
-            {
-                PosLimit.SetAttribute("min", "-0.4");
-                PosLimit.SetAttribute("max", "0.4");
-            }
-            else
-            {
-                PosLimit.SetAttribute("min", "-180");
-                PosLimit.SetAttribute("max", "180");
-            }
+            PosLimit.SetAttribute("min", "-180");
+            PosLimit.SetAttribute("max", "180");
             xmlDHJoint.AppendChild(PosLimit);
 
             //<Drawable name="A cyl" >
@@ -147,39 +126,21 @@ namespace DHConverter
             Drawable.SetAttribute("name", "A box");
             xmlDHJoint.AppendChild(Drawable);
 
-            String rpy, pos;
-            float floata;
-            float.TryParse(joint.a, NumberStyles.Any, CultureInfo.InvariantCulture, out floata);
-            if (String.Compare(nextjoint.type, "prismatic", true) == 0)
-            {
-                rpy = "90 0 0";
-                pos = "0 -";
-                pos += (floata / 2).ToString(CultureInfo.InvariantCulture);
-                pos += " 0";
-            }
-            else
-            {
-                rpy = "0 0 0";
-                pos = "";
-                pos += (floata / 2).ToString(CultureInfo.InvariantCulture);
-                pos += " 0 0";
-            }
-
             //<RPY>0 0 0</RPY>
             RPY = xmlDoc.CreateElement("", "RPY", "");
-            xmlText = xmlDoc.CreateTextNode(rpy);
+            xmlText = xmlDoc.CreateTextNode("0 0 0");
             RPY.AppendChild(xmlText);
             Drawable.AppendChild(RPY);
 
             //<Pos>0.5 0 0</Pos>
             Pos = xmlDoc.CreateElement("", "Pos", "");
-            xmlText = xmlDoc.CreateTextNode(pos);
+            xmlText = xmlDoc.CreateTextNode("0.5 0 0");
             Pos.AppendChild(xmlText);
             Drawable.AppendChild(Pos);
 
             //<Box x="1.0" y="0.1" z="0.1" />
             Box = xmlDoc.CreateElement("", "Box", "");
-            Box.SetAttribute("x", joint.a);
+            Box.SetAttribute("x", "1.0");
             Box.SetAttribute("y", "0.1");
             Box.SetAttribute("z", "0.1");
             Drawable.AppendChild(Box);
