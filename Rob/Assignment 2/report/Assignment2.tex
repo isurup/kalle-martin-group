@@ -30,6 +30,21 @@
 % latex twice to get up-to-date table of contents
 %\tableofcontents
 
+\lstset{ % Configuration of listings
+        language=java,
+        frame=tRBl,%single,
+        frameround=tttt,
+        breaklines=true,
+        numbers=left,
+        numberstyle=\tiny,
+        basicstyle=\footnotesize,
+        showstringspaces=false,
+        captionpos=t,
+        keywordstyle=\bfseries\color{blue},
+        identifierstyle=\bfseries\color{black},
+        escapeinside={(*@}{@*)}
+}
+
 \input{tex/introduction}
 \input{tex/description}
 \input{tex/program}
