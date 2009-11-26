@@ -29,7 +29,7 @@ namespace DHConverter
     public class Joint
     {        
         public string joint;
-        public string type;
+        public string id;
         public string a;
         public string alpha;
         public string d;
@@ -37,8 +37,8 @@ namespace DHConverter
 
         public Joint()
         {
-            joint = "0";
-            type = "nil";
+            joint = "nil";
+            id = "nil";
             a = "0";
             alpha = "0";
             d = "0";

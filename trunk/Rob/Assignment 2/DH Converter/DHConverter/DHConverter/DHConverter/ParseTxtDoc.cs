@@ -12,6 +12,9 @@ namespace DHConverter
         {
             Joint joint = null;
             content = content.Replace(" ","");//Remove empty places
+            content = content.Replace("Pi/2", "90");
+            
+
             string[] lines = Regex.Split(content, "\r\n");
 
             int last_result=0,result = 0;
@@ -22,17 +25,23 @@ namespace DHConverter
             {       
                 if (isValue(line))
                 {
-                    Regex rule = new Regex("^(?<name>\\w+)(?<ID>\\w+)=(?<value>[a-zA-Z0-9.]+)");
+                    Regex rule = new Regex("^(?<name>\\w+)(?<ID>\\w+)=(?<value>[a-zA-Z0-9./+-]+)");
                     Match match = rule.Match(line);
                     string name = match.Groups["name"].Value;
                     string value = match.Groups["value"].Value;
                     string Id = match.Groups["ID"].Value;
 
                     success = int.TryParse(Id, out result);
+
+                    if (name.ToUpper().CompareTo("REVOLUTE") == 0) { }
+                    else if (name.ToUpper().CompareTo("PRISMATIC") == 0) { }
+
                     if (float.TryParse(value, out fvalue))
                     {
                         //value = float.Parse(
                     }
+
+                    //if(name.CompareTo("joint")
 
                     if (last_result != result && success)
                     {
@@ -40,7 +49,7 @@ namespace DHConverter
                         if (joint != null) {  template.AddJoint(joint); }//ADD joint
                         joint = new Joint();//Create new Joint
                     }
-                    joint = TryAddJointValues(joint, name, value, Id);
+                        joint = TryAddJointValues(joint, name, value, Id);
 
                 }
             }
@@ -48,6 +57,7 @@ namespace DHConverter
             {//ADD joint
                  template.AddJoint(joint); 
             }
+            
     }
 
 
@@ -57,10 +67,11 @@ namespace DHConverter
                     
             switch (name)
             {
+                    
                 case "joint"://joint1 = revolute
                     {
-                        joint.type = value;
-                        joint.joint = Id;
+                        joint.id = "Joint" + Id;
+                        joint.joint = value;//Revolute, Prismatic
                         break;
                     }
 
@@ -92,12 +103,12 @@ namespace DHConverter
         public bool isValue(String str)
         {
             bool value = false;            
-            value |= new Regex("a[0-999]=[0-999]").IsMatch(str);//a1=12, a7=89 ...
-            value |= new Regex("DOF=[0-999]").IsMatch(str);//DOF=1, DOF=83 ...
-            value |= new Regex("joint[0-999]=[a-zA-Z0-999]").IsMatch(str);///joint1=revolute1, joint2=prismatic3, ...
-            value |= new Regex("alpha[0-999]=[0-360]").IsMatch(str);//alpha2=90, alpha4=180
-            value |= new Regex("theta[0-999]=[a-z0-360]").IsMatch(str);//theta2=q1, theta4=180 (not sure about this..)           
-            value |= new Regex("d[0-999]=[a-z0-360]").IsMatch(str);//theta2=q1, theta4=180 (not sure about this..)
+            value |= new Regex("a[0-999]=[0-9.+-]").IsMatch(str);//a1=12, a7=89 ...
+            value |= new Regex("DOF=[0-9]").IsMatch(str);//DOF=1, DOF=83 ...
+            value |= new Regex("joint[0-999]=[a-zA-Z0-9]").IsMatch(str);///joint1=revolute1, joint2=prismatic3, ...
+            value |= new Regex("alpha[0-999]=[+-azA-Z0-360//0-9]").IsMatch(str);//alpha2=90, alpha4=180
+            value |= new Regex("theta[0-999]=[azA-Z0-360.+-/]").IsMatch(str);//theta2=q1, theta4=180 (not sure about this..)           
+            value |= new Regex("d[0-999]=[a-z0-360.+-]").IsMatch(str);//theta2=q1, theta4=180 (not sure about this..)
             //Add another rule ... 
             return value;
         } 

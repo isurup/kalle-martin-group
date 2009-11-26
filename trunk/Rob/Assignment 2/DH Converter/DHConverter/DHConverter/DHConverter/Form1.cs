@@ -36,29 +36,29 @@ namespace DHConverter
                 ParseTxtDoc txtParser = new ParseTxtDoc();
                 template = new Template();
                 txtParser.ParseContent(content, template);
-                button2.Enabled = true;
-                MessageBox.Show("Save now to XML");
+                //button2.Enabled = true;
+                //MessageBox.Show("Save now to XML");
                 sr.Close();
             }
             catch
             {
                 MessageBox.Show("Error!");
             }
-        }  
-
-        private void button2_Click(object sender, EventArgs e)
-        {
             String XmlFileName = "DH_File.Xml";
             XmlFileName = textBox2.Text;
             CreateXmlDoc XmlDoc = new CreateXmlDoc();
             if (XmlFileName.Length == 0)
-            {                
+            {
                 XmlFileName = "DH_File.Xml";
             }
-            XmlDoc.CreateXmlFile(XmlFileName,template);
-            MessageBox.Show("Xml file saved, file name: "+XmlFileName);
+            XmlDoc.CreateXmlFile(XmlFileName, template);
+            MessageBox.Show("Xml file saved, file name: " + XmlFileName);
         }
 
-            }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
 
