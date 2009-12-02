@@ -1,17 +1,8 @@
-\section{DH$\rightarrow$RW device file converter program}
+\section{Robot model}
 \label{sec:program}
 
-\paragraph{Motivation why C\#}
-The DH converter is an application based on the C\# programming language. C\# was chosen for a couple of reasons. C\# is an object oriented language that lets us manage objects in an easier manner, of course C\# has a huge library. For instance, Regular expressions and Xml libraries, allows us to easier build such an application.
-Basically the application consists of two parts one part is responsible for the data parsing from a Robotica text file and an another part responsible for creating a xml file relative to the parsed text.
+\paragraph{Robot}
 
-\paragraph{Functionality}
-The application has two text boxes and two buttons.
-In the text box called ''Path:'' the path where the text file exists are entered. If the file does not exist (or some other failure occurs), the application will produce an error message. If the file is successfully parsed an another button called ''Save XML'' will be enabled. When ''Save XML'' are pushed the file will be saved where the application are placed. For instance, if the place of ''DH Converter 1.1v'' is on ''C:/'', then ''DH\_File.Xml'' will be saved on place: ''C:/DH\_File.Xml''.
-
-\paragraph{Inside Structure}
-As mentioned before the application are basically divided into two parts:
 \begin{enumerate}
-	\item The text parser part: Text parser has a class called ''ParseTxtDoc.cs'' that is responsible for the structure of joints creation. This class is based on Regular expression and creates the rules to parse the text file.\\
-	\item The xml template part: Xml part has a class called ''CreateXmlDoc.cs'' that is responsible for the creation of the xml document. Here the created template let us easily modify and change the values.
+	\item The \\
 \end{enumerate}
