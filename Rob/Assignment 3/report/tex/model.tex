@@ -1,13 +1,13 @@
 \section{Robot model}
 \label{sec:program}
 
-The robot Denso 6556 has six joints, and all these joint are revolute type. 
+The robot Denso 6556 has six joints, all of which are of the revolute type.
 
 \begin{enumerate}
-	\item The  construct the DH parameters out of the data sheet of the Denso 6556, from six joints, according to these parameters a xml file were created and joint degree limitations were added. \\
-	\item  The object file was splitted into objects of joints and saved as seperated objects by using AC3D software \\
+	\item Construction of the DH parameters based on the data sheet of the Denso 6556, six joints in all. According to these parameters, an xml file was created and joint degree limitations were added. \\
+	\item  The object file was split into joint objects and saved as separate objects by using the AC3D software\cite{ac3d}. \\
 	\item  In the XML file, frames were placed and the objects of joints were included. \\
-	\item The position of objects were changed according to RPY, because each shape were saved and loaded without regards of other shapes. \\
+	\item The position and rotation of objects was tweaked according to RPY and offset because each shape were saved and loaded without regard to other shapes and aligned by hand. \\
 	\item The XML was loaded into RobWork and simulated, small corrections of shapes placement were neccessary. \\
 	\item Simple collision ascii .stl models were created and included into the XML file to simulate collision between joints. \\
 \end{enumerate}
