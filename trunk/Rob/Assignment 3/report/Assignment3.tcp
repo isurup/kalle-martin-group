@@ -3,7 +3,7 @@ Type=TeXnicCenterProjectInformation
 Version=4
 
 [ProjectInfo]
-MainFile=Assignment2.tex
+MainFile=Assignment3.tex
 UseBibTeX=1
 UseMakeIndex=0
 ActiveProfile=LaTeX => PDF
