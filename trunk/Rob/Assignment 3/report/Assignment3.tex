@@ -1,0 +1,61 @@
+% article document class appropriate for small (<100 pages) documents
+\documentclass{article}
+
+% Packages provide additional functionality
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{amsmath}
+
+\newcommand{\sa}{s\alpha}
+\newcommand{\ca}{c\alpha}
+\renewcommand{\sb}{s\beta}
+\newcommand{\cb}{c\beta}
+\newcommand{\sg}{s\gamma}
+\newcommand{\cg}{c\gamma}
+
+\title{Robwork Assignment 2\\Group 1}
+\author{Martin Toft Franzen, Martin Moghadam, Robertas Jacauskas,\\
+ Audrius Palisaitis and Kalle Grafstr�m}
+
+\begin{document}
+
+\maketitle % reads info from \title and \author above
+
+% auto-generated from previous compilation pass, you may need to run
+% latex twice to get up-to-date table of contents
+%\tableofcontents
+
+\lstset{ % Configuration of listings
+        language=java,
+        frame=tRBl,%single,
+        frameround=tttt,
+        breaklines=true,
+        numbers=left,
+        numberstyle=\tiny,
+        basicstyle=\footnotesize,
+        showstringspaces=false,
+        captionpos=t,
+        keywordstyle=\bfseries\color{blue},
+        identifierstyle=\bfseries\color{black},
+        escapeinside={(*@}{@*)}
+}
+
+\input{tex/introduction}
+\input{tex/description}
+\input{tex/program}
+\input{tex/conclusion}
+
+\nocite{bib1} % Creates entry in bibliography even if it isn't cited.
+
+
+\addcontentsline{toc}{section}{References} % Include references in TOC
+\bibliographystyle{unsrt} % references appear in order of citations
+\bibliography{references}
+
+
+\end{document}
