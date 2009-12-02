@@ -1,0 +1,86 @@
+solid stl file generated from AC3D
+ facet normal 0.000000 -1.000000 0.000000
+  outer loop
+   vertex -0.080062 -0.054166 -0.232405
+   vertex 0.068089 -0.054166 -0.000448
+   vertex -0.080062 -0.054166 -0.000448
+  endloop
+ endfacet
+ facet normal 0.000000 -1.000000 0.000000
+  outer loop
+   vertex 0.068089 -0.054166 -0.000448
+   vertex -0.080062 -0.054166 -0.232405
+   vertex 0.068089 -0.054166 -0.232405
+  endloop
+ endfacet
+ facet normal 0.000000 1.000000 0.000000
+  outer loop
+   vertex 0.068089 0.051413 -0.232405
+   vertex -0.080062 0.051413 -0.000448
+   vertex 0.068089 0.051413 -0.000448
+  endloop
+ endfacet
+ facet normal 0.000000 1.000000 0.000000
+  outer loop
+   vertex -0.080062 0.051413 -0.000448
+   vertex 0.068089 0.051413 -0.232405
+   vertex -0.080062 0.051413 -0.232405
+  endloop
+ endfacet
+ facet normal 0.000000 0.000000 1.000000
+  outer loop
+   vertex -0.080062 0.051413 -0.000448
+   vertex 0.068089 -0.054166 -0.000448
+   vertex 0.068089 0.051413 -0.000448
+  endloop
+ endfacet
+ facet normal 0.000000 0.000000 1.000000
+  outer loop
+   vertex 0.068089 -0.054166 -0.000448
+   vertex -0.080062 0.051413 -0.000448
+   vertex -0.080062 -0.054166 -0.000448
+  endloop
+ endfacet
+ facet normal 0.000000 0.000000 -1.000000
+  outer loop
+   vertex -0.080062 -0.054166 -0.232405
+   vertex 0.068089 0.051413 -0.232405
+   vertex 0.068089 -0.054166 -0.232405
+  endloop
+ endfacet
+ facet normal 0.000000 0.000000 -1.000000
+  outer loop
+   vertex 0.068089 0.051413 -0.232405
+   vertex -0.080062 -0.054166 -0.232405
+   vertex -0.080062 0.051413 -0.232405
+  endloop
+ endfacet
+ facet normal -1.000000 0.000000 0.000000
+  outer loop
+   vertex -0.080062 -0.054166 -0.232405
+   vertex -0.080062 0.051413 -0.000448
+   vertex -0.080062 0.051413 -0.232405
+  endloop
+ endfacet
+ facet normal -1.000000 0.000000 0.000000
+  outer loop
+   vertex -0.080062 0.051413 -0.000448
+   vertex -0.080062 -0.054166 -0.232405
+   vertex -0.080062 -0.054166 -0.000448
+  endloop
+ endfacet
+ facet normal 1.000000 0.000000 0.000000
+  outer loop
+   vertex 0.068089 -0.054166 -0.000448
+   vertex 0.068089 0.051413 -0.232405
+   vertex 0.068089 0.051413 -0.000448
+  endloop
+ endfacet
+ facet normal 1.000000 0.000000 0.000000
+  outer loop
+   vertex 0.068089 0.051413 -0.232405
+   vertex 0.068089 -0.054166 -0.000448
+   vertex 0.068089 -0.054166 -0.232405
+  endloop
+ endfacet
+endsolid
