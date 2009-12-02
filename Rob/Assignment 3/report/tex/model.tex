@@ -5,4 +5,12 @@
 
 \begin{enumerate}
 	\item The \\
+	
+	The robot Denso 6565 has six joints, and all these joint are revolute type. 
+
+1. Was given DH parameters, from six joints, according these parameters we created the xml file and added joint degree limitations.
+2. The object file was splitted into objects of joints and saved as seperated objects by using AC3D software.
+3. In the XML file were placed frames and included the objects of joints.
+4. The position of objects were changed according RPY, because each shape was saved and loaded without regards of other shapes.
+5. The XML was loaded into RobWork and simulated, small corrections of shapes placement were neccessary.
 \end{enumerate}
