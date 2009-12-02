@@ -1,0 +1,126 @@
+<WorkCell name="scene">
+  <SerialDevice name="Simple Planar Link">
+    <Frame name="Base">
+    <!--
+      <Drawable name="A cyl">
+        <RPY>0 0 0</RPY>
+        <Pos>0.0 0 0.1</Pos>
+        <Cylinder radius="0.2" z="0.203" />
+      </Drawable>
+      <Drawable name="A box">
+        <RPY>0 90 0</RPY>
+        <Pos>0 0 0</Pos>
+        <Box x="0" y="0.1" z="0.1" />
+      </Drawable>
+      <Drawable name="A box">
+        <RPY>0 90 0</RPY>
+        <Pos>0.5 0 0.490</Pos>
+        <Box x="0.980" y="0.1" z="0.1" />
+      </Drawable>
+      -->
+    </Frame>
+    <DHJoint name="Joint1" alpha="0" a="0" d="0.335" offset="0">
+      <PosLimit min="-170" max="170" />
+      <Drawable name="A cyl">
+        <Cylinder radius="0.02" z="0.02" />
+      </Drawable>
+    </DHJoint>
+    <DHJoint name="Joint2" alpha="-90" a="0.075" d="0" offset="-90">
+      <PosLimit min="-100" max="135" />
+      <Drawable name="A cyl">
+        <Cylinder radius="0.02" z="0.02" />
+      </Drawable>
+    </DHJoint>
+    <DHJoint name="Joint3" alpha="0" a="0.270" d="0" offset="-90">
+      <PosLimit min="-119" max="166"/>
+      <Drawable name="A cyl">
+        <Cylinder radius="0.02" z="0.02" />
+      </Drawable>
+    </DHJoint>
+    <DHJoint name="Joint4" alpha="-90" a="0.09" d="0.295" offset="0">
+      <PosLimit min="-190" max="190" />
+      <Drawable name="A cyl">
+        <Cylinder radius="0.02" z="0.02" />
+      </Drawable>
+    </DHJoint>
+    <DHJoint name="Joint5" alpha="90" a="0" d="0" offset="0">
+      <PosLimit min="-120" max="120" />
+      <Drawable name="A cyl">
+        <Cylinder radius="0.02" z="0.02" />
+      </Drawable>
+    </DHJoint>
+    <!--DHJoint name="Joint6" alpha="-90" a="0" d="0.08" offset="0"-->
+    <DHJoint name="Joint6" alpha="-90" a="0" d="0.052" offset="0">
+      <PosLimit min="-360" max="360" />
+      <Drawable name="A cyl">
+        <Cylinder radius="0.02" z="0.00000001" />
+      </Drawable>
+    </DHJoint>
+    
+   <Drawable name="Base" refframe="Base" colmodel="Disabled">
+    <RPY> 0 0 180</RPY> <Pos> 0 0 0</Pos>
+    <Polytope file="geometry/base" />
+   </Drawable>
+   <CollisionModel name="Base" refframe="Base">
+    <RPY> 0 0 180</RPY> <Pos> 0 0 0</Pos>
+     <Polytope file="Geometry/basebound" />
+   </CollisionModel>
+  
+   <Drawable name="Arm1" refframe="Joint1" colmodel="Disabled">
+    <RPY> -90 0 180</RPY> <Pos> -0.0007 0 -0.1321</Pos>
+    <Polytope file="geometry/joint1" />
+   </Drawable>
+   <CollisionModel name="Arm1" refframe="Joint1">
+    <RPY> -90 0 180</RPY> <Pos> -0.0007 0 -0.1321</Pos>
+     <Polytope file="Geometry/joint1bound" />
+   </CollisionModel>
+   
+   <Drawable name="Arm2" refframe="Joint2" colmodel="Disabled">
+    <RPY> 0 90 180</RPY> <Pos> 0 0 0.062</Pos>
+    <Polytope file="geometry/joint2" />
+   </Drawable>
+   <CollisionModel name="Arm2" refframe="Joint2">
+     <RPY> 0 90 180</RPY> <Pos> 0 0 0.062</Pos>
+     <Polytope file="Geometry/joint2bound" />
+   </CollisionModel>
+  
+   <Drawable name="Arm3" refframe="Joint3" colmodel="Disabled">
+    <RPY> 0 90 90</RPY> <Pos> 0 0 0.077</Pos>
+    <Polytope file="geometry/joint3" />
+   </Drawable>
+   <CollisionModel name="Arm3" refframe="Joint3">
+    <RPY> 0 90 90</RPY> <Pos> 0 0 0.077</Pos>
+     <Polytope file="Geometry/joint3bound" />
+   </CollisionModel>
+   
+   <Drawable name="Arm4" refframe="Joint4" colmodel="Disabled">
+    <RPY> 90 0 180</RPY> <Pos> 0 0 -0.185</Pos>
+    <Polytope file="geometry/joint4" />
+   </Drawable> 
+   <CollisionModel name="Arm4" refframe="Joint4">
+    <RPY> 90 0 180</RPY> <Pos> 0 0 -0.185</Pos>
+     <Polytope file="Geometry/joint4bound" />
+   </CollisionModel>
+   
+   <Drawable name="Arm5" refframe="Joint5" colmodel="Disabled">
+    <RPY> 90 90 180</RPY> <Pos> 0 0 -0.0009</Pos>
+    <Polytope file="geometry/joint5" />
+   </Drawable> 
+   <CollisionModel name="Arm5" refframe="Joint5">
+    <RPY> 90 90 180</RPY> <Pos> 0 0 -0.0009</Pos>
+     <Polytope file="Geometry/joint5bound" />
+   </CollisionModel>
+   
+   <Drawable name="Arm6" refframe="Joint6" colmodel="Disabled">
+    <RPY> 0 0 180</RPY> <Pos> -0.0001 -0.00001 0</Pos>
+    <Polytope file="geometry/joint6" />
+   </Drawable> 
+   <CollisionModel name="Arm6" refframe="Joint6">
+    <RPY> 0 0 180</RPY> <Pos> -0.0001 -0.00001 0</Pos>
+     <Polytope file="Geometry/joint6bound" />
+   </CollisionModel>
+   
+   <CollisionSetup file="CollisionSetup.xml" />
+   
+  </SerialDevice>
+</WorkCell>
