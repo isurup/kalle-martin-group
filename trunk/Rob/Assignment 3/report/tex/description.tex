@@ -1,8 +1,5 @@
 \section{Problem description}
 \label{sec:description}
 
-\begin{quote}
-The task was to build a Denso VS-5656 device, and simulate it in Robwork. We had a description of DH parameters, .obj file where was the 
-device, and .mtl file which is a description of .obj file. According DH parameters need to place frames, and create a XML file, load it,
-and simulate in RobWork. The collision model should be consider and build as well.
-\end{quote}
+The task was to build a Denso VS-6556 device, and simulate it in Robwork. We had a data specification sheet of the Denso robot, .obj 3D model, and .mtl file which is a description of the material of the .obj model. The task was to find DH-parameters, and create a RobWork XML file, load it,
+and simulate in RobWork. The .obj model can't be loaded as it is but it needs to be split up into links with joints and saved as .ac format before RobWork can load the new models. Then to make use of collision detection between links new collosion 3D models needs to be created. 
