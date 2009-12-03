@@ -117,4 +117,161 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Playing_card_club_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_club_2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_club_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_club_3.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_club_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_club_4.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_club_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_club_5.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_club_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_club_6.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_club_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_club_7.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_club_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_club_8.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_club_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_club_9.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_club_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_club_10.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_club_A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_club_A.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_club_J" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_club_J.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_club_K" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_club_K.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_club_Q" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_club_Q.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_diamond_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_diamond_2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_diamond_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_diamond_3.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_diamond_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_diamond_4.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_diamond_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_diamond_5.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_diamond_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_diamond_6.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_diamond_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_diamond_7.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_diamond_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_diamond_8.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_diamond_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_diamond_9.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_diamond_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_diamond_10.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_diamond_A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_diamond_A.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_diamond_J" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_diamond_J.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_diamond_K" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_diamond_K.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_diamond_Q" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_diamond_Q.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_heart_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_heart_2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_heart_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_heart_3.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_heart_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_heart_4.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_heart_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_heart_5.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_heart_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_heart_6.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_heart_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_heart_7.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_heart_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_heart_8.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_heart_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_heart_9.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_heart_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_heart_10.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_heart_A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_heart_A.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_heart_J" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_heart_J.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_heart_K" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_heart_K.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_heart_Q" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_heart_Q.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_spade_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_spade_2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_spade_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_spade_3.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_spade_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_spade_4.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_spade_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_spade_5.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_spade_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_spade_6.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_spade_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_spade_7.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_spade_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_spade_8.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_spade_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_spade_9.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_spade_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_spade_10.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_spade_A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_spade_A.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_spade_J" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_spade_J.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_spade_K" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_spade_K.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Playing_card_spade_Q" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Playing_card_spade_Q.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
