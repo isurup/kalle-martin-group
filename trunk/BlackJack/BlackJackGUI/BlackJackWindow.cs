@@ -20,5 +20,10 @@ namespace BlackJackGUI
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
