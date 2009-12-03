@@ -421,7 +421,7 @@
             this.Controls.Add(this.Stand);
             this.Controls.Add(this.Hit);
             this.Name = "BlackJackWindow";
-            this.Text = "Form1";
+            this.Text = "Black Jack";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
