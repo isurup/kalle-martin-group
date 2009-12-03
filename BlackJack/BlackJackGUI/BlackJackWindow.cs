@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace BlackJackGUI
 {
-    public partial class Form1 : Form
+    public partial class BlackJackWindow : Form
     {
-        public Form1()
+        public BlackJackWindow()
         {
             InitializeComponent();
         }

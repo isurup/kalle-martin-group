@@ -1,6 +1,6 @@
 ﻿namespace BlackJackGUI
 {
-    partial class Form1
+    partial class BlackJackWindow
     {
         /// <summary>
         /// Required designer variable.
