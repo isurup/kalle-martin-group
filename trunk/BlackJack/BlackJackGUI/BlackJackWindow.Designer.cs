@@ -305,7 +305,7 @@
             this.textBox1.Location = new System.Drawing.Point(374, 12);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(259, 184);
+            this.textBox1.Size = new System.Drawing.Size(259, 314);
             this.textBox1.TabIndex = 22;
             // 
             // Split
@@ -376,7 +376,7 @@
             // 
             // SaveLog
             // 
-            this.SaveLog.Location = new System.Drawing.Point(537, 202);
+            this.SaveLog.Location = new System.Drawing.Point(374, 332);
             this.SaveLog.Name = "SaveLog";
             this.SaveLog.Size = new System.Drawing.Size(75, 23);
             this.SaveLog.TabIndex = 30;
