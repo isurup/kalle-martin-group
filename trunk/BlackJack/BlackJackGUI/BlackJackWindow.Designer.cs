@@ -90,7 +90,7 @@
             this.Hit.TabIndex = 0;
             this.Hit.Text = "Hit";
             this.Hit.UseVisualStyleBackColor = true;
-            this.Hit.Click += new System.EventHandler(this.button1_Click);
+            this.Hit.Click += new System.EventHandler(this.Hit_Click);
             // 
             // Stand
             // 
@@ -100,7 +100,7 @@
             this.Stand.TabIndex = 1;
             this.Stand.Text = "Stand";
             this.Stand.UseVisualStyleBackColor = true;
-            this.Stand.Click += new System.EventHandler(this.button2_Click);
+            this.Stand.Click += new System.EventHandler(this.Stand_Click);
             // 
             // pictureBox1
             // 
@@ -316,7 +316,7 @@
             this.Split.TabIndex = 23;
             this.Split.Text = "Split";
             this.Split.UseVisualStyleBackColor = true;
-            this.Split.Click += new System.EventHandler(this.button3_Click);
+            this.Split.Click += new System.EventHandler(this.Split_Click);
             // 
             // Bet
             // 
@@ -326,7 +326,7 @@
             this.Bet.TabIndex = 24;
             this.Bet.Text = "Bet";
             this.Bet.UseVisualStyleBackColor = true;
-            this.Bet.Click += new System.EventHandler(this.button4_Click);
+            this.Bet.Click += new System.EventHandler(this.Bet_Click);
             // 
             // textBox2
             // 
@@ -383,7 +383,7 @@
             this.SaveLog.TabIndex = 30;
             this.SaveLog.Text = "Save Log";
             this.SaveLog.UseVisualStyleBackColor = true;
-            this.SaveLog.Click += new System.EventHandler(this.button5_Click);
+            this.SaveLog.Click += new System.EventHandler(this.SaveLog_Click);
             // 
             // BlackJackWindow
             // 
