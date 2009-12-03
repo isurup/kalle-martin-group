@@ -55,7 +55,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::BlackJackGUI.Properties.Resources.Playing_card_club_2;
+            this.pictureBox1.Image = global::BlackJackGUI.Properties.Resources.Playing_card_spade_Q1;
             this.pictureBox1.Location = new System.Drawing.Point(69, 85);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 50);

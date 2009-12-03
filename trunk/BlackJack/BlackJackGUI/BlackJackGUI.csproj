@@ -136,6 +136,162 @@
     <None Include="Resources\Playing_card_club_21.png" />
     <None Include="Resources\Playing_card_club_2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_club_22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_club_31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_club_41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_club_51.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_club_61.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_club_71.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_club_81.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_club_91.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_club_101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_club_A1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_club_J1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_club_K1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_club_Q1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_diamond_21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_diamond_31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_diamond_41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_diamond_51.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_diamond_61.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_diamond_71.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_diamond_81.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_diamond_91.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_diamond_101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_diamond_A1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_diamond_J1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_diamond_K1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_diamond_Q1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_heart_21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_heart_31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_heart_41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_heart_51.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_heart_61.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_heart_71.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_heart_81.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_heart_91.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_heart_101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_heart_A1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_heart_J1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_heart_K1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_heart_Q1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_spade_21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_spade_31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_spade_41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_spade_51.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_spade_61.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_spade_71.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_spade_81.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_spade_91.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_spade_101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_spade_A1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_spade_J1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_spade_K1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playing_card_spade_Q1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
