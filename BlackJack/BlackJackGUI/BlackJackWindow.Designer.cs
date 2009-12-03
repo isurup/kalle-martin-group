@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BlackJackWindow));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Hit = new System.Windows.Forms.Button();
+            this.Stand = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -52,14 +52,14 @@
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.Split = new System.Windows.Forms.Button();
+            this.Bet = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.SaveLog = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -82,24 +82,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // Hit
             // 
-            this.button1.Location = new System.Drawing.Point(587, 470);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Hit";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Hit.Location = new System.Drawing.Point(587, 470);
+            this.Hit.Name = "Hit";
+            this.Hit.Size = new System.Drawing.Size(75, 23);
+            this.Hit.TabIndex = 0;
+            this.Hit.Text = "Hit";
+            this.Hit.UseVisualStyleBackColor = true;
+            this.Hit.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // Stand
             // 
-            this.button2.Location = new System.Drawing.Point(587, 499);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Stand";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Stand.Location = new System.Drawing.Point(587, 499);
+            this.Stand.Name = "Stand";
+            this.Stand.Size = new System.Drawing.Size(75, 23);
+            this.Stand.TabIndex = 1;
+            this.Stand.Text = "Stand";
+            this.Stand.UseVisualStyleBackColor = true;
+            this.Stand.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox1
             // 
@@ -307,23 +308,25 @@
             this.textBox1.Size = new System.Drawing.Size(259, 184);
             this.textBox1.TabIndex = 22;
             // 
-            // button3
+            // Split
             // 
-            this.button3.Location = new System.Drawing.Point(587, 441);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Split";
-            this.button3.UseVisualStyleBackColor = true;
+            this.Split.Location = new System.Drawing.Point(587, 441);
+            this.Split.Name = "Split";
+            this.Split.Size = new System.Drawing.Size(75, 23);
+            this.Split.TabIndex = 23;
+            this.Split.Text = "Split";
+            this.Split.UseVisualStyleBackColor = true;
+            this.Split.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // Bet
             // 
-            this.button4.Location = new System.Drawing.Point(587, 412);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 24;
-            this.button4.Text = "Bet";
-            this.button4.UseVisualStyleBackColor = true;
+            this.Bet.Location = new System.Drawing.Point(587, 412);
+            this.Bet.Name = "Bet";
+            this.Bet.Size = new System.Drawing.Size(75, 23);
+            this.Bet.TabIndex = 24;
+            this.Bet.Text = "Bet";
+            this.Bet.UseVisualStyleBackColor = true;
+            this.Bet.Click += new System.EventHandler(this.button4_Click);
             // 
             // textBox2
             // 
@@ -372,28 +375,29 @@
             this.label4.TabIndex = 29;
             this.label4.Text = "Dealer:";
             // 
-            // button5
+            // SaveLog
             // 
-            this.button5.Location = new System.Drawing.Point(587, 202);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 30;
-            this.button5.Text = "Save Log";
-            this.button5.UseVisualStyleBackColor = true;
+            this.SaveLog.Location = new System.Drawing.Point(587, 202);
+            this.SaveLog.Name = "SaveLog";
+            this.SaveLog.Size = new System.Drawing.Size(75, 23);
+            this.SaveLog.TabIndex = 30;
+            this.SaveLog.Text = "Save Log";
+            this.SaveLog.UseVisualStyleBackColor = true;
+            this.SaveLog.Click += new System.EventHandler(this.button5_Click);
             // 
             // BlackJackWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1270, 536);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.SaveLog);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.Bet);
+            this.Controls.Add(this.Split);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox11);
             this.Controls.Add(this.pictureBox12);
@@ -415,8 +419,8 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Stand);
+            this.Controls.Add(this.Hit);
             this.Name = "BlackJackWindow";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -446,8 +450,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Hit;
+        private System.Windows.Forms.Button Stand;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -469,14 +473,14 @@
         private System.Windows.Forms.PictureBox pictureBox19;
         private System.Windows.Forms.PictureBox pictureBox20;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button Split;
+        private System.Windows.Forms.Button Bet;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button SaveLog;
     }
 }
 
