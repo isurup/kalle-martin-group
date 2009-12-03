@@ -59,5 +59,369 @@ namespace BlackJackGUI.Properties {
                 resourceCulture = value;
             }
         }
+        
+        internal static System.Drawing.Bitmap Playing_card_club_10 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_club_10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_club_2 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_club_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_club_3 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_club_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_club_4 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_club_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_club_5 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_club_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_club_6 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_club_6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_club_7 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_club_7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_club_8 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_club_8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_club_9 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_club_9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_club_A {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_club_A", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_club_J {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_club_J", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_club_K {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_club_K", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_club_Q {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_club_Q", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_diamond_10 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_diamond_10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_diamond_2 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_diamond_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_diamond_3 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_diamond_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_diamond_4 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_diamond_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_diamond_5 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_diamond_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_diamond_6 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_diamond_6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_diamond_7 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_diamond_7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_diamond_8 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_diamond_8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_diamond_9 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_diamond_9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_diamond_A {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_diamond_A", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_diamond_J {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_diamond_J", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_diamond_K {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_diamond_K", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_diamond_Q {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_diamond_Q", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_heart_10 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_heart_10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_heart_2 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_heart_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_heart_3 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_heart_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_heart_4 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_heart_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_heart_5 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_heart_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_heart_6 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_heart_6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_heart_7 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_heart_7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_heart_8 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_heart_8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_heart_9 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_heart_9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_heart_A {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_heart_A", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_heart_J {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_heart_J", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_heart_K {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_heart_K", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_heart_Q {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_heart_Q", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_spade_10 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_spade_10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_spade_2 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_spade_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_spade_3 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_spade_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_spade_4 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_spade_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_spade_5 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_spade_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_spade_6 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_spade_6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_spade_7 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_spade_7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_spade_8 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_spade_8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_spade_9 {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_spade_9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_spade_A {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_spade_A", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_spade_J {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_spade_J", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_spade_K {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_spade_K", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Playing_card_spade_Q {
+            get {
+                object obj = ResourceManager.GetObject("Playing_card_spade_Q", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
