@@ -207,6 +207,7 @@
             this.pictureBox11.Size = new System.Drawing.Size(200, 250);
             this.pictureBox11.TabIndex = 21;
             this.pictureBox11.TabStop = false;
+            this.pictureBox11.Visible = false;
             // 
             // pictureBox12
             // 
@@ -216,6 +217,7 @@
             this.pictureBox12.Size = new System.Drawing.Size(200, 250);
             this.pictureBox12.TabIndex = 20;
             this.pictureBox12.TabStop = false;
+            this.pictureBox12.Visible = false;
             // 
             // pictureBox13
             // 
@@ -225,6 +227,7 @@
             this.pictureBox13.Size = new System.Drawing.Size(200, 250);
             this.pictureBox13.TabIndex = 19;
             this.pictureBox13.TabStop = false;
+            this.pictureBox13.Visible = false;
             // 
             // pictureBox14
             // 
@@ -234,6 +237,7 @@
             this.pictureBox14.Size = new System.Drawing.Size(200, 250);
             this.pictureBox14.TabIndex = 18;
             this.pictureBox14.TabStop = false;
+            this.pictureBox14.Visible = false;
             // 
             // pictureBox15
             // 
@@ -243,6 +247,7 @@
             this.pictureBox15.Size = new System.Drawing.Size(200, 250);
             this.pictureBox15.TabIndex = 17;
             this.pictureBox15.TabStop = false;
+            this.pictureBox15.Visible = false;
             // 
             // pictureBox16
             // 
@@ -252,6 +257,7 @@
             this.pictureBox16.Size = new System.Drawing.Size(200, 250);
             this.pictureBox16.TabIndex = 16;
             this.pictureBox16.TabStop = false;
+            this.pictureBox16.Visible = false;
             // 
             // pictureBox17
             // 
@@ -261,6 +267,7 @@
             this.pictureBox17.Size = new System.Drawing.Size(200, 250);
             this.pictureBox17.TabIndex = 15;
             this.pictureBox17.TabStop = false;
+            this.pictureBox17.Visible = false;
             // 
             // pictureBox18
             // 
@@ -270,6 +277,7 @@
             this.pictureBox18.Size = new System.Drawing.Size(200, 250);
             this.pictureBox18.TabIndex = 14;
             this.pictureBox18.TabStop = false;
+            this.pictureBox18.Visible = false;
             // 
             // pictureBox19
             // 
@@ -279,6 +287,7 @@
             this.pictureBox19.Size = new System.Drawing.Size(200, 250);
             this.pictureBox19.TabIndex = 13;
             this.pictureBox19.TabStop = false;
+            this.pictureBox19.Visible = false;
             // 
             // pictureBox20
             // 
@@ -287,6 +296,7 @@
             this.pictureBox20.Size = new System.Drawing.Size(200, 250);
             this.pictureBox20.TabIndex = 12;
             this.pictureBox20.TabStop = false;
+            this.pictureBox20.Visible = false;
             // 
             // textBox1
             // 
