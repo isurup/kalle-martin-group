@@ -31,6 +31,42 @@ namespace BlackJackGUI
         {
             PlayerCards.Add(myThrowCard());
 
+            switch (PlayerCards.Count)
+            {
+                case 1:
+                    pictureBox1.Image(BlackJackG);
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
+                case 5:
+
+                    break;
+                case 6:
+
+                    break;
+                case 7:
+
+                    break;
+                case 8:
+
+                    break;
+                case 9:
+
+                    break;
+                case 10:
+
+                    break;
+                default:
+                    break;
+            }
+
             int tmp = 0;
             int tmpAce = 0;
             foreach (Card i in PlayerCards)
