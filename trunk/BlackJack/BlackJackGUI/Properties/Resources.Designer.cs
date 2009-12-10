@@ -60,366 +60,366 @@ namespace BlackJackGUI.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap _1 {
+        internal static System.Drawing.Bitmap card1 {
             get {
-                object obj = ResourceManager.GetObject("1", resourceCulture);
+                object obj = ResourceManager.GetObject("card1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _10 {
+        internal static System.Drawing.Bitmap card10 {
             get {
-                object obj = ResourceManager.GetObject("10", resourceCulture);
+                object obj = ResourceManager.GetObject("card10", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _11 {
+        internal static System.Drawing.Bitmap card11 {
             get {
-                object obj = ResourceManager.GetObject("11", resourceCulture);
+                object obj = ResourceManager.GetObject("card11", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _12 {
+        internal static System.Drawing.Bitmap card12 {
             get {
-                object obj = ResourceManager.GetObject("12", resourceCulture);
+                object obj = ResourceManager.GetObject("card12", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _13 {
+        internal static System.Drawing.Bitmap card13 {
             get {
-                object obj = ResourceManager.GetObject("13", resourceCulture);
+                object obj = ResourceManager.GetObject("card13", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _14 {
+        internal static System.Drawing.Bitmap card14 {
             get {
-                object obj = ResourceManager.GetObject("14", resourceCulture);
+                object obj = ResourceManager.GetObject("card14", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _15 {
+        internal static System.Drawing.Bitmap card15 {
             get {
-                object obj = ResourceManager.GetObject("15", resourceCulture);
+                object obj = ResourceManager.GetObject("card15", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _16 {
+        internal static System.Drawing.Bitmap card16 {
             get {
-                object obj = ResourceManager.GetObject("16", resourceCulture);
+                object obj = ResourceManager.GetObject("card16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _17 {
+        internal static System.Drawing.Bitmap card17 {
             get {
-                object obj = ResourceManager.GetObject("17", resourceCulture);
+                object obj = ResourceManager.GetObject("card17", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _18 {
+        internal static System.Drawing.Bitmap card18 {
             get {
-                object obj = ResourceManager.GetObject("18", resourceCulture);
+                object obj = ResourceManager.GetObject("card18", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _19 {
+        internal static System.Drawing.Bitmap card19 {
             get {
-                object obj = ResourceManager.GetObject("19", resourceCulture);
+                object obj = ResourceManager.GetObject("card19", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _2 {
+        internal static System.Drawing.Bitmap card2 {
             get {
-                object obj = ResourceManager.GetObject("2", resourceCulture);
+                object obj = ResourceManager.GetObject("card2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _20 {
+        internal static System.Drawing.Bitmap card20 {
             get {
-                object obj = ResourceManager.GetObject("20", resourceCulture);
+                object obj = ResourceManager.GetObject("card20", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _21 {
+        internal static System.Drawing.Bitmap card21 {
             get {
-                object obj = ResourceManager.GetObject("21", resourceCulture);
+                object obj = ResourceManager.GetObject("card21", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _22 {
+        internal static System.Drawing.Bitmap card22 {
             get {
-                object obj = ResourceManager.GetObject("22", resourceCulture);
+                object obj = ResourceManager.GetObject("card22", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _23 {
+        internal static System.Drawing.Bitmap card23 {
             get {
-                object obj = ResourceManager.GetObject("23", resourceCulture);
+                object obj = ResourceManager.GetObject("card23", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _24 {
+        internal static System.Drawing.Bitmap card24 {
             get {
-                object obj = ResourceManager.GetObject("24", resourceCulture);
+                object obj = ResourceManager.GetObject("card24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _25 {
+        internal static System.Drawing.Bitmap card25 {
             get {
-                object obj = ResourceManager.GetObject("25", resourceCulture);
+                object obj = ResourceManager.GetObject("card25", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _26 {
+        internal static System.Drawing.Bitmap card26 {
             get {
-                object obj = ResourceManager.GetObject("26", resourceCulture);
+                object obj = ResourceManager.GetObject("card26", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _27 {
+        internal static System.Drawing.Bitmap card27 {
             get {
-                object obj = ResourceManager.GetObject("27", resourceCulture);
+                object obj = ResourceManager.GetObject("card27", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _28 {
+        internal static System.Drawing.Bitmap card28 {
             get {
-                object obj = ResourceManager.GetObject("28", resourceCulture);
+                object obj = ResourceManager.GetObject("card28", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _29 {
+        internal static System.Drawing.Bitmap card29 {
             get {
-                object obj = ResourceManager.GetObject("29", resourceCulture);
+                object obj = ResourceManager.GetObject("card29", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _3 {
+        internal static System.Drawing.Bitmap card3 {
             get {
-                object obj = ResourceManager.GetObject("3", resourceCulture);
+                object obj = ResourceManager.GetObject("card3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _30 {
+        internal static System.Drawing.Bitmap card30 {
             get {
-                object obj = ResourceManager.GetObject("30", resourceCulture);
+                object obj = ResourceManager.GetObject("card30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _31 {
+        internal static System.Drawing.Bitmap card31 {
             get {
-                object obj = ResourceManager.GetObject("31", resourceCulture);
+                object obj = ResourceManager.GetObject("card31", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _32 {
+        internal static System.Drawing.Bitmap card32 {
             get {
-                object obj = ResourceManager.GetObject("32", resourceCulture);
+                object obj = ResourceManager.GetObject("card32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _33 {
+        internal static System.Drawing.Bitmap card33 {
             get {
-                object obj = ResourceManager.GetObject("33", resourceCulture);
+                object obj = ResourceManager.GetObject("card33", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _34 {
+        internal static System.Drawing.Bitmap card34 {
             get {
-                object obj = ResourceManager.GetObject("34", resourceCulture);
+                object obj = ResourceManager.GetObject("card34", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _35 {
+        internal static System.Drawing.Bitmap card35 {
             get {
-                object obj = ResourceManager.GetObject("35", resourceCulture);
+                object obj = ResourceManager.GetObject("card35", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _36 {
+        internal static System.Drawing.Bitmap card36 {
             get {
-                object obj = ResourceManager.GetObject("36", resourceCulture);
+                object obj = ResourceManager.GetObject("card36", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _37 {
+        internal static System.Drawing.Bitmap card37 {
             get {
-                object obj = ResourceManager.GetObject("37", resourceCulture);
+                object obj = ResourceManager.GetObject("card37", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _38 {
+        internal static System.Drawing.Bitmap card38 {
             get {
-                object obj = ResourceManager.GetObject("38", resourceCulture);
+                object obj = ResourceManager.GetObject("card38", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _39 {
+        internal static System.Drawing.Bitmap card39 {
             get {
-                object obj = ResourceManager.GetObject("39", resourceCulture);
+                object obj = ResourceManager.GetObject("card39", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _4 {
+        internal static System.Drawing.Bitmap card4 {
             get {
-                object obj = ResourceManager.GetObject("4", resourceCulture);
+                object obj = ResourceManager.GetObject("card4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _40 {
+        internal static System.Drawing.Bitmap card40 {
             get {
-                object obj = ResourceManager.GetObject("40", resourceCulture);
+                object obj = ResourceManager.GetObject("card40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _41 {
+        internal static System.Drawing.Bitmap card41 {
             get {
-                object obj = ResourceManager.GetObject("41", resourceCulture);
+                object obj = ResourceManager.GetObject("card41", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _42 {
+        internal static System.Drawing.Bitmap card42 {
             get {
-                object obj = ResourceManager.GetObject("42", resourceCulture);
+                object obj = ResourceManager.GetObject("card42", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _43 {
+        internal static System.Drawing.Bitmap card43 {
             get {
-                object obj = ResourceManager.GetObject("43", resourceCulture);
+                object obj = ResourceManager.GetObject("card43", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _44 {
+        internal static System.Drawing.Bitmap card44 {
             get {
-                object obj = ResourceManager.GetObject("44", resourceCulture);
+                object obj = ResourceManager.GetObject("card44", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _45 {
+        internal static System.Drawing.Bitmap card45 {
             get {
-                object obj = ResourceManager.GetObject("45", resourceCulture);
+                object obj = ResourceManager.GetObject("card45", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _46 {
+        internal static System.Drawing.Bitmap card46 {
             get {
-                object obj = ResourceManager.GetObject("46", resourceCulture);
+                object obj = ResourceManager.GetObject("card46", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _47 {
+        internal static System.Drawing.Bitmap card47 {
             get {
-                object obj = ResourceManager.GetObject("47", resourceCulture);
+                object obj = ResourceManager.GetObject("card47", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _48 {
+        internal static System.Drawing.Bitmap card48 {
             get {
-                object obj = ResourceManager.GetObject("48", resourceCulture);
+                object obj = ResourceManager.GetObject("card48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _49 {
+        internal static System.Drawing.Bitmap card49 {
             get {
-                object obj = ResourceManager.GetObject("49", resourceCulture);
+                object obj = ResourceManager.GetObject("card49", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _5 {
+        internal static System.Drawing.Bitmap card5 {
             get {
-                object obj = ResourceManager.GetObject("5", resourceCulture);
+                object obj = ResourceManager.GetObject("card5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _50 {
+        internal static System.Drawing.Bitmap card50 {
             get {
-                object obj = ResourceManager.GetObject("50", resourceCulture);
+                object obj = ResourceManager.GetObject("card50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _51 {
+        internal static System.Drawing.Bitmap card51 {
             get {
-                object obj = ResourceManager.GetObject("51", resourceCulture);
+                object obj = ResourceManager.GetObject("card51", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _52 {
+        internal static System.Drawing.Bitmap card52 {
             get {
-                object obj = ResourceManager.GetObject("52", resourceCulture);
+                object obj = ResourceManager.GetObject("card52", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _6 {
+        internal static System.Drawing.Bitmap card6 {
             get {
-                object obj = ResourceManager.GetObject("6", resourceCulture);
+                object obj = ResourceManager.GetObject("card6", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _7 {
+        internal static System.Drawing.Bitmap card7 {
             get {
-                object obj = ResourceManager.GetObject("7", resourceCulture);
+                object obj = ResourceManager.GetObject("card7", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _8 {
+        internal static System.Drawing.Bitmap card8 {
             get {
-                object obj = ResourceManager.GetObject("8", resourceCulture);
+                object obj = ResourceManager.GetObject("card8", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap _9 {
+        internal static System.Drawing.Bitmap card9 {
             get {
-                object obj = ResourceManager.GetObject("9", resourceCulture);
+                object obj = ResourceManager.GetObject("card9", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
