@@ -72,7 +72,6 @@ namespace BlackJackGUI
             {
                 playerScore = tmp;
             }
-
         }
 
         private void Stand_Click(object sender, EventArgs e)
