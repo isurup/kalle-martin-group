@@ -26,11 +26,6 @@ namespace BlackJackGUI
 
         }
 
-        private void Split_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Hit_Click(object sender, EventArgs e)
         {
 
