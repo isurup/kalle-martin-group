@@ -238,7 +238,7 @@
     <None Include="Resources\Playing_card_spade_Q.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Semester Project 2.txt" />
+    <Content Include="Read Me Semester Project 2.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
