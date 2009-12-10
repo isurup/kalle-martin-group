@@ -118,160 +118,160 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_club_2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_club_3.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_club_4.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_club_5.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_club_6.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card7" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_club_7.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card8" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_club_8.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_club_9.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card10" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_club_10.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_club_A.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_club_J.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="13" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card13" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_club_K.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card12" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_club_Q.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="15" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card15" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_diamond_2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_diamond_3.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="17" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card17" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_diamond_4.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="18" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card18" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_diamond_5.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="19" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card19" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_diamond_6.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_diamond_7.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_diamond_8.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card22" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_diamond_9.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="23" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card23" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_diamond_10.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="14" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card14" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_diamond_A.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_diamond_J.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card26" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_diamond_K.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="25" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card25" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_diamond_Q.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="28" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card28" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_heart_2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="29" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card29" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_heart_3.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_heart_4.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="31" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card31" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_heart_5.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_heart_6.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="33" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card33" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_heart_7.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="34" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card34" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_heart_8.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="35" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card35" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_heart_9.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="36" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card36" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_heart_10.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="27" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card27" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_heart_A.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="37" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card37" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_heart_J.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="39" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card39" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_heart_K.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="38" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card38" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_heart_Q.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="41" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card41" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_spade_2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="42" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card42" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_spade_3.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="43" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card43" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_spade_4.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="44" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card44" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_spade_5.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="45" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card45" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_spade_6.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="46" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card46" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_spade_7.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="47" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card47" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_spade_8.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_spade_9.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="49" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card49" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_spade_10.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_spade_A.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_spade_J.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="52" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card52" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_spade_K.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="51" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="card51" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playing_card_spade_Q.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
