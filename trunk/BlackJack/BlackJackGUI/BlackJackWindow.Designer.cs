@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BlackJackWindow));
             this.Hit = new System.Windows.Forms.Button();
             this.Stand = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -103,7 +102,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(7, 30);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(200, 250);
@@ -113,7 +111,6 @@
             // pictureBox2
             // 
             this.pictureBox2.ErrorImage = null;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(44, 56);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(200, 250);
@@ -123,7 +120,6 @@
             // pictureBox3
             // 
             this.pictureBox3.ErrorImage = null;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(82, 81);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(200, 250);
@@ -133,7 +129,6 @@
             // pictureBox4
             // 
             this.pictureBox4.ErrorImage = null;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(127, 105);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(200, 250);
@@ -143,7 +138,6 @@
             // pictureBox5
             // 
             this.pictureBox5.ErrorImage = null;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(168, 131);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(200, 250);
@@ -153,7 +147,6 @@
             // pictureBox6
             // 
             this.pictureBox6.ErrorImage = null;
-            this.pictureBox6.Image = global::BlackJackGUI.Properties.Resources.card6;
             this.pictureBox6.Location = new System.Drawing.Point(7, 176);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(200, 250);
@@ -163,7 +156,6 @@
             // pictureBox7
             // 
             this.pictureBox7.ErrorImage = null;
-            this.pictureBox7.Image = global::BlackJackGUI.Properties.Resources.card7;
             this.pictureBox7.Location = new System.Drawing.Point(44, 200);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(200, 250);
@@ -173,7 +165,6 @@
             // pictureBox8
             // 
             this.pictureBox8.ErrorImage = null;
-            this.pictureBox8.Image = global::BlackJackGUI.Properties.Resources.card8;
             this.pictureBox8.Location = new System.Drawing.Point(82, 223);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(200, 250);
@@ -183,7 +174,6 @@
             // pictureBox9
             // 
             this.pictureBox9.ErrorImage = null;
-            this.pictureBox9.Image = global::BlackJackGUI.Properties.Resources.card9;
             this.pictureBox9.Location = new System.Drawing.Point(127, 245);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(200, 250);
@@ -193,7 +183,6 @@
             // pictureBox10
             // 
             this.pictureBox10.ErrorImage = null;
-            this.pictureBox10.Image = global::BlackJackGUI.Properties.Resources.card11;
             this.pictureBox10.Location = new System.Drawing.Point(168, 270);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(200, 250);
@@ -203,7 +192,6 @@
             // pictureBox11
             // 
             this.pictureBox11.ErrorImage = null;
-            this.pictureBox11.Image = global::BlackJackGUI.Properties.Resources.card24;
             this.pictureBox11.Location = new System.Drawing.Point(804, 271);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(200, 250);
@@ -213,7 +201,6 @@
             // pictureBox12
             // 
             this.pictureBox12.ErrorImage = null;
-            this.pictureBox12.Image = global::BlackJackGUI.Properties.Resources.card22;
             this.pictureBox12.Location = new System.Drawing.Point(763, 246);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(200, 250);
@@ -223,7 +210,6 @@
             // pictureBox13
             // 
             this.pictureBox13.ErrorImage = null;
-            this.pictureBox13.Image = global::BlackJackGUI.Properties.Resources.card21;
             this.pictureBox13.Location = new System.Drawing.Point(718, 224);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(200, 250);
@@ -233,7 +219,6 @@
             // pictureBox14
             // 
             this.pictureBox14.ErrorImage = null;
-            this.pictureBox14.Image = global::BlackJackGUI.Properties.Resources.card20;
             this.pictureBox14.Location = new System.Drawing.Point(680, 201);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(200, 250);
@@ -243,7 +228,6 @@
             // pictureBox15
             // 
             this.pictureBox15.ErrorImage = null;
-            this.pictureBox15.Image = global::BlackJackGUI.Properties.Resources.card19;
             this.pictureBox15.Location = new System.Drawing.Point(643, 177);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(200, 250);
@@ -253,7 +237,6 @@
             // pictureBox16
             // 
             this.pictureBox16.ErrorImage = null;
-            this.pictureBox16.Image = global::BlackJackGUI.Properties.Resources.card18;
             this.pictureBox16.Location = new System.Drawing.Point(804, 131);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(200, 250);
@@ -263,7 +246,6 @@
             // pictureBox17
             // 
             this.pictureBox17.ErrorImage = null;
-            this.pictureBox17.Image = global::BlackJackGUI.Properties.Resources.card17;
             this.pictureBox17.Location = new System.Drawing.Point(763, 105);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(200, 250);
@@ -273,7 +255,6 @@
             // pictureBox18
             // 
             this.pictureBox18.ErrorImage = null;
-            this.pictureBox18.Image = global::BlackJackGUI.Properties.Resources.card16;
             this.pictureBox18.Location = new System.Drawing.Point(718, 81);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(200, 250);
@@ -283,7 +264,6 @@
             // pictureBox19
             // 
             this.pictureBox19.ErrorImage = null;
-            this.pictureBox19.Image = global::BlackJackGUI.Properties.Resources.card15;
             this.pictureBox19.Location = new System.Drawing.Point(680, 56);
             this.pictureBox19.Name = "pictureBox19";
             this.pictureBox19.Size = new System.Drawing.Size(200, 250);
@@ -292,7 +272,6 @@
             // 
             // pictureBox20
             // 
-            this.pictureBox20.Image = global::BlackJackGUI.Properties.Resources.card14;
             this.pictureBox20.Location = new System.Drawing.Point(643, 30);
             this.pictureBox20.Name = "pictureBox20";
             this.pictureBox20.Size = new System.Drawing.Size(200, 250);
