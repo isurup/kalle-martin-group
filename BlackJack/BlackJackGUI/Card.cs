@@ -1,6 +1,6 @@
 ﻿//  OOP1 Semester Project 2
 //  BlackJack GUI Application
-//  Kalle Grafstöm and Martin Moghadam 
+//  Kalle Grafstöm and Martin Moghadam
 //
 //  This class contains the Card
 using System;
