@@ -93,19 +93,19 @@ namespace BlackJackGUI
             string tmp;
             if (cardSuit == Suits.Clubs)
             {
-                tmp = "♣ ";
+                tmp = "Clubs ";
             }
             else if (cardSuit == Suits.Diamonds)
             {
-                tmp = "♦ ";
+                tmp = "Diamonds ";
             }
             else if (cardSuit == Suits.Hearts)
             {
-                tmp = "♥ ";
+                tmp = "Hearts ";
             }
             else if (cardSuit == Suits.Spades)
             {
-                tmp = "♠ ";
+                tmp = "Spades ";
             }
             else
             {
