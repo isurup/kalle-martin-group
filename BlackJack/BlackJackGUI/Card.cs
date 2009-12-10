@@ -1,5 +1,5 @@
-﻿//  OOP1 Semester Project 1
-//  BlackJack console appliaction 
+﻿//  OOP1 Semester Project 2
+//  BlackJack GUI Application
 //  Kalle Grafstöm and Martin Moghadam 
 //
 //  This class contains the Card
