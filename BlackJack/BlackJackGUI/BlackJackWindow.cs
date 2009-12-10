@@ -34,34 +34,34 @@ namespace BlackJackGUI
             switch (PlayerCards.Count)
             {
                 case 1:
-                    pictureBox1.Image(BlackJackG);
+                    pictureBox1.Image();
                     break;
                 case 2:
-
+                    pictureBox2.Image();
                     break;
                 case 3:
-
+                    pictureBox3.Image();
                     break;
                 case 4:
-
+                    pictureBox4.Image();
                     break;
                 case 5:
-
+                    pictureBox5.Image();
                     break;
                 case 6:
-
+                    pictureBox6.Image();
                     break;
                 case 7:
-
+                    pictureBox7.Image();
                     break;
                 case 8:
-
+                    pictureBox8.Image();
                     break;
                 case 9:
-
+                    pictureBox9.Image();
                     break;
                 case 10:
-
+                    pictureBox10.Image();
                     break;
                 default:
                     break;
