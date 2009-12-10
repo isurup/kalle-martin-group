@@ -35,13 +35,13 @@ namespace BlackJackGUI
             int tmpAce = 0;
             foreach (Card i in PlayerCards)
             {
-                Console.Out.WriteLine(i);
+                //Console.Out.WriteLine(i);
                 tmp += i.CardValue;
                 if (i.Face == Card.CardType.Ace)
                 {
                     if (tmpAce + 10 == 21)
                     {
-                        Console.Out.WriteLine("BlackJack! Player Wins!");
+                        //Console.Out.WriteLine("BlackJack! Player Wins!");
                         PlayerCards.Clear();
                         tmpAce += i.CardValue;
                     }
@@ -60,12 +60,12 @@ namespace BlackJackGUI
             }
             if (tmp > 21)
             {
-                Console.Out.WriteLine("Bust! Dealer Wins!");
+                //Console.Out.WriteLine("Bust! Dealer Wins!");
                 PlayerCards.Clear();
             }
             else if (tmp == 21)
             {
-                Console.Out.WriteLine("BlackJack! Player Wins!");
+                //Console.Out.WriteLine("BlackJack! Player Wins!");
                 PlayerCards.Clear();
             }
             else
@@ -87,6 +87,30 @@ namespace BlackJackGUI
         private void Bet_Click(object sender, EventArgs e)
         {
 
+        }
+
+        //-----------------------------------------------
+        // Check if the deck has cards and returns a card,
+        // if the deck is empty the cards are shuffled.
+        // -The Deck Class has a ThrowCard method that returns null
+        // if the deck no longer has any cards, and a suffle class
+        // that reinitilizes the deck. 
+        //-----------------------------------------------
+        private static Card myThrowCard()
+        {
+            Card x = GameDeck.ThrowCard();
+            if (x == null)
+            {
+                //Console.Out.WriteLine("Game Deck is empty, shuffling and clearing the game.\n New Game:\n");
+                PlayerCards.Clear();
+                DealerCards.Clear();
+                GameDeck.ShuffleDeck();
+                return GameDeck.ThrowCard();
+            }
+            else
+            {
+                return x;
+            }
         }
     }
 }
