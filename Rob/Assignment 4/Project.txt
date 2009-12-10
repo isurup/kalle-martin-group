@@ -1,0 +1,8 @@
+Assignment 4 Doing things in thereal world:
+
+Each assigment have the following basis:
+
+	-Robot
+	-Robwork
+	-Task interface
+	-Tool interface
