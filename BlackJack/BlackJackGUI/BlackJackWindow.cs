@@ -34,7 +34,8 @@ namespace BlackJackGUI
             switch (PlayerCards.Count)
             {
                 case 1:
-                    pictureBox1.Image();
+                    pictureBox1.Image = ;
+                    pictureBox1.Visible = true;
                     break;
                 case 2:
                     pictureBox2.Image();
