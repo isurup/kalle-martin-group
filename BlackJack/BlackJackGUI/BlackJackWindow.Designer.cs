@@ -153,7 +153,7 @@
             // pictureBox6
             // 
             this.pictureBox6.ErrorImage = null;
-            this.pictureBox6.Image = global::BlackJackGUI.Properties.Resources.Playing_card_club_6;
+            this.pictureBox6.Image = global::BlackJackGUI.Properties.Resources._6;
             this.pictureBox6.Location = new System.Drawing.Point(7, 176);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(200, 250);
@@ -163,7 +163,7 @@
             // pictureBox7
             // 
             this.pictureBox7.ErrorImage = null;
-            this.pictureBox7.Image = global::BlackJackGUI.Properties.Resources.Playing_card_club_7;
+            this.pictureBox7.Image = global::BlackJackGUI.Properties.Resources._7;
             this.pictureBox7.Location = new System.Drawing.Point(44, 200);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(200, 250);
@@ -173,7 +173,7 @@
             // pictureBox8
             // 
             this.pictureBox8.ErrorImage = null;
-            this.pictureBox8.Image = global::BlackJackGUI.Properties.Resources.Playing_card_club_8;
+            this.pictureBox8.Image = global::BlackJackGUI.Properties.Resources._8;
             this.pictureBox8.Location = new System.Drawing.Point(82, 223);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(200, 250);
@@ -183,7 +183,7 @@
             // pictureBox9
             // 
             this.pictureBox9.ErrorImage = null;
-            this.pictureBox9.Image = global::BlackJackGUI.Properties.Resources.Playing_card_club_9;
+            this.pictureBox9.Image = global::BlackJackGUI.Properties.Resources._9;
             this.pictureBox9.Location = new System.Drawing.Point(127, 245);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(200, 250);
@@ -193,7 +193,7 @@
             // pictureBox10
             // 
             this.pictureBox10.ErrorImage = null;
-            this.pictureBox10.Image = global::BlackJackGUI.Properties.Resources.Playing_card_club_J;
+            this.pictureBox10.Image = global::BlackJackGUI.Properties.Resources._11;
             this.pictureBox10.Location = new System.Drawing.Point(168, 270);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(200, 250);
@@ -203,7 +203,7 @@
             // pictureBox11
             // 
             this.pictureBox11.ErrorImage = null;
-            this.pictureBox11.Image = global::BlackJackGUI.Properties.Resources.Playing_card_diamond_J;
+            this.pictureBox11.Image = global::BlackJackGUI.Properties.Resources._24;
             this.pictureBox11.Location = new System.Drawing.Point(804, 271);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(200, 250);
@@ -213,7 +213,7 @@
             // pictureBox12
             // 
             this.pictureBox12.ErrorImage = null;
-            this.pictureBox12.Image = global::BlackJackGUI.Properties.Resources.Playing_card_diamond_9;
+            this.pictureBox12.Image = global::BlackJackGUI.Properties.Resources._22;
             this.pictureBox12.Location = new System.Drawing.Point(763, 246);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(200, 250);
@@ -223,7 +223,7 @@
             // pictureBox13
             // 
             this.pictureBox13.ErrorImage = null;
-            this.pictureBox13.Image = global::BlackJackGUI.Properties.Resources.Playing_card_diamond_8;
+            this.pictureBox13.Image = global::BlackJackGUI.Properties.Resources._21;
             this.pictureBox13.Location = new System.Drawing.Point(718, 224);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(200, 250);
@@ -233,7 +233,7 @@
             // pictureBox14
             // 
             this.pictureBox14.ErrorImage = null;
-            this.pictureBox14.Image = global::BlackJackGUI.Properties.Resources.Playing_card_diamond_7;
+            this.pictureBox14.Image = global::BlackJackGUI.Properties.Resources._20;
             this.pictureBox14.Location = new System.Drawing.Point(680, 201);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(200, 250);
@@ -243,7 +243,7 @@
             // pictureBox15
             // 
             this.pictureBox15.ErrorImage = null;
-            this.pictureBox15.Image = global::BlackJackGUI.Properties.Resources.Playing_card_diamond_6;
+            this.pictureBox15.Image = global::BlackJackGUI.Properties.Resources._19;
             this.pictureBox15.Location = new System.Drawing.Point(643, 177);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(200, 250);
@@ -253,7 +253,7 @@
             // pictureBox16
             // 
             this.pictureBox16.ErrorImage = null;
-            this.pictureBox16.Image = global::BlackJackGUI.Properties.Resources.Playing_card_diamond_5;
+            this.pictureBox16.Image = global::BlackJackGUI.Properties.Resources._18;
             this.pictureBox16.Location = new System.Drawing.Point(804, 131);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(200, 250);
@@ -263,7 +263,7 @@
             // pictureBox17
             // 
             this.pictureBox17.ErrorImage = null;
-            this.pictureBox17.Image = global::BlackJackGUI.Properties.Resources.Playing_card_diamond_4;
+            this.pictureBox17.Image = global::BlackJackGUI.Properties.Resources._17;
             this.pictureBox17.Location = new System.Drawing.Point(763, 105);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(200, 250);
@@ -273,7 +273,7 @@
             // pictureBox18
             // 
             this.pictureBox18.ErrorImage = null;
-            this.pictureBox18.Image = global::BlackJackGUI.Properties.Resources.Playing_card_diamond_3;
+            this.pictureBox18.Image = global::BlackJackGUI.Properties.Resources._16;
             this.pictureBox18.Location = new System.Drawing.Point(718, 81);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(200, 250);
@@ -283,7 +283,7 @@
             // pictureBox19
             // 
             this.pictureBox19.ErrorImage = null;
-            this.pictureBox19.Image = global::BlackJackGUI.Properties.Resources.Playing_card_diamond_2;
+            this.pictureBox19.Image = global::BlackJackGUI.Properties.Resources._15;
             this.pictureBox19.Location = new System.Drawing.Point(680, 56);
             this.pictureBox19.Name = "pictureBox19";
             this.pictureBox19.Size = new System.Drawing.Size(200, 250);
@@ -292,7 +292,7 @@
             // 
             // pictureBox20
             // 
-            this.pictureBox20.Image = global::BlackJackGUI.Properties.Resources.Playing_card_diamond_A;
+            this.pictureBox20.Image = global::BlackJackGUI.Properties.Resources._14;
             this.pictureBox20.Location = new System.Drawing.Point(643, 30);
             this.pictureBox20.Name = "pictureBox20";
             this.pictureBox20.Size = new System.Drawing.Size(200, 250);
