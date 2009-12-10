@@ -52,7 +52,6 @@
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.Split = new System.Windows.Forms.Button();
             this.Bet = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -308,16 +307,6 @@
             this.textBox1.Size = new System.Drawing.Size(259, 314);
             this.textBox1.TabIndex = 22;
             // 
-            // Split
-            // 
-            this.Split.Location = new System.Drawing.Point(374, 443);
-            this.Split.Name = "Split";
-            this.Split.Size = new System.Drawing.Size(75, 23);
-            this.Split.TabIndex = 23;
-            this.Split.Text = "Split";
-            this.Split.UseVisualStyleBackColor = true;
-            this.Split.Click += new System.EventHandler(this.Split_Click);
-            // 
             // Bet
             // 
             this.Bet.Location = new System.Drawing.Point(374, 414);
@@ -396,7 +385,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.Bet);
-            this.Controls.Add(this.Split);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox11);
             this.Controls.Add(this.pictureBox12);
@@ -472,7 +460,6 @@
         private System.Windows.Forms.PictureBox pictureBox19;
         private System.Windows.Forms.PictureBox pictureBox20;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button Split;
         private System.Windows.Forms.Button Bet;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
