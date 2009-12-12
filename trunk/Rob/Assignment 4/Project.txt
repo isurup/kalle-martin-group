@@ -1,4 +1,4 @@
-Assignment 4 Doing things in thereal world:
+Assignment 4 Doing things in the real world:
 
 Each assigment have the following basis:
 
@@ -6,3 +6,11 @@ Each assigment have the following basis:
 	-Robwork
 	-Task interface
 	-Tool interface
+
+tasks:
+------------
+Robot        (verify robot details, parameters, generate xml-file)
+tasks        (font->cartesian point location convertion)
+robworks     (inverse kinematics->pathplanner->file output)
+simulation   (simulate robot device file, simulate generated output file)
+presentation (actual robot font writing)
