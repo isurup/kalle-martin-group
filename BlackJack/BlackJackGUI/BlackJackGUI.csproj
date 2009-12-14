@@ -163,79 +163,79 @@
     <None Include="Image\card28.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_heart_3.png" />
+    <None Include="Image\card29.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_heart_4.png" />
+    <None Include="Image\card30.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_heart_5.png" />
+    <None Include="Image\card31.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_heart_6.png" />
+    <None Include="Image\card32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_heart_7.png" />
+    <None Include="Image\card33.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_heart_8.png" />
+    <None Include="Image\card34.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_heart_9.png" />
+    <None Include="Image\card35.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_heart_10.png" />
+    <None Include="Image\card36.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Image\card27.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_heart_J.png" />
+    <None Include="Image\card37.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_heart_K.png" />
+    <None Include="Image\card39.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_heart_Q.png" />
+    <None Include="Image\card38.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_spade_2.png" />
+    <None Include="Image\card41.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_spade_3.png" />
+    <None Include="Image\card42.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_spade_4.png" />
+    <None Include="Image\card43.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_spade_5.png" />
+    <None Include="Image\card44.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_spade_6.png" />
+    <None Include="Image\card45.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_spade_7.png" />
+    <None Include="Image\card46.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_spade_8.png" />
+    <None Include="Image\card47.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_spade_9.png" />
+    <None Include="Image\card48.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_spade_10.png" />
+    <None Include="Image\card49.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_spade_A.png" />
+    <None Include="Image\card40.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_spade_J.png" />
+    <None Include="Image\card50.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_spade_K.png" />
+    <None Include="Image\card52.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_spade_Q.png" />
+    <None Include="Image\card51.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Read Me Semester Project 2.txt" />
