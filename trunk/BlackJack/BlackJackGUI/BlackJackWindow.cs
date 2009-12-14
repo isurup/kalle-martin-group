@@ -35,35 +35,44 @@ namespace BlackJackGUI
             switch (PlayerCards.Count)
             {
                 case 1:
-                    pictureBox1.Image = tmpCard.Image
+                    pictureBox1.Image = tmpCard.CardImage;
                     pictureBox1.Visible = true;
                     break;
                 case 2:
-                    pictureBox2.Image();
+                    pictureBox2.Image = tmpCard.CardImage;
+                    pictureBox2.Visible = true;
                     break;
                 case 3:
-                    pictureBox3.Image();
+                    pictureBox3.Image = tmpCard.CardImage;
+                    pictureBox3.Visible = true;
                     break;
                 case 4:
-                    pictureBox4.Image();
+                    pictureBox4.Image = tmpCard.CardImage;
+                    pictureBox4.Visible = true;
                     break;
                 case 5:
-                    pictureBox5.Image();
+                    pictureBox5.Image = tmpCard.CardImage;
+                    pictureBox5.Visible = true;
                     break;
                 case 6:
-                    pictureBox6.Image();
+                    pictureBox6.Image = tmpCard.CardImage;
+                    pictureBox6.Visible = true;
                     break;
                 case 7:
-                    pictureBox7.Image();
+                    pictureBox7.Image = tmpCard.CardImage;
+                    pictureBox7.Visible = true;
                     break;
                 case 8:
-                    pictureBox8.Image();
+                    pictureBox8.Image = tmpCard.CardImage;
+                    pictureBox8.Visible = true;
                     break;
                 case 9:
-                    pictureBox9.Image();
+                    pictureBox9.Image = tmpCard.CardImage;
+                    pictureBox9.Visible = true;
                     break;
                 case 10:
-                    pictureBox10.Image();
+                    pictureBox10.Image = tmpCard.CardImage;
+                    pictureBox10.Visible = true;
                     break;
                 default:
                     break;
