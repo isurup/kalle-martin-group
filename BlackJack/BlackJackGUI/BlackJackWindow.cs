@@ -20,7 +20,8 @@ namespace BlackJackGUI
         List<Card> PlayerCards = new List<Card>();
         List<Card> DealerCards = new List<Card>();
 
-        public static int bet;
+        public static int bet = 0;
+        public static int winnings = 0;
         public static int playerScore;
         public static int playerScoreAce; // Needed because of Ace Duality
 
@@ -107,6 +108,8 @@ namespace BlackJackGUI
                     {
                         //Console.Out.WriteLine("BlackJack! Player Wins!");
                         PlayerCards.Clear();
+                        winnings = winnings + bet;//wins bet
+                        bet = 0; // resest bet
                         tmpAce += i.CardValue;
                     }
                     else
@@ -126,11 +129,15 @@ namespace BlackJackGUI
             {
                 //Console.Out.WriteLine("Bust! Dealer Wins!");
                 PlayerCards.Clear();
+                winnings = winnings - bet; // losses bet
+                bet = 0; // resest bet
             }
             else if (tmp == 21)
             {
                 //Console.Out.WriteLine("BlackJack! Player Wins!");
                 PlayerCards.Clear();
+                winnings = winnings + bet; //wins bet
+                bet = 0; // resest bet
             }
             else
             {
@@ -218,6 +225,8 @@ namespace BlackJackGUI
                         //Console.Out.WriteLine("Dealer gets BlackJack! Dealer Wins!");
                         PlayerCards.Clear();
                         DealerCards.Clear();
+                        winnings = winnings - bet; // losses bet
+                        bet = 0; // resest bet
                     }
                 }
                 //Console.Out.WriteLine(newCard + " + ");
@@ -228,18 +237,24 @@ namespace BlackJackGUI
                 //Console.Out.WriteLine("Dealer Busts! Player Wins!");
                 PlayerCards.Clear();
                 DealerCards.Clear();
+                winnings = winnings - bet; // losses bet
+                bet = 0; // resest bet
             }
             else if (tmpDealer == 21)
             {
                 //Console.Out.WriteLine("Dealer gets BlackJack! Dealer Wins!");
                 PlayerCards.Clear();
                 DealerCards.Clear();
+                winnings = winnings - bet; // losses bet
+                bet = 0; // resest bet
             }
             else if (tmpDealer > playerScore && tmpDealer > playerScoreAce)
             {
                 //Console.Out.WriteLine("Dealer gets Highest! Dealer Wins!");
                 PlayerCards.Clear();
                 DealerCards.Clear();
+                winnings = winnings - bet; // losses bet
+                bet = 0; // resest bet
             }
             else
             {
@@ -249,12 +264,16 @@ namespace BlackJackGUI
                     //Console.Out.WriteLine("Player has highst, Player Wins! ");
                     PlayerCards.Clear();
                     DealerCards.Clear();
+                    winnings = winnings + bet;//wins bet
+                    bet = 0; // resest bet
                 }
                 else
                 {
                     //Console.Out.WriteLine("Dealer wins!");
                     PlayerCards.Clear();
                     DealerCards.Clear();
+                    winnings = winnings - bet; // losses bet
+                    bet = 0; // resest bet
                 }
             }
         }
@@ -266,7 +285,7 @@ namespace BlackJackGUI
 
         private void Bet_Click(object sender, EventArgs e)
         {
-
+            bet = bet + 5;
         }
 
         //-----------------------------------------------
@@ -345,5 +364,6 @@ namespace BlackJackGUI
                 };
             }
         }
+
     }
 }
