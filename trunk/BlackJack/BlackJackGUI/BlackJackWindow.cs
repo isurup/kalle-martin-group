@@ -16,9 +16,9 @@ namespace BlackJackGUI
             InitializeComponent();
         }
 
-        public static Deck GameDeck = new Deck();
-        public static List<Card> PlayerCards = new List<Card>();
-        public static List<Card> DealerCards = new List<Card>();
+        Deck GameDeck = new Deck();
+        List<Card> PlayerCards = new List<Card>();
+        List<Card> DealerCards = new List<Card>();
         public static int playerScore;
         public static int playerScoreAce; // Needed because of Ace Duality
 
@@ -84,7 +84,7 @@ namespace BlackJackGUI
             {
                 //Console.Out.WriteLine(i);
                 tmp += i.CardValue;
-                if (i.Face == Card.CardType.Ace)
+                if (i.CardFace == Card.CardType.Ace)
                 {
                     if (tmpAce + 10 == 21)
                     {
@@ -143,7 +143,7 @@ namespace BlackJackGUI
         // if the deck no longer has any cards, and a suffle class
         // that reinitilizes the deck. 
         //-----------------------------------------------
-        private static Card myThrowCard()
+        private Card myThrowCard()
         {
             Card x = GameDeck.ThrowCard();
             if (x == null)
