@@ -58,6 +58,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.SaveLog = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -327,11 +328,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(452, 398);
+            this.label1.Location = new System.Drawing.Point(471, 394);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.Size = new System.Drawing.Size(26, 13);
             this.label1.TabIndex = 26;
-            this.label1.Text = "Bet Info:";
+            this.label1.Text = "Bet:";
             // 
             // label2
             // 
@@ -372,11 +373,19 @@
             this.SaveLog.UseVisualStyleBackColor = true;
             this.SaveLog.Click += new System.EventHandler(this.SaveLog_Click);
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(498, 391);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 31;
+            // 
             // BlackJackWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 528);
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.pictureBox20);
             this.Controls.Add(this.pictureBox19);
             this.Controls.Add(this.pictureBox18);
@@ -466,6 +475,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button SaveLog;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }
 
