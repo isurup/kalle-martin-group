@@ -36,42 +36,52 @@ namespace BlackJackGUI
             {
                 case 1:
                     pictureBox1.Image = tmpCard.CardImage;
+                    pictureBox1.BringToFront();
                     pictureBox1.Visible = true;
                     break;
                 case 2:
                     pictureBox2.Image = tmpCard.CardImage;
+                    pictureBox2.BringToFront();
                     pictureBox2.Visible = true;
                     break;
                 case 3:
                     pictureBox3.Image = tmpCard.CardImage;
+                    pictureBox3.BringToFront();
                     pictureBox3.Visible = true;
                     break;
                 case 4:
                     pictureBox4.Image = tmpCard.CardImage;
+                    pictureBox4.BringToFront();
                     pictureBox4.Visible = true;
                     break;
                 case 5:
                     pictureBox5.Image = tmpCard.CardImage;
+                    pictureBox5.BringToFront();
                     pictureBox5.Visible = true;
                     break;
                 case 6:
                     pictureBox6.Image = tmpCard.CardImage;
+                    pictureBox6.BringToFront();
                     pictureBox6.Visible = true;
                     break;
                 case 7:
                     pictureBox7.Image = tmpCard.CardImage;
+                    pictureBox7.BringToFront();
                     pictureBox7.Visible = true;
                     break;
                 case 8:
                     pictureBox8.Image = tmpCard.CardImage;
+                    pictureBox8.BringToFront();
                     pictureBox8.Visible = true;
                     break;
                 case 9:
                     pictureBox9.Image = tmpCard.CardImage;
+                    pictureBox9.BringToFront();
                     pictureBox9.Visible = true;
                     break;
                 case 10:
                     pictureBox10.Image = tmpCard.CardImage;
+                    pictureBox10.BringToFront();
                     pictureBox10.Visible = true;
                     break;
                 default:
@@ -151,6 +161,7 @@ namespace BlackJackGUI
                 //Console.Out.WriteLine("Game Deck is empty, shuffling and clearing the game.\n New Game:\n");
                 PlayerCards.Clear();
                 DealerCards.Clear();
+                hidePictureBoxes();
                 GameDeck.ShuffleDeck();
                 return GameDeck.ThrowCard();
             }
@@ -158,6 +169,29 @@ namespace BlackJackGUI
             {
                 return x;
             }
+        }
+        private void hidePictureBoxes()
+        {
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = false;
+            pictureBox4.Visible = false;
+            pictureBox5.Visible = false;
+            pictureBox6.Visible = false;
+            pictureBox7.Visible = false;
+            pictureBox8.Visible = false;
+            pictureBox9.Visible = false;
+            pictureBox10.Visible = false;
+            pictureBox11.Visible = false;
+            pictureBox12.Visible = false;
+            pictureBox13.Visible = false;
+            pictureBox14.Visible = false;
+            pictureBox15.Visible = false;
+            pictureBox16.Visible = false;
+            pictureBox17.Visible = false;
+            pictureBox18.Visible = false;
+            pictureBox19.Visible = false;
+            pictureBox20.Visible = false;
         }
     }
 }
