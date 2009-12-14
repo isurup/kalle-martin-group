@@ -137,7 +137,116 @@ namespace BlackJackGUI
 
         private void Stand_Click(object sender, EventArgs e)
         {
+            int tmpDealer = 0;
+            DealerCards.Clear();
 
+            switch (DealerCards.Count)
+            {
+                case 1:
+                    pictureBox11.Image = tmpCard.CardImage;
+                    pictureBox11.BringToFront();
+                    pictureBox11.Visible = true;
+                    break;
+                case 2:
+                    pictureBox12.Image = tmpCard.CardImage;
+                    pictureBox12.BringToFront();
+                    pictureBox12.Visible = true;
+                    break;
+                case 3:
+                    pictureBox13.Image = tmpCard.CardImage;
+                    pictureBox13.BringToFront();
+                    pictureBox13.Visible = true;
+                    break;
+                case 4:
+                    pictureBox14.Image = tmpCard.CardImage;
+                    pictureBox14.BringToFront();
+                    pictureBox14.Visible = true;
+                    break;
+                case 5:
+                    pictureBox15.Image = tmpCard.CardImage;
+                    pictureBox15.BringToFront();
+                    pictureBox15.Visible = true;
+                    break;
+                case 6:
+                    pictureBox16.Image = tmpCard.CardImage;
+                    pictureBox16.BringToFront();
+                    pictureBox16.Visible = true;
+                    break;
+                case 7:
+                    pictureBox17.Image = tmpCard.CardImage;
+                    pictureBox17.BringToFront();
+                    pictureBox17.Visible = true;
+                    break;
+                case 8:
+                    pictureBox18.Image = tmpCard.CardImage;
+                    pictureBox18.BringToFront();
+                    pictureBox18.Visible = true;
+                    break;
+                case 9:
+                    pictureBox19.Image = tmpCard.CardImage;
+                    pictureBox19.BringToFront();
+                    pictureBox19.Visible = true;
+                    break;
+                case 10:
+                    pictureBox20.Image = tmpCard.CardImage;
+                    pictureBox20.BringToFront();
+                    pictureBox20.Visible = true;
+                    break;
+                default:
+                    break;
+            }
+
+            do
+            {
+                Card newCard = myThrowCard();
+                DealerCards.Add(newCard);
+                tmpDealer += newCard.CardValue;
+                if (newCard.Face == Card.CardType.Ace)
+                {
+                    if (tmpDealer + 10 == 21)
+                    {
+                        //Console.Out.WriteLine("Dealer gets BlackJack! Dealer Wins!");
+                        PlayerCards.Clear();
+                        DealerCards.Clear();
+                    }
+                }
+                //Console.Out.WriteLine(newCard + " + ");
+            } while (tmpDealer < 16); // stops at 17 or above
+
+            if (tmpDealer > 21)
+            {
+                //Console.Out.WriteLine("Dealer Busts! Player Wins!");
+                PlayerCards.Clear();
+                DealerCards.Clear();
+            }
+            else if (tmpDealer == 21)
+            {
+                //Console.Out.WriteLine("Dealer gets BlackJack! Dealer Wins!");
+                PlayerCards.Clear();
+                DealerCards.Clear();
+            }
+            else if (tmpDealer > playerScore && tmpDealer > playerScoreAce)
+            {
+                //Console.Out.WriteLine("Dealer gets Highest! Dealer Wins!");
+                PlayerCards.Clear();
+                DealerCards.Clear();
+            }
+            else
+            {
+                //Console.Out.WriteLine("Dealer stands on: " + tmpDealer);
+                if (tmpDealer < playerScore || tmpDealer < playerScoreAce)
+                {
+                    //Console.Out.WriteLine("Player has highst, Player Wins! ");
+                    PlayerCards.Clear();
+                    DealerCards.Clear();
+                }
+                else
+                {
+                    //Console.Out.WriteLine("Dealer wins!");
+                    PlayerCards.Clear();
+                    DealerCards.Clear();
+                }
+            }
         }
 
         private void SaveLog_Click(object sender, EventArgs e)
