@@ -29,12 +29,13 @@ namespace BlackJackGUI
         //-----------------------------------------------
         private void Hit_Click(object sender, EventArgs e)
         {
-            PlayerCards.Add(myThrowCard());
+            Card tmpCard = myThrowCard();
+            PlayerCards.Add(tmpCard);
 
             switch (PlayerCards.Count)
             {
                 case 1:
-                    pictureBox1.Image = ;
+                    pictureBox1.Image = tmpCard.Image
                     pictureBox1.Visible = true;
                     break;
                 case 2:

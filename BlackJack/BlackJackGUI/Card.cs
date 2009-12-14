@@ -17,7 +17,7 @@ namespace BlackJackGUI
         private Suits cardSuit;
         private int Id;
         private int Value;
-        private Bitmap CardImage;
+        private Bitmap myCardImage;
 
         //-----------------------------------------------
         // Card from Ace to King
@@ -61,7 +61,7 @@ namespace BlackJackGUI
             Value = (int)cardType + 1;
             if (Value > 10)
                 Value = 10;
-            CardImage = new Bitmap("card" + Id + ".png");
+            myCardImage = new Bitmap("card" + Id + ".png");
         }
 
         //-----------------------------------------------
@@ -77,19 +77,19 @@ namespace BlackJackGUI
             get { return Value; }
         }
 
-        public CardType Face
+        public CardType CardFace
         {
             get { return cardType; }
         }
 
-        public Suits Suit
+        public Suits CardSuit
         {
             get { return cardSuit; }
         }
 
-        public Bitmap Image
+        public Bitmap CardImage
         {
-            get { return CardImage; }
+            get { return myCardImage; }
         }
 
         //-----------------------------------------------
