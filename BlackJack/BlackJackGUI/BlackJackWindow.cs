@@ -204,7 +204,7 @@ namespace BlackJackGUI
                     default:
                         break;
                 }
-                Thread.Sleep(500);
+                Thread.Sleep(2000);
                 if (newCard.CardFace == Card.CardType.Ace)
                 {
                     if (tmpDealer + 10 == 21)
