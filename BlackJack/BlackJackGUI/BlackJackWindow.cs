@@ -19,7 +19,6 @@ namespace BlackJackGUI
         Deck GameDeck = new Deck();
         List<Card> PlayerCards = new List<Card>();
         List<Card> DealerCards = new List<Card>();
-        Timer aTimer;
 
         public static int bet;
         public static int playerScore;
