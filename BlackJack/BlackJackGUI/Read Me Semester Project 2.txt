@@ -3,3 +3,5 @@
 Semester Project 2 by Martin Moghadam and Kalle Grafstöm
 
 Description: A simple BlackJack console application, with the computer being the dealer and the user being the player. The game consist of only one deck.
+
+The code is commented, and is easy to read and understand. The project also includes a class diagram (a .cd file) created with visual studio 2008.
