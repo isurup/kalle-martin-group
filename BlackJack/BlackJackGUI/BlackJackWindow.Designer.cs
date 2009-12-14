@@ -312,7 +312,7 @@
             this.Bet.Name = "Bet";
             this.Bet.Size = new System.Drawing.Size(75, 23);
             this.Bet.TabIndex = 24;
-            this.Bet.Text = "Bet";
+            this.Bet.Text = "Bet + 5$";
             this.Bet.UseVisualStyleBackColor = true;
             this.Bet.Click += new System.EventHandler(this.Bet_Click);
             // 
