@@ -61,7 +61,15 @@ namespace BlackJackGUI
             Value = (int)cardType + 1;
             if (Value > 10)
                 Value = 10;
-            myCardImage = new Bitmap("Image\\card" + Id + ".png");
+            try
+            {
+                myCardImage = new Bitmap("Image\\card" + Id + ".png");
+            }
+            catch (Exception) // cant find file
+            {
+                myCardImage = new Bitmap("Image\\default.png");
+            }
+            
         }
 
         //-----------------------------------------------
