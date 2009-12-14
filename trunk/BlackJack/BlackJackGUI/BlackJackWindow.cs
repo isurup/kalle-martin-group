@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.Threading;
 
 namespace BlackJackGUI
 {
@@ -20,6 +19,9 @@ namespace BlackJackGUI
         Deck GameDeck = new Deck();
         List<Card> PlayerCards = new List<Card>();
         List<Card> DealerCards = new List<Card>();
+        Timer aTimer;
+
+        public static int bet;
         public static int playerScore;
         public static int playerScoreAce; // Needed because of Ace Duality
 
@@ -32,6 +34,8 @@ namespace BlackJackGUI
         {
             if (PlayerCards.Count == 0)
                 hidePlayerPictureBoxes();
+            if (DealerCards.Count == 0)
+                hideDealerPictureBoxes();
 
             Card tmpCard = myThrowCard();
             PlayerCards.Add(tmpCard);
@@ -137,6 +141,9 @@ namespace BlackJackGUI
 
         private void Stand_Click(object sender, EventArgs e)
         {
+            if (DealerCards.Count == 0)
+                hideDealerPictureBoxes();
+
             int tmpDealer = 0;
             DealerCards.Clear();
 
@@ -204,7 +211,7 @@ namespace BlackJackGUI
                     default:
                         break;
                 }
-                Thread.Sleep(2000);
+
                 if (newCard.CardFace == Card.CardType.Ace)
                 {
                     if (tmpDealer + 10 == 21)
@@ -288,6 +295,10 @@ namespace BlackJackGUI
                 return x;
             }
         }
+
+        //-----------------------------------------------
+        // Hides the picture boxes 
+        //-----------------------------------------------
         private void hidePlayerPictureBoxes()
         {
             pictureBox1.Visible = false;
@@ -313,6 +324,27 @@ namespace BlackJackGUI
             pictureBox18.Visible = false;
             pictureBox19.Visible = false;
             pictureBox20.Visible = false;
+        }
+
+        //-----------------------------------------------
+        // Our application isn't multithreaded, we use timers to wait
+        // so the app is still responsive without using threads
+        // !!!!does not work, not used!!!
+        //-----------------------------------------------
+
+        private void myWait(int millisecounds)
+        {
+            Timer aTimer = new Timer();
+            aTimer.Interval = millisecounds;
+            aTimer.Enabled = true;
+            aTimer.Start();
+            while (aTimer.Enabled)
+            {
+                aTimer.Tick += delegate
+                {
+                    aTimer.Stop();
+                };
+            }
         }
     }
 }
