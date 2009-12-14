@@ -121,46 +121,46 @@
     <None Include="Image\card12.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_diamond_2.png" />
+    <None Include="Image\card15.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_diamond_3.png" />
+    <None Include="Image\card16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_diamond_4.png" />
+    <None Include="Image\card17.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_diamond_5.png" />
+    <None Include="Image\card18.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_diamond_6.png" />
+    <None Include="Image\card19.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_diamond_7.png" />
+    <None Include="Image\card20.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_diamond_8.png" />
+    <None Include="Image\card21.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_diamond_9.png" />
+    <None Include="Image\card22.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_diamond_10.png" />
+    <None Include="Image\card23.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_diamond_A.png" />
+    <None Include="Image\card14.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_diamond_J.png" />
+    <None Include="Image\card24.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_diamond_K.png" />
+    <None Include="Image\card26.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_diamond_Q.png" />
+    <None Include="Image\card25.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_heart_2.png" />
+    <None Include="Image\card28.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Image\Playing_card_heart_3.png" />
@@ -187,7 +187,7 @@
     <None Include="Image\Playing_card_heart_10.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_heart_A.png" />
+    <None Include="Image\card27.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Image\Playing_card_heart_J.png" />
