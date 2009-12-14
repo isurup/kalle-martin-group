@@ -63,11 +63,11 @@ namespace BlackJackGUI
                 Value = 10;
             try
             {
-                myCardImage = new Bitmap("Image\\card" + Id + ".png");
+                myCardImage = new Bitmap(@".\Image\card" + Id + ".png");
             }
             catch (Exception) // cant find file
             {
-                myCardImage = new Bitmap("Image\\default.png");
+                myCardImage = new Bitmap(@".\Image\default.png");
             }
             
         }
