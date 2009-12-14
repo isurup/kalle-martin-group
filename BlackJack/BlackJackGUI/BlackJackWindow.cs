@@ -201,7 +201,7 @@ namespace BlackJackGUI
                 Card newCard = myThrowCard();
                 DealerCards.Add(newCard);
                 tmpDealer += newCard.CardValue;
-                if (newCard.Face == Card.CardType.Ace)
+                if (newCard.CardFace == Card.CardType.Ace)
                 {
                     if (tmpDealer + 10 == 21)
                     {
