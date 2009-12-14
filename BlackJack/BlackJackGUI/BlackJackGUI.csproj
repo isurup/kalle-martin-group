@@ -238,6 +238,7 @@
     <None Include="Image\card51.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Image\default.png" />
     <Content Include="Read Me Semester Project 2.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
