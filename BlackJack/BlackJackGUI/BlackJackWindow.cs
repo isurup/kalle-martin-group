@@ -29,6 +29,9 @@ namespace BlackJackGUI
         //-----------------------------------------------
         private void Hit_Click(object sender, EventArgs e)
         {
+            if (PlayerCards.Count == 0)
+                hidePlayerPictureBoxes();
+
             Card tmpCard = myThrowCard();
             PlayerCards.Add(tmpCard);
 
@@ -161,7 +164,8 @@ namespace BlackJackGUI
                 //Console.Out.WriteLine("Game Deck is empty, shuffling and clearing the game.\n New Game:\n");
                 PlayerCards.Clear();
                 DealerCards.Clear();
-                hidePictureBoxes();
+                hidePlayerPictureBoxes();
+                hideDealerPictureBoxes();
                 GameDeck.ShuffleDeck();
                 return GameDeck.ThrowCard();
             }
@@ -170,7 +174,7 @@ namespace BlackJackGUI
                 return x;
             }
         }
-        private void hidePictureBoxes()
+        private void hidePlayerPictureBoxes()
         {
             pictureBox1.Visible = false;
             pictureBox2.Visible = false;
@@ -182,6 +186,9 @@ namespace BlackJackGUI
             pictureBox8.Visible = false;
             pictureBox9.Visible = false;
             pictureBox10.Visible = false;
+        }
+        private void hideDealerPictureBoxes()
+        {
             pictureBox11.Visible = false;
             pictureBox12.Visible = false;
             pictureBox13.Visible = false;
