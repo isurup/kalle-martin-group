@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 
 namespace BlackJackGUI
 {
@@ -16,6 +17,7 @@ namespace BlackJackGUI
         private Suits cardSuit;
         private int Id;
         private int Value;
+        private Bitmap CardImage;
 
         //-----------------------------------------------
         // Card from Ace to King
@@ -59,6 +61,7 @@ namespace BlackJackGUI
             Value = (int)cardType + 1;
             if (Value > 10)
                 Value = 10;
+            CardImage = new Bitmap("card" + Id + ".png");
         }
 
         //-----------------------------------------------
@@ -82,6 +85,11 @@ namespace BlackJackGUI
         public Suits Suit
         {
             get { return cardSuit; }
+        }
+
+        public Bitmap Image
+        {
+            get { return CardImage; }
         }
 
         //-----------------------------------------------
