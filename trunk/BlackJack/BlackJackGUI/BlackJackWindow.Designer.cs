@@ -202,7 +202,7 @@
             // pictureBox11
             // 
             this.pictureBox11.ErrorImage = null;
-            this.pictureBox11.Location = new System.Drawing.Point(804, 271);
+            this.pictureBox11.Location = new System.Drawing.Point(643, 30);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(200, 250);
             this.pictureBox11.TabIndex = 21;
@@ -212,7 +212,7 @@
             // pictureBox12
             // 
             this.pictureBox12.ErrorImage = null;
-            this.pictureBox12.Location = new System.Drawing.Point(763, 246);
+            this.pictureBox12.Location = new System.Drawing.Point(680, 56);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(200, 250);
             this.pictureBox12.TabIndex = 20;
@@ -222,7 +222,7 @@
             // pictureBox13
             // 
             this.pictureBox13.ErrorImage = null;
-            this.pictureBox13.Location = new System.Drawing.Point(718, 224);
+            this.pictureBox13.Location = new System.Drawing.Point(718, 81);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(200, 250);
             this.pictureBox13.TabIndex = 19;
@@ -232,7 +232,7 @@
             // pictureBox14
             // 
             this.pictureBox14.ErrorImage = null;
-            this.pictureBox14.Location = new System.Drawing.Point(680, 201);
+            this.pictureBox14.Location = new System.Drawing.Point(763, 105);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(200, 250);
             this.pictureBox14.TabIndex = 18;
@@ -242,7 +242,7 @@
             // pictureBox15
             // 
             this.pictureBox15.ErrorImage = null;
-            this.pictureBox15.Location = new System.Drawing.Point(643, 177);
+            this.pictureBox15.Location = new System.Drawing.Point(804, 131);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(200, 250);
             this.pictureBox15.TabIndex = 17;
@@ -252,7 +252,7 @@
             // pictureBox16
             // 
             this.pictureBox16.ErrorImage = null;
-            this.pictureBox16.Location = new System.Drawing.Point(804, 131);
+            this.pictureBox16.Location = new System.Drawing.Point(643, 176);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(200, 250);
             this.pictureBox16.TabIndex = 16;
@@ -262,7 +262,7 @@
             // pictureBox17
             // 
             this.pictureBox17.ErrorImage = null;
-            this.pictureBox17.Location = new System.Drawing.Point(763, 105);
+            this.pictureBox17.Location = new System.Drawing.Point(680, 200);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(200, 250);
             this.pictureBox17.TabIndex = 15;
@@ -272,7 +272,7 @@
             // pictureBox18
             // 
             this.pictureBox18.ErrorImage = null;
-            this.pictureBox18.Location = new System.Drawing.Point(718, 81);
+            this.pictureBox18.Location = new System.Drawing.Point(718, 223);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(200, 250);
             this.pictureBox18.TabIndex = 14;
@@ -282,7 +282,7 @@
             // pictureBox19
             // 
             this.pictureBox19.ErrorImage = null;
-            this.pictureBox19.Location = new System.Drawing.Point(680, 56);
+            this.pictureBox19.Location = new System.Drawing.Point(763, 245);
             this.pictureBox19.Name = "pictureBox19";
             this.pictureBox19.Size = new System.Drawing.Size(200, 250);
             this.pictureBox19.TabIndex = 13;
@@ -291,7 +291,7 @@
             // 
             // pictureBox20
             // 
-            this.pictureBox20.Location = new System.Drawing.Point(643, 30);
+            this.pictureBox20.Location = new System.Drawing.Point(804, 270);
             this.pictureBox20.Name = "pictureBox20";
             this.pictureBox20.Size = new System.Drawing.Size(200, 250);
             this.pictureBox20.TabIndex = 12;
@@ -377,6 +377,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 528);
+            this.Controls.Add(this.pictureBox20);
+            this.Controls.Add(this.pictureBox19);
+            this.Controls.Add(this.pictureBox18);
+            this.Controls.Add(this.pictureBox17);
+            this.Controls.Add(this.pictureBox16);
+            this.Controls.Add(this.pictureBox15);
+            this.Controls.Add(this.pictureBox14);
+            this.Controls.Add(this.pictureBox13);
+            this.Controls.Add(this.pictureBox12);
             this.Controls.Add(this.SaveLog);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -385,16 +394,6 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.Bet);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.pictureBox11);
-            this.Controls.Add(this.pictureBox12);
-            this.Controls.Add(this.pictureBox13);
-            this.Controls.Add(this.pictureBox14);
-            this.Controls.Add(this.pictureBox15);
-            this.Controls.Add(this.pictureBox16);
-            this.Controls.Add(this.pictureBox17);
-            this.Controls.Add(this.pictureBox18);
-            this.Controls.Add(this.pictureBox19);
-            this.Controls.Add(this.pictureBox20);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.pictureBox8);
@@ -407,6 +406,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Stand);
             this.Controls.Add(this.Hit);
+            this.Controls.Add(this.pictureBox11);
             this.Name = "BlackJackWindow";
             this.Text = "Black Jack - Project by Martin Moghadam and Kalle Grafström";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
