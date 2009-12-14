@@ -94,31 +94,31 @@
     <None Include="Image\card5.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_club_6.png" />
+    <None Include="Image\card6.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_club_7.png" />
+    <None Include="Image\card7.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_club_8.png" />
+    <None Include="Image\card8.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_club_9.png" />
+    <None Include="Image\card9.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_club_10.png" />
+    <None Include="Image\card10.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Image\card1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_club_J.png" />
+    <None Include="Image\card11.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_club_K.png" />
+    <None Include="Image\card13.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\Playing_card_club_Q.png" />
+    <None Include="Image\card12.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Image\Playing_card_diamond_2.png" />
