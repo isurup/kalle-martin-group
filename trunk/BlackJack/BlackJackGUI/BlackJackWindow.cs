@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.Timers;
+using System.Threading;
 
 namespace BlackJackGUI
 {
@@ -140,6 +140,9 @@ namespace BlackJackGUI
             int tmpDealer = 0;
             DealerCards.Clear();
 
+            if (PlayerCards.Count <= 1)
+                return;
+
             do
             {
                 Card newCard = myThrowCard();
@@ -201,6 +204,7 @@ namespace BlackJackGUI
                     default:
                         break;
                 }
+                Thread.Sleep(500);
                 if (newCard.CardFace == Card.CardType.Ace)
                 {
                     if (tmpDealer + 10 == 21)
