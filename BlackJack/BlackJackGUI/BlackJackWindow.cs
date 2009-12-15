@@ -14,6 +14,7 @@ namespace BlackJackGUI
         public BlackJackWindow()
         {
             InitializeComponent();
+            textBoxGame.AppendText("♠ ♣ ♥ ♦ BlackJack:\n");
         }
 
         Deck GameDeck = new Deck();
@@ -107,6 +108,7 @@ namespace BlackJackGUI
                     if (tmpAce + 10 == 21)
                     {
                         //Console.Out.WriteLine("BlackJack! Player Wins!");
+                        textBoxGame.AppendText("BlackJack! Player Wins!\n");
                         PlayerCards.Clear();
                         winnings = winnings + bet;//wins bet
                         bet = 0; // resest bet
@@ -128,6 +130,7 @@ namespace BlackJackGUI
             if (tmp > 21)
             {
                 //Console.Out.WriteLine("Bust! Dealer Wins!");
+                textBoxGame.AppendText("Bust! Dealer Wins!\n");
                 PlayerCards.Clear();
                 winnings = winnings - bet; // losses bet
                 bet = 0; // resest bet
@@ -135,6 +138,7 @@ namespace BlackJackGUI
             else if (tmp == 21)
             {
                 //Console.Out.WriteLine("BlackJack! Player Wins!");
+                textBoxGame.AppendText("BlackJack! Player Wins!\n");
                 PlayerCards.Clear();
                 winnings = winnings + bet; //wins bet
                 bet = 0; // resest bet
@@ -223,6 +227,7 @@ namespace BlackJackGUI
                     if (tmpDealer + 10 == 21)
                     {
                         //Console.Out.WriteLine("Dealer gets BlackJack! Dealer Wins!");
+                        textBoxGame.AppendText("Dealer gets BlackJack! Dealer Wins!\n");
                         PlayerCards.Clear();
                         DealerCards.Clear();
                         winnings = winnings - bet; // losses bet
@@ -235,14 +240,16 @@ namespace BlackJackGUI
             if (tmpDealer > 21)
             {
                 //Console.Out.WriteLine("Dealer Busts! Player Wins!");
+                textBoxGame.AppendText("Dealer Busts! Player Wins!\n");
                 PlayerCards.Clear();
                 DealerCards.Clear();
-                winnings = winnings - bet; // losses bet
+                winnings = winnings + bet; // wins bet
                 bet = 0; // resest bet
             }
             else if (tmpDealer == 21)
             {
                 //Console.Out.WriteLine("Dealer gets BlackJack! Dealer Wins!");
+                textBoxGame.AppendText("Dealer gets BlackJack! Dealer Wins!\n");
                 PlayerCards.Clear();
                 DealerCards.Clear();
                 winnings = winnings - bet; // losses bet
@@ -262,6 +269,7 @@ namespace BlackJackGUI
                 if (tmpDealer < playerScore || tmpDealer < playerScoreAce)
                 {
                     //Console.Out.WriteLine("Player has highst, Player Wins! ");
+                    textBoxGame.AppendText("Player has highst, Player Wins!\n");
                     PlayerCards.Clear();
                     DealerCards.Clear();
                     winnings = winnings + bet;//wins bet
@@ -270,6 +278,7 @@ namespace BlackJackGUI
                 else
                 {
                     //Console.Out.WriteLine("Dealer wins!");
+                    textBoxGame.AppendText("Dealer wins!\n");
                     PlayerCards.Clear();
                     DealerCards.Clear();
                     winnings = winnings - bet; // losses bet
@@ -301,6 +310,7 @@ namespace BlackJackGUI
             if (x == null)
             {
                 //Console.Out.WriteLine("Game Deck is empty, shuffling and clearing the game.\n New Game:\n");
+                textBoxGame.AppendText("Game Deck is empty, shuffling and clearing the game.\n New Game:\n");
                 PlayerCards.Clear();
                 DealerCards.Clear();
                 hidePlayerPictureBoxes();
