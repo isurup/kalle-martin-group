@@ -50,7 +50,7 @@
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxGame = new System.Windows.Forms.TextBox();
             this.Bet = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -299,13 +299,14 @@
             this.pictureBox20.TabStop = false;
             this.pictureBox20.Visible = false;
             // 
-            // textBox1
+            // textBoxGame
             // 
-            this.textBox1.Location = new System.Drawing.Point(374, 12);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(259, 314);
-            this.textBox1.TabIndex = 22;
+            this.textBoxGame.Location = new System.Drawing.Point(374, 12);
+            this.textBoxGame.Multiline = true;
+            this.textBoxGame.Name = "textBoxGame";
+            this.textBoxGame.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxGame.Size = new System.Drawing.Size(259, 314);
+            this.textBoxGame.TabIndex = 22;
             // 
             // Bet
             // 
@@ -322,6 +323,7 @@
             this.textBox2.Location = new System.Drawing.Point(455, 414);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
+            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox2.Size = new System.Drawing.Size(178, 110);
             this.textBox2.TabIndex = 25;
             // 
@@ -402,7 +404,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.Bet);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxGame);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.pictureBox8);
@@ -467,7 +469,7 @@
         private System.Windows.Forms.PictureBox pictureBox18;
         private System.Windows.Forms.PictureBox pictureBox19;
         private System.Windows.Forms.PictureBox pictureBox20;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxGame;
         private System.Windows.Forms.Button Bet;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
