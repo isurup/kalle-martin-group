@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace BlackJackGUI
 {
@@ -16,7 +17,7 @@ namespace BlackJackGUI
             InitializeComponent();
             textBoxGame.AppendText("♠ ♣ ♥ ♦ BlackJack:\n");
         }
-
+     
         Deck GameDeck = new Deck();
         List<Card> PlayerCards = new List<Card>();
         List<Card> DealerCards = new List<Card>();
@@ -33,6 +34,10 @@ namespace BlackJackGUI
         //-----------------------------------------------
         private void Hit_Click(object sender, EventArgs e)
         {
+            StreamWriter outFile = File.CreateText(@"../../BlackJack.tmp");
+            outFile.WriteLine(textBoxGame.Text);
+            outFile.WriteLine("\n");
+
             if (PlayerCards.Count == 0)
                 hidePlayerPictureBoxes();
             if (DealerCards.Count == 0)
@@ -147,6 +152,7 @@ namespace BlackJackGUI
             {
                 playerScore = tmp;
             }
+            outFile.Close();
         }
 
         private void Stand_Click(object sender, EventArgs e)
@@ -289,7 +295,7 @@ namespace BlackJackGUI
 
         private void SaveLog_Click(object sender, EventArgs e)
         {
-
+            File.Copy(@"../../BlackJack.tmp", @"../../BlackJackLog.txt");
         }
 
         private void Bet_Click(object sender, EventArgs e)
