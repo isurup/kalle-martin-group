@@ -106,13 +106,11 @@ namespace BlackJackGUI
             int tmpAce = 0;
             foreach (Card i in PlayerCards)
             {
-                //Console.Out.WriteLine(i);
                 tmp += i.CardValue;
                 if (i.CardFace == Card.CardType.Ace)
                 {
                     if (tmpAce + 10 == 21)
                     {
-                        //Console.Out.WriteLine("BlackJack! Player Wins!");
                         textBoxGame.AppendText("BlackJack! Player Wins!\n");
                         playerWins();
                         tmpAce += i.CardValue;
@@ -132,13 +130,11 @@ namespace BlackJackGUI
             }
             if (tmp > 21)
             {
-                //Console.Out.WriteLine("Bust! Dealer Wins!");
                 textBoxGame.AppendText("Bust! Dealer Wins!\n");
                 playerLoses();
             }
             else if (tmp == 21)
             {
-                //Console.Out.WriteLine("BlackJack! Player Wins!");
                 textBoxGame.AppendText("BlackJack! Player Wins!\n");
                 playerWins();
             }
@@ -149,6 +145,9 @@ namespace BlackJackGUI
             outFile.Close();
         }
 
+        //-----------------------------------------------
+        // Stand method, envoked when the stand button is clicked
+        //-----------------------------------------------
         private void Stand_Click(object sender, EventArgs e)
         {
             if (DealerCards.Count == 0)
@@ -226,54 +225,52 @@ namespace BlackJackGUI
                 {
                     if (tmpDealer + 10 == 21)
                     {
-                        //Console.Out.WriteLine("Dealer gets BlackJack! Dealer Wins!");
                         textBoxGame.AppendText("Dealer gets BlackJack! Dealer Wins!\n");
                         playerLoses();
                     }
                 }
-                //Console.Out.WriteLine(newCard + " + ");
             } while (tmpDealer < 16); // stops at 17 or above
 
             if (tmpDealer > 21)
             {
-                //Console.Out.WriteLine("Dealer Busts! Player Wins!");
                 textBoxGame.AppendText("Dealer Busts! Player Wins!\n");
                 playerWins();
             }
             else if (tmpDealer == 21)
             {
-                //Console.Out.WriteLine("Dealer gets BlackJack! Dealer Wins!");
                 textBoxGame.AppendText("Dealer gets BlackJack! Dealer Wins!\n");
                 playerLoses();
             }
             else if (tmpDealer > playerScore && tmpDealer > playerScoreAce)
             {
-                //Console.Out.WriteLine("Dealer gets Highest! Dealer Wins!");
                 playerLoses();
             }
             else
             {
-                //Console.Out.WriteLine("Dealer stands on: " + tmpDealer);
                 if (tmpDealer < playerScore || tmpDealer < playerScoreAce)
                 {
-                    //Console.Out.WriteLine("Player has highst, Player Wins! ");
                     textBoxGame.AppendText("Player has highst, Player Wins!\n");
                     playerWins();
                 }
                 else
                 {
-                    //Console.Out.WriteLine("Dealer wins!");
                     textBoxGame.AppendText("Dealer wins!\n");
                     playerLoses();
                 }
             }
         }
 
+        //-----------------------------------------------
+        // Save to txt file method
+        //-----------------------------------------------
         private void SaveLog_Click(object sender, EventArgs e)
         {
             File.Copy(@"../../BlackJack.tmp", @"../../BlackJackLog.txt",true);
         }
 
+        //-----------------------------------------------
+        // Bet method, bets and writes in text box
+        //-----------------------------------------------
         private void Bet_Click(object sender, EventArgs e)
         {
             bet = bet + 5;
@@ -292,7 +289,6 @@ namespace BlackJackGUI
             Card x = GameDeck.ThrowCard();
             if (x == null)
             {
-                //Console.Out.WriteLine("Game Deck is empty, shuffling and clearing the game.\n New Game:\n");
                 textBoxGame.AppendText("Game Deck is empty, shuffling and clearing the game.\n New Game:\n");
                 PlayerCards.Clear();
                 DealerCards.Clear();
@@ -337,6 +333,9 @@ namespace BlackJackGUI
             pictureBox20.Visible = false;
         }
 
+        //-----------------------------------------------
+        // envoked when the player wins 
+        //-----------------------------------------------
         private void playerWins()
         {
             PlayerCards.Clear();
@@ -346,6 +345,10 @@ namespace BlackJackGUI
             textBoxBet.Text = "" + bet;
             textBoxBetInfo.Text = "Current Winnings: " + winnings;
         }
+
+        //-----------------------------------------------
+        // envoked when the player loses
+        //-----------------------------------------------
         private void playerLoses()
         {
             PlayerCards.Clear();
