@@ -16,6 +16,12 @@ namespace BlackJackGUI
         {
             InitializeComponent();
             textBoxGame.AppendText("♠ ♣ ♥ ♦ BlackJack:\n");
+            StreamWriter outFile = File.CreateText(@"../../BlackJack.tmp");
+        }
+
+        public ~BlackJackWindow()
+        {
+            outFile.Close();
         }
      
         Deck GameDeck = new Deck();
@@ -34,7 +40,7 @@ namespace BlackJackGUI
         //-----------------------------------------------
         private void Hit_Click(object sender, EventArgs e)
         {
-            StreamWriter outFile = File.CreateText(@"../../BlackJack.tmp");
+            
             outFile.WriteLine(textBoxGame.Text);
             outFile.WriteLine("\n");
 
@@ -152,7 +158,6 @@ namespace BlackJackGUI
             {
                 playerScore = tmp;
             }
-            outFile.Close();
         }
 
         private void Stand_Click(object sender, EventArgs e)
