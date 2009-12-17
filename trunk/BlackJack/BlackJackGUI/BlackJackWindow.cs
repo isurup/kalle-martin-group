@@ -15,13 +15,7 @@ namespace BlackJackGUI
         public BlackJackWindow()
         {
             InitializeComponent();
-            textBoxGame.AppendText("♠ ♣ ♥ ♦ BlackJack:\n");
-            
-        }
-
-        ~BlackJackWindow()
-        {
-            
+            textBoxGame.AppendText("♠ ♣ ♥ ♦ BlackJack:\n");   
         }
      
         Deck GameDeck = new Deck();
