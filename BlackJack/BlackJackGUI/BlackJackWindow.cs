@@ -19,7 +19,7 @@ namespace BlackJackGUI
             StreamWriter outFile = File.CreateText(@"../../BlackJack.tmp");
         }
 
-        public ~BlackJackWindow()
+        ~BlackJackWindow()
         {
             outFile.Close();
         }
