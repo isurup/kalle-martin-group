@@ -114,11 +114,7 @@ namespace BlackJackGUI
                     {
                         //Console.Out.WriteLine("BlackJack! Player Wins!");
                         textBoxGame.AppendText("BlackJack! Player Wins!\n");
-                        PlayerCards.Clear();
-                        winnings = winnings + bet;//wins bet
-                        bet = 0; // resest bet
-                        textBoxBet.Text = "" + bet;
-                        textBoxBetInfo.Text = "Current Winnings: " + winnings;
+                        playerWins();
                         tmpAce += i.CardValue;
                     }
                     else
@@ -138,21 +134,13 @@ namespace BlackJackGUI
             {
                 //Console.Out.WriteLine("Bust! Dealer Wins!");
                 textBoxGame.AppendText("Bust! Dealer Wins!\n");
-                PlayerCards.Clear();
-                winnings = winnings - bet; // losses bet
-                bet = 0; // resest bet
-                textBoxBet.Text = "" + bet;
-                textBoxBetInfo.Text = "Current Winnings: " + winnings;
+                playerLoses();
             }
             else if (tmp == 21)
             {
                 //Console.Out.WriteLine("BlackJack! Player Wins!");
                 textBoxGame.AppendText("BlackJack! Player Wins!\n");
-                PlayerCards.Clear();
-                winnings = winnings + bet; //wins bet
-                bet = 0; // resest bet
-                textBoxBet.Text = "" + bet;
-                textBoxBetInfo.Text = "Current Winnings: " + winnings;
+                playerWins();
             }
             else
             {
@@ -240,12 +228,7 @@ namespace BlackJackGUI
                     {
                         //Console.Out.WriteLine("Dealer gets BlackJack! Dealer Wins!");
                         textBoxGame.AppendText("Dealer gets BlackJack! Dealer Wins!\n");
-                        PlayerCards.Clear();
-                        DealerCards.Clear();
-                        winnings = winnings - bet; // losses bet
-                        bet = 0; // resest bet
-                        textBoxBet.Text = "" + bet;
-                        textBoxBetInfo.Text = "Current Winnings: " + winnings;
+                        playerLoses();
                     }
                 }
                 //Console.Out.WriteLine(newCard + " + ");
@@ -255,33 +238,18 @@ namespace BlackJackGUI
             {
                 //Console.Out.WriteLine("Dealer Busts! Player Wins!");
                 textBoxGame.AppendText("Dealer Busts! Player Wins!\n");
-                PlayerCards.Clear();
-                DealerCards.Clear();
-                winnings = winnings + bet; // wins bet
-                bet = 0; // resest bet
-                textBoxBet.Text = "" + bet;
-                textBoxBetInfo.Text = "Current Winnings: " + winnings;
+                playerWins();
             }
             else if (tmpDealer == 21)
             {
                 //Console.Out.WriteLine("Dealer gets BlackJack! Dealer Wins!");
                 textBoxGame.AppendText("Dealer gets BlackJack! Dealer Wins!\n");
-                PlayerCards.Clear();
-                DealerCards.Clear();
-                winnings = winnings - bet; // losses bet
-                bet = 0; // resest bet
-                textBoxBet.Text = "" + bet;
-                textBoxBetInfo.Text = "Current Winnings: " + winnings;
+                playerLoses();
             }
             else if (tmpDealer > playerScore && tmpDealer > playerScoreAce)
             {
                 //Console.Out.WriteLine("Dealer gets Highest! Dealer Wins!");
-                PlayerCards.Clear();
-                DealerCards.Clear();
-                winnings = winnings - bet; // losses bet
-                bet = 0; // resest bet
-                textBoxBet.Text = "" + bet;
-                textBoxBetInfo.Text = "Current Winnings: " + winnings;
+                playerLoses();
             }
             else
             {
@@ -290,23 +258,13 @@ namespace BlackJackGUI
                 {
                     //Console.Out.WriteLine("Player has highst, Player Wins! ");
                     textBoxGame.AppendText("Player has highst, Player Wins!\n");
-                    PlayerCards.Clear();
-                    DealerCards.Clear();
-                    winnings = winnings + bet;//wins bet
-                    bet = 0; // resest bet
-                    textBoxBet.Text = "" + bet;
-                    textBoxBetInfo.Text = "Current Winnings: " + winnings;
+                    playerWins();
                 }
                 else
                 {
                     //Console.Out.WriteLine("Dealer wins!");
                     textBoxGame.AppendText("Dealer wins!\n");
-                    PlayerCards.Clear();
-                    DealerCards.Clear();
-                    winnings = winnings - bet; // losses bet
-                    bet = 0; // resest bet
-                    textBoxBet.Text = "" + bet;
-                    textBoxBetInfo.Text = "Current Winnings: " + winnings;
+                    playerLoses();
                 }
             }
         }
@@ -377,6 +335,25 @@ namespace BlackJackGUI
             pictureBox18.Visible = false;
             pictureBox19.Visible = false;
             pictureBox20.Visible = false;
+        }
+
+        private void playerWins()
+        {
+            PlayerCards.Clear();
+            DealerCards.Clear();
+            winnings = winnings + bet;//wins bet
+            bet = 0; // resest bet
+            textBoxBet.Text = "" + bet;
+            textBoxBetInfo.Text = "Current Winnings: " + winnings;
+        }
+        private void playerLoses()
+        {
+            PlayerCards.Clear();
+            DealerCards.Clear();
+            winnings = winnings - bet; // losses bet
+            bet = 0; // resest bet
+            textBoxBet.Text = "" + bet;
+            textBoxBetInfo.Text = "Current Winnings: " + winnings;
         }
     }
 }
