@@ -378,27 +378,5 @@ namespace BlackJackGUI
             pictureBox19.Visible = false;
             pictureBox20.Visible = false;
         }
-
-        //-----------------------------------------------
-        // Our application isn't multithreaded, we use timers to wait
-        // so the app is still responsive without using threads
-        // !!!!does not work, not used!!!
-        //-----------------------------------------------
-
-        private void myWait(int millisecounds)
-        {
-            Timer aTimer = new Timer();
-            aTimer.Interval = millisecounds;
-            aTimer.Enabled = true;
-            aTimer.Start();
-            while (aTimer.Enabled)
-            {
-                aTimer.Tick += delegate
-                {
-                    aTimer.Stop();
-                };
-            }
-        }
-
     }
 }
