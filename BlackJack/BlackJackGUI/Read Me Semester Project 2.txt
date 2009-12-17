@@ -2,11 +2,14 @@
 
 Semester Project 2 by Martin Moghadam and Kalle Grafstöm
 
-Description: A simple BlackJack application, with the computer being the dealer and the user being the player. The game consist of only one deck.
-The game has a betting system that allow the play to place bets on each hand. The bet is reset at the end of each hand.
+Description: A simple BlackJack application, with the computer being the dealer and the user being the player. The game consist 
+of only one deck.The game has a betting system that allow the play to place bets on each hand. 
+The bet is reset at the end of each hand.
 
-The code is commented, and is easy to read and understand. The project also includes a class diagram (a .cd file) created with visual studio 2008.
+The code is commented, and is easy to read and understand. The project also includes a class diagram (a .cd file) created
+ with visual studio 2008.
 
 The basic rules of the game involve adding the value of an initial two card hand in hopes of being dealt a value of twenty-one. 
-If a value of less than twenty-one is dealt, the player may choose to be dealt single cards until they either reach a value of twenty one, reach a value they 
-feel comfortable to play, or reach a value that exceeds twenty-one. The winner holds a hand with a value of, or nearest to, twenty-one without exceeding it.
+If a value of less than twenty-one is dealt, the player may choose to be dealt single cards until they either reach a value of 
+twenty one, reach a value they feel comfortable to play, or reach a value that exceeds twenty-one. The winner holds a hand with
+ a value of, or nearest to, twenty-one without exceeding it.
