@@ -52,13 +52,13 @@
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.textBoxGame = new System.Windows.Forms.TextBox();
             this.Bet = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxBetInfo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.SaveLog = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxBet = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -318,14 +318,14 @@
             this.Bet.UseVisualStyleBackColor = true;
             this.Bet.Click += new System.EventHandler(this.Bet_Click);
             // 
-            // textBox2
+            // textBoxBetInfo
             // 
-            this.textBox2.Location = new System.Drawing.Point(455, 414);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox2.Size = new System.Drawing.Size(178, 110);
-            this.textBox2.TabIndex = 25;
+            this.textBoxBetInfo.Location = new System.Drawing.Point(455, 414);
+            this.textBoxBetInfo.Multiline = true;
+            this.textBoxBetInfo.Name = "textBoxBetInfo";
+            this.textBoxBetInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxBetInfo.Size = new System.Drawing.Size(178, 110);
+            this.textBoxBetInfo.TabIndex = 25;
             // 
             // label1
             // 
@@ -375,19 +375,19 @@
             this.SaveLog.UseVisualStyleBackColor = true;
             this.SaveLog.Click += new System.EventHandler(this.SaveLog_Click);
             // 
-            // textBox3
+            // textBoxBet
             // 
-            this.textBox3.Location = new System.Drawing.Point(498, 391);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 31;
+            this.textBoxBet.Location = new System.Drawing.Point(498, 391);
+            this.textBoxBet.Name = "textBoxBet";
+            this.textBoxBet.Size = new System.Drawing.Size(100, 20);
+            this.textBoxBet.TabIndex = 31;
             // 
             // BlackJackWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 528);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBoxBet);
             this.Controls.Add(this.pictureBox20);
             this.Controls.Add(this.pictureBox19);
             this.Controls.Add(this.pictureBox18);
@@ -402,7 +402,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxBetInfo);
             this.Controls.Add(this.Bet);
             this.Controls.Add(this.textBoxGame);
             this.Controls.Add(this.pictureBox10);
@@ -471,13 +471,13 @@
         private System.Windows.Forms.PictureBox pictureBox20;
         private System.Windows.Forms.TextBox textBoxGame;
         private System.Windows.Forms.Button Bet;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxBetInfo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button SaveLog;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxBet;
     }
 }
 

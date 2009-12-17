@@ -117,6 +117,8 @@ namespace BlackJackGUI
                         PlayerCards.Clear();
                         winnings = winnings + bet;//wins bet
                         bet = 0; // resest bet
+                        textBoxBet.Text = "" + bet;
+                        textBoxBetInfo.Text = "Current Winnings: " + winnings;
                         tmpAce += i.CardValue;
                     }
                     else
@@ -139,6 +141,8 @@ namespace BlackJackGUI
                 PlayerCards.Clear();
                 winnings = winnings - bet; // losses bet
                 bet = 0; // resest bet
+                textBoxBet.Text = "" + bet;
+                textBoxBetInfo.Text = "Current Winnings: " + winnings;
             }
             else if (tmp == 21)
             {
@@ -147,6 +151,8 @@ namespace BlackJackGUI
                 PlayerCards.Clear();
                 winnings = winnings + bet; //wins bet
                 bet = 0; // resest bet
+                textBoxBet.Text = "" + bet;
+                textBoxBetInfo.Text = "Current Winnings: " + winnings;
             }
             else
             {
@@ -238,6 +244,8 @@ namespace BlackJackGUI
                         DealerCards.Clear();
                         winnings = winnings - bet; // losses bet
                         bet = 0; // resest bet
+                        textBoxBet.Text = "" + bet;
+                        textBoxBetInfo.Text = "Current Winnings: " + winnings;
                     }
                 }
                 //Console.Out.WriteLine(newCard + " + ");
@@ -251,6 +259,8 @@ namespace BlackJackGUI
                 DealerCards.Clear();
                 winnings = winnings + bet; // wins bet
                 bet = 0; // resest bet
+                textBoxBet.Text = "" + bet;
+                textBoxBetInfo.Text = "Current Winnings: " + winnings;
             }
             else if (tmpDealer == 21)
             {
@@ -260,6 +270,8 @@ namespace BlackJackGUI
                 DealerCards.Clear();
                 winnings = winnings - bet; // losses bet
                 bet = 0; // resest bet
+                textBoxBet.Text = "" + bet;
+                textBoxBetInfo.Text = "Current Winnings: " + winnings;
             }
             else if (tmpDealer > playerScore && tmpDealer > playerScoreAce)
             {
@@ -268,6 +280,8 @@ namespace BlackJackGUI
                 DealerCards.Clear();
                 winnings = winnings - bet; // losses bet
                 bet = 0; // resest bet
+                textBoxBet.Text = "" + bet;
+                textBoxBetInfo.Text = "Current Winnings: " + winnings;
             }
             else
             {
@@ -280,6 +294,8 @@ namespace BlackJackGUI
                     DealerCards.Clear();
                     winnings = winnings + bet;//wins bet
                     bet = 0; // resest bet
+                    textBoxBet.Text = "" + bet;
+                    textBoxBetInfo.Text = "Current Winnings: " + winnings;
                 }
                 else
                 {
@@ -289,6 +305,8 @@ namespace BlackJackGUI
                     DealerCards.Clear();
                     winnings = winnings - bet; // losses bet
                     bet = 0; // resest bet
+                    textBoxBet.Text = "" + bet;
+                    textBoxBetInfo.Text = "Current Winnings: " + winnings;
                 }
             }
         }
@@ -301,6 +319,7 @@ namespace BlackJackGUI
         private void Bet_Click(object sender, EventArgs e)
         {
             bet = bet + 5;
+            textBoxBet.Text = ""+ bet;
         }
 
         //-----------------------------------------------
