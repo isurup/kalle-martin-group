@@ -1,0 +1,50 @@
+<SerialDevice name="LRM200">
+
+ <Frame name="Base">
+ 
+	<Drawable name="Table_Leg_1">
+        <RPY>0 0 0</RPY>
+        <Pos>0.725 0.725 1.025</Pos>
+        <Box x="0.1" y="0.1" z="2.05" />
+    </Drawable>
+
+	<Drawable name="Table_Leg_2">
+        <RPY>0 0 0</RPY>
+        <Pos>-0.725 0.725 1.025</Pos>
+        <Box x="0.1" y="0.1" z="2.05" />
+    </Drawable>
+	
+	<Drawable name="Table_Leg_3">
+        <RPY>0 0 0</RPY>
+        <Pos>0.725 -0.725 1.025</Pos>
+        <Box x="0.1" y="0.1" z="2.05" />
+    </Drawable>
+	
+	<Drawable name="Table_Leg_4">
+        <RPY>0 0 0</RPY>
+        <Pos>-0.725 -0.725 1.025</Pos>
+        <Box x="0.1" y="0.1" z="2.05" />
+    </Drawable>
+		
+	<Drawable name="Table_Main">
+        <RPY>0 0 0</RPY>
+        <Pos>0 0 0.8</Pos>
+        <Box x="1.45" y="1.45" z="0.1" />
+    </Drawable>
+
+	<Drawable name="Write_Box">
+        <RPY>90 0 0</RPY>
+        <Pos>0.1875 -0.21 0.95</Pos>
+        <Box x="0.59" y="0.235" z="0.2" />
+    </Drawable>
+	 		
+	<Drawable name="Robot_Box">
+        <RPY>90 0 0</RPY>
+        <Pos>-0.2475 -0.26 0.915</Pos>
+        <Box x="0.43" y="0.295" z="0.13" />
+    </Drawable>
+	 				
+	 
+	 
+</Frame>
+</SerialDevice>
