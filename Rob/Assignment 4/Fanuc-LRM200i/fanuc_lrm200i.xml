@@ -1,5 +1,6 @@
 <SerialDevice name="LRM200">
  <Frame name="Base">
+ 
  <Drawable name="Table_Leg_1">
         <RPY>0 0 0</RPY>
         <Pos>0.725 0.725 1.025</Pos>
@@ -61,25 +62,38 @@
  <Joint name="Joint6" type="Revolute">
   <RPY> 90 0 -90 </RPY> <Pos> 0 0 0</Pos></Joint>
 
+  <!--
+  Note: Here we can callibrate Tool frame by shifting parameters a and b (read document), parameters
+  !-->
+   <Frame name="Intermediate_Tool_Frame" refframe="Joint6">   
+		 <RPY> 0 -45 0 </RPY> <Pos> 0 0 -0.08</Pos>
+ </Frame>  
+   <Frame name="ToolFrame" refframe="Intermediate_Tool_Frame">
+		<RPY> 0 -90 0 </RPY> <Pos> -0.1 0 -0.1</Pos>
+ </Frame>
+ 
+ 
+  
+  
  <Frame name="TCP">
   <RPY>180 180 0</RPY>
   <Pos>0 0 -0.08</Pos>
  </Frame>
 
   
- <PosLimit refjoint="Joint1" min="-180" max="180" />
- <PosLimit refjoint="Joint2" min="-180" max="180" />
- <PosLimit refjoint="Joint3" min="-180" max="180" />
- <PosLimit refjoint="Joint4" min="-180" max="180" />
- <PosLimit refjoint="Joint5" min="-180" max="180" />
- <PosLimit refjoint="Joint6" min="-180" max="180" />
+ <PosLimit refjoint="Joint1" min="-26" max="116" />
+ <PosLimit refjoint="Joint2" min="-30" max="90" />
+ <PosLimit refjoint="Joint3" min="-120" max="0" />
+ <PosLimit refjoint="Joint4" min="-45" max="45" />
+ <PosLimit refjoint="Joint5" min="-60" max="60" />
+ <PosLimit refjoint="Joint6" min="-0" max="0" />
 
- <VelLimit refjoint="Joint1" max="180" />
- <VelLimit refjoint="Joint2" max="180" />
- <VelLimit refjoint="Joint3" max="180" />
- <VelLimit refjoint="Joint4" max="180" />
- <VelLimit refjoint="Joint5" max="180" />
- <VelLimit refjoint="Joint6" max="180" />
+ <VelLimit refjoint="Joint1" max="100" />
+ <VelLimit refjoint="Joint2" max="100" />
+ <VelLimit refjoint="Joint3" max="100" />
+ <VelLimit refjoint="Joint4" max="100" />
+ <VelLimit refjoint="Joint5" max="100" />
+ <VelLimit refjoint="Joint6" max="100" />
 
  <Drawable name="BaseGeo" refframe="Base">
   <RPY> 90 0 0 </RPY> <Pos> -0.2475 -0.26 1.33</Pos>
