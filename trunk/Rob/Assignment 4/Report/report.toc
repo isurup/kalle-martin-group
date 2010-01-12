@@ -1,5 +1,11 @@
 \contentsline {section}{\numberline {1}Introduction}{1}
-\contentsline {section}{\numberline {2}Rob Work Studio}{1}
-\contentsline {section}{\numberline {3}Conclusion}{1}
-\contentsline {section}{References}{1}
-\contentsline {section}{\numberline {4}Appendix}{2}
+\contentsline {section}{\numberline {2}Specifications of Robot Arm}{1}
+\contentsline {subsection}{\numberline {2.1}Dimensions of the two Models}{2}
+\contentsline {subsection}{\numberline {2.2}Construction of the Cage}{3}
+\contentsline {subsection}{\numberline {2.3}Construction of Joint Angles}{5}
+\contentsline {subsection}{\numberline {2.4}Modeling the Tool Frame}{7}
+\contentsline {subsection}{\numberline {2.5}Construction of XML File}{9}
+\contentsline {subsection}{\numberline {2.6}Construction of Joints}{9}
+\contentsline {section}{\numberline {3}Conclusion}{10}
+\contentsline {section}{References}{10}
+\contentsline {section}{\numberline {4}Appendix}{11}
