@@ -9,8 +9,10 @@ Each assigment have the following basis:
 
 tasks:
 ------------
-Robot        (verify robot details, parameters, generate xml-file)
-tasks        (font->cartesian point location convertion)
-robworks     (inverse kinematics->pathplanner->file output)
-simulation   (simulate robot device file, simulate generated output file)
-presentation (actual robot font writing)
+Robot          (verify robot details, parameters, generate xml-file)
+tasks          (font->cartesian point location convertion)
+robworks       (inverse kinematics->pathplanner->file output)
+simulation     (simulate robot device file, simulate generated output file)
+RobWorkMillLab (Figure out how to use it, get it to work)
+presentation   (actual robot font writing, create a video)
+Write manual   (Explain the elements and how they are used)

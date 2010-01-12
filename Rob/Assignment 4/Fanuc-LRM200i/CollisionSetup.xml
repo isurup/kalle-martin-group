@@ -6,7 +6,7 @@
         that all pairs should be excluded. We need an option that can
         do this for us.
         -->
-
+<!--
         <FramePair first="Base" second="Joint1"/>
         <FramePair first="Base" second="Joint2"/>
         <FramePair first="Base" second="Joint3"/>
@@ -33,6 +33,12 @@
         <FramePair first="Joint4" second="Joint6"/>
 
         <FramePair first="Joint5" second="Joint6"/>
-
+-->
+        <FramePair first="Base"   second="Joint1"/>
+        <FramePair first="Joint1" second="Joint2"/>
+        <FramePair first="Joint2" second="Joint3"/>
+        <FramePair first="Joint3" second="Joint4"/>
+        <FramePair first="Joint4" second="Joint5"/>
+        <FramePair first="Joint5" second="Joint6"/>
     </Exclude>
 </CollisionSetup>
