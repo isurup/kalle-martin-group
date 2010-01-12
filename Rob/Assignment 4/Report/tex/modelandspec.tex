@@ -76,9 +76,18 @@ Before start we need to illustrate the robot position in the cage and show all m
   \label{fig:JointWorkspaceDimensions}
 \end{figure}
 
+According figure 6 we can calculate max movements of the joint1 or angles: \\
+
+\noindent$\theta _{min}=\theta _{max1}  \\
+\theta _{max}=\theta _{max2}\\
+\theta _{max1}=arctan\left ( \frac{500-x}{520+90+40} \right )\\
+\theta _{max2}=\frac{\pi }{2}+arctan\left ( \frac{500-x}{520+90+40} \right )$\\
+
 In the formula 1 value x is error. Depending on the shape of the robot we use x > 154, let us say x = 180. Than we can calculate max movement ranges of the joint 1:
 
-%math
+\noindent$\theta _{max1}=arctan\left ( \frac{500-180}{520+90+40} \right )=arctan\left ( \frac{320}{650} \right )\approx 26deg \\
+\theta _{max1}=\frac{\pi }{2}+arctan\left ( \frac{500-180}{520+90+40} \right )=\frac{\pi }{2}+arctan\left ( \frac{320}{650} \right )\approx 116deg$\\
+
 
 We can illustrate angles of theta from another view (view from left). Regarding formula 1 we can also calculate other angles, however we can not do all of them, because joints are dependent each other and we only modeling here statically. 
 
