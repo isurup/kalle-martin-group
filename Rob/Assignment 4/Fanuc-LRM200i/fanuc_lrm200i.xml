@@ -116,7 +116,11 @@
   <Polytope file="Geometry/JT5-LR200i-1" /></Drawable>
  <Drawable name="J6Geo" refframe="Joint6">
   <RPY> 0 90 0 </RPY> <Pos>-0.325 0 0.44</Pos>  
-  <Polytope file="Geometry/JT6-LR200i-1" /></Drawable>
+  <Polytope file="Geometry/JT6-LR200i-1" /></Drawable> 
+ <Drawable name="HolderGeo" refframe="ToolBase">
+  <RPY>-90 0 0 </RPY> <Pos> 0 0 0 </Pos>
+  <Polytope file="Scene/Fanuc-LRM200i/toolflange2" />
+ </Drawable>
   
  <CollisionSetup file="CollisionSetup.xml" />
   
