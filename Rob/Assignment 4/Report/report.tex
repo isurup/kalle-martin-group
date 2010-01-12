@@ -1,0 +1,43 @@
+\documentclass{article}
+
+\usepackage{url}
+%\usepackage[danish]{babel}
+%\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+%\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{enumitem}
+
+\title{SSE Report ZAM Multi-Agent System}
+\author{Martin Moghadam, Martin Franzen\\
+Kalle Grafstr\"{o}m, Audrius Palisaitis, Robertas Jacauskas}
+\begin{document}
+
+\maketitle % reads info from \title and \author above
+
+\begin{abstract}
+This paper was written during the course Rob1
+\end{abstract}
+
+% auto-generated from previous compilation pass, you may need to run
+% latex twice to get up-to-date table of contents
+\tableofcontents
+
+\nocite{bib-example} % Creates entry in bibliography even if it isn't cited.
+\nocite{bib-example2} 
+\nocite{bib-example3} 
+
+\input{tex/introduction}
+\input{tex/robwork}
+\input{tex/conclusion}
+
+\addcontentsline{toc}{section}{References} % Include references in TOC
+\bibliographystyle{unsrt} % references appear in order of citations
+\bibliography{references}
+
+\input{tex/appendix}
+\end{document}
