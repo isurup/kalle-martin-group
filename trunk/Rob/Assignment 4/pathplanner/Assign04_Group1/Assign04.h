@@ -35,7 +35,7 @@ public:
 
 private slots:
 
-	void clickBtnSolve();
+	void clickBtnOpen();
 
     void stateChangedListener(const rw::kinematics::State& state);
 

@@ -1,6 +1,9 @@
 #include "Assign04.h"
 
 #include <QPushButton>
+#include <rw/common/StringUtil.hpp>
+#include <iostream>
+#include <fstream>
 
 // needed for VS
 #define _USE_MATH_DEFINES
@@ -24,7 +27,7 @@ RobWorkStudioPlugin("Assign04_Group1", QIcon("c:\\pax_icon.png")),
 
     // Connect signals from the ui component to slots implemented by this plugin
 
-	connect(btnSolve ,SIGNAL(pressed()), this, SLOT(clickBtnSolve()) );
+	connect(btnOpen ,SIGNAL(pressed()), this, SLOT(clickBtnOpen()) );
 }
 
 assign04::~assign04()
@@ -58,10 +61,33 @@ void assign04::stateChangedListener(const State& state) {
 }
 
 
-void assign04::clickBtnSolve() {
+void assign04::clickBtnOpen() {
+	std::cout << "Selected input file: ";
 
-	std::cout << "Rob01Ex1Plugin::clickBtnSolve()" << std::endl;
-	std::cout << "current AngleSet: " << _strAngleSet.toStdString() << std::endl;
+	QString selectedFilter;
+	QString filename = QFileDialog::getOpenFileName(
+        this,
+        "Open file", // Title
+        ".", // Directory
+        "All supported ( *.txt )"
+        " \n All ( *.* )",
+        &selectedFilter);
+	std::string file = filename.toStdString();
+	const std::string ext = StringUtil::getFileExtension(file);
+
+	if( ext != ".txt" )
+		std::cout << "Unsupported file. Must be txt; was: " << ext << std::endl;
+	else {
+		std::cout << file << std::endl << std::endl;
+		std::ifstream infile (file.c_str());
+		std::string line;
+		if( infile.is_open() ) {
+			while (! infile.eof() ) {
+				std::getline (infile, line);
+				std::cout << line << std::endl;
+			}
+		}
+	}
 }
 
 // Inserts a MovableFrame into the workcell with reference to WorldFrame
