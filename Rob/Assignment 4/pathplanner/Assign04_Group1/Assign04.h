@@ -18,6 +18,8 @@
 #include <QList>
 #include <QStringList>
 
+#include <vector>
+
 
 class ASSIGN04_EXPORT assign04: public RobWorkStudioPlugin, private Ui::Assign04Widget
 {
@@ -53,6 +55,13 @@ private:
 
 	void assign04::updateFrame(rw::math::Rotation3D<double> rotation);
 	void assign04::enableInterface(bool b);
+
+  //--------------
+  // New functions
+  //--------------
+  std::vector<char> vLetters;
+  std::vector< std::vector<int> > vX,vY,vZ;
+  
 };
 
 #endif // ASSIGN04_H
