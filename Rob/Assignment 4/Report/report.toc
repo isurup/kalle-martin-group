@@ -3,12 +3,12 @@
 \contentsline {subsection}{\numberline {2.1}Dimensions of the two Models}{3}
 \contentsline {subsection}{\numberline {2.2}Construction of the Cage}{5}
 \contentsline {subsection}{\numberline {2.3}Construction of Joint Angles}{6}
-\contentsline {subsection}{\numberline {2.4}Modeling the Tool Frame}{8}
+\contentsline {subsection}{\numberline {2.4}Modeling the Tool Frame}{9}
 \contentsline {subsection}{\numberline {2.5}Construction of XML File}{10}
-\contentsline {subsection}{\numberline {2.6}Construction of Joints}{10}
-\contentsline {section}{\numberline {3}Parsing}{11}
-\contentsline {section}{\numberline {4}Path Planing}{11}
-\contentsline {section}{\numberline {5}Testing the System}{11}
-\contentsline {section}{\numberline {6}Conclusion}{11}
-\contentsline {section}{References}{11}
-\contentsline {section}{\numberline {7}Appendix}{12}
+\contentsline {subsection}{\numberline {2.6}Construction of Joints}{11}
+\contentsline {section}{\numberline {3}Parsing}{12}
+\contentsline {section}{\numberline {4}Path Planing}{12}
+\contentsline {section}{\numberline {5}Testing the System}{12}
+\contentsline {section}{\numberline {6}Conclusion}{12}
+\contentsline {section}{References}{12}
+\contentsline {section}{\numberline {7}Appendix}{13}
