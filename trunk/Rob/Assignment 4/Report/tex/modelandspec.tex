@@ -20,7 +20,7 @@ We need to verify robot details before start of working, because in laboratory w
 Find the similarities and differences points from which aspects we analyze them. One of the point we chosen specifications of two models, of course this point is not primary. As we see main point here is axes – both models has same number of axes. According this we can say models are similar. Other points from the table are not so important for use – it is payload, reach or motion speed, because they more related to efficiency.
 
 \subsection{Dimensions of the two Models}
-Here we try to verify details from dimension aspect. We try find is these models similar in dimensions or not. For instance like one model can be 3 meters high and another 30 centimeters, so they are totally different.  Both models depicted below in the figure 3. Models are quite the same because they both have six revolute axes (we defined in previous chapter). We can try regarding dimension of two models constructing DH parameters and then comparing them.
+Here we try to verify details from dimension aspect. We try find is these models similar in dimensions or not. For instance like one model can be 3 meters high and another 30 centimeters, so they are totally different.  Both models depicted in the figure \ref{fig:FanucModels}. Models are quite the same because they both have six revolute axes (we defined in previous chapter). We can try regarding dimension of two models constructing DH parameters and then comparing them.
 
 \begin{figure}[H]
   \centering
@@ -33,7 +33,7 @@ To construct DH parameters, before we need to know what the meanings of the para
 
 % math 
 
-To construct the DH parameters we need to know the dimensions of both the models, they are shown in the figure 2. At the left LR Mate 200iB model which we use in the laboratory and on the right LR Mate 200iC model which we use only to simulate. Constructed parameters shown in the table 2. 
+To construct the DH parameters we need to know the dimensions of both the models, they are shown in the figure \ref{fig:ModelsDimensions}. At the left LR Mate 200iB model which we use in the laboratory and on the right LR Mate 200iC model which we use only to simulate. Constructed parameters shown in the figure \ref{fig:tableParameters}. 
 
 \begin{figure}[H]
   \centering
@@ -42,10 +42,10 @@ To construct the DH parameters we need to know the dimensions of both the models
   \label{fig:tableParameters}
 \end{figure}
 
-From the table 2 we can see that the real model and model which will be used for simulations is quite similar, however some links [1] are different and it makes not the same. However differences not very huge so we make decision that model for simulation can be used as simulator. We have define that LR Mate 200iB will be constructed by defining frames and model LR Mate 200iC is just defining the shapes of 3D model. So we make guarantee that the next part will be simulate real robot model and we only see model in RobWork (LR Mate 200iC), which a little bit different from real model (LR Mate 200iB).
+From figure\ref{fig:tableParameters} we can see that the real model and model which will be used for simulations is quite similar, however some links are different and it makes not the same. However differences not very huge so we make decision that model for simulation can be used as simulator. We have define that LR Mate 200iB will be constructed by defining frames and model LR Mate 200iC is just defining the shapes of 3D model. So we make guarantee that the next part will be simulate real robot model and we only see model in RobWork (LR Mate 200iC), which a little bit different from real model (LR Mate 200iB).
 
 \subsection{Construction of the Cage}
-After verification of the details we can measure the dimensions of where the robot stands. LR Mate 200iB stands in the cage as shown in the figure 3 (here is LR Mate 200iC model, because we not make a photo to do better illustrations). Dimensions of the cage measured and depicted by the RobWork, using the XML file were created cage. Robot hand stands on the table and around the robot hand is a cage which guarantees the safety. Position of the LR Mate 200iB on the cage is on the left – up corner (if we look from the front view).
+After verification of the details we can measure the dimensions of where the robot stands. LR Mate 200iB stands in the cage as shown in the figure \ref{fig:robworkCage} (here is LR Mate 200iC model, because we not make a photo to do better illustrations). Dimensions of the cage measured and depicted by the RobWork, using the XML file were created cage. Robot hand stands on the table and around the robot hand is a cage which guarantees the safety. Position of the LR Mate 200iB on the cage is on the left – up corner (if we look from the front view).
 
 \begin{figure}[H]
   \centering
@@ -54,7 +54,7 @@ After verification of the details we can measure the dimensions of where the rob
   \label{fig:robworkCage}
 \end{figure}
 
-Figure 4 shows the robot position from top view and dimensions of the cage where LR Mate 200i stands. As we see shape of the table is square, real table width is a little bit bigger. We use smaller reason to guarantee what we would not damage the cage. Defined smaller work space it will guarantee safety.\newline
+Figure \ref{fig:robworkCageDimensions} shows the robot position from top view and dimensions of the cage where LR Mate 200i stands. As we see shape of the table is square, real table width is a little bit bigger. We use smaller reason to guarantee what we would not damage the cage. Defined smaller work space it will guarantee safety.\newline
 
 Lengths were measured by using the 50 cm ruler. Of course we would like to find the bigger one, so probably of that our measurements have bigger errors and we can imagine that they could be maybe ± 2.5 cm. We do not guarantee that all values precise enough.
 
@@ -68,7 +68,7 @@ Lengths were measured by using the 50 cm ruler. Of course we would like to find 
 Regarding this we can set right max theta angles. They will limit movements of the joints. If we do not do this we risk damaging the cage if the errors occur.
 
 \subsection{Construction of Joint Angles}
-Joint angles we mean interval of turn between min and max. By default values were set as shown in the figure 5, however we need to change them to guarantee what the robot hand did not move too much. If we allow all these values when everything also will be alright but if the robot fails for some of the reasons than could be a risk to damage the window or even worse injure people around. So that is why we decided to limit turning angle of the robot. 
+Joint angles we mean interval of turn between min and max. By default values were set as shown in the figure \ref{fig:angleDefaultXML}, however we need to change them to guarantee what the robot hand did not move too much. If we allow all these values when everything also will be alright but if the robot fails for some of the reasons than could be a risk to damage the window or even worse injure people around. So that is why we decided to limit turning angle of the robot. 
 
 \begin{figure}[H]
   \centering
@@ -86,7 +86,7 @@ Before start we need to illustrate the robot position in the cage and show all m
   \label{fig:JointWorkspaceDimensions}
 \end{figure}
 
-According figure 6 we can calculate max movements of the joint1 or angles: \\
+According figure \ref{fig:JointWorkspaceDimensions} we can calculate max movements of the joint1 or angles: \\
 
 
 $\theta _{min}=\theta _{max1}\\
@@ -99,7 +99,7 @@ $\theta _{min}=\theta _{max1}\\
 
 In the formula 1 value x is error. Depending on the shape of the robot we use x > 154, let us say x = 180. Than we can calculate max movement ranges of the joint 1:
 
-\noindent$\theta _{max1}=arctan\left ( \frac{500-180}{520+90+40} \right )=arctan\left ( \frac{320}{650} \right )\approx 26deg \\
+$\theta _{max1}=arctan\left ( \frac{500-180}{520+90+40} \right )=arctan\left ( \frac{320}{650} \right )\approx 26deg \\
 \theta _{max1}=\frac{\pi }{2}+arctan\left ( \frac{500-180}{520+90+40} \right )=\frac{\pi }{2}+arctan\left ( \frac{320}{650} \right )\approx 116deg$\\
 
 
@@ -112,7 +112,7 @@ We can illustrate angles of theta from another view (view from left). Regarding 
   \label{fig:JointWorkspace}
 \end{figure}
 
-Our chosen – calculated angles are shown in the figure 8. As we can see angles are much more less than it can be, because of the safety. 
+Our chosen – calculated angles are shown in the figure \ref{fig:angleXML}. As we can see angles are much more less than it can be, because of the safety. 
 
 \begin{figure}[H]
   \centering
@@ -123,7 +123,7 @@ Our chosen – calculated angles are shown in the figure 8. As we can see angles
 
 \subsection {Modeling the Tool Frame}
 
-Requirement was to have few parameters which let us easily calibrate the tool frame (drill frame). Before that we need to measure the drill which shown in the figure 9 (not very nice). As we see from the figure 9, there are two unknowns a and b. Values of a and b let define the position of the drill. As we see than we changing b than we can shift to right or left and it depends mostly of the drill construction. Second one called a is height control of the drill and it possibly changed many times. For instance if we broken the drill or changed the new one. 
+Requirement was to have few parameters which let us easily calibrate the tool frame (drill frame). Before that we need to measure the drill which shown in the figure \ref{fig:drillDimensions} (not very nice). As we see from the figure \ref{fig:drillDimensions}, there are two unknowns a and b. Values of a and b let define the position of the drill. As we see than we changing b than we can shift to right or left and it depends mostly of the drill construction. Second one called a is height control of the drill and it possibly changed many times. For instance if we broken the drill or changed the new one. 
 
 \begin{figure}[H]
   \centering
@@ -132,7 +132,7 @@ Requirement was to have few parameters which let us easily calibrate the tool fr
   \label{fig:drillDimensions}
 \end{figure}
 
-Setting of the tool frame were done throw intermediate tool frame. Intermediate tool frame rotate frame by 45 deg, because of the drill construction.  Then we can easily calibrate tool frame according the created intermediate frame. As shown in the figure 10. There are two values a and b (for more details look at the figure 9) value b is width of where drill stand and value a is deep of the drill.
+Setting of the tool frame were done throw intermediate tool frame. Intermediate tool frame rotate frame by 45 deg, because of the drill construction.  Then we can easily calibrate tool frame according the created intermediate frame. As shown in the figure \ref{fig:toolCalibrationXML}. There are two values a and b (for more details look at the figure \ref{fig:drillDimensions}) value b is width of where drill stand and value a is deep of the drill.
 
 \begin{figure}[H]
   \centering
@@ -141,7 +141,7 @@ Setting of the tool frame were done throw intermediate tool frame. Intermediate 
   \label{fig:toolCalibrationXML}
 \end{figure}
 
-Result of the intermediate and tool frames shown in the figure 11. Configuration of it shown in the XML file extract (figure 10). Regarding this we can easily adopt any desired tool. For instance if we get longer drill or different dimensions of tool than we can easily modify XML file and work.
+Result of the intermediate and tool frames shown in the figure \ref{fig:toolFrame}. Configuration of it shown in the XML file extract (figure \ref{fig:toolCalibrationXML}). Regarding this we can easily adopt any desired tool. For instance if we get longer drill or different dimensions of tool than we can easily modify XML file and work.
 
 \begin{figure}[H]
   \centering
@@ -150,7 +150,7 @@ Result of the intermediate and tool frames shown in the figure 11. Configuration
   \label{fig:toolFrame}
 \end{figure}
 
-As we can see from the figure 11 tool frame can be easily modified. Tool frame is important for the future parts, like path planner. Path planner takes Cartesian coordinates from the letter model and moves tool frame regarding it. By moving tool frame all join values change and we need to parse them and send to real robot, but this discussion is out of this chapter scope.
+As we can see from the figure \ref{fig:toolFrame} tool frame can be easily modified. Tool frame is important for the future parts, like path planner. Path planner takes Cartesian coordinates from the letter model and moves tool frame regarding it. By moving tool frame all join values change and we need to parse them and send to real robot, but this discussion is out of this chapter scope.
 
 \subsection{Construction of XML File}
 
@@ -171,7 +171,7 @@ LR Mate 200iB has six axes. Each axis is revolute, dimensions given by manufactu
 \end{enumerate} 
 
 We use first approach because in the assignment there was no appointment how to construct. First approach was used for someone but parameters were not the same, so we need to recalculate all parameters. Before start to construct the joints we need to define where put a base frame. From the base frame all other joints will be constructed. There were discussions where to put the base frame. One opinion was to put base frame at the one of the table corners, another one where robot centre stands and last one down – centre of the table. We decided to choose last one, because there was easiest way to start construct table and after that joints. Reason was that the base frame will stand independently to any of the objects around it.
-Second approach will be more useful, reason of easier understand and adopt new changes of the robot. For instance if the lengths Robot arm changed. We actually need change DH parameters in the XML by entering into places like shown in the figure 12. 
+Second approach will be more useful, reason of easier understand and adopt new changes of the robot. For instance if the lengths Robot arm changed. We actually need change DH parameters in the XML by entering into places like shown in the figure \ref{fig:DHParameters}. 
 
 \begin{figure}[H]
   \centering
