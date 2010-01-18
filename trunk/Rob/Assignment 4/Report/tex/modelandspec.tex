@@ -45,7 +45,7 @@ To construct the DH parameters we need to know the dimensions of both the models
 From the table 2 we can see that the real model and model which will be used for simulations is quite similar, however some links [1] are different and it makes not the same. However differences not very huge so we make decision that model for simulation can be used as simulator. We have define that LR Mate 200iB will be constructed by defining frames and model LR Mate 200iC is just defining the shapes of 3D model. So we make guarantee that the next part will be simulate real robot model and we only see model in RobWork (LR Mate 200iC), which a little bit different from real model (LR Mate 200iB).
 
 \subsection{Construction of the Cage}
-After verification of the details we can measure the dimensions of where the robot stands. LR Mate 200iB stands in the cage as shown in the figure 3 (here is LR Mate 200iC model, because we not make a photo to do better illustrations). Dimensions of the cage measured and depicted by the RobWork, using the xml file were created cage. Robot hand stands on the table and around the robot hand is a cage which guarantees the safety. Position of the LR Mate 200iB on the cage is on the left – up corner (if we look from the front view).
+After verification of the details we can measure the dimensions of where the robot stands. LR Mate 200iB stands in the cage as shown in the figure 3 (here is LR Mate 200iC model, because we not make a photo to do better illustrations). Dimensions of the cage measured and depicted by the RobWork, using the XML file were created cage. Robot hand stands on the table and around the robot hand is a cage which guarantees the safety. Position of the LR Mate 200iB on the cage is on the left – up corner (if we look from the front view).
 
 \begin{figure}[H]
   \centering
@@ -77,7 +77,7 @@ Joint angles we mean interval of turn between min and max. By default values wer
   \label{fig:angleDefaultXML}
 \end{figure}
 
-Before start we need to illustrate the robot position in the cage and show all measured dimensions. Regarding robot dimensions and joint positions we can start modeling angles of turnings. In the xml file each joint has min and max we set it by $\theta _{min}$ and $\theta _{max}$ here theta is angle limits of turn.
+Before start we need to illustrate the robot position in the cage and show all measured dimensions. Regarding robot dimensions and joint positions we can start modeling angles of turnings. In the XML file each joint has min and max we set it by $\theta _{min}$ and $\theta _{max}$ here theta is angle limits of turn.
 
 \begin{figure}[H]
   \centering
@@ -88,7 +88,8 @@ Before start we need to illustrate the robot position in the cage and show all m
 
 According figure 6 we can calculate max movements of the joint1 or angles: \\
 
-\noindent$\theta _{min}=\theta _{max1}\\
+
+$\theta _{min}=\theta _{max1}\\
 \theta _{max}=\theta _{max2}$
 
 \begin{align}
@@ -140,7 +141,7 @@ Setting of the tool frame were done throw intermediate tool frame. Intermediate 
   \label{fig:toolCalibrationXML}
 \end{figure}
 
-Result of the intermediate and tool frames shown in the figure 11. Configuration of it shown in the xml file extract (figure 10). Regarding this we can easily adopt any desired tool. For instance if we get longer drill or different dimensions of tool than we can easily modify xml file and work.
+Result of the intermediate and tool frames shown in the figure 11. Configuration of it shown in the XML file extract (figure 10). Regarding this we can easily adopt any desired tool. For instance if we get longer drill or different dimensions of tool than we can easily modify XML file and work.
 
 \begin{figure}[H]
   \centering
@@ -154,19 +155,23 @@ As we can see from the figure 11 tool frame can be easily modified. Tool frame i
 \subsection{Construction of XML File}
 
 Xml file were constructed considering to the few of the things:
-1)	Base frame setup. Discussion where set the base frame. It chosen to put center – down of the table (cage).
-2)	Dimensions of the cage. All dimensions were measured and shown in the chapter: “Construction of the cage”. Regarding this xml file has parameters which depict the cage.
-3)	Dimensions of the LR Mate 200iB. Regarding of dimensions were constructed all joints in the xml file.
-4)	Model graphics of the LR Mate 200iC. Regarding this was used 3D model to illustrate – simulate robot behavior.
-5)	Collision setup. There was added reference to collision setup which indicates collisions of the LR Mate 200iC model.
+\begin{enumerate}
+\item Base frame setup. Discussion where set the base frame. It chosen to put center – down of the table (cage).
+\item Dimensions of the cage. All dimensions were measured and shown in the chapter: “Construction of the cage”. Regarding this XML file has parameters which depict the cage.
+\item Dimensions of the LR Mate 200iB. Regarding of dimensions were constructed all joints in the XML file.
+\item Model graphics of the LR Mate 200iC. Regarding this was used 3D model to illustrate – simulate robot behavior.
+\item Collision setup. There was added reference to collision setup which indicates collisions of the LR Mate 200iC model.
+\end{enumerate} 
 
 \subsection{Construction of Joints}
-LR Mate 200iB has six axes. Each axis is revolute, dimensions given by manufacturer. Regarding this we can start to create joints in xml. We can do by two ways:
-1)	Calculate positions of the joints by using template of the Fanuc 200i model. This was given by RobWork, however model is not quite the same.
-2)	Calculate DH parameters and regarding this construct the xml file with joints
+LR Mate 200iB has six axes. Each axis is revolute, dimensions given by manufacturer. Regarding this we can start to create joints in XML. We can do by two ways:
+\begin{enumerate}
+\item Calculate positions of the joints by using template of the Fanuc 200i model. This was given by RobWork, however model is not quite the same.
+\item Calculate DH parameters and regarding this construct the XML file with joints
+\end{enumerate} 
 
 We use first approach because in the assignment there was no appointment how to construct. First approach was used for someone but parameters were not the same, so we need to recalculate all parameters. Before start to construct the joints we need to define where put a base frame. From the base frame all other joints will be constructed. There were discussions where to put the base frame. One opinion was to put base frame at the one of the table corners, another one where robot centre stands and last one down – centre of the table. We decided to choose last one, because there was easiest way to start construct table and after that joints. Reason was that the base frame will stand independently to any of the objects around it.
-Second approach will be more useful, reason of easier understand and adopt new changes of the robot. For instance if the lengths Robot arm changed. We actually need change DH parameters in the xml by entering into places like shown in the figure 12. 
+Second approach will be more useful, reason of easier understand and adopt new changes of the robot. For instance if the lengths Robot arm changed. We actually need change DH parameters in the XML by entering into places like shown in the figure 12. 
 
 \begin{figure}[H]
   \centering
