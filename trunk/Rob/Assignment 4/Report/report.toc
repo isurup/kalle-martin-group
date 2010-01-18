@@ -1,14 +1,16 @@
 \contentsline {section}{\numberline {1}Introduction}{2}
-\contentsline {section}{\numberline {2}Specifications of Robot Arm}{2}
+\contentsline {section}{\numberline {2}Specifications of the Robot Arm}{2}
 \contentsline {subsection}{\numberline {2.1}Dimensions of the two Models}{4}
 \contentsline {subsection}{\numberline {2.2}Construction of the Cage}{5}
-\contentsline {subsection}{\numberline {2.3}Construction of Joint Angles}{6}
-\contentsline {subsection}{\numberline {2.4}Modeling the Tool Frame}{9}
-\contentsline {subsection}{\numberline {2.5}Construction of XML File}{11}
-\contentsline {subsection}{\numberline {2.6}Construction of Joints}{11}
-\contentsline {section}{\numberline {3}Parsing}{12}
-\contentsline {section}{\numberline {4}Path Planning}{12}
-\contentsline {section}{\numberline {5}Testing the System}{12}
-\contentsline {section}{\numberline {6}Conclusion}{12}
-\contentsline {section}{References}{12}
-\contentsline {section}{\numberline {7}Appendix}{13}
+\contentsline {subsection}{\numberline {2.3}Construction of Joint Angles}{7}
+\contentsline {subsection}{\numberline {2.4}Modeling the Tool Frame}{10}
+\contentsline {subsection}{\numberline {2.5}Construction of XML File}{12}
+\contentsline {subsection}{\numberline {2.6}Construction of Joints}{12}
+\contentsline {section}{\numberline {3}Letter Font Application}{13}
+\contentsline {subsection}{\numberline {3.1}Letter labeling application}{15}
+\contentsline {section}{\numberline {4}Parsing}{17}
+\contentsline {section}{\numberline {5}Path Planning}{17}
+\contentsline {section}{\numberline {6}Testing the System}{17}
+\contentsline {section}{\numberline {7}Conclusion}{17}
+\contentsline {section}{References}{17}
+\contentsline {section}{\numberline {8}Appendix}{18}
