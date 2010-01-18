@@ -1,7 +1,7 @@
 \section{Specifications of the Robot Arm}
 \label{sec:spec}
 
-It's necessary to verify the Fanuc LR Mate 200i specifications before any work on the RobWork plugins can commence, because the robot in the laboratory is a LR Mate 200iB and in RobWork it's a LR Mate200iC model. It is essential that the LR Mate model in RobWork is true to the real robot in the laboratory. The model in RobWork (LR Mate200iC) is depicted in the figure below – left and the model in the laboratory (LR Mate200iB) is depicted below – right. As can be seen from the figure, the models in some points are different however in other cases they are similar.
+It's necessary to verify the Fanuc LR Mate 200i specifications before any work on the RobWork plugins can commence, because the robot in the laboratory is a LR Mate 200iB and in RobWork it's a LR Mate200iC model. It is essential that the LR Mate model in RobWork is true to the real robot in the laboratory. The model in RobWork (LR Mate200iC) is depicted in the figure below left and the model in the laboratory (LR Mate200iB) is depicted below right. As can be seen from the figure, the models in some points are different however in other cases they are similar.
 
 \begin{figure}[H]
   \centering
@@ -17,7 +17,7 @@ It's necessary to verify the Fanuc LR Mate 200i specifications before any work o
   \label{fig:tableSpecifications}
 \end{figure}
 
-Find the similarities and differences points from which aspects we analyze them. One of the point we chosen specifications of two models, of course this point is not primary. As we see main point here is axes – both models has same number of axes. According this we can say models are similar. Other points from the table are not so important for use – it is payload, reach or motion speed, because they more related to efficiency.
+Find the similarities and differences points from which aspects we analyze them. One of the point we chosen specifications of two models, of course this point is not primary. As we see main point here is axes both models has same number of axes. According this we can say models are similar. Other points from the table are not so important for use it is payload, reach or motion speed, because they more related to efficiency.
 
 \subsection{Dimensions of the two Models}
 Here we try to verify details from dimension aspect. We try find is these models similar in dimensions or not. For instance like one model can be 3 meters high and another 30 centimeters, so they are totally different.  Both models depicted in the figure \ref{fig:FanucModels}. Models are quite the same because they both have six revolute axes (we defined in previous chapter). We can try regarding dimension of two models constructing DH parameters and then comparing them.
@@ -49,7 +49,7 @@ To construct the DH parameters we need to know the dimensions of both the models
 From figure\ref{fig:tableParameters} we can see that the real model and model which will be used for simulations is quite similar, however some links are different and it makes not the same. However differences not very huge so we make decision that model for simulation can be used as simulator. We have define that LR Mate 200iB will be constructed by defining frames and model LR Mate 200iC is just defining the shapes of 3D model. So we make guarantee that the next part will be simulate real robot model and we only see model in RobWork (LR Mate 200iC), which a little bit different from real model (LR Mate 200iB).
 
 \subsection{Construction of the Cage}
-After verification of the details we can measure the dimensions of where the robot stands. LR Mate 200iB stands in the cage as shown in the figure \ref{fig:robworkCage} (here is LR Mate 200iC model, because we not make a photo to do better illustrations). Dimensions of the cage measured and depicted by the RobWork, using the XML file were created cage. Robot hand stands on the table and around the robot hand is a cage which guarantees the safety. Position of the LR Mate 200iB on the cage is on the left – up corner (if we look from the front view).
+After verification of the details we can measure the dimensions of where the robot stands. LR Mate 200iB stands in the cage as shown in the figure \ref{fig:robworkCage} (here is LR Mate 200iC model, because we not make a photo to do better illustrations). Dimensions of the cage measured and depicted by the RobWork, using the XML file were created cage. Robot hand stands on the table and around the robot hand is a cage which guarantees the safety. Position of the LR Mate 200iB on the cage is on the left up corner (if we look from the front view).
 
 \begin{figure}[H]
   \centering
@@ -160,10 +160,10 @@ As we can see from the figure \ref{fig:toolFrame} tool frame can be easily modif
 
 Xml file were constructed considering to the few of the things:
 \begin{enumerate}
-\item Base frame setup. Discussion where set the base frame. It chosen to put center – down of the table (cage).
+\item Base frame setup. Discussion where set the base frame. It chosen to put center down of the table (cage).
 \item Dimensions of the cage. All dimensions were measured and shown in the chapter: “Construction of the cage”. Regarding this XML file has parameters which depict the cage.
 \item Dimensions of the LR Mate 200iB. Regarding of dimensions were constructed all joints in the XML file.
-\item Model graphics of the LR Mate 200iC. Regarding this was used 3D model to illustrate – simulate robot behavior.
+\item Model graphics of the LR Mate 200iC. Regarding this was used 3D model to illustrate simulate robot behavior.
 \item Collision setup. There was added reference to collision setup which indicates collisions of the LR Mate 200iC model.
 \end{enumerate} 
 
@@ -174,7 +174,7 @@ LR Mate 200iB has six axes. Each axis is revolute, dimensions given by manufactu
 \item Calculate DH parameters and regarding this construct the XML file with joints
 \end{enumerate} 
 
-We use first approach because in the assignment there was no appointment how to construct. First approach was used for someone but parameters were not the same, so we need to recalculate all parameters. Before start to construct the joints we need to define where put a base frame. From the base frame all other joints will be constructed. There were discussions where to put the base frame. One opinion was to put base frame at the one of the table corners, another one where robot centre stands and last one down – centre of the table. We decided to choose last one, because there was easiest way to start construct table and after that joints. Reason was that the base frame will stand independently to any of the objects around it.
+We use first approach because in the assignment there was no appointment how to construct. First approach was used for someone but parameters were not the same, so we need to recalculate all parameters. Before start to construct the joints we need to define where put a base frame. From the base frame all other joints will be constructed. There were discussions where to put the base frame. One opinion was to put base frame at the one of the table corners, another one where robot centre stands and last one down centre of the table. We decided to choose last one, because there was easiest way to start construct table and after that joints. Reason was that the base frame will stand independently to any of the objects around it.
 Second approach will be more useful, reason of easier understand and adopt new changes of the robot. For instance if the lengths Robot arm changed. We actually need change DH parameters in the XML by entering into places like shown in the figure \ref{fig:DHParameters}. 
 
 \begin{figure}[H]
