@@ -66,7 +66,7 @@ We deal with two images, one image is an original, and another image is was a cl
 \begin{figure}[H]
   \centering
   \includegraphics[scale= 0.6]{source/pixelmatrix.png}
-  \caption{9 pixels’ connectivity matrix.}
+  \caption{9 pixels’ connectivity matrix}
   \label{fig:pixelmatrix}
 \end{figure}
 
@@ -79,5 +79,34 @@ Connectivity matrix is used to take values from original image and write the res
   \label{fig:matriximages}
 \end{figure}
 
-The letters (objects) labeling algorithm is shown in figure 2.7. At the beginning the image is converted to binary, it allow us easier to deal with information, we set non-white pixels to black. 
+The letters (objects) labeling algorithm is shown in figure \ref{fig:matriximages}. At the beginning the image is converted to binary, it allow us easier to deal with information, we set non-white pixels to black. 
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale= 0.6]{source/labeling.png}
+  \caption{Letters labeling algorithm}
+  \label{fig:labeling}
+\end{figure}
+
+When we have a binary image we have only two values: black – which represent the letter (or object), and white – which we assume as background. In the next step we take pixels from connectivity matrix and check if exists black pixels (which belongs to letter or object), if there are no black pixels we move the connectivity matrix by one pixel in particular direction and repeat the black pixel checking. But if there are black pixels, we perform checking in order to figure out or we need to create a new label (detected new object) or some of these pixels belongs to before detected letter (or object), and it is enough to rewrite the previous labels. The example of labeling text letters is shown in figure \ref{fig:labelingexample}. We have a binary image this image is called “clone image” it is a copy of original.  By performing letters labeling algorithm (figure \ref{fig:labeling}) we can detect how much different letters (objects) we have. The important thing is what we should twice repeat letters labeling algorithm, at first time we arbitrary choose from which images corner to start, for instance it  is convenient to start  from the top/left corner, the second time of repeating algorithm we need to choose an opposite corner it would be bottom/right.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale= 0.6]{source/labelingexample.png}
+  \caption{Letters labeling example}
+  \label{fig:labelingexample}
+\end{figure}
+
+If we would not perform algorithm from opposite corner, the algorithm would detect more letters (objects) then there exists, in such letters as U, Y, H, V, W … , because the connectivity matrix is too small, but if we choose connectivity matrix quite large, there are risks: detect two letters as one letter, loose more pixels (near image corners).
+
+\subsection{Letter Font Application Extension}
+At the moment the letter font application deals with text as an image, in other words, the letters are consider as image (which we can save, paint, change color).  So it is possible to load image directly (this feature is not implemented on final application, because the task was to deal with letters), so by having this application source code and knowing basics of objecting oriented programming, it easy to load any picture here as shown in figure \ref{fig:letterappextension}.   
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale= 0.6]{source/letterappextension.png}
+  \caption{Letter font application}
+  \label{fig:letterappextension}
+\end{figure}
+
+The interesting thing is what all image processing knowledge we could apply here, such as edge detection, Hough transformation etc., and this is mean what this letter font application is universal, we can easy make extensions.  
