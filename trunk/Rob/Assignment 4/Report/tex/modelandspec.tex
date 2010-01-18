@@ -17,10 +17,11 @@ It's necessary to verify the Fanuc LR Mate 200i specifications before any work o
   \label{fig:tableSpecifications}
 \end{figure}
 
-Find the similarities and differences points from which aspects an analyze can be commenced. As can be seen the main point to analyze is the motion range that is a little bit different between the two models. But physically the two robots are similar with respect to physical length of the joint arms, it's important to get a correct physical representation of the robot in RobWorkStudio. Other points from the table are not so important for use, among this is payload, reach or motion speed, because they are more related to efficiency.
+Find the similarity and difference points in the table above from which an analyze can be commenced. As can be seen the main point to analyze is the motion range that is a little bit different between the two models. But physically are the two robots similar with respect to physical length of the joint arms, it's important to get a correct physical representation of the robot in RobWorkStudio. Other points from the table are not so important for use, among this is payload, reach or motion speed, because they are more related to efficiency.
 
 \subsection{Dimensions of the two Models}
-Here we try to verify details from dimension aspect. We try find is these models similar in dimensions or not. For instance like one model can be 3 meters high and another 30 centimeters, so they are totally different.  Both models depicted in the figure \ref{fig:FanucModels}. Models are quite the same because they both have six revolute axes (we defined in previous chapter). We can try regarding dimension of two models constructing DH parameters and then comparing them.
+By analyzing the datasheet of the two models it can be concluded that the physical appearance of the two Fanuc robots are similar in dimensions. They have six revolute joints and simimilar joint arm dimensions. Both models are depicted in the figure \ref{fig:FanucModels}. 
+Then DH-parameters can be determined using the datasheet and physically inspecting the robot in the laboratory.
 
 \begin{figure}[H]
   \centering
