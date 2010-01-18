@@ -4,6 +4,7 @@
 	Version="9,00"
 	Name="Assign04_Group1"
 	ProjectGUID="{695179A4-11EF-4724-83C6-52091864C674}"
+	RootNamespace="Assign04_Group1"
 	Keyword="Qt4VSv1.0"
 	TargetFrameworkVersion="131072"
 	>
