@@ -61,7 +61,7 @@ After verification of the details, measuring the dimensions of where the robot i
 
 Figure \ref{fig:robworkCageDimensions} shows the robot position from top view and dimensions of the cage where LR Mate 200i stands. As can be seen the shape of the table is square, the real table width is a little bit bigger. A smaller is used because it makes it easier to avoid any damage to the cage. A defined smaller work space gives more safety.\newline
 
-Lengths were measured by using the 50 cm ruler. Of course we would like to find a bigger one, so there are probably some errors in the measurements have bigger errors that they could be maybe ± 2.5 cm. We do not guarantee that all values precise enough.
+Lengths were measured by using the 50 cm ruler. Of course a bigger one would have been better, so there are probably some errors in the measurements $\pm$ 2.5 cm. It's not guaranteed that all values are precise enough.
 
 \begin{figure}[H]
   \centering
@@ -70,10 +70,10 @@ Lengths were measured by using the 50 cm ruler. Of course we would like to find 
   \label{fig:robworkCageDimensions}
 \end{figure}
 
-Regarding this we can set right max theta angles. They will limit movements of the joints. If we do not do this we risk damaging the cage if the errors occur.
+Regarding this, max theta angles can be determined. They will limit the movements of the joints. If this is not done, there is a risk in damaging the cage or robot.
 
 \subsection{Construction of Joint Angles}
-Joint angles we mean interval of turn between min and max. By default values were set as shown in the figure \ref{fig:angleDefaultXML}, however we need to change them to guarantee what the robot hand did not move too much. If we allow all these values when everything also will be alright but if the robot fails for some of the reasons than could be a risk to damage the window or even worse injure people around. So that is why we decided to limit turning angle of the robot. 
+Joint angles means the interval of turning between min and max. By default values were set as shown in the figure \ref{fig:angleDefaultXML}, however a change of those do guarantees that the robot hand can't move too much. If these values are allowed and something is wrong in the state sequence there could be a risk of damage to the window, robot or even worse injure people around. So that is why a desicion was made to limit the turning angle of the robot. 
 
 \begin{figure}[H]
   \centering
@@ -82,7 +82,7 @@ Joint angles we mean interval of turn between min and max. By default values wer
   \label{fig:angleDefaultXML}
 \end{figure}
 
-Before start we need to illustrate the robot position in the cage and show all measured dimensions. Regarding robot dimensions and joint positions we can start modeling angles of turnings. In the XML file each joint has min and max we set it by $\theta _{min}$ and $\theta _{max}$ here theta is angle limits of turn.
+Before start an illustration of the robots position in the cage is needed to show all measured dimensions. With all dimensions and joint positions determined, modelling of the turning angles of joint arms could be done. In the XML file each joint has min and max and is set by $\theta _{min}$ and $\theta _{max}$ here theta is angle limits of turning.
 
 \begin{figure}[H]
   \centering
@@ -91,7 +91,7 @@ Before start we need to illustrate the robot position in the cage and show all m
   \label{fig:JointWorkspaceDimensions}
 \end{figure}
 
-According figure \ref{fig:JointWorkspaceDimensions} we can calculate max movements of the joint1 or angles: \\
+According to figure \ref{fig:JointWorkspaceDimensions} max movements or angles of joint1 can be calculated: \\
 
 
 $\theta _{min}=\theta _{max1}\\
@@ -102,7 +102,7 @@ $\theta _{min}=\theta _{max1}\\
 \theta _{max2}=\frac{\pi }{2}+arctan\left ( \frac{500-x}{520+90+40} \right )\label{eq:eq1}
 \end{align}
 
-In the formula 1 value x is error. Depending on the shape of the robot we use x > 154, let us say x = 180. Than we can calculate max movement ranges of the joint 1:
+In equation 1 value x is wrong. Depending on the shape of the robot x $>$ 154 is used, x = 180 were chosen. Than max movement ranges of the joint 1 could be calculated:
 
 $\theta _{max1}=arctan\left ( \frac{500-180}{520+90+40} \right )=arctan\left ( \frac{320}{650} \right )\approx 26deg \\
 \theta _{max1}=\frac{\pi }{2}+arctan\left ( \frac{500-180}{520+90+40} \right )=\frac{\pi }{2}+arctan\left ( \frac{320}{650} \right )\approx 116deg$\\
