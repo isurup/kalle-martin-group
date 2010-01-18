@@ -20,7 +20,7 @@ It's necessary to verify the Fanuc LR Mate 200i specifications before any work o
 Find the similarity and difference points in the table above from which an analyze can be commenced. As can be seen the main point to analyze is the motion range that is a little bit different between the two models. But physically are the two robots similar with respect to physical length of the joint arms, it's important to get a correct physical representation of the robot in RobWorkStudio. Other points from the table are not so important for use, among this is payload, reach or motion speed, because they are more related to efficiency.
 
 \subsection{Dimensions of the two Models}
-By analyzing the datasheet of the two models it can be concluded that the physical appearance of the two Fanuc robots are similar in dimensions. They have six revolute joints and simimilar joint arm dimensions. Both models are depicted in the figure \ref{fig:FanucModels}. 
+By analyzing the datasheet of the two models it can be concluded that the physical appearance of the two Fanuc robots are similar in dimensions. They have six revoloute joints and similar joint arm dimensions. Both models are depicted in the figure \ref{fig:FanucModels}. 
 Then DH-parameters can be determined using the datasheet and physically inspecting the robot in the laboratory to verify the dimensions.
 
 \begin{figure}[H]
@@ -82,7 +82,7 @@ Joint angles means the interval of turning between min and max. By default value
   \label{fig:angleDefaultXML}
 \end{figure}
 
-Before start an illustration of the robots position in the cage is needed to show all measured dimensions. With all dimensions and joint positions determined, modelling of the turning angles of joint arms could be done. In the XML file each joint has min and max and is set by $\theta _{min}$ and $\theta _{max}$ here theta is angle limits of turning.
+Before start an illustration of the robots position in the cage is needed to show all measured dimensions. With all dimensions and joint positions determined, modeling of the turning angles of joint arms could be done. In the XML file each joint has min and max and is set by $\theta _{min}$ and $\theta _{max}$ here theta is angle limits of turning.
 
 \begin{figure}[H]
   \centering
@@ -102,13 +102,13 @@ $\theta _{min}=\theta _{max1}\\
 \theta _{max2}=\frac{\pi }{2}+arctan\left ( \frac{500-x}{520+90+40} \right )\label{eq:eq1}
 \end{align}
 
-In equation 1 value x is wrong. Depending on the shape of the robot x $>$ 154 is used, x = 180 were chosen. Than max movement ranges of the joint 1 could be calculated:
+In equation 1 the value x is wrong. Depending on the shape of the robot x $>$ 154 is used, x = 180 were chosen. Than max movement range of the joint 1 could be calculated:
 
 $\theta _{max1}=arctan\left ( \frac{500-180}{520+90+40} \right )=arctan\left ( \frac{320}{650} \right )\approx 26deg \\
 \theta _{max1}=\frac{\pi }{2}+arctan\left ( \frac{500-180}{520+90+40} \right )=\frac{\pi }{2}+arctan\left ( \frac{320}{650} \right )\approx 116deg$\\
 
 
-We can illustrate angles of theta from another view (view from left). Regarding formula 1 we can also calculate other angles, however we can not do all of them, because joints are dependent each other and we only modeling here statically. 
+Angles of theta can be illustrated from another view (view from left). Using formula 1 other angles can also be calculated, however we not all of them can be calculated, because the joints are dependent of each other and the here the model is only static. 
 
 \begin{figure}[H]
   \centering
@@ -117,7 +117,7 @@ We can illustrate angles of theta from another view (view from left). Regarding 
   \label{fig:JointWorkspace}
 \end{figure}
 
-Our chosen – calculated angles are shown in the figure \ref{fig:angleXML}. As we can see angles are much more less than it can be, because of the safety. 
+The chosen calculated angles are shown in the figure \ref{fig:angleXML}. As can be seen, the angles are much smaller than they can be, because of the safety. 
 
 \begin{figure}[H]
   \centering
