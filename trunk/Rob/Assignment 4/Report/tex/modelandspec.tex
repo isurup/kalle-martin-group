@@ -47,10 +47,10 @@ To determine the DH-parameters we need to know the dimensions of both the models
   \label{fig:tableParameters}
 \end{figure}
 
-From figure\ref{fig:tableParameters} we can see that the real model and model which will be used for simulations is quite similar, however some links are different and it makes not the same. However differences not very huge so we make decision that model for simulation can be used as simulator. We have define that LR Mate 200iB will be constructed by defining frames and model LR Mate 200iC is just defining the shapes of 3D model. So we make guarantee that the next part will be simulate real robot model and we only see model in RobWork (LR Mate 200iC), which a little bit different from real model (LR Mate 200iB).
+From figure\ref{fig:tableParameters} it can be seen that the real model and the model which will be used for simulations is quite similar, however some links are different. However differences are not huge so a decision was made that the model can be used for simulation. The LR Mate 200iB was constructed by using some frames from and the some 3D model objects of the LR Mate 200iC. The model seen in RobWorkStudio are a mix of LR Mate 200iC and LR Mate 200iB, but the dimensions and DH-parameters are determined from the robot in the laboratory.
 
 \subsection{Construction of the Cage}
-After verification of the details we can measure the dimensions of where the robot stands. LR Mate 200iB stands in the cage as shown in the figure \ref{fig:robworkCage} (here is LR Mate 200iC model, because we not make a photo to do better illustrations). Dimensions of the cage measured and depicted by the RobWork, using the XML file were created cage. Robot hand stands on the table and around the robot hand is a cage which guarantees the safety. Position of the LR Mate 200iB on the cage is on the left up corner (if we look from the front view).
+After verification of the details, measuring the dimensions of where the robot is fixed were made. The LR Mate 200iB stands in the cage as shown in the figure \ref{fig:robworkCage} (here is LR Mate 200iC model). Dimensions of the cage measured and depicted by the RobWorkStudio were created using the XML file. Robot hand stands on the table and around the robot hand is a cage which guarantees the safety of the operator. Position of the LR Mate 200iB in the cage is in the left up corner (if watched from the front view).
 
 \begin{figure}[H]
   \centering
@@ -59,9 +59,9 @@ After verification of the details we can measure the dimensions of where the rob
   \label{fig:robworkCage}
 \end{figure}
 
-Figure \ref{fig:robworkCageDimensions} shows the robot position from top view and dimensions of the cage where LR Mate 200i stands. As we see shape of the table is square, real table width is a little bit bigger. We use smaller reason to guarantee what we would not damage the cage. Defined smaller work space it will guarantee safety.\newline
+Figure \ref{fig:robworkCageDimensions} shows the robot position from top view and dimensions of the cage where LR Mate 200i stands. As can be seen the shape of the table is square, the real table width is a little bit bigger. A smaller is used because it makes it easier to avoid any damage to the cage. A defined smaller work space gives more safety.\newline
 
-Lengths were measured by using the 50 cm ruler. Of course we would like to find the bigger one, so probably of that our measurements have bigger errors and we can imagine that they could be maybe ± 2.5 cm. We do not guarantee that all values precise enough.
+Lengths were measured by using the 50 cm ruler. Of course we would like to find a bigger one, so there are probably some errors in the measurements have bigger errors that they could be maybe ± 2.5 cm. We do not guarantee that all values precise enough.
 
 \begin{figure}[H]
   \centering
