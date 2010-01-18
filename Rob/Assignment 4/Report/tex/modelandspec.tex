@@ -12,7 +12,7 @@ We need to verify robot details before start of working, because in laboratory w
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale= 1]{source/table1.png}
+  \includegraphics[scale= 0.8]{source/table1.png}
   \caption{Specifications of LR Mate 200iB and LR Mate 200iC}
   \label{fig:tableSpecifications}
 \end{figure}
@@ -88,10 +88,13 @@ Before start we need to illustrate the robot position in the cage and show all m
 
 According figure 6 we can calculate max movements of the joint1 or angles: \\
 
-\noindent$\theta _{min}=\theta _{max1}  \\
-\theta _{max}=\theta _{max2}\\
-\theta _{max1}=arctan\left ( \frac{500-x}{520+90+40} \right )\\
-\theta _{max2}=\frac{\pi }{2}+arctan\left ( \frac{500-x}{520+90+40} \right )$\\
+$\theta _{min}=\theta _{max1}\\
+\theta _{max}=\theta _{max2}$
+
+\begin{align}
+\theta _{max1}=arctan\left ( \frac{500-x}{520+90+40} \right ) \label{eq:eq0}\\
+\theta _{max2}=\frac{\pi }{2}+arctan\left ( \frac{500-x}{520+90+40} \right )\label{eq:eq1}
+\end{align}
 
 In the formula 1 value x is error. Depending on the shape of the robot we use x > 154, let us say x = 180. Than we can calculate max movement ranges of the joint 1:
 
@@ -167,7 +170,7 @@ Second approach will be more useful, reason of easier understand and adopt new c
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale= 0.8]{source/DHParameters.png}
+  \includegraphics[scale= 0.65]{source/DHParameters.png}
   \caption{Example of configuration by DH parameters}
   \label{fig:DHParameters}
 \end{figure}
