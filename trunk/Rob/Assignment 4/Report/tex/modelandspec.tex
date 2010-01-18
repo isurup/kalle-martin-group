@@ -20,7 +20,7 @@ It's necessary to verify the Fanuc LR Mate 200i specifications before any work o
 Find the similarity and difference points in the table above from which an analyze can be commenced. As can be seen the main point to analyze is the motion range that is a little bit different between the two models. But physically are the two robots similar with respect to physical length of the joint arms, it's important to get a correct physical representation of the robot in RobWorkStudio. Other points from the table are not so important for use, among this is payload, reach or motion speed, because they are more related to efficiency.
 
 \subsection{Dimensions of the two Models}
-By analyzing the datasheet of the two models it can be concluded that the physical appearance of the two Fanuc robots are similar in dimensions. They have six revoloute joints and similar joint arm dimensions. Both models are depicted in the figure \ref{fig:FanucModels}. 
+By analyzing the datasheet of the two models it can be concluded that the physical appearance of the two Fanuc robots are similar in dimensions. They have six revolute joints and similar joint arm dimensions. Both models are depicted in the figure \ref{fig:FanucModels}. 
 Then DH-parameters can be determined using the datasheet and physically inspecting the robot in the laboratory to verify the dimensions.
 
 \begin{figure}[H]
@@ -159,24 +159,24 @@ As we can see from the figure \ref{fig:toolFrame} tool frame can be easily modif
 
 \subsection{Construction of XML File}
 
-Xml file were constructed considering to the few of the things:
+Xml file were constructed taking this into consideration:
 \begin{enumerate}
-\item Base frame setup. Discussion where set the base frame. It chosen to put center down of the table (cage).
-\item Dimensions of the cage. All dimensions were measured and shown in the chapter: "Construction of the cage". Regarding this XML file has parameters which depict the cage.
-\item Dimensions of the LR Mate 200iB. Regarding of dimensions were constructed all joints in the XML file.
-\item Model graphics of the LR Mate 200iC. Regarding this was used 3D model to illustrate simulate robot behavior.
-\item Collision setup. There was added reference to collision setup which indicates collisions of the LR Mate 200iC model.
+\item Base frame setup. Discussion where to set the base frame. It's chosen to put center down under the table (cage).
+\item Dimensions of the cage. All dimensions were measured and shown in the chapter: "Construction of the cage". Regarding this, XML file has parameters which depict the cage.
+\item Dimensions of the LR Mate 200iB. Using the dimensions of this the joints in the XML file were created.
+\item Model graphics of the LR Mate 200iC. This 3D model were used to illustrate the simulated robot behavior.
+\item Collision setup. There were added reference to a collision setup which indicates collisions of the LR Mate 200iC model.
 \end{enumerate} 
 
 \subsection{Construction of Joints}
-LR Mate 200iB has six axes. Each axis is revolute, dimensions given by manufacturer. Regarding this we can start to create joints in XML. We can do by two ways:
+LR Mate 200iB has six axes. Each axis is revolute, dimensions are given by the manufacturer. Using this, the creation of joints in XML can be done. There are two ways to do it:
 \begin{enumerate}
-\item Calculate positions of the joints by using template of the Fanuc 200i model. This was given by RobWork, however model is not quite the same.
-\item Calculate DH parameters and regarding this construct the XML file with joints
+\item Calculate positions of the joints by using the template of the Fanuc 200i model. This was given by RobWork, however the models are not quite the same.
+\item Calculate DH parameters and using this to build the XML file with joints.
 \end{enumerate} 
 
-We use first approach because in the assignment there was no appointment how to construct. First approach was used for someone but parameters were not the same, so we need to recalculate all parameters. Before start to construct the joints we need to define where put a base frame. From the base frame all other joints will be constructed. There were discussions where to put the base frame. One opinion was to put base frame at the one of the table corners, another one where robot centre stands and last one down centre of the table. We decided to choose last one, because there was easiest way to start construct table and after that joints. Reason was that the base frame will stand independently to any of the objects around it.
-Second approach will be more useful, reason of easier understand and adopt new changes of the robot. For instance if the lengths Robot arm changed. We actually need change DH parameters in the XML by entering into places like shown in the figure \ref{fig:DHParameters}. 
+The first approach was used because in the assignment there was no description of how to do it. First approach were used for someone but parameters were not the same, so new ones were needed to calculated. Before the start of constructing the joints, it was necessary to define where to put the base frame. From the base frame all other joints are constructed. There were some discussion of where to put the base frame. One opinion was to put the base frame at the one of the table corners, another one where robot center is and the last one down under at the center of the table. It was decided to choose the last one, because it was the easiest way to start constructing the table and the joints. Reason was that the base frame will stand independently to any of the objects around it.
+Second approach will be more useful, the reason is that it's easier to understand and adopt new changes to the robot. For instance if the length of the Robot arm changed. It's actually necessary to change DH parameters in the XML by entering the spots shown in figure \ref{fig:DHParameters}. 
 
 \begin{figure}[H]
   \centering
@@ -184,7 +184,3 @@ Second approach will be more useful, reason of easier understand and adopt new c
   \caption{Example of configuration by DH parameters}
   \label{fig:DHParameters}
 \end{figure}
-
-
-
-
