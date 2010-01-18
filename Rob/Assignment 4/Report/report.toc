@@ -6,6 +6,9 @@
 \contentsline {subsection}{\numberline {2.4}Modeling the Tool Frame}{7}
 \contentsline {subsection}{\numberline {2.5}Construction of XML File}{9}
 \contentsline {subsection}{\numberline {2.6}Construction of Joints}{9}
-\contentsline {section}{\numberline {3}Conclusion}{10}
+\contentsline {section}{\numberline {3}Parsing}{10}
+\contentsline {section}{\numberline {4}Path Planing}{10}
+\contentsline {section}{\numberline {5}Testing the System}{10}
+\contentsline {section}{\numberline {6}Conclusion}{10}
 \contentsline {section}{References}{10}
-\contentsline {section}{\numberline {4}Appendix}{11}
+\contentsline {section}{\numberline {7}Appendix}{11}
