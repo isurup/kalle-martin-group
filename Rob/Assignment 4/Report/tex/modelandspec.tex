@@ -5,12 +5,17 @@ We need to verify robot details before start of working, because in laboratory w
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale= 1]{source/fanucModelPhoto.png}
+  \includegraphics[scale= 0.8]{source/fanucModelPhoto.png}
   \caption{Fanuc Models, left: LR Mate 200iC, right: LR Mate 200iB}
   \label{fig:FanucModels}
 \end{figure}
 
-% table
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale= 1]{source/table1.png}
+  \caption{Specifications of LR Mate 200iB and LR Mate 200iC}
+  \label{fig:tableSpecifications}
+\end{figure}
 
 Find the similarities and differences points from which aspects we analyze them. One of the point we chosen specifications of two models, of course this point is not primary. As we see main point here is axes – both models has same number of axes. According this we can say models are similar. Other points from the table are not so important for use – it is payload, reach or motion speed, because they more related to efficiency.
 
@@ -30,7 +35,12 @@ To construct DH parameters, before we need to know what the meanings of the para
 
 To construct the DH parameters we need to know the dimensions of both the models, they are shown in the figure 2. At the left LR Mate 200iB model which we use in the laboratory and on the right LR Mate 200iC model which we use only to simulate. Constructed parameters shown in the table 2. 
 
-% table
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale= 0.8]{source/table2.png}
+  \caption{DH parameters of LR Mate 200iB and LR Mate 200iC}
+  \label{fig:tableParameters}
+\end{figure}
 
 From the table 2 we can see that the real model and model which will be used for simulations is quite similar, however some links [1] are different and it makes not the same. However differences not very huge so we make decision that model for simulation can be used as simulator. We have define that LR Mate 200iB will be constructed by defining frames and model LR Mate 200iC is just defining the shapes of 3D model. So we make guarantee that the next part will be simulate real robot model and we only see model in RobWork (LR Mate 200iC), which a little bit different from real model (LR Mate 200iB).
 
