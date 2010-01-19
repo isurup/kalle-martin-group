@@ -8,7 +8,6 @@
 #include <rw/models/WorkCell.hpp>
 #include <rw/kinematics/State.hpp>
 #include <rw/kinematics/MovableFrame.hpp>
-
 #include <rwlibs/drawable/RenderFrame.hpp>
 
 #include "ui_Assign04Widget.h"
@@ -38,30 +37,33 @@ public:
 private slots:
 
 	void clickBtnOpen();
-
-    void stateChangedListener(const rw::kinematics::State& state);
+  void clickBtnMove();
 
 private:
 
-	rw::kinematics::MovableFrame* insertFrame(std::string name);
-	void addRenderFrame(rw::kinematics::Frame* frame, float scale);
+  rw::kinematics::MovableFrame* _pTestFrame;
+  rw::models::WorkCellPtr _pWorkCell;
 
-	rw::models::WorkCell* _pWorkCell;
-
-	rw::kinematics::MovableFrame* _pTestFrame;
-
-	QString _strAngleSet;
-	bool _bolUpdating;
-
-	void assign04::updateFrame(rw::math::Rotation3D<double> rotation);
-	void assign04::enableInterface(bool b);
-
-  //--------------
-  // New functions
-  //--------------
-  std::vector<char> vLetters;
-  std::vector< std::vector<int> > vX,vY,vZ;
+  const std::vector<rw::kinematics::State> assign04::pathPlanner(
+          std::vector<rw::math::Q>& confs,
+          const rw::kinematics::State& state);
   
+  rw::math::Q assign04::IKSolver(
+          const rw::math::Transform3D<double>& baseTtool,
+          const rw::kinematics::State& state);
+
+  const std::vector<rw::kinematics::State> assign04::QToStates(
+          rw::models::DevicePtr device,
+          std::vector<rw::math::Q>& confs,
+          const rw::kinematics::State& state);
+
+  int _density;
+  std::vector<char> _vLetters;
+  std::vector< std::vector<int> > _vX,_vY,_vZ;
+  rw::models::DevicePtr _pDevice;
+	RobWorkStudio* _pRWS;
+  rw::math::Q _home;
+  rw::math::Transform3D<double> _origin;
 };
 
 #endif // ASSIGN04_H

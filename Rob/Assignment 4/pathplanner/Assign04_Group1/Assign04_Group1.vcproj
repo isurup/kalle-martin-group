@@ -4,7 +4,6 @@
 	Version="9,00"
 	Name="Assign04_Group1"
 	ProjectGUID="{695179A4-11EF-4724-83C6-52091864C674}"
-	RootNamespace="Assign04_Group1"
 	Keyword="Qt4VSv1.0"
 	TargetFrameworkVersion="131072"
 	>
@@ -110,7 +109,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="$(RW_DEPENDENCIES)\Boost_1_39_0;$(RW_DEPENDENCIES)\workspace\RobWork\src;$(RW_DEPENDENCIES)\workspace\RobWorkStudio\src;.\GeneratedFiles;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtGui;."
+				AdditionalIncludeDirectories="&quot;$(RW_DEPENDENCIES)\Boost_1_39_0&quot;;&quot;$(RW_DEPENDENCIES)\workspace\RobWork\src&quot;;&quot;$(RW_DEPENDENCIES)\workspace\RobWorkStudio\src&quot;;.\GeneratedFiles;&quot;$(QTDIR)\include&quot;;&quot;.\GeneratedFiles\$(ConfigurationName)&quot;;&quot;$(QTDIR)\include\QtCore&quot;;&quot;$(QTDIR)\include\QtOpenGL&quot;;&quot;$(QTDIR)\include\QtGui&quot;;&quot;$(RW_DEPENDENCIES)\workspace\RobWork\ext&quot;;."
 				PreprocessorDefinitions="UNICODE;WIN32;QT_LARGEFILE_SUPPORT;QT_THREAD_SUPPORT;QT_CORE_LIB;QT_GUI_LIB;QT_OPENGL_LIB;NOMINMAX;_HAS_ITERATOR_DEBUGGING=0;_SECURE_SCL=0;BIND_FORTRAN_LOWERCASE_UNDERSCORE;RW_ENABLE_ASSERT;ASSIGN04_LIB"
 				RuntimeLibrary="3"
 				TreatWChar_tAsBuiltInType="false"
@@ -196,7 +195,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Moc&apos;ing $(InputFileName)..."
-						CommandLine="&quot;$(QTDIR)\bin\moc.exe&quot;  &quot;$(InputPath)&quot; -o &quot;.\GeneratedFiles\$(ConfigurationName)\moc_$(InputName).cpp&quot; -D_HAS_ITERATOR_DEBUGGING=0 -D_SECURE_SCL=0 -D_WINDLL -DBIND_FORTRAN_LOWERCASE_UNDERSCORE -DNOMINMAX -DQT_CORE_LIB -DQT_GUI_LIB -DQT_LARGEFILE_SUPPORT -DQT_OPENGL_LIB -DQT_THREAD_SUPPORT -DASSIGN04_LIB -DRW_ENABLE_ASSERT -DUNICODE -DWIN32 -I&quot;$(QTDIR)\include\.&quot; -I&quot;$(QTDIR)\include\QtCore\.&quot; -I&quot;$(QTDIR)\include\QtGui\.&quot; -I&quot;$(QTDIR)\include\QtOpenGL\.&quot; -I&quot;$(RW_DEPENDENCIES)\Boost_1_39_0\.&quot; -I&quot;$(RW_DEPENDENCIES)\workspace\RobWork\src\.&quot; -I&quot;$(RW_DEPENDENCIES)\workspace\RobWorkStudio\src\.&quot; -I&quot;.\.&quot; -I&quot;.\GeneratedFiles\$(ConfigurationName)\.&quot; -I&quot;.\GeneratedFiles\.&quot;&#x0D;&#x0A;"
+						CommandLine="&quot;$(QTDIR)\bin\moc.exe&quot;   -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_THREAD_SUPPORT -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DNOMINMAX -D_HAS_ITERATOR_DEBUGGING=0 -D_SECURE_SCL=0 -DBIND_FORTRAN_LOWERCASE_UNDERSCORE -DRW_ENABLE_ASSERT -DASSIGN04_LIB -D_WINDLL  -I&quot;$(RW_DEPENDENCIES)\Boost_1_39_0\.&quot; -I&quot;$(RW_DEPENDENCIES)\workspace\RobWork\src\.&quot; -I&quot;$(RW_DEPENDENCIES)\workspace\RobWorkStudio\src\.&quot; -I&quot;.\GeneratedFiles\.&quot; -I&quot;$(QTDIR)\include\.&quot; -I&quot;.\GeneratedFiles\$(ConfigurationName)\.&quot; -I&quot;$(QTDIR)\include\QtCore\.&quot; -I&quot;$(QTDIR)\include\QtOpenGL\.&quot; -I&quot;$(QTDIR)\include\QtGui\.&quot; -I&quot;$(RW_DEPENDENCIES)\workspace\RobWork\ext\.&quot; -I&quot;.\.&quot; &quot;.\Assign04.h&quot; -o &quot;.\GeneratedFiles\$(ConfigurationName)\moc_$(InputName).cpp&quot;&#x0D;&#x0A;"
 						AdditionalDependencies="&quot;$(QTDIR)\bin\moc.exe&quot;;$(InputPath)"
 						Outputs="&quot;.\GeneratedFiles\$(ConfigurationName)\moc_$(InputName).cpp&quot;"
 					/>

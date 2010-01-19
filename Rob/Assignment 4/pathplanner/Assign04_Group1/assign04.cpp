@@ -11,12 +11,25 @@
 #define M_PI       3.14159265358979323846
 
 #include <rws/RobWorkStudio.hpp>
+#include <rw/pathplanning/PlannerConstraint.hpp>
+#include <rwlibs/proximitystrategies/ProximityStrategyYaobi.hpp>
+#include <rw/pathplanning/QToQPlanner.hpp>
+#include <rw/pathplanning/QSampler.hpp>
+#include <rwlibs/pathplanners/sbl/SBLPlanner.hpp>
+#include <rw/loaders/path/PathLoader.hpp>
+#include <rw/models/Models.hpp>
 
 using namespace rw::math;
 using namespace rw::common;
 using namespace rw::kinematics;
 using namespace rw::models;
+using namespace rw::pathplanning;
+using namespace rwlibs::proximitystrategies;
+using namespace rwlibs::pathplanners;
 using namespace rwlibs::drawable;
+using namespace rw::proximity;
+using namespace rw::loaders;
+using namespace rw::invkin;
 using namespace std;
 
 assign04::assign04():
@@ -26,123 +39,171 @@ RobWorkStudioPlugin("Assign04_Group1", QIcon("c:\\fanucIcon.png")),
   setupUi(this);
 
   // Connect signals from the ui component to slots implemented by this plugin
-
   connect(btnOpen ,SIGNAL(pressed()), this, SLOT(clickBtnOpen()) );
+  connect(btnMove ,SIGNAL(pressed()), this, SLOT(clickBtnMove()) );
   }
 
 assign04::~assign04() {
 }
 
 void assign04::initialize() {
-  getRobWorkStudio()->stateChangedEvent().add(boost::bind(&assign04::stateChangedListener, this, _1), this);
-  _bolUpdating = false;
+  const double val[] = {-1.571,1.053,-1.068,0,0.3,0};
+  _home = *new Q(6,val); // Configuration for position above writebox
+  _origin = *new Transform3D<double>(Vector3D<double>(0.440,-0.010,0.950),
+      RPY<double>(0.350,0.000,-M_PI)); // Approx (deg) -70, 70, -60, 0, 15, 0
 }
 
-//3
 void assign04::open(WorkCell* workcell) {
   _pWorkCell = workcell;
-
-  //insertFrame("TestFrame"); //CRASH, do it from a button instead.
-
-  // Show WorldFrame
-  addRenderFrame(workcell->getWorldFrame(),0.5);
 }
 
 void assign04::close() {
 }
 
-void assign04::stateChangedListener(const State& state) {
-}
-
 void assign04::clickBtnOpen() {
-  cout << "Selected input file: ";
+  try {
+    cout << "Selected input file: \n\t";
 
-  QString selectedFilter;
-  QString filename = QFileDialog::getOpenFileName(
-    this,
-    "Open file", // Title
-    ".", // Directory
-    "All supported ( *.txt )"
-    " \n All ( *.* )",
-    &selectedFilter);
+    QString selectedFilter;
+    QString filename = QFileDialog::getOpenFileName(
+      this,
+      "Open file", // Title
+      ".", // Directory
+      "All supported ( *.txt )"
+      " \n All ( *.* )",
+      &selectedFilter);
 
-  string file = filename.toStdString();
-  const string ext = StringUtil::getFileExtension(file);
+    string file = filename.toStdString();
+    const string ext = StringUtil::getFileExtension(file);
 
-  if( ext != ".txt" )
-    cout << "Unsupported file. Must be .txt; was: " << ext << endl;
-  else {
-    cout << file << endl << endl;
-    ifstream infile (file.c_str());
-    string line;
-    char l;
-    int a,b,c, index = 0;
-    vX.clear(); vY.clear(); vZ.clear(); vLetters.clear();
+    if( ext != ".txt" )
+      cout << "Unsupported file. Must be .txt; was: " << ext << endl;
+    else {
+      cout << file << endl << endl;
+      ifstream infile (file.c_str());
+      string line;
+      char l;
+      int a,b,c,d, index = 0;
+      _vX.clear(); _vY.clear(); _vZ.clear(); _vLetters.clear(); _density = 0;
 
-    if( infile.is_open() ) {
-      while (! infile.eof() ) {
-        getline (infile, line);
-        if( sscanf(line.c_str(), "Letter = %c", &l) == 1 ) {
-          vLetters.push_back(l);
-          vX.push_back(*new vector<int>());
-          vY.push_back(*new vector<int>());
-          vZ.push_back(*new vector<int>());
+      if( infile.is_open() ) {
+        while (! infile.eof() ) {
+          getline (infile, line);
+          if( sscanf(line.c_str(), "%d\t%d\t%d", &a, &b, &c) == 3 ) {
+            _vX[index].push_back(a);
+            _vY[index].push_back(b);
+            _vZ[index].push_back(c);
+          }
+          else if( sscanf(line.c_str(), "Letter = %c", &l) == 1 ) {
+            _vLetters.push_back(l);
+            _vX.push_back(*new vector<int>());
+            _vY.push_back(*new vector<int>());
+            _vZ.push_back(*new vector<int>());
+          }
+          else if( strstr (line.c_str(),"NEXT_LETTER") != NULL ) {
+            index++;
+          }
+          else if( sscanf(line.c_str(), "Density = %d", &d) == 1 ) {
+            _density = d;
+          }
         }
-        else if( sscanf(line.c_str(), "%d\t%d\t%d", &a, &b, &c) == 3 ) {
-          vX[index].push_back(a);
-          vY[index].push_back(b);
-          vZ[index].push_back(c);
+        cout << "Density: " << _density << endl;
+        for(int i=0;i<index;i++) {
+          cout << "Letter " << _vLetters[i] << ": ";
+          cout << "Size: " << _vX[i].size() << endl;
         }
-        else if( strstr (line.c_str(),"NEXT_LETTER") != NULL ) {
-          index++;
-        }
-      }
-      for(int i=0;i<index;i++) {
-        cout << "Letter " << vLetters[i] << ": ";
-        cout << "Size: " << vX[i].size() << endl;
       }
     }
   }
+  catch (exception& e) {
+    cout << "An error occurred!\n\t" << e.what() << endl;
+  }
+  catch (int e) { cout << "int exception:\n\t" << e << endl; }
+  catch (char e) { cout << "char exception:\n\t" << e << endl; }
+  catch (...) { cout << "An unknown error occurred!" << endl; }
 }
 
-// Inserts a MovableFrame into the workcell with reference to WorldFrame
-MovableFrame* assign04::insertFrame(string name) {
+void assign04::clickBtnMove() {
+  if ( _pWorkCell->getDevices().size() == 0 )
+    cout << "No workcell loaded or no devices in workcell" << endl;
+  else {
+    _pDevice = _pWorkCell->getDevices().front();
+    cout << "Device loaded: " << _pDevice->getName() << endl;
 
-  // Create and add the movable daf frame to WC
-  MovableFrame *newFrame = new MovableFrame(name);
-  _pWorkCell->getStateStructure()->addDAF(newFrame,_pWorkCell->getWorldFrame());
+    const State state = getRobWorkStudio()->getState();
 
-  // Now this is VERY important; remember to update the WC state structure
-  State state = getRobWorkStudio()->getState();
-  state = _pWorkCell->getStateStructure()->upgradeState(state);
+    Q pos = _pDevice->getQ(state);
+    Transform3D<double> tEnd = _pDevice->baseTend(state);
+    cout << "Conf: " << pos << endl;
+    cout << "Current: " << tEnd << endl;
+    cout << "Origin:  " << _origin << endl;
+    std::vector<Q> path;
+    path.push_back(pos);
+    path.push_back(_home);
+    
+    const std::vector<State> states = QToStates(_pDevice, path, state);
 
-  //Initialize transformation
-  Rotation3D<double> targetR(1,0,0,0,1,0,0,0,1);
-  Vector3D<double> targetP(0,0,1.5);
-  Transform3D<double> target(targetP,targetR);
-  newFrame->setTransform(target,state);
-
-  // Attach frame to the reference frame
-  newFrame->attachTo(_pWorkCell->getWorldFrame(),state);
-  getRobWorkStudio()->setState(state);
-
-  return newFrame;
-
+    // Write the sequence of states to a file.
+    PathLoader::storeVelocityTimedStatePath(
+        *_pWorkCell, states, _pDevice->getName() + ".rwplay");
+  }
 }
 
-// Adds a red-green-blue visualization to a frame
-void assign04::addRenderFrame(Frame* frame, float scale) {
+const vector<State> assign04::pathPlanner(vector<Q>& confs, const State& state ) {
+    // The path planning constraint is to avoid collisions.
+    const PlannerConstraint constraint = PlannerConstraint::make( ProximityStrategyYaobi::make(), _pWorkCell, _pDevice, state);
 
-  RenderFrame* pRenderFrame = new RenderFrame(scale);
-  Drawable* pRFDrawable = new Drawable(pRenderFrame);
+    // An SBL based point-to-point path planner.
+    QToQPlannerPtr planner = SBLPlanner::makeQToQPlanner(
+        SBLSetup::make(constraint, _pDevice));
 
-  getRobWorkStudio()->getWorkCellGLDrawer()->addDrawableToFrame(frame, pRFDrawable);
+    std::vector<Q> path;
+    for (int i = 0; i < (confs.size() - 1); i++) {
+        const Q from = confs[i];
+        Q to = confs[i+1];
+        const bool ok = planner->query(from, to, path);
+        if (!ok) {
+            std::cout << "Path " << i << " not found.\n";
+            break;
+        }
+    }
+    /*
+    // A sampler of collision free configurations for the device.
+    QSamplerPtr cfreeQ = QSampler::makeConstrained(
+        QSampler::makeUniform(_pDevice),
+        constraint.getQConstraintPtr());
 
-  return;
+    // Plan 10 paths to sampled collision free configurations.
+    std::vector<Q> path;
+    for (int cnt = 0; cnt < 10; cnt++) {
+        const Q next = cfreeQ->sample();
+        const bool ok = planner->query(pos, next, path);
+        if (!ok) {
+            std::cout << "Path " << cnt << " not found.\n";
+            return;
+        } else {
+            pos = next;
+        }
+    }
+    */
+
+    // Map the configurations to a sequence of states.
+    return QToStates(_pDevice, path, state);
 }
 
-//--------------
-// New functions
-//--------------
+const vector<State> assign04::QToStates(DevicePtr device, vector<Q>& confs, 
+                                        const State& state) {
+  const std::vector<State> states = Models::getStatePath(*device, confs, state);
+  return states;
+}
+
+Q assign04::IKSolver(const Transform3D<>& baseTtool, const State& state) {
+  //rw::invkin::IterativeIK ResolvedRateSolver(_device, _tcpFrame, _state)
+  //
+  //IKMetaSolver metaSolver(_iksolver.get(), _device, (CollisionDetector*)NULL);
+  //metaSolver.setMaxAttempts(50);
+  //std::vector<Q> solutions = metaSolver.solve(baseTtcp, _state);
+  return _home; // To be implemented
+}
 
 Q_EXPORT_PLUGIN(assign04);
