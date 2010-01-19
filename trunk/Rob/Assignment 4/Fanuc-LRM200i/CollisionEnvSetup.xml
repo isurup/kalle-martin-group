@@ -1,0 +1,10 @@
+
+<CollisionSetup>
+    <Exclude>
+        <FramePair first="Box"    second="DeviceBase"/>
+        <FramePair first="Box"    second="LRM200.Base"/>
+        <FramePair first="Box"    second="LRM200.Joint6"/>
+        <FramePair first="Box"    second="LRM200.ToolBase"/>
+        <FramePair first="DeviceBase"   second="LRM200.Base"/>
+    </Exclude>
+</CollisionSetup>
