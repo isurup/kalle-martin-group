@@ -1,3 +1,6 @@
 \section{Path Planning}
 \label{sec:pathplaning}
 
+The path planning part of the RobworkStudio plugin isn't really aptly named as the purpose of the plugin, besides the file parser element, is to translate the parsed Cartesian coordinates into rotation values for each of the robots joints. These are determined by using inverse kinematics (henceforth written as IK). To be more specific, one of the inbuilt iterative IK solvers called ResolvedRateSolver is used through the IK wrapper IKMetaSolver. The values are then stored in so called configurations. A path planner can then determine whether a collision free route between each of the Cartesian coordinates exist. This functionality presents a huge penalty to the total calculation time and has therefore been deactivated by default since paths between each letter coordinate are short and trivial.
+
+To be continued...
