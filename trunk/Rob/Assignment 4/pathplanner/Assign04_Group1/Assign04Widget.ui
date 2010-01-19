@@ -33,6 +33,19 @@
      <string>Open file</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="btnMove">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>70</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Move</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
