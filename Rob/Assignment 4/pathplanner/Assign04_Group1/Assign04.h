@@ -36,8 +36,9 @@ public:
 
 private slots:
 
-	void clickBtnOpen();
-  void clickBtnMove();
+	void clickBtnParse();
+  void clickBtnGenerate();
+  void clickBtnTest();
 
 private:
 
@@ -56,6 +57,16 @@ private:
           rw::models::DevicePtr device,
           std::vector<rw::math::Q>& confs,
           const rw::kinematics::State& state);
+
+  rw::math::Transform3D<double> assign04::offset(double x, double y, double z);
+  rw::math::Transform3D<double> assign04::offset(double x, double y, double z,
+          rw::math::Transform3D<double> t);
+
+  void assign04::updateDevice(rw::math::Q q, rw::kinematics::State state);
+
+  bool assign04::addSolution(rw::math::Q q, std::vector<rw::math::Q>& v);
+
+  bool assign04::writeJNT(std::string name, std::vector<rw::math::Q>& confs);
 
   int _density;
   std::vector<char> _vLetters;
