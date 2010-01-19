@@ -17,6 +17,8 @@
 #include <rw/pathplanning/QSampler.hpp>
 #include <rwlibs/pathplanners/sbl/SBLPlanner.hpp>
 #include <rw/loaders/path/PathLoader.hpp>
+#include <rw/invkin/ResolvedRateSolver.hpp>
+#include <rw/invkin/IKMetaSolver.hpp>
 #include <rw/models/Models.hpp>
 
 using namespace rw::math;
@@ -31,6 +33,7 @@ using namespace rw::proximity;
 using namespace rw::loaders;
 using namespace rw::invkin;
 using namespace std;
+using ::boost::math::abs;
 
 assign04::assign04():
 RobWorkStudioPlugin("Assign04_Group1", QIcon("c:\\fanucIcon.png")),
@@ -39,28 +42,39 @@ RobWorkStudioPlugin("Assign04_Group1", QIcon("c:\\fanucIcon.png")),
   setupUi(this);
 
   // Connect signals from the ui component to slots implemented by this plugin
-  connect(btnOpen ,SIGNAL(pressed()), this, SLOT(clickBtnOpen()) );
-  connect(btnMove ,SIGNAL(pressed()), this, SLOT(clickBtnMove()) );
+  connect(btnParse ,SIGNAL(pressed()), this, SLOT(clickBtnParse()) );
+  connect(btnGenerate ,SIGNAL(pressed()), this, SLOT(clickBtnGenerate()) );
+  connect(btnTest ,SIGNAL(pressed()), this, SLOT(clickBtnTest()) );
   }
 
 assign04::~assign04() {
 }
 
 void assign04::initialize() {
-  const double val[] = {-1.571,1.053,-1.068,0,0.3,0};
+  //const double val[] = {-1.571,1.053,-1.068,0,0.3,0};
+  const double val[] = {-1.571,0,-1.068,0,0.3,0};
   _home = *new Q(6,val); // Configuration for position above writebox
   _origin = *new Transform3D<double>(Vector3D<double>(0.440,-0.010,0.950),
-      RPY<double>(0.350,0.000,-M_PI)); // Approx (deg) -70, 70, -60, 0, 15, 0
+      RPY<double>(0.000,0.000,-M_PI)); // Approx (deg) -70, 70, -60, 0, 15, 0
 }
 
 void assign04::open(WorkCell* workcell) {
   _pWorkCell = workcell;
+  if ( _pWorkCell->getDevices().size() == 0 )
+    cout << "No devices in workcell." << endl;
+  else {
+    _pDevice = _pWorkCell->getDevices().front();
+    cout << "Device loaded: " << _pDevice->getName() << endl << endl;
+    btnParse->setEnabled(true);
+    btnTest->setEnabled(true);
+    inX->setEnabled(true); inY->setEnabled(true); inZ->setEnabled(true);
+  }
 }
 
 void assign04::close() {
 }
 
-void assign04::clickBtnOpen() {
+void assign04::clickBtnParse() {
   try {
     cout << "Selected input file: \n\t";
 
@@ -121,32 +135,97 @@ void assign04::clickBtnOpen() {
   catch (int e) { cout << "int exception:\n\t" << e << endl; }
   catch (char e) { cout << "char exception:\n\t" << e << endl; }
   catch (...) { cout << "An unknown error occurred!" << endl; }
+
+  if( !_vLetters.empty() && (_density != 0) && !_vX[0].empty() )
+    btnGenerate->setEnabled(true);
+  else
+    btnGenerate->setEnabled(false);
 }
 
-void assign04::clickBtnMove() {
-  if ( _pWorkCell->getDevices().size() == 0 )
-    cout << "No workcell loaded or no devices in workcell" << endl;
-  else {
-    _pDevice = _pWorkCell->getDevices().front();
-    cout << "Device loaded: " << _pDevice->getName() << endl;
+void assign04::clickBtnGenerate() {
+  const State state = getRobWorkStudio()->getState();
+  vector<Q> path;
+  Q pos = _pDevice->getQ(state);
 
-    const State state = getRobWorkStudio()->getState();
+  path.push_back(pos);
+  path.push_back(_home);
 
-    Q pos = _pDevice->getQ(state);
-    Transform3D<double> tEnd = _pDevice->baseTend(state);
-    cout << "Conf: " << pos << endl;
-    cout << "Current: " << tEnd << endl;
-    cout << "Origin:  " << _origin << endl;
-    std::vector<Q> path;
-    path.push_back(pos);
-    path.push_back(_home);
+  Transform3D<double> transform, tmp;
+  Q solution;
+  double oldX = -1, oldY = -1, oldZ = -1;
+  int cnt=0, miss=0;
+  bool lift = false;
+  
+  cout << "Generating path." << endl;
+  for( int i=0; i < _vLetters.size(); i++ ) {
+    for( int j=0; j < _vX[i].size(); j++ ) {
+      cnt++;
+      transform = offset(_vX[i][j], _vY[i][j], _vZ[i][j]);
+      
+      if( oldX >= 0 && oldY >= 0 && oldZ >= 0 ) {
+        if( abs((oldX - _vX[i][j])) > (_density + 1) ||
+            abs((oldY - _vY[i][j])) > (_density + 1) ) 
+          lift = true;
+        else
+          lift = false;
+      }
+
+      if( j != 0 && lift ) {
+        tmp = offset(oldX, oldY, oldZ + 10);
+        solution = IKSolver(tmp, state);
+        //path.push_back(solution);
+        if( !addSolution(solution, path) ) miss++;
+      }
+      if( j == 0 || lift ) {
+        tmp = offset(0, 0, 10, transform);
+        solution = IKSolver(tmp, state);
+        //path.push_back(solution);
+        if( !addSolution(solution, path) ) miss++;
+      }
+
+      solution = IKSolver(transform, state);
+      //path.push_back(solution);
+      if( !addSolution(solution, path) ) miss++;
+      oldX = _vX[i][j]; oldY = _vY[i][j]; oldZ = _vZ[i][j];
+      if( cnt % 10 == 0 )
+        cout << ".";
+    }
+    tmp = offset(0, 0, 100, transform);
+    solution = IKSolver(tmp, state);
+    //path.push_back(solution);
+    if( !addSolution(solution, path) ) miss++;
     
-    const std::vector<State> states = QToStates(_pDevice, path, state);
-
-    // Write the sequence of states to a file.
-    PathLoader::storeVelocityTimedStatePath(
-        *_pWorkCell, states, _pDevice->getName() + ".rwplay");
+    cout << "\nGenerated path for the letter: " << _vLetters[i] << endl;
   }
+  path.push_back(_home);
+  cout << "Finished generating path!" << endl;
+  cout << "\tLetter coordinates : " << cnt << endl;
+  cout << "\tPath coordinates   : " << path.size() << endl;
+  cout << "\tDropped coordinates: " << miss << endl;
+
+  const std::vector<State> states = QToStates(_pDevice, path, state);
+
+  // Write the sequence of states to a file.
+  PathLoader::storeVelocityTimedStatePath(
+      *_pWorkCell, states, _pDevice->getName() + ".rwplay");
+  cout << endl;
+}
+
+void assign04::clickBtnTest() {
+  const State state = getRobWorkStudio()->getState();
+
+  Transform3D<double> trans = offset(inX->value(),inY->value(),inZ->value());
+
+  Q solution = IKSolver(trans,state);
+
+  cout << "Testing (" << inX->value() << ", " << inY->value() << ", " 
+       << inZ->value() << "):" << endl;
+  if( !solution.empty() ) {
+    cout << "  Values: " << solution << endl;
+    updateDevice(solution, state);
+  }
+  else
+    cout << "  No solution found." << endl;
 }
 
 const vector<State> assign04::pathPlanner(vector<Q>& confs, const State& state ) {
@@ -197,13 +276,56 @@ const vector<State> assign04::QToStates(DevicePtr device, vector<Q>& confs,
   return states;
 }
 
-Q assign04::IKSolver(const Transform3D<>& baseTtool, const State& state) {
-  //rw::invkin::IterativeIK ResolvedRateSolver(_device, _tcpFrame, _state)
-  //
-  //IKMetaSolver metaSolver(_iksolver.get(), _device, (CollisionDetector*)NULL);
-  //metaSolver.setMaxAttempts(50);
-  //std::vector<Q> solutions = metaSolver.solve(baseTtcp, _state);
-  return _home; // To be implemented
+Q assign04::IKSolver(const Transform3D<double>& baseTtool, const State& state) {
+  ResolvedRateSolver iksolver(_pDevice, state);
+  CollisionDetector *detector = NULL;
+
+  IKMetaSolver metaSolver(&iksolver, _pDevice, detector);
+  metaSolver.setMaxAttempts(50);
+  metaSolver.setStopAtFirst(true); // No way of determining best solution?
+  vector<Q> solutions = metaSolver.solve(baseTtool, state);
+
+  Q out;
+  if( solutions.empty() )
+    out = *new Q();
+  else
+    out = solutions.front();
+  return out; // Always only 1 solution.
+}
+
+Transform3D<double> assign04::offset(double x, double y, double z) {
+  Vector3D<double> v(x/-1000,y/-1000,z/1000);
+  return Transform3D<double>(_origin.P() + v,_origin.R());
+}
+
+Transform3D<double> assign04::offset(double x, double y, double z, Transform3D<double> t) {
+  Vector3D<double> v(x/-1000,y/-1000,z/1000);
+  return Transform3D<double>(t.P() + v, t.R());
+}
+
+void assign04::updateDevice(Q q, State state) {
+  if( _pDevice != NULL ) {
+    _pDevice->setQ(q, state);
+    getRobWorkStudio()->setState(state);
+  }
+}
+
+bool assign04::addSolution(Q q, vector<Q>& v) {
+  bool return_value = false;
+  if( q.size() == 6 ) {
+    v.push_back(q);
+    return_value = true;
+  }
+  return return_value;
+}
+
+bool assign04::writeJNT(string name, vector<Q>& confs) {
+  try {
+    //ofstream jntFile (name);
+  }
+  catch(...) {
+  }
+  return false;
 }
 
 Q_EXPORT_PLUGIN(assign04);
