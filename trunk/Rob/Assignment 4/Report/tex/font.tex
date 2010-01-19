@@ -1,7 +1,7 @@
 \section{Letter Font Application}
 \label{sec:font}
-This section presents letter font model GUI application, the inputs comes from a user, and user can choose a set of settings, the main one is the font, font style, size of letter. This application writes a set of drilling points in to txt file, the txt file also can choose arbitrary a user. The letter font model is implemented under vision (image processing), so all theory from image processing could be applied there.\\
-The purpose of this application is to return letters drilling points, and these drilling points would be used to performing drilling (carving) by robot arm Fanuc 200ib (figure \ref{fig:writingbox}).
+This section presents the letter and font GUI application, the input comes from a user, and the user can choose a set of settings, the main settings are the font, font style and font size. This application writes a set of milling points to an output .txt file. The letter font model is implemented under vision (image processing), so all theory from image processing could be applied there.\\
+The purpose of this application is to return letters milling points, and these milling points would be used to performing milling (carving) by the robot arm Fanuc 200ib (figure \ref{fig:writingbox}).
 
 \begin{figure}[H]
   \centering
@@ -10,7 +10,7 @@ The purpose of this application is to return letters drilling points, and these 
   \label{fig:writingbox}
 \end{figure}
 
-Letter font model is an important step for performing actual (real) letter carving on foam, another step would be inverse kinematics, which path planner uses for planning movements between frames. The application main window is shown in figure  \ref{fig:letterapp}, also there is provided a description of application elements.
+Letter font model is an important step for performing actual (real) letter carving in foam, another step would be inverse kinematics, which the path planner uses for planning movements between frames. The applications main window is shown in figure  \ref{fig:letterapp}, there are also provided a description of the application elements.
 
 \begin{figure}[H]
   \centering
@@ -35,10 +35,11 @@ Letter font model is an important step for performing actual (real) letter carvi
 \item Set the text position according Y (in Cartesian domain) on writing box
 \item The font window, where we can the size, font, font style of text
 \item The start position of writing box
-\item The path of txt file, where are stored each drilling points
+\item The path of txt file, where all the milling points are stored
 \end{enumerate}
+The text fields have been changed to make the understanding of the application easier, for an updated picture see figure \ref{fig:LetterFontsFinal} in appendix.
 
-First by application we set the txt file path, the txt file stores each drilling points information, this information we can see also in C\# application (figure \ref{fig:letterconsole}). Second it is necessary to set writing box position, because according this position would be wrote drilling points, and other settings are optional. 
+The default output path for the generated .txt file is the same directory as the application directory but can be changed to a user defined. The output file stores all the milling points, this information can also be seen in the C\# application (figure \ref{fig:letterconsole}). Second it is necessary to set the writing box position, because according to this position, is where the milling points start, and the other settings are optional. The density option is also written to the output file because it is used by the RobWorkStudio plugin to find the gaps in the letters and of course also to define how exact the milling tool will follow the letters outlines.
 
 \begin{figure}[H]
   \centering
@@ -47,10 +48,10 @@ First by application we set the txt file path, the txt file stores each drilling
   \label{fig:letterconsole}
 \end{figure}
 
-As we can see from figure \ref{fig:letterconsole} each letter’s drilling point are separated, because the image is consider as a set of letters. We could do not separate the letters, but then it would be consider as a set of drilling positions, and we would not be able carving out letters, just drilling. We could react or take some actions then the letter’s drilling points finish, or skip it.
+As it can be seen in figure \ref{fig:letterconsole} each letter will be milled until it is finished before it begins on a new one. If this weren't the case the milling tool would never know when a new letter had begun and wouldn't rise the tool to start at the new starting point.
 
 \subsection{Letter labeling application}
-We deal with image in byte mode and the image is represented like figure \ref{fig:imagebyte}. As we can see the image is composed of R-red, G-green, B-blue bytes and padding bytes. We are interesting only in RGB bytes, the padding bytes describe how image is stored in memory, and they do not have any influence of displaying image. The programming becomes complex, because in order to jump to next image’s row we need count offset (which is equal (stride – images width)), and in order to access to next pixel we need to jump by three bytes.
+The image is dealt with in byte mode and the image is represented like a figure \ref{fig:imagebyte}. As we can see the image is composed of R-red, G-green, B-blue bytes and padding bytes. The only thing that is interesting are RGB bytes, the padding bytes describes how the image is stored in memory, and they do not have any influence of displaying the image. The programming becomes complex, because in order to jump to the next image row we need the count offset (which is equal to (stride - image width)), and in order to access the next pixel we need to jump three bytes.
 
 \begin{figure}[H]
   \centering
@@ -59,27 +60,28 @@ We deal with image in byte mode and the image is represented like figure \ref{fi
   \label{fig:imagebyte}
 \end{figure}
 
-We deal with two images, one image is an original, and another image is was a clone of original image. In clone image we access to each pixel bytes, and use such image as an array, where we change values, we do it in such way because it is faster, and easier access to write values, rather than to create a huge array, and write by own functions.
+There are two images, one image is the original, and the other image is a clone of the original one. In the clone image each pixel bytes are accessed as an array, where the values are changed, it's done
+so, because it is faster, and easier to access to write values, rather than to create a huge array.
 
- Was used 9 pixels connectivity matrix figure  \ref{fig:pixelmatrix}, there are a lot of options but we chose such one, it is not too big, by the way and easy manages such shape of matrix (not like triangles or cross shape).  
+A 8-connectivity matrix were used see figure \ref{fig:pixelmatrix}, there are a lot of options but this one were chosen, it is not too big and it is easy to manage this type of matrix (not like triangles or cross shape).  
 
 \begin{figure}[H]
   \centering
   \includegraphics[scale= 0.6]{source/pixelmatrix.png}
-  \caption{9 pixels’ connectivity matrix}
+  \caption{9 pixel connectivity matrix}
   \label{fig:pixelmatrix}
 \end{figure}
 
-Connectivity matrix is used to take values from original image and write the result to a clone image. Another reason of choosing 3x3 connectivity matrix is what we loose only images corners pixels. It was possibility to choose 2x2 matrix, but the time of image processing would significantly increase, and we would also loose also the corner pixels.
+The connectivity matrix is used to take values from the original image and write the result to a clone image. Another reason of choosing 3x3 connectivity matrix is that we loose only the images corner pixels. It was a possibility to choose 2x2 matrix, but the time of image processing would increase significantly, and the corner pixels would also be lost in the process.
 
 \begin{figure}[H]
   \centering
   \includegraphics[scale= 0.6]{source/matriximages.png}
-  \caption{9 pixels’ connectivity matrix over image}
+  \caption{9 pixels connectivity matrix over image}
   \label{fig:matriximages}
 \end{figure}
 
-The letters (objects) labeling algorithm is shown in figure \ref{fig:matriximages}. At the beginning the image is converted to binary, it allow us easier to deal with information, we set non-white pixels to black. 
+The letters (objects) labeling algorithm is shown in figure \ref{fig:matriximages}. At the beginning the image is converted to binary, it made it easier to deal with the information, non-white pixels were set to black. 
 
 \begin{figure}[H]
   \centering
@@ -88,7 +90,7 @@ The letters (objects) labeling algorithm is shown in figure \ref{fig:matriximage
   \label{fig:labeling}
 \end{figure}
 
-When we have a binary image we have only two values: black – which represent the letter (or object), and white – which we assume as background. In the next step we take pixels from connectivity matrix and check if exists black pixels (which belongs to letter or object), if there are no black pixels we move the connectivity matrix by one pixel in particular direction and repeat the black pixel checking. But if there are black pixels, we perform checking in order to figure out or we need to create a new label (detected new object) or some of these pixels belongs to before detected letter (or object), and it is enough to rewrite the previous labels. The example of labeling text letters is shown in figure \ref{fig:labelingexample}. We have a binary image this image is called “clone image” it is a copy of original.  By performing letters labeling algorithm (figure \ref{fig:labeling}) we can detect how much different letters (objects) we have. The important thing is what we should twice repeat letters labeling algorithm, at first time we arbitrary choose from which images corner to start, for instance it  is convenient to start  from the top/left corner, the second time of repeating algorithm we need to choose an opposite corner it would be bottom/right.
+When a binary image is used there are only two values: black which represent the letter (or object), and white which are assumed to be the background. In the next step pixels from the connectivity matrix are looked at and a check if black pixels (which belongs to letter or object) exists are done, if there are no black pixels a move of the connectivity matrix by one pixel in a particular direction and repeat the black pixel checking are done. But if there are black pixels, check are performed in order to figure out if a new label (detected new object) needs to be created, or some of these pixels belongs to before detected letter (or object), and it is enough to rewrite the previous labels. The example of labeling text letters is shown in figure \ref{fig:labelingexample}. We have a binary image this image is called “clone image” it is a copy of original.  By performing letters labeling algorithm (figure \ref{fig:labeling}) we can detect how much different letters (objects) we have. The important thing is what we should twice repeat letters labeling algorithm, at first time we arbitrary choose from which images corner to start, for instance it  is convenient to start  from the top/left corner, the second time of repeating algorithm we need to choose an opposite corner it would be bottom/right.
 
 \begin{figure}[H]
   \centering
