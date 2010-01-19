@@ -1,7 +1,17 @@
-<SerialDevice name="LRM200">
- <Frame name="Base">
- 
- <Drawable name="Table_Leg_1">
+<WorkCell name="FanucScene">
+
+<Frame name="Box" refframe="WORLD">
+  <RPY> 0 0 0 </RPY> <Pos> 0 0 0 </Pos>
+  <Drawable name="Write_Box" refframe="Box">
+      <RPY>90 0 0</RPY>
+      <Pos>0.411605 -0.260634 0.95</Pos>
+      <Box x="0.59" y="0.235" z="0.2" />
+  </Drawable>
+</Frame>
+
+<Frame name="DeviceBase" refframe="WORLD">
+  <RPY> 0 0 0 </RPY> <Pos> 0 0 0 </Pos>
+  <Drawable name="Table_Leg_1">
         <RPY>0 0 0</RPY>
         <Pos>0.725 0.725 1.025</Pos>
         <Box x="0.1" y="0.1" z="2.05" />
@@ -30,18 +40,22 @@
         <Pos>0 0 0.8</Pos>
         <Box x="1.45" y="1.45" z="0.1" />
     </Drawable>
-
+<!--
 	<Drawable name="Write_Box">
         <RPY>90 0 0</RPY>
         <Pos>0.1875 -0.21 0.95</Pos>
         <Box x="0.59" y="0.235" z="0.2" />
     </Drawable>
-	 		
-	<Drawable name="Robot_Box">
-        <RPY>90 0 0</RPY>
-        <Pos>-0.2475 -0.26 0.915</Pos>
-        <Box x="0.43" y="0.295" z="0.13" />
-    </Drawable>
+-->
+</Frame>
+
+<SerialDevice name="LRM200">
+ <Frame name="Base" refframe="WORLD">
+ 	<Drawable name="Robot_Box">
+      <RPY>90 0 0</RPY>
+      <Pos>-0.2475 -0.26 0.915</Pos>
+      <Box x="0.43" y="0.295" z="0.13" />
+  </Drawable>
 </Frame>
  
  <Joint name="Joint1" type="Revolute">
@@ -64,7 +78,7 @@
 
   <!--
   Note: Here we can callibrate Tool frame by shifting parameters a and b (read document), parameters
-  !-->
+  
    <Frame name="Intermediate_Tool_Frame" refframe="Joint6">   
 		 <RPY> 0 -45 0 </RPY> <Pos> 0 0 -0.08</Pos>
  </Frame>  
@@ -79,14 +93,17 @@
   <RPY>180 180 0</RPY>
   <Pos>0 0 -0.08</Pos>
  </Frame>
-
+-->
+ <Frame name="ToolBase" refframe="Joint6">
+    	 <RPY> 0 45 180 </RPY> <Pos> -0.0050868 -0.0005 -0.20030</Pos>
+ </Frame>
   
- <PosLimit refjoint="Joint1" min="-170" max="170" />
- <PosLimit refjoint="Joint2" min="-100" max="100" />
- <PosLimit refjoint="Joint3" min="-194" max="194" />
- <PosLimit refjoint="Joint4" min="-190" max="190" />
- <PosLimit refjoint="Joint5" min="-120" max="120" />
- <PosLimit refjoint="Joint6" min="-360" max="360" />
+ <PosLimit refjoint="Joint1" min="-116" max="26" />
+ <PosLimit refjoint="Joint2" min="0" max="100" />
+ <PosLimit refjoint="Joint3" min="-120" max="0" />
+ <PosLimit refjoint="Joint4" min="-90" max="90" />
+ <PosLimit refjoint="Joint5" min="-90" max="90" />
+ <PosLimit refjoint="Joint6" min="-60" max="60" />
 
  <VelLimit refjoint="Joint1" max="100" />
  <VelLimit refjoint="Joint2" max="100" />
@@ -117,11 +134,19 @@
  <Drawable name="J6Geo" refframe="Joint6">
   <RPY> 0 90 0 </RPY> <Pos>-0.325 0 0.44</Pos>  
   <Polytope file="Geometry/JT6-LR200i-1" /></Drawable> 
+  <!--
  <Drawable name="HolderGeo" refframe="ToolFrame">
   <RPY>90 0 0 </RPY> <Pos> 0.0158 0 -0.0158 </Pos>
   <Polytope file="Geometry/toolflange2" />
+ </Drawable>
+ -->
+ <Drawable name="HolderGeo" refframe="ToolBase">
+   <RPY>-90 0 0 </RPY> <Pos> 0 0 0 </Pos>
+   <Polytope file="Geometry/toolflange2" />
  </Drawable>
   
  <CollisionSetup file="CollisionSetup.xml" />
   
 </SerialDevice>
+<CollisionSetup file="CollisionEnvSetup.xml" />
+</WorkCell>
