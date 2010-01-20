@@ -63,10 +63,9 @@ private:
           rw::math::Transform3D<double> t);
 
   void assign04::updateDevice(rw::math::Q q, rw::kinematics::State state);
-
   bool assign04::addSolution(rw::math::Q q, std::vector<rw::math::Q>& v);
-
   bool assign04::writeJNT(std::string name, std::vector<rw::math::Q>& confs);
+  double assign04::rToD(double r);
 
   int _density;
   std::vector<char> _vLetters;
