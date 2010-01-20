@@ -52,7 +52,7 @@ assign04::~assign04() {
 
 void assign04::initialize() {
   //const double val[] = {-1.571,1.053,-1.068,0,0.3,0};
-  const double val[] = {-1.571,0,-1.068,0,0.3,0};
+  const double val[] = {0,M_PI/2,-M_PI/2,0,0,0};
   _home = *new Q(6,val); // Configuration for position above writebox
   _origin = *new Transform3D<double>(Vector3D<double>(0.440,-0.010,0.950),
       RPY<double>(0.000,0.000,-M_PI)); // Approx (deg) -70, 70, -60, 0, 15, 0
@@ -229,8 +229,6 @@ void assign04::clickBtnTest() {
   }
   else
     cout << "  No solution found." << endl;
-  cout << "rToD test(pi): " << rToD(double(M_PI)) << endl;
-  cout << "rToD test(-1.2): " << rToD(double(-1.2)) << endl;
 }
 
 const vector<State> assign04::pathPlanner(vector<Q>& confs, const State& state ) {
