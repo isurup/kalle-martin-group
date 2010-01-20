@@ -147,7 +147,7 @@ void assign04::clickBtnGenerate() {
   vector<Q> path;
   Q pos = _pDevice->getQ(state);
 
-  path.push_back(pos);
+  //path.push_back(pos);
   path.push_back(_home);
 
   Transform3D<double> transform, tmp;
@@ -203,6 +203,9 @@ void assign04::clickBtnGenerate() {
   cout << "\tPath coordinates   : " << path.size() << endl;
   cout << "\tDropped coordinates: " << miss << endl;
 
+  if( writeJNT(_pDevice->getName() + ".jnt", path) )
+    cout << "jnt-file created!" << endl;
+
   const std::vector<State> states = QToStates(_pDevice, path, state);
 
   // Write the sequence of states to a file.
@@ -226,6 +229,8 @@ void assign04::clickBtnTest() {
   }
   else
     cout << "  No solution found." << endl;
+  cout << "rToD test(pi): " << rToD(double(M_PI)) << endl;
+  cout << "rToD test(-1.2): " << rToD(double(-1.2)) << endl;
 }
 
 const vector<State> assign04::pathPlanner(vector<Q>& confs, const State& state ) {
@@ -320,12 +325,28 @@ bool assign04::addSolution(Q q, vector<Q>& v) {
 }
 
 bool assign04::writeJNT(string name, vector<Q>& confs) {
+  bool return_value = false;
   try {
-    //ofstream jntFile (name);
+    if( confs.size() > 0 ) {
+      FILE * pFile;
+      pFile = fopen(name.c_str(),"w");
+      int i=0;
+      fprintf(pFile, "JNT, %d, %#.4f, %#.4f, %#.4f, %#.4f, %#.4f, %#.4f, 0, 5000, 4, 1500, 10, 10\n", i+1, rToD(confs[i][0]), rToD(confs[i][1]), rToD(confs[i][2]), rToD(confs[i][3]), rToD(confs[i][4]), rToD(confs[i][5]));
+      for( i=1; i < confs.size()-1; i++ )
+        fprintf(pFile, "JNT, %d, %#.4f, %#.4f, %#.4f, %#.4f, %#.4f, %#.4f, 0, 200, 4, 1500, 10, 75\n", i+1, rToD(confs[i][0]), rToD(confs[i][1]), rToD(confs[i][2]), rToD(confs[i][3]), rToD(confs[i][4]), rToD(confs[i][5]));
+      fprintf(pFile, "JNT, %d, %#.4f, %#.4f, %#.4f, %#.4f, %#.4f, %#.4f, 0, 5000, 4, 1500, 10, 10\n", i+1, rToD(confs[i][0]), rToD(confs[i][1]), rToD(confs[i][2]), rToD(confs[i][3]), rToD(confs[i][4]), rToD(confs[i][5]));
+      fclose (pFile);
+      return_value = true;
+    }
   }
   catch(...) {
+    cout << "Unhandled IO exception!" << endl;
   }
-  return false;
+  return return_value;
+}
+
+double assign04::rToD(double r) {
+  return r*180/M_PI;
 }
 
 Q_EXPORT_PLUGIN(assign04);
