@@ -327,10 +327,18 @@ bool assign04::writeJNT(string name, vector<Q>& confs) {
       FILE * pFile;
       pFile = fopen(name.c_str(),"w");
       int i=0;
-      fprintf(pFile, "JNT, %d, %#.4f, %#.4f, %#.4f, %#.4f, %#.4f, %#.4f, 0, 5000, 4, 1500, 10, 10\n", i+1, rToD(confs[i][0]), rToD(confs[i][1]), rToD(confs[i][2]), rToD(confs[i][3]), rToD(confs[i][4]), rToD(confs[i][5]));
-      for( i=1; i < confs.size()-1; i++ )
-        fprintf(pFile, "JNT, %d, %#.4f, %#.4f, %#.4f, %#.4f, %#.4f, %#.4f, 0, 200, 4, 1500, 10, 75\n", i+1, rToD(confs[i][0]), rToD(confs[i][1]), rToD(confs[i][2]), rToD(confs[i][3]), rToD(confs[i][4]), rToD(confs[i][5]));
-      fprintf(pFile, "JNT, %d, %#.4f, %#.4f, %#.4f, %#.4f, %#.4f, %#.4f, 0, 5000, 4, 1500, 10, 10\n", i+1, rToD(confs[i][0]), rToD(confs[i][1]), rToD(confs[i][2]), rToD(confs[i][3]), rToD(confs[i][4]), rToD(confs[i][5]));
+      double j1, j2, j3, j4, j5, j6;
+      j1 = rToD(confs[i][0]); j2 = rToD(confs[i][1]); j3 = rToD(confs[i][2]);
+      j4 = rToD(confs[i][3]); j5 = rToD(confs[i][4]); j6 = rToD(confs[i][5]);
+      fprintf(pFile, "JNT, %d, %#.4f, %#.4f, %#.4f, %#.4f, %#.4f, %#.4f, 0, 5000, 4, 1500, 10, 10\n", i+1, j1, j2, j3+(2*j2), j4, j5, j6);
+      for( i=1; i < confs.size()-1; i++ ) {
+        j1 = rToD(confs[i][0]); j2 = rToD(confs[i][1]); j3 = rToD(confs[i][2]);
+        j4 = rToD(confs[i][3]); j5 = rToD(confs[i][4]); j6 = rToD(confs[i][5]);
+        fprintf(pFile, "JNT, %d, %#.4f, %#.4f, %#.4f, %#.4f, %#.4f, %#.4f, 0, 200, 4, 1500, 10, 75\n", i+1, j1, j2, j3+(2*j2), j4, j5, j6);
+      }
+      j1 = rToD(confs[i][0]); j2 = rToD(confs[i][1]); j3 = rToD(confs[i][2]);
+      j4 = rToD(confs[i][3]); j5 = rToD(confs[i][4]); j6 = rToD(confs[i][5]);
+      fprintf(pFile, "JNT, %d, %#.4f, %#.4f, %#.4f, %#.4f, %#.4f, %#.4f, 0, 5000, 4, 1500, 10, 10\n", i+1, j1, j2, j3+(2*j2), j4, j5, j6);
       fclose (pFile);
       return_value = true;
     }
