@@ -29,5 +29,8 @@ The main part of the plugin handles the conversion from the parsed Cartesian coo
 
 \subsubsection{Implementation}
 \label{sec:pathplanningImpl}
-
-
+The solver is called when the user presses the \textit{generate} button which is only available if the parse button has previously been pressed and a valid file has been selected.\\
+When the \textit{generate} button is clicked, the State is updated to a State with the robot device in the pregenerated ''home'' configuration close to the working area. This is preferable when using the IK solver since it iteratively tries to solve the Cartesian coordinates based on the current State and therefore might reduce the total number of iterations needed to solve the problem.\\
+It then iteratively solves each letter coordinate taken in relation to the workarea origin. During this it takes into consideration the distance from the previous coordinate to the current, and if this is larger than the density value of the letter coordinates, the tool head is lifted by inserting two additional configurations with increased Z-values.\\
+When all coordinates has been solved or failed, the vector array of configurations is parsed to a function called \textit{writeJNT}. This function uses fprintf to create a string with the joint values formated in and time frame constant added. This is done for each configuration and creates a file in the application directory called \%devicename\%.jnt.\\
+Additionally the configurations are converted to states and written to a replay file which allows the user to simulate the output path in RobWorkStudio. This file is also placed in the application directory and is called \%devicename\%.rwplay.
