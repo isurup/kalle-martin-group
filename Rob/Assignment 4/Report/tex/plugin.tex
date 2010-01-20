@@ -15,10 +15,17 @@ To parse an input file a list of criteria must be met:
 
 If an input file respects this specification the parser will most likely parse the file successfully.\\
 
+The actual implementation of the parser is described in the following section.
 
+\subsubsection{Implementation}
+\label{sec:parserImpl}
+Uses simple sscanf (formatted string reader) and strstr (locate substring) to parse input file which is read by using ifstream (input file stream). All parse functionality is C portable, primarily because the programmer was familiar with these functionalities.
 
 \subsection{Path planning and joint angle solving}
 \label{sec:pathplanning}
-The path planning part of the RobworkStudio plugin isn't really aptly named as the purpose of the plugin, besides the file parser element, is to translate the parsed Cartesian coordinates into rotation values for each of the robots joints. These are determined by using inverse kinematics (henceforth written as IK). To be more specific, one of the inbuilt iterative IK solvers called ResolvedRateSolver is used through the IK wrapper IKMetaSolver. The values are then stored in so called configurations. A path planner can then determine whether a collision free route between each of the Cartesian coordinates exist. This functionality presents a huge penalty to the total calculation time and has therefore been deactivated by default since paths between each letter coordinate are short and trivial.
+Despite its name, path planning is not a feature that is used at all in the final implementation of the plugin. The functionality is implemented based on the Robworks manual, but the overhead imposed by the planner is considerable and the gain was deemed insignificant in the end since mostly all coordinates are inside the target milling material and therefore either always or never collides with an object. In addition the paths between these coordinates are generally short and trivial, rendering the pathPlanner unnecessary. A function called \textit{pathPlanner} exists in the project namespace but is never used and is only provided as an addon for future use.\\
 
-To be continued...
+The main part of the plugin handles the conversion from the parsed Cartesian coordinates into rotation values for each of the robots joints. These are determined by using inverse kinematics (henceforth written as IK). More specifically, one of the inbuilt iterative IK solvers called ResolvedRateSolver is used through the IK wrapper IKMetaSolver. The values are then stored in a vector array of configurations. This array is passed to a function that converts each configuration into a joint parameter configuration and printed to the output jnt file.
+
+\subsubsection{Implementation}
+\label{sec:pathplanningImpl}
