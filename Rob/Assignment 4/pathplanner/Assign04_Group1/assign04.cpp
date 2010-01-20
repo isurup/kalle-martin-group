@@ -52,7 +52,7 @@ assign04::~assign04() {
 
 void assign04::initialize() {
   //const double val[] = {-1.571,1.053,-1.068,0,0.3,0};
-  const double val[] = {0,M_PI/2,-M_PI/2,0,0,0};
+  const double val[] = {0,M_PI/4,-M_PI/4,0,0,0};
   _home = *new Q(6,val); // Configuration for position above writebox
   _origin = *new Transform3D<double>(Vector3D<double>(0.440,-0.010,0.950),
       RPY<double>(0.000,0.000,-M_PI)); // Approx (deg) -70, 70, -60, 0, 15, 0
@@ -143,11 +143,9 @@ void assign04::clickBtnParse() {
 }
 
 void assign04::clickBtnGenerate() {
-  const State state = getRobWorkStudio()->getState();
   vector<Q> path;
-  Q pos = _pDevice->getQ(state);
-
-  //path.push_back(pos);
+  updateDevice(_home, getRobWorkStudio()->getState() );
+  const State state = getRobWorkStudio()->getState();
   path.push_back(_home);
 
   Transform3D<double> transform, tmp;
