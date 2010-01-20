@@ -1,0 +1,24 @@
+\section{RobworkStudio plugin}
+\label{sec:plugin}
+In addition to the Letter Font application a plugin for RobworkStudio has been created. The purpose of this plugin is to read Cartesian coordinates from a file similar to the one created by the Letter Font program and then output both a RobworkStudio simulation file and a jnt-file for direct use with the Fanuc robot.
+
+\subsection{Parser}
+\label{sec:parser}
+To parse an input file a list of criteria must be met:
+\begin{itemize}
+	\item Txt file format. The parser only accepts files with the extension txt, even if the files are written in any form of clear text. 
+	\item Letter allocation. Coordinates are allocated into subgroups according to letters. The parser scans for the keyword \textit{Letter = \$} to signify a new group of coordinates allocated to a specific letter. A letter can be any character or number except space.
+	\item Letter separation. Letters are separated by the keyword \textit{NEXT\_LETTER} to signify the end of a group.
+	\item Coordinate formating. Coordinates must be on individual lines, each component separated by a tabular. Coordinates are assumed to be integer (pixel) values corresponding to millimeter offsets on the individual axes from an origin specified by the plugin based on the selected robot device. The X axis specifies the height of text, 0 and negative being furthest from the robot. The Y axis specifies the width of the text, with 0 and negative to the left of the robot. The Z axis specifies the elevation of the toolhead when milling, with 0 at table level and positive values elevating the drill above it.
+	\item Density specification. The toolhead will be lifted with a fixed value when moving between letters. This is to avoid carving connecting paths between them. To enable the plugin to lift the toolhead when milling complex letters or gaps in these, the density of coordinates must be specified in the file with the keyword \textit{Density = \$}. The parser assumes that coordinate density is quadratic and therefore equal on both the X and Y axes.
+\end{itemize}
+
+If an input file respects this specification the parser will most likely parse the file successfully.\\
+
+
+
+\subsection{Path planning and joint angle solving}
+\label{sec:pathplanning}
+The path planning part of the RobworkStudio plugin isn't really aptly named as the purpose of the plugin, besides the file parser element, is to translate the parsed Cartesian coordinates into rotation values for each of the robots joints. These are determined by using inverse kinematics (henceforth written as IK). To be more specific, one of the inbuilt iterative IK solvers called ResolvedRateSolver is used through the IK wrapper IKMetaSolver. The values are then stored in so called configurations. A path planner can then determine whether a collision free route between each of the Cartesian coordinates exist. This functionality presents a huge penalty to the total calculation time and has therefore been deactivated by default since paths between each letter coordinate are short and trivial.
+
+To be continued...
