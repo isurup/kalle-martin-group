@@ -28,12 +28,12 @@ public final class Scanner {
 
 // isOperator returns true iff the given character is an operator character.
 
-  private boolean isOperator(char c) {
-    return (c == '+' || c == '-' || c == '*' || c == '/' ||
-	    c == '=' || c == '<' || c == '>' || c == '\\' ||
-	    c == '&' || c == '@' || c == '%' || c == '^' ||
-	    c == '?');
-  }
+  //private boolean isOperator(char c) {
+  //  return (c == '+' || c == '-' || c == '*' || c == '/' ||
+  //	    c == '=' || c == '<' || c == '>' || c == '\\' ||
+  //	    c == '&' || c == '@' || c == '%' || c == '^' ||
+  //	    c == '?');
+  //}
 
 
 ///////////////////////////////////////////////////////////////////////////////
