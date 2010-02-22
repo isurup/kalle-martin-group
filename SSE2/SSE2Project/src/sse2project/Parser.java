@@ -9,86 +9,86 @@ package sse2project;
  *
  * @author Kalle
  */
-package Triangle.SyntacticAnalyzer;
 
-import Triangle.ErrorReporter;
-import Triangle.AbstractSyntaxTrees.ActualParameter;
-import Triangle.AbstractSyntaxTrees.ActualParameterSequence;
-import Triangle.AbstractSyntaxTrees.ArrayAggregate;
-import Triangle.AbstractSyntaxTrees.ArrayExpression;
-import Triangle.AbstractSyntaxTrees.ArrayTypeDenoter;
-import Triangle.AbstractSyntaxTrees.AssignCommand;
-import Triangle.AbstractSyntaxTrees.BinaryExpression;
-import Triangle.AbstractSyntaxTrees.CallCommand;
-import Triangle.AbstractSyntaxTrees.CallExpression;
-import Triangle.AbstractSyntaxTrees.CharacterExpression;
-import Triangle.AbstractSyntaxTrees.CharacterLiteral;
-import Triangle.AbstractSyntaxTrees.Command;
-import Triangle.AbstractSyntaxTrees.ConstActualParameter;
-import Triangle.AbstractSyntaxTrees.ConstDeclaration;
-import Triangle.AbstractSyntaxTrees.ConstFormalParameter;
-import Triangle.AbstractSyntaxTrees.Declaration;
-import Triangle.AbstractSyntaxTrees.DotVname;
-import Triangle.AbstractSyntaxTrees.EmptyActualParameterSequence;
-import Triangle.AbstractSyntaxTrees.EmptyCommand;
-import Triangle.AbstractSyntaxTrees.EmptyFormalParameterSequence;
-import Triangle.AbstractSyntaxTrees.Expression;
-import Triangle.AbstractSyntaxTrees.FieldTypeDenoter;
-import Triangle.AbstractSyntaxTrees.FormalParameter;
-import Triangle.AbstractSyntaxTrees.FormalParameterSequence;
-import Triangle.AbstractSyntaxTrees.FuncActualParameter;
-import Triangle.AbstractSyntaxTrees.FuncDeclaration;
-import Triangle.AbstractSyntaxTrees.FuncFormalParameter;
-import Triangle.AbstractSyntaxTrees.Identifier;
-import Triangle.AbstractSyntaxTrees.IfCommand;
-import Triangle.AbstractSyntaxTrees.IfExpression;
-import Triangle.AbstractSyntaxTrees.IntegerExpression;
-import Triangle.AbstractSyntaxTrees.IntegerLiteral;
-import Triangle.AbstractSyntaxTrees.LetCommand;
-import Triangle.AbstractSyntaxTrees.LetExpression;
-import Triangle.AbstractSyntaxTrees.MultipleActualParameterSequence;
-import Triangle.AbstractSyntaxTrees.MultipleArrayAggregate;
-import Triangle.AbstractSyntaxTrees.MultipleFieldTypeDenoter;
-import Triangle.AbstractSyntaxTrees.MultipleFormalParameterSequence;
-import Triangle.AbstractSyntaxTrees.MultipleRecordAggregate;
-import Triangle.AbstractSyntaxTrees.Operator;
-import Triangle.AbstractSyntaxTrees.ProcActualParameter;
-import Triangle.AbstractSyntaxTrees.ProcDeclaration;
-import Triangle.AbstractSyntaxTrees.ProcFormalParameter;
-import Triangle.AbstractSyntaxTrees.Program;
-import Triangle.AbstractSyntaxTrees.RecordAggregate;
-import Triangle.AbstractSyntaxTrees.RecordExpression;
-import Triangle.AbstractSyntaxTrees.RecordTypeDenoter;
-import Triangle.AbstractSyntaxTrees.SequentialCommand;
-import Triangle.AbstractSyntaxTrees.SequentialDeclaration;
-import Triangle.AbstractSyntaxTrees.SimpleTypeDenoter;
-import Triangle.AbstractSyntaxTrees.SimpleVname;
-import Triangle.AbstractSyntaxTrees.SingleActualParameterSequence;
-import Triangle.AbstractSyntaxTrees.SingleArrayAggregate;
-import Triangle.AbstractSyntaxTrees.SingleFieldTypeDenoter;
-import Triangle.AbstractSyntaxTrees.SingleFormalParameterSequence;
-import Triangle.AbstractSyntaxTrees.SingleRecordAggregate;
-import Triangle.AbstractSyntaxTrees.SubscriptVname;
-import Triangle.AbstractSyntaxTrees.TypeDeclaration;
-import Triangle.AbstractSyntaxTrees.TypeDenoter;
-import Triangle.AbstractSyntaxTrees.UnaryExpression;
-import Triangle.AbstractSyntaxTrees.VarActualParameter;
-import Triangle.AbstractSyntaxTrees.VarDeclaration;
-import Triangle.AbstractSyntaxTrees.VarFormalParameter;
-import Triangle.AbstractSyntaxTrees.Vname;
-import Triangle.AbstractSyntaxTrees.VnameExpression;
-import Triangle.AbstractSyntaxTrees.WhileCommand;
+import sse2project.AbstractSyntaxTrees.Collaboration;
+//import Triangle.ErrorReporter;
+//import Triangle.AbstractSyntaxTrees.ActualParameter;
+//import Triangle.AbstractSyntaxTrees.ActualParameterSequence;
+//import Triangle.AbstractSyntaxTrees.ArrayAggregate;
+//import Triangle.AbstractSyntaxTrees.ArrayExpression;
+//import Triangle.AbstractSyntaxTrees.ArrayTypeDenoter;
+//import Triangle.AbstractSyntaxTrees.AssignCommand;
+//import Triangle.AbstractSyntaxTrees.BinaryExpression;
+//import Triangle.AbstractSyntaxTrees.CallCommand;
+//import Triangle.AbstractSyntaxTrees.CallExpression;
+//import Triangle.AbstractSyntaxTrees.CharacterExpression;
+//import Triangle.AbstractSyntaxTrees.CharacterLiteral;
+//import Triangle.AbstractSyntaxTrees.Command;
+//import Triangle.AbstractSyntaxTrees.ConstActualParameter;
+//import Triangle.AbstractSyntaxTrees.ConstDeclaration;
+//import Triangle.AbstractSyntaxTrees.ConstFormalParameter;
+//import Triangle.AbstractSyntaxTrees.Declaration;
+//import Triangle.AbstractSyntaxTrees.DotVname;
+//import Triangle.AbstractSyntaxTrees.EmptyActualParameterSequence;
+//import Triangle.AbstractSyntaxTrees.EmptyCommand;
+//import Triangle.AbstractSyntaxTrees.EmptyFormalParameterSequence;
+//import Triangle.AbstractSyntaxTrees.Expression;
+//import Triangle.AbstractSyntaxTrees.FieldTypeDenoter;
+//import Triangle.AbstractSyntaxTrees.FormalParameter;
+//import Triangle.AbstractSyntaxTrees.FormalParameterSequence;
+//import Triangle.AbstractSyntaxTrees.FuncActualParameter;
+//import Triangle.AbstractSyntaxTrees.FuncDeclaration;
+//import Triangle.AbstractSyntaxTrees.FuncFormalParameter;
+import sse2project.AbstractSyntaxTrees.Identifier;
+//import Triangle.AbstractSyntaxTrees.IfCommand;
+//import Triangle.AbstractSyntaxTrees.IfExpression;
+//import Triangle.AbstractSyntaxTrees.IntegerExpression;
+import sse2project.AbstractSyntaxTrees.IntegerLiteral;
+//import Triangle.AbstractSyntaxTrees.LetCommand;
+//import Triangle.AbstractSyntaxTrees.LetExpression;
+//import Triangle.AbstractSyntaxTrees.MultipleActualParameterSequence;
+//import Triangle.AbstractSyntaxTrees.MultipleArrayAggregate;
+//import Triangle.AbstractSyntaxTrees.MultipleFieldTypeDenoter;
+//import Triangle.AbstractSyntaxTrees.MultipleFormalParameterSequence;
+//import Triangle.AbstractSyntaxTrees.MultipleRecordAggregate;
+//import Triangle.AbstractSyntaxTrees.Operator;
+//import Triangle.AbstractSyntaxTrees.ProcActualParameter;
+//import Triangle.AbstractSyntaxTrees.ProcDeclaration;
+//import Triangle.AbstractSyntaxTrees.ProcFormalParameter;
+import sse2project.AbstractSyntaxTrees.Program;
+//import Triangle.AbstractSyntaxTrees.RecordAggregate;
+//import Triangle.AbstractSyntaxTrees.RecordExpression;
+//import Triangle.AbstractSyntaxTrees.RecordTypeDenoter;
+//import Triangle.AbstractSyntaxTrees.SequentialCommand;
+//import Triangle.AbstractSyntaxTrees.SequentialDeclaration;
+//import Triangle.AbstractSyntaxTrees.SimpleTypeDenoter;
+//import Triangle.AbstractSyntaxTrees.SimpleVname;
+//import Triangle.AbstractSyntaxTrees.SingleActualParameterSequence;
+//import Triangle.AbstractSyntaxTrees.SingleArrayAggregate;
+//import Triangle.AbstractSyntaxTrees.SingleFieldTypeDenoter;
+//import Triangle.AbstractSyntaxTrees.SingleFormalParameterSequence;
+//import Triangle.AbstractSyntaxTrees.SingleRecordAggregate;
+//import Triangle.AbstractSyntaxTrees.SubscriptVname;
+//import Triangle.AbstractSyntaxTrees.TypeDeclaration;
+//import Triangle.AbstractSyntaxTrees.TypeDenoter;
+//import Triangle.AbstractSyntaxTrees.UnaryExpression;
+//import Triangle.AbstractSyntaxTrees.VarActualParameter;
+//import Triangle.AbstractSyntaxTrees.VarDeclaration;
+//import Triangle.AbstractSyntaxTrees.VarFormalParameter;
+//import Triangle.AbstractSyntaxTrees.Vname;
+//import Triangle.AbstractSyntaxTrees.VnameExpression;
+//import Triangle.AbstractSyntaxTrees.WhileCommand;
 
 public class Parser {
 
   private Scanner lexicalAnalyser;
-  private ErrorReporter errorReporter;
+  //private ErrorReporter errorReporter;
   private Token currentToken;
   private SourcePosition previousTokenPosition;
 
-  public Parser(Scanner lexer, ErrorReporter reporter) {
+  public Parser(Scanner lexer) { //, ErrorReporter reporter
     lexicalAnalyser = lexer;
-    errorReporter = reporter;
+    //errorReporter = reporter;
     previousTokenPosition = new SourcePosition();
   }
 
@@ -128,7 +128,7 @@ public class Parser {
 
   void syntacticError(String messageTemplate, String tokenQuoted) throws SyntaxError {
     SourcePosition pos = currentToken.position;
-    errorReporter.reportError(messageTemplate, tokenQuoted, pos);
+    //errorReporter.reportError(messageTemplate, tokenQuoted, pos);
     throw(new SyntaxError());
   }
 
@@ -147,7 +147,7 @@ public class Parser {
     currentToken = lexicalAnalyser.scan();
 
     try {
-      Command cAST = parseCommand();
+      Collaboration cAST = parseCollaboration();
       programAST = new Program(cAST, previousTokenPosition);
       if (currentToken.kind != Token.EOT) {
         syntacticError("\"%\" not expected after end of program",
@@ -244,28 +244,30 @@ public class Parser {
 
 // parseCommand parses the command, and constructs an AST
 // to represent its phrase structure.
+//parseCollaboration parses the collaboration, and constructs an AST
+// to represent its phrase structure.
 
-  Command parseCommand() throws SyntaxError {
-    Command commandAST = null; // in case there's a syntactic error
+  Collaboration parseCollaboration() throws SyntaxError {
+    Collaboration collaborationAST = null; // in case there's a syntactic error
 
-    SourcePosition commandPos = new SourcePosition();
+    SourcePosition collaborationPos = new SourcePosition();
 
-    start(commandPos);
-    commandAST = parseSingleCommand();
+    start(collaborationPos);
+    collaborationAST = parseSingleCollaboration();
     while (currentToken.kind == Token.SEMICOLON) {
       acceptIt();
-      Command c2AST = parseSingleCommand();
-      finish(commandPos);
-      commandAST = new SequentialCommand(commandAST, c2AST, commandPos);
+      Collaboration c2AST = parseSingleCollaboration();
+      finish(collaborationPos);
+      collaborationAST = new SequentialCollaboration(collaborationAST, c2AST, collaborationPos);
     }
-    return commandAST;
+    return collaborationAST;
   }
 
-  Command parseSingleCommand() throws SyntaxError {
-    Command commandAST = null; // in case there's a syntactic error
+  Collaboration parseSingleCollaboration() throws SyntaxError {
+    Collaboration commandAST = null; // in case there's a syntactic error
 
-    SourcePosition commandPos = new SourcePosition();
-    start(commandPos);
+    SourcePosition collaborationPos = new SourcePosition();
+    start(collaborationPos);
 
     switch (currentToken.kind) {
 
