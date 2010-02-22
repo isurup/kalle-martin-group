@@ -34,10 +34,9 @@ final class Token extends Object {
         }
       }
     } else
-      this.kind = kind;
-
-    this.spelling = spelling;
-    this.position = position;
+        this.kind = kind;
+        this.spelling = spelling;
+        this.position = position;
 
   }
 
