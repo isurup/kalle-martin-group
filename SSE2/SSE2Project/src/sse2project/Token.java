@@ -17,7 +17,7 @@ final class Token extends Object {
 
   public Token(int kind, String spelling, SourcePosition position) {
 
-    if (kind == Token.IDENTIFIER) {
+  if (kind == Token.COLLABORATION) {
       int currentKind = firstReservedWord;
       boolean searching = true;
 
@@ -26,10 +26,12 @@ final class Token extends Object {
         if (comparison == 0) {
           this.kind = currentKind;
           searching = false;
-        } else if (comparison > 0 || currentKind == lastReservedWord) {
-          this.kind = Token.IDENTIFIER;
-          searching = false;
-        } else {
+        }
+//        else if (comparison > 0 || currentKind == lastReservedWord) {
+//          this.kind = Token.IDENTIFIER;
+//          searching = false;
+//        }
+        else {
           currentKind ++;
         }
       }
@@ -39,6 +41,29 @@ final class Token extends Object {
         this.position = position;
 
   }
+
+//    if (kind == Token.IDENTIFIER) {
+//      int currentKind = firstReservedWord;
+//      boolean searching = true;
+//
+//      while (searching) {
+//        int comparison = tokenTable[currentKind].compareTo(spelling);
+//        if (comparison == 0) {
+//          this.kind = currentKind;
+//          searching = false;
+//        } else if (comparison > 0 || currentKind == lastReservedWord) {
+//          this.kind = Token.IDENTIFIER;
+//          searching = false;
+//        } else {
+//          currentKind ++;
+//        }
+//      }
+//    } else
+//        this.kind = kind;
+//        this.spelling = spelling;
+//        this.position = position;
+//
+//  }
 
   public static String spell (int kind) {
     return tokenTable[kind];
@@ -57,6 +82,7 @@ final class Token extends Object {
     INTLITERAL	= 0,
     CHARLITERAL	= 1,
     IDENTIFIER	= 2,
+    COLLABORATION = 3,
     //OPERATOR	= 3,
 
     // reserved words - must be in alphabetical order...
@@ -102,6 +128,7 @@ final class Token extends Object {
     "<int>",
     "<char>",
     "<identifier>",
+    "<collaboration>",
     //"<operator>",
     "array",
     //"begin",
@@ -135,8 +162,9 @@ final class Token extends Object {
     "",
     "<error>"
   };
-
-  private final static int	firstReservedWord = Token.ARRAY,
-  				lastReservedWord  = Token.WHILE;
+private final static int	firstReservedWord = Token.COLLABORATION;
+  				//lastReservedWord  = Token.WHILE;
+//  private final static int	firstReservedWord = Token.ARRAY,
+//  				lastReservedWord  = Token.WHILE;
 
 }
