@@ -105,34 +105,34 @@ public final class Scanner {
         takeIt();
       return Token.INTLITERAL;
 
-    case '+':  case '-':  case '*': case '/':  case '=':
-    case '<':  case '>':  case '\\':  case '&':  case '@':
-    case '%':  case '^':  case '?':
-      takeIt();
-      while (isOperator(currentChar))
-        takeIt();
-      return Token.OPERATOR;
+    //case '+':  case '-':  case '*': case '/':  case '=':
+    //case '<':  case '>':  case '\\':  case '&':  case '@':
+    //case '%':  case '^':  case '?':
+    //  takeIt();
+    //  while (isOperator(currentChar))
+    //    takeIt();
+    //  return Token.OPERATOR;
 
-    case '\'':
-      takeIt();
-      takeIt(); // the quoted character
-      if (currentChar == '\'') {
-      	takeIt();
-        return Token.CHARLITERAL;
-      } else
-        return Token.ERROR;
+    //case '\'':
+    //  takeIt();
+    //  takeIt(); // the quoted character
+    //  if (currentChar == '\'') {
+    //  	takeIt();
+    //    return Token.CHARLITERAL;
+    //  } else
+    //    return Token.ERROR;
 
-    case '.':
-      takeIt();
-      return Token.DOT;
+    //case '.':
+    //  takeIt();
+    //  return Token.DOT;
 
-    case ':':
-      takeIt();
-      if (currentChar == '=') {
-        takeIt();
-        return Token.BECOMES;
-      } else
-        return Token.COLON;
+    //case ':':
+    //  takeIt();
+    //  if (currentChar == '=') {
+    //    takeIt();
+    //    return Token.BECOMES;
+    //  } else
+    //    return Token.COLON;
 
     case ';':
       takeIt();
@@ -142,17 +142,17 @@ public final class Scanner {
       takeIt();
       return Token.COMMA;
 
-    case '~':
-      takeIt();
-      return Token.IS;
+    //case '~':
+    //  takeIt();
+    //  return Token.IS;
 
-    case '(':
-      takeIt();
-      return Token.LPAREN;
+    //case '(':
+    //  takeIt();
+    //  return Token.LPAREN;
 
-    case ')':
-      takeIt();
-      return Token.RPAREN;
+    //case ')':
+    //  takeIt();
+    //  return Token.RPAREN;
 
     case '[':
       takeIt();
@@ -162,13 +162,13 @@ public final class Scanner {
       takeIt();
       return Token.RBRACKET;
 
-    case '{':
-      takeIt();
-      return Token.LCURLY;
+    //case '{':
+    //  takeIt();
+    //  return Token.LCURLY;
 
-    case '}':
-      takeIt();
-      return Token.RCURLY;
+    //case '}':
+    //  takeIt();
+    //  return Token.RCURLY;
 
     case SourceFile.EOT:
       return Token.EOT;
