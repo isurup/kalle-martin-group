@@ -11,9 +11,9 @@ package sse2project.AbstractSyntaxTrees;
  */
 import sse2project.SourcePosition;
 
-public class SequentialCollaboration extends CollaborationList {
+public class SequentialCollaboration extends AST {
 
-  public SequentialCollaboration (CollaborationList c1AST, CollaborationList c2AST, SourcePosition thePosition) {
+  public SequentialCollaboration (CollaborationList c1AST, CollaborationList c2AST, SourcePosition thePosition){
       super (thePosition);
       C1 = c1AST;
       C2 = c2AST;
@@ -26,4 +26,5 @@ public class SequentialCollaboration extends CollaborationList {
 
   public CollaborationList C1;
   public CollaborationList C2;
+
 }
