@@ -9,8 +9,5 @@ package sse2project.AbstractSyntaxTrees;
  *
  * @author Kalle
  */
-public class BotList extends Collaboration {
-    public BotList(){
-  }
-
+public class BotList{
 }

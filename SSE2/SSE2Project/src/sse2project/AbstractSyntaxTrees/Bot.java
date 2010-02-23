@@ -11,4 +11,7 @@ package sse2project.AbstractSyntaxTrees;
  */
 public class Bot {
 
+    public Bot() {
+    }
+
 }
