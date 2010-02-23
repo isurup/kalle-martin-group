@@ -10,8 +10,12 @@ package sse2project;
  * @author Kalle
  */
 
-import sse2project.AbstractSyntaxTrees.Collaboration;
+import sse2project.AbstractSyntaxTrees.BotsProgram;
 import sse2project.AbstractSyntaxTrees.CollaborationList;
+import sse2project.AbstractSyntaxTrees.Collaboration;
+import sse2project.AbstractSyntaxTrees.Bot;
+import sse2project.AbstractSyntaxTrees.OperationList;
+import sse2project.AbstractSyntaxTrees.Operations;
 import sse2project.AbstractSyntaxTrees.Identifier2;
 //import Triangle.ErrorReporter;
 //import Triangle.AbstractSyntaxTrees.ActualParameter;
@@ -57,7 +61,7 @@ import sse2project.AbstractSyntaxTrees.IntegerLiteral;
 //import Triangle.AbstractSyntaxTrees.ProcActualParameter;
 //import Triangle.AbstractSyntaxTrees.ProcDeclaration;
 //import Triangle.AbstractSyntaxTrees.ProcFormalParameter;
-import sse2project.AbstractSyntaxTrees.Program;
+import sse2project.AbstractSyntaxTrees.BotsProgram;
 //import Triangle.AbstractSyntaxTrees.RecordAggregate;
 //import Triangle.AbstractSyntaxTrees.RecordExpression;
 //import Triangle.AbstractSyntaxTrees.RecordTypeDenoter;
@@ -140,9 +144,9 @@ public class Parser {
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-  public Program parseProgram() {
+  public BotsProgram parseBotsProgram() {
 
-    Program programAST = null;
+    BotsProgram programAST = null;
 
     previousTokenPosition.start = 0;
     previousTokenPosition.finish = 0;
@@ -150,7 +154,7 @@ public class Parser {
 
     try {
       Collaboration cAST = parseCollaboration();
-      programAST = new Program(cAST, previousTokenPosition);
+      programAST = new BotsProgram(cAST, previousTokenPosition);
       if (currentToken.kind != Token.EOT) {
         syntacticError("\"%\" not expected after end of program",
           currentToken.spelling);
@@ -164,7 +168,13 @@ public class Parser {
 // COLLABORATIONLISTS
 //
 ///////////////////////////////////////////////////////////////////////////////
-    public CollaborationList parseCollaborationList() {
+    CollaborationList parseCollaborationList() {
+        parseCollaborationList();
+        while (currentToken.kind == Token.COLLABORATION)
+            {
+                acceptIt();
+                parseCollaborationList();
+            }
     }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -172,7 +182,25 @@ public class Parser {
 // COLLABORATIONS
 //
 ///////////////////////////////////////////////////////////////////////////////
-    public Collaboration parseCollaboration() {
+    Collaboration parseCollaboration() throws SyntaxError {
+        Collaboration collaborationAST = null; // in case there's a syntactic error
+        SourcePosition collaborationPos = new SourcePosition();
+        start(collaborationPos);
+        collaborationAST = parseSingleCollaboration();
+
+        switch (currentToken.kind){
+            case Token.COLLABORATION:
+            {
+                acceptIt();
+                parseIdentifier();
+                parseBotList();
+                accept(Token.LBRACKET);
+                parseOperationList();
+                accept(Token.RBRACKET);
+            }
+            break;
+        }
+
     }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -180,7 +208,12 @@ public class Parser {
 // BOTLISTS
 //
 ///////////////////////////////////////////////////////////////////////////////
-    public Program parseBotList() {
+    BotsProgram parseBotList() {
+        parseBot();
+        while (currentToken.kind == Token.COMMA){
+            acceptIt();
+            parseBot();
+        }
     }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -188,7 +221,8 @@ public class Parser {
 // BOTS
 //
 ///////////////////////////////////////////////////////////////////////////////
-    public Program parseBot() {
+    Bot parseBot() throws SyntaxError {
+        accept(Token.INTLITERAL);
     }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -196,7 +230,19 @@ public class Parser {
 // OPERATIONLISTS
 //
 ///////////////////////////////////////////////////////////////////////////////
-    public Program parseOperationList() {
+    public OperationList parseOperationList() {
+        switch(currentToken.kind){
+            case Token.IDENTIFIER2:
+            {
+                acceptIt();
+                parseOperation();
+                while(currentToken.kind == Token.SEMICOLON){
+                    acceptIt();
+                    parseOperation();
+                }
+              break;
+            }
+        }
     }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -204,7 +250,11 @@ public class Parser {
 // OPERATIONS
 //
 ///////////////////////////////////////////////////////////////////////////////
-    public Program parseOperation() {
+    Operations parseOperation() {
+        accept(Token.IDENTIFIER2);
+        parseIdentifier2();
+        accept(Token.BY);
+        parseIntegerLiteral();
     }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -212,9 +262,16 @@ public class Parser {
 // IDENTIFIER
 //
 ///////////////////////////////////////////////////////////////////////////////
-    public Program parseIdentifier() {
-    }
+    Identifier parseIdentifier() {
+        if(currentToken.kind == Token.WORK){
+            acceptIt();
+        }
+    
+        else if (currentToken.kind == Token.MOVE){
+            acceptIt();
 
+        }
+    }
 ///////////////////////////////////////////////////////////////////////////////
 //
 // INTEGER-LITERALS
@@ -260,56 +317,56 @@ public class Parser {
 // parseCharacterLiteral parses a character-literal, and constructs a leaf
 // AST to represent it.
 
-  CharacterLiteral parseCharacterLiteral() throws SyntaxError {
-    CharacterLiteral CL = null;
-
-    if (currentToken.kind == Token.CHARLITERAL) {
-      previousTokenPosition = currentToken.position;
-      String spelling = currentToken.spelling;
-      CL = new CharacterLiteral(spelling, previousTokenPosition);
-      currentToken = lexicalAnalyser.scan();
-    } else {
-      CL = null;
-      syntacticError("character literal expected here", "");
-    }
-    return CL;
-  }
+//  CharacterLiteral parseCharacterLiteral() throws SyntaxError {
+//    CharacterLiteral CL = null;
+//
+//    if (currentToken.kind == Token.CHARLITERAL) {
+//      previousTokenPosition = currentToken.position;
+//      String spelling = currentToken.spelling;
+//      CL = new CharacterLiteral(spelling, previousTokenPosition);
+//      currentToken = lexicalAnalyser.scan();
+//    } else {
+//      CL = null;
+//      syntacticError("character literal expected here", "");
+//    }
+//    return CL;
+//  }
 
 // parseIdentifier parses an identifier, and constructs a leaf AST to
 // represent it.
 
-  Identifier parseIdentifier() throws SyntaxError {
-    Identifier I = null;
-
-    if (currentToken.kind == Token.IDENTIFIER) {
-      previousTokenPosition = currentToken.position;
-      String spelling = currentToken.spelling;
-      I = new Identifier(spelling, previousTokenPosition);
-      currentToken = lexicalAnalyser.scan();
-    } else {
-      I = null;
-      syntacticError("identifier expected here", "");
-    }
-    return I;
-  }
+//  Identifier parseIdentifier() throws SyntaxError {
+//    Identifier I = null;
+//
+//    if (currentToken.kind == Token.IDENTIFIER) {
+//      previousTokenPosition = currentToken.position;
+//      String spelling = currentToken.spelling;
+//      I = new Identifier(spelling, previousTokenPosition);
+//      currentToken = lexicalAnalyser.scan();
+//    } else {
+//      I = null;
+//      syntacticError("identifier expected here", "");
+//    }
+//    return I;
+//  }
 
 // parseOperator parses an operator, and constructs a leaf AST to
 // represent it.
 
-  Operator parseOperator() throws SyntaxError {
-    Operator O = null;
-
-    if (currentToken.kind == Token.OPERATOR) {
-      previousTokenPosition = currentToken.position;
-      String spelling = currentToken.spelling;
-      O = new Operator(spelling, previousTokenPosition);
-      currentToken = lexicalAnalyser.scan();
-    } else {
-      O = null;
-      syntacticError("operator expected here", "");
-    }
-    return O;
-  }
+//  Operator parseOperator() throws SyntaxError {
+//    Operator O = null;
+//
+//    if (currentToken.kind == Token.OPERATOR) {
+//      previousTokenPosition = currentToken.position;
+//      String spelling = currentToken.spelling;
+//      O = new Operator(spelling, previousTokenPosition);
+//      currentToken = lexicalAnalyser.scan();
+//    } else {
+//      O = null;
+//      syntacticError("operator expected here", "");
+//    }
+//    return O;
+//  }
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -417,6 +474,8 @@ public class Parser {
       break;
 
     case Token.SEMICOLON:
+    case Token.BY:
+    case Token.BETWEEN:
     case Token.END:
     case Token.ELSE:
     case Token.IN:

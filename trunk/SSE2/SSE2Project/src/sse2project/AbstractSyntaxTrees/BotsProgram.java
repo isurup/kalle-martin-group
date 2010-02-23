@@ -11,9 +11,9 @@ package sse2project.AbstractSyntaxTrees;
  */
 import sse2project.SourcePosition;
 
-public class Program extends AST {
+public class BotsProgram extends AST {
 
-  public Program (Collaboration cAST, SourcePosition thePosition) {
+  public BotsProgram (Collaboration cAST, SourcePosition thePosition) {
     super (thePosition);
     C = cAST;
   }

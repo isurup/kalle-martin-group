@@ -17,15 +17,15 @@ public abstract class AST {
 
   public AST (SourcePosition thePosition) {
     position = thePosition;
-    entity = null;
+    //entity = null;
   }
 
   public SourcePosition getPosition() {
     return position;
   }
 
-  public abstract Object visit(Visitor v, Object o);
+  //public abstract Object visit(Visitor v, Object o);
 
   public SourcePosition	position;
-  public RuntimeEntity  entity;
+  //public RuntimeEntity  entity;
 }
