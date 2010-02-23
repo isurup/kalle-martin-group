@@ -9,12 +9,10 @@ package sse2project.AbstractSyntaxTrees;
  *
  * @author Kalle
  */
-import sse2project.SourcePosition;
 
 abstract public class Terminal extends AST {
 
-  public Terminal (String theSpelling, SourcePosition thePosition) {
-    super (thePosition);
+  public Terminal (String theSpelling) {
     spelling = theSpelling;
   }
 

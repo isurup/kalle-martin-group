@@ -155,8 +155,8 @@ public class Parser {
     currentToken = lexicalAnalyser.scan();
 
     try {
-      CollaborationList c1AST = parseCollaboration();
-      programAST = new BotsProgram(c1AST, previousTokenPosition);
+      CollaborationList cAST = parseCollaboration();
+      programAST = new BotsProgram(cAST, previousTokenPosition);
       if (currentToken.kind != Token.EOT) {
         syntacticError("\"%\" not expected after end of program",
           currentToken.spelling);
