@@ -11,21 +11,21 @@ package sse2project.AbstractSyntaxTrees;
  */
 
 //import Triangle.CodeGenerator.RuntimeEntity;
-import sse2project.SourcePosition;
+//import sse2project.SourcePosition;
 
-public abstract class AST {
+public abstract class AST {         //SourcePosition thePosition
 
-  public AST (SourcePosition thePosition) {
-    position = thePosition;
+  public AST () {
+    //position = thePosition;
     //entity = null;
   }
 
-  public SourcePosition getPosition() {
-    return position;
-  }
+  //public SourcePosition getPosition() {
+    //return position;
+  //}
 
   //public abstract Object visit(Visitor v, Object o);
 
-  public SourcePosition	position;
+  //public SourcePosition	position;
   //public RuntimeEntity  entity;
 }
