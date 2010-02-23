@@ -9,6 +9,10 @@ package sse2project.AbstractSyntaxTrees;
  *
  * @author Kalle
  */
-public class CollaborationList {
+import sse2project.SourcePosition;
+public abstract class CollaborationList extends AST {
 
+  public CollaborationList (SourcePosition thePosition) {
+    super (thePosition);
+  }
 }

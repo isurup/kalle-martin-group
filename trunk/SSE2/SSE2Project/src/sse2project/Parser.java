@@ -13,6 +13,8 @@ package sse2project;
 import sse2project.AbstractSyntaxTrees.BotsProgram;
 import sse2project.AbstractSyntaxTrees.CollaborationList;
 import sse2project.AbstractSyntaxTrees.Collaboration;
+import sse2project.AbstractSyntaxTrees.SequentialCollaboration;
+import sse2project.AbstractSyntaxTrees.BotList;
 import sse2project.AbstractSyntaxTrees.Bot;
 import sse2project.AbstractSyntaxTrees.OperationList;
 import sse2project.AbstractSyntaxTrees.Operations;
@@ -153,8 +155,8 @@ public class Parser {
     currentToken = lexicalAnalyser.scan();
 
     try {
-      Collaboration cAST = parseCollaboration();
-      programAST = new BotsProgram(cAST, previousTokenPosition);
+      CollaborationList c1AST = parseCollaboration();
+      programAST = new BotsProgram(c1AST, previousTokenPosition);
       if (currentToken.kind != Token.EOT) {
         syntacticError("\"%\" not expected after end of program",
           currentToken.spelling);
@@ -169,37 +171,30 @@ public class Parser {
 //
 ///////////////////////////////////////////////////////////////////////////////
     CollaborationList parseCollaborationList() {
-        parseCollaborationList();
-        while (currentToken.kind == Token.COLLABORATION)
-            {
-                acceptIt();
-                parseCollaborationList();
+        CollaborationList c1AST = parseCollaboration();
+        while (currentToken.kind == Token.COLLABORATION){
+            CollaborationList c2AST = parseCollaboration();
+                c1AST = new SequentialCollaboration(c1AST, c2AST);
             }
+        return c1AST;
     }
+
+
 
 ///////////////////////////////////////////////////////////////////////////////
 //
 // COLLABORATIONS
 //
 ///////////////////////////////////////////////////////////////////////////////
-    Collaboration parseCollaboration() throws SyntaxError {
-        Collaboration collaborationAST = null; // in case there's a syntactic error
-        SourcePosition collaborationPos = new SourcePosition();
-        start(collaborationPos);
-        collaborationAST = parseSingleCollaboration();
-
-        switch (currentToken.kind){
-            case Token.COLLABORATION:
-            {
-                acceptIt();
-                parseIdentifier();
-                parseBotList();
-                accept(Token.LBRACKET);
-                parseOperationList();
-                accept(Token.RBRACKET);
-            }
-            break;
-        }
+    CollaborationList parseCollaboration(){
+        accept(Token.COLLABORATION);
+        accept(Token.IDENTIFIER);
+        BotList b1 = parseBotList();
+        accept(Token.LBRACKET);
+        OperationList o1 = parseOperationList();
+        accept(Token.RBRACKET);
+        return new Collaboration(b1, o1);
+           
 
     }
 
@@ -208,7 +203,7 @@ public class Parser {
 // BOTLISTS
 //
 ///////////////////////////////////////////////////////////////////////////////
-    BotsProgram parseBotList() {
+    BotList parseBotList() {
         parseBot();
         while (currentToken.kind == Token.COMMA){
             acceptIt();
@@ -263,14 +258,7 @@ public class Parser {
 //
 ///////////////////////////////////////////////////////////////////////////////
     Identifier parseIdentifier() {
-        if(currentToken.kind == Token.WORK){
-            acceptIt();
-        }
-    
-        else if (currentToken.kind == Token.MOVE){
-            acceptIt();
-
-        }
+        
     }
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -302,8 +290,20 @@ public class Parser {
 // IDENTIFIER2
 //
 ///////////////////////////////////////////////////////////////////////////////
-    public Identifier2 parseIdentifier2() {
+    Identifier2 parseIdentifier2() {
+        if(currentToken.kind == Token.WORK){
+            acceptIt();
+        }
+
+        else if (currentToken.kind == Token.MOVE){
+            acceptIt();
+
+        }
     }
+
+
+
+
 
 
 ///////////////////////////////////////////////////////////////////////////////
