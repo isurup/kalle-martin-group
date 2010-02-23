@@ -266,15 +266,25 @@ public class Parser {
 //
 ///////////////////////////////////////////////////////////////////////////////
     Identifier parseIdentifier() throws SyntaxError {
-        accept(Token.INTLITERAL);
-        return new Identifier();
+        Identifier I = null;
+
+    if (currentToken.kind == Token.IDENTIFIER) {
+      previousTokenPosition = currentToken.position;
+      String spelling = currentToken.spelling;
+      I = new Identifier(spelling, previousTokenPosition);
+      currentToken = lexicalAnalyser.scan();
+    } else {
+      I = null;
+      syntacticError("identifier expected here", "");
+    }
+    return I;
     }
 ///////////////////////////////////////////////////////////////////////////////
 //
 // INTEGER-LITERALS
 //
 ///////////////////////////////////////////////////////////////////////////////
-    public IntegerLiteral parseIntegerLiteral() {
+    public IntegerLiteral parseIntegerLiteral() throws SyntaxError {
         // parseIntegerLiteral parses an integer-literal, and constructs
 // a leaf AST to represent it.
 
@@ -299,7 +309,7 @@ public class Parser {
 // IDENTIFIER2
 //
 ///////////////////////////////////////////////////////////////////////////////
-    Identifier2 parseIdentifier2() {
+    Identifier2 parseIdentifier2()throws SyntaxError {
         if(currentToken.kind == Token.WORK){
             acceptIt();
         }
@@ -308,6 +318,7 @@ public class Parser {
             acceptIt();
 
         }
+     return new Identifier2();
     }
 
 
