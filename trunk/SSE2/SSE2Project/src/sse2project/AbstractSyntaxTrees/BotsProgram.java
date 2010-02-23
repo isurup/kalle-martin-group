@@ -13,8 +13,8 @@ import sse2project.SourcePosition;
 
 public class BotsProgram extends AST {
 
-  public BotsProgram (CollaborationList cAST, SourcePosition SP ) {
-    C = cAST;
+  public BotsProgram (SourcePosition thePosition) {
+    super (thePosition);
   }
   public CollaborationList C;
 }
