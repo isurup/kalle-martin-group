@@ -179,7 +179,8 @@ public class Parser {
         CollaborationList c1AST = parseCollaborationList();
         while (currentToken.kind == Token.COLLABORATION){
             CollaborationList c2AST = parseCollaboration();
-            c1AST = new SequentialCollaboration(c1AST, c2AST);
+            
+            c1AST = new SequentialCollaboration(c1AST, c2AST, currentToken.position);
             }
         return c1AST;
     }
