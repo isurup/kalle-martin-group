@@ -16,8 +16,10 @@ import sse2project.AbstractSyntaxTrees.Collaboration;
 import sse2project.AbstractSyntaxTrees.SequentialCollaboration;
 import sse2project.AbstractSyntaxTrees.BotList;
 import sse2project.AbstractSyntaxTrees.Bot;
+import sse2project.AbstractSyntaxTrees.SequentialBot;
 import sse2project.AbstractSyntaxTrees.OperationList;
 import sse2project.AbstractSyntaxTrees.Operations;
+import sse2project.AbstractSyntaxTrees.SequentialOperation;
 import sse2project.AbstractSyntaxTrees.Identifier;
 import sse2project.AbstractSyntaxTrees.Identifier2;
 import sse2project.AbstractSyntaxTrees.IntegerLiteral;
@@ -179,7 +181,6 @@ public class Parser {
         CollaborationList c1AST = parseCollaborationList();
         while (currentToken.kind == Token.COLLABORATION){
             CollaborationList c2AST = parseCollaboration();
-            
             c1AST = new SequentialCollaboration(c1AST, c2AST, currentToken.position);
             }
         return c1AST;
@@ -209,15 +210,16 @@ public class Parser {
 //
 ///////////////////////////////////////////////////////////////////////////////
     BotList parseBotList() throws SyntaxError{
-        BotList BLAST = parseBotList();
+        BotList b1AST = parseBotList();
         parseBot();
         while (currentToken.kind == Token.COMMA){
-            acceptIt();
-            parseBot();
+            BotList b2AST = parseBot();
+            b1AST = new SequentialBot(b1AST, b2AST, currentToken.position);
         }
-        Bot bot = parseBot();
-        return BLAST;
+        //Bot bot = parseBot();
+        return b1AST;
     }
+
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -235,16 +237,16 @@ public class Parser {
 // OPERATIONLISTS
 //
 ///////////////////////////////////////////////////////////////////////////////
-    public OperationList parseOperationList() throws SyntaxError {
-        OperationList OLAST = parseOperationList();
+    OperationList parseOperationList() throws SyntaxError {
+        OperationList o1AST = parseOperationList();
         
         accept(Token.IDENTIFIER2);
-        parseOperation();
+        //parseOperation();
         while(currentToken.kind == Token.SEMICOLON){
-            acceptIt();
-            parseOperation();
+            OperationList o2AST = parseOperation();
+            o1AST = new SequentialOperation(o1AST, o2AST, currentToken.position);
         }
-     return OLAST;
+     return o1AST;
     }
 
 ///////////////////////////////////////////////////////////////////////////////
