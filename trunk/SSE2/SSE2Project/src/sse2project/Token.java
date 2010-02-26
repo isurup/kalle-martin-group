@@ -80,22 +80,22 @@ final class Token extends Object {
 
     // literals, identifiers, operators...
     INTLITERAL	= 0,
-    CHARLITERAL	= 1,
-    IDENTIFIER	= 2,
-    COLLABORATION = 3,
-    OPERATIONS = 4,
+    //CHARLITERAL	= 1,
+    IDENTIFIER	= 1,
+    IDENTIFIER2 = 2,
+    OPERATIONS = 3,
     //OPERATOR	= 3,
 
     // reserved words - must be in alphabetical order...
-    ARRAY		= 5,
-    IDENTIFIER2         = 6,
+    COLLABORATION       = 5,
+    
     BY                  = 7,
     BETWEEN             = 8,
     //BEGIN		= 5,
     //CONST		= 6,
     //DO			= 7,
     //ELSE		= 8,
-    END			= 9,
+    //END			= 9,
     WORK                = 10,
     MOVE                = 11,
     //FUNC		= 10,
@@ -174,8 +174,8 @@ final class Token extends Object {
     "",
     "<error>"
   };
-private final static int	firstReservedWord = Token.COLLABORATION;
-  				//lastReservedWord  = Token.WHILE;
+private final static int	firstReservedWord = Token.COLLABORATION,
+  				lastReservedWord  = Token.MOVE;
 //  private final static int	firstReservedWord = Token.ARRAY,
 //  				lastReservedWord  = Token.WHILE;
 
