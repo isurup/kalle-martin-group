@@ -9,9 +9,14 @@ package sse2project.AbstractSyntaxTrees;
  *
  * @author Kalle
  */
-public class Bot {
-
-    public Bot() {
+import sse2project.SourcePosition;
+public class Bot extends BotList {
+    public Bot(IntegerLiteral INTAST, SourcePosition thePosition){
+      super (thePosition);
+      INTLIT = INTAST;
     }
-
+    //public Object visit(Visitor v, Object o) {
+    //return v.visitAssignCommand(this, o);
+  //}
+    public IntegerLiteral INTLIT;
 }

@@ -9,6 +9,10 @@ package sse2project.AbstractSyntaxTrees;
  *
  * @author Kalle
  */
-public class OperationList {
-
+import sse2project.SourcePosition;
+public abstract class OperationList extends CollaborationList{   // Why? And why not extend Collaboration
+    public OperationList(SourcePosition thePosition){
+        super (thePosition);
+    }
 }
+

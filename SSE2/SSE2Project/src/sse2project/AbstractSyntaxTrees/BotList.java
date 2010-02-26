@@ -9,5 +9,13 @@ package sse2project.AbstractSyntaxTrees;
  *
  * @author Kalle
  */
-public class BotList{
+import sse2project.SourcePosition;
+public abstract class BotList extends CollaborationList { //why and why not Collaboration!!!
+
+    public BotList(SourcePosition thePosition){
+      super (thePosition);
+    }
+    //public Object visit(Visitor v, Object o) {
+    //return v.visitAssignCommand(this, o);
+  //}
 }
