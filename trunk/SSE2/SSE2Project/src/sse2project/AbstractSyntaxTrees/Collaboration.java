@@ -11,9 +11,14 @@ package sse2project.AbstractSyntaxTrees;
  */
 import sse2project.SourcePosition;
 public class Collaboration extends CollaborationList{
-  public Collaboration(BotList b1, OperationList o1, SourcePosition thePosition){
+  public Collaboration(BotList BLAST, OperationList OLAST, SourcePosition thePosition){
       super (thePosition);
+      BL = BLAST;
+      OL = OLAST;
   }
-  public BotList B;
-  public OperationList O;
+  //public Object visit(Visitor v, Object o) {
+    //return v.visitAssignCommand(this, o);
+  //}
+  public BotList BL;
+  public OperationList OL;
 }
