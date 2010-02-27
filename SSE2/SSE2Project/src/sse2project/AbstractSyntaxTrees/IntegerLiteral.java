@@ -17,8 +17,8 @@ public class IntegerLiteral extends Terminal {
     super (theSpelling, thePosition);
   }
 
-  //public Object visit(Visitor v, Object o) {
-    //return v.visitIntegerLiteral(this, o);
-  //}
+  public Object visit(Visitor v, Object o) {
+    return v.visitIntegerLiteral(this, o);
+  }
 
 }

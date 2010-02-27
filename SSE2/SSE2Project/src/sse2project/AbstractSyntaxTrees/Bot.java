@@ -18,8 +18,8 @@ public class Bot extends BotList {
      // super (thePosition);
       INTLIT = INTAST;
     }
-    //public Object visit(Visitor v, Object o) {
-    //return v.visitAssignCommand(this, o);
-  //}
+    public Object visit(Visitor v, Object o) {            
+        return v.visitBot(this, o);
+  }
     public IntegerLiteral INTLIT;
 }

@@ -15,4 +15,7 @@ public abstract class CollaborationList extends AST {
   public CollaborationList(){//(SourcePosition thePosition) {
       //super (thePosition);
   }
+  public Object visit(Visitor v, Object o) {
+    return v.visitCollaborationList(this, o);
+  }
 }

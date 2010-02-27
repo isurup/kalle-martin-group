@@ -18,5 +18,9 @@ abstract public class Terminal extends AST {
     spelling = theSpelling;
   }
 
+  public Object visit(Visitor v, Object o) {
+    return v.visitTerminal(this, o);
+    }
+
   public String spelling;
 }

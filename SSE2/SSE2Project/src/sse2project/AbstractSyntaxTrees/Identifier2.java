@@ -18,4 +18,8 @@ public class Identifier2 extends Terminal {
     //type = null;
     //decl = null;
   }
+
+    public Object visit(Visitor v, Object o) {
+    return v.visitIdentifier2(this, o);
+  }
 }

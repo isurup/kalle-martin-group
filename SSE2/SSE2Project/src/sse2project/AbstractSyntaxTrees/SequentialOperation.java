@@ -17,9 +17,9 @@ public class SequentialOperation extends OperationList {
         O1 = o1AST;
         O2 = o2AST;
     }
-    //public Object visit(Visitor v, Object o) {
-    //return v.visitSequentialCommand(this, o);
-    //}
+    public Object visit(Visitor v, Object o) {
+    return v.visitSequentialOperation(this, o);
+    }
     public OperationList O1;
     public OperationList O2;
 }
