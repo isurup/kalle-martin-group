@@ -11,8 +11,11 @@ package sse2project.AbstractSyntaxTrees;
  */
 import sse2project.SourcePosition;
 public class Bot extends BotList {
-    public Bot(IntegerLiteral INTAST, SourcePosition thePosition){
-      super (thePosition);
+
+    public Bot(){
+    }    
+    public Bot(IntegerLiteral INTAST){//, SourcePosition thePosition){
+     // super (thePosition);
       INTLIT = INTAST;
     }
     //public Object visit(Visitor v, Object o) {

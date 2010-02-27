@@ -11,8 +11,8 @@ package sse2project.AbstractSyntaxTrees;
  */
 import sse2project.SourcePosition;
 public class Collaboration extends CollaborationList{
-  public Collaboration(Identifier IDAST, BotList BLAST, OperationList OLAST, SourcePosition thePosition){
-      super (thePosition);
+  public Collaboration(Identifier IDAST, BotList BLAST, OperationList OLAST){//, SourcePosition thePosition){
+      //super (thePosition);
       ID = IDAST;
       BL = BLAST;
       OL = OLAST;
