@@ -15,6 +15,10 @@ import sse2project.SourcePosition;
 
 public abstract class AST {
 
+
+  public AST()
+  {
+  }
   public AST (SourcePosition thePosition) {
     position = thePosition;
     //entity = null;

@@ -13,8 +13,8 @@ import sse2project.SourcePosition;
 
 public class SequentialCollaboration extends CollaborationList {
 
-  public SequentialCollaboration (CollaborationList c1AST, CollaborationList c2AST, SourcePosition thePosition){
-      super (thePosition);
+  public SequentialCollaboration (CollaborationList c1AST, CollaborationList c2AST){//, SourcePosition thePosition){
+      //super (thePosition);
       C1 = c1AST;
       C2 = c2AST;
 

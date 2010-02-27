@@ -15,7 +15,11 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        System.out.println("<GROUP 1> SSE2: BoCoLa");
+        String path  = "C:\\Documents and Settings\\Administrator\\My Documents\\Source Insight\\Projects\\Triangle\\";
+        String fileName = "\\"+"tam1.txt";
+        Compiler comp = new Compiler(path+fileName);
+        comp.CompileProgram();
     }
 
 }

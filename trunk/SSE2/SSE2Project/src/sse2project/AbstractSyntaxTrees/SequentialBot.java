@@ -11,22 +11,21 @@ package sse2project.AbstractSyntaxTrees;
  */
 import sse2project.SourcePosition;
 
-public class SequentialBot extends Bot {
+public class SequentialBot extends Bot {//extends CollaborationList{
 
-  public SequentialBot (BotList b1AST, BotList b2AST, SourcePosition thePosition){
-      super (thePosition);                                                         //Why are there problem with SourcePosition??
+  public SequentialBot (BotList b1AST, BotList b2AST){//, SourcePosition thePosition){
+      //super (thePosition);                                                         //Why are there problem with SourcePosition??
+      
       B1 = b1AST;
       B2 = b2AST;
 
   }
-
   //public Object visit(Visitor v, Object o) {
     //return v.visitSequentialCommand(this, o);
   //}
 
-  public CollaborationList B1;
-  public CollaborationList B2;
-
+  public BotList B1;
+  public BotList B2;
 }
 //import sse2project.SourcePosition;
 //

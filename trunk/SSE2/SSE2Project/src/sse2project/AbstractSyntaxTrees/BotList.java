@@ -12,8 +12,8 @@ package sse2project.AbstractSyntaxTrees;
 import sse2project.SourcePosition;
 public abstract class BotList extends CollaborationList { //why and why not Collaboration!!!
 
-    public BotList(SourcePosition thePosition){
-      super (thePosition);
+    public BotList() {//(SourcePosition thePosition){
+     // super (thePosition);
     }
     //public Object visit(Visitor v, Object o) {
     //return v.visitAssignCommand(this, o);
