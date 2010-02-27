@@ -132,13 +132,13 @@ final class Token extends Object {
 
   private static String[] tokenTable = new String[] {
     "<int>",
-    "<char>",
+    //"<char>",
     "<identifier>",
-    "<collaboration>",
+    "collaboration",
     "<operations>",
     //"<operator>",
     "array",
-    "<IDENTIFIER2>",
+    "<identifier2>",
     "by",
     "between",
     "work",
