@@ -16,9 +16,10 @@ public class Operations extends OperationList{
         ID2 = ID2AST;
         INTLIT = INTAST;
     }
-    //public Object visit(Visitor v, Object o) {
-    //return v.visitAssignCommand(this, o);
-    //}
+    public Object visit(Visitor v, Object o) {
+    return v.visitOperations(this, o);
+    }
+
     public Identifier2 ID2;
     public IntegerLiteral INTLIT;
 

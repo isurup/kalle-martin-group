@@ -17,8 +17,8 @@ public class BotsProgram extends AST {
     super (thePosition);
     CL = cAST;
     }
-    //public Object visit(Visitor v, Object o) {
-    //return v.visitProgram(this, o);
-  //}
+    public Object visit(Visitor v, Object o) {
+    return v.visitBotsProgram(this, o);
+  }
     public CollaborationList CL;
   }

@@ -14,5 +14,9 @@ public abstract class OperationList extends CollaborationList{   // Why? And why
     public OperationList(SourcePosition thePosition){
         //super (thePosition);
     }
+
+     public Object visit(Visitor v, Object o) {
+    return v.visitOperationList(this, o);
+  }
 }
 

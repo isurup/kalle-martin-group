@@ -17,9 +17,9 @@ public class Collaboration extends CollaborationList{
       BL = BLAST;
       OL = OLAST;
   }
-  //public Object visit(Visitor v, Object o) {
-    //return v.visitAssignCommand(this, o);
-  //}
+  public Object visit(Visitor v, Object o) {
+    return v.visitCollaboration(this, o);
+  }
   public Identifier ID;
   public BotList BL;
   public OperationList OL;

@@ -20,9 +20,9 @@ public class SequentialCollaboration extends CollaborationList {
 
   }
 
-  //public Object visit(Visitor v, Object o) {
-    //return v.visitSequentialCommand(this, o);
-  //}
+  public Object visit(Visitor v, Object o) {
+    return v.visitSequentialCollaboration(this, o);
+  }
 
   public CollaborationList C1;
   public CollaborationList C2;

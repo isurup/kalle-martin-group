@@ -20,9 +20,9 @@ public class SequentialBot extends Bot {//extends CollaborationList{
       B2 = b2AST;
 
   }
-  //public Object visit(Visitor v, Object o) {
-    //return v.visitSequentialCommand(this, o);
-  //}
+  public Object visit(Visitor v, Object o) {
+    return v.visitSequentialBot(this, o);
+  }
 
   public BotList B1;
   public BotList B2;

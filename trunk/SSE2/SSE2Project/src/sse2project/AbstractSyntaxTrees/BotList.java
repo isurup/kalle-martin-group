@@ -15,7 +15,7 @@ public abstract class BotList extends CollaborationList { //why and why not Coll
     public BotList() {//(SourcePosition thePosition){
      // super (thePosition);
     }
-    //public Object visit(Visitor v, Object o) {
-    //return v.visitAssignCommand(this, o);
-  //}
+    public Object visit(Visitor v, Object o) {    
+    return v.visitBotList(this, o);
+  }
 }

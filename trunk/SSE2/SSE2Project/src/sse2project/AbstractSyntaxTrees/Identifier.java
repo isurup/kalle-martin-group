@@ -19,12 +19,9 @@ public class Identifier extends Terminal {
     //decl = null;
   }
 
-
-    
-
-  //public Object visit(Visitor v, Object o) {
-    //return v.visitIdentifier(this, o);
-  //}
+  public Object visit(Visitor v, Object o) {
+    return v.visitIdentifier(this, o);
+  }
 
   //public TypeDenoter type;
   //public AST decl; // Either a Declaration or a FieldTypeDenoter

@@ -32,8 +32,9 @@ public class Compiler
 
         scanner = new Scanner(source);
         parser = new Parser(scanner);
-
         theAST = parser.parseBotsProgram();
+
+        theAST.visit(null, this);
 
         return true;
     }
