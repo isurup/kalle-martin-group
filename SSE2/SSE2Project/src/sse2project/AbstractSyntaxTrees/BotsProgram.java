@@ -9,6 +9,7 @@ package sse2project.AbstractSyntaxTrees;
  *
  * @author Kalle
  */
+import sse2project.Parser;
 import sse2project.SourcePosition;
 
 public class BotsProgram extends AST {
@@ -21,4 +22,5 @@ public class BotsProgram extends AST {
     return v.visitBotsProgram(this, o);
   }
     public CollaborationList CL;
+
   }

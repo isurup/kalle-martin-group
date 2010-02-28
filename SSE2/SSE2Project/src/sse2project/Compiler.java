@@ -5,9 +5,23 @@
 
 package sse2project;
 
+import sse2project.AbstractSyntaxTrees.Bot;
+import sse2project.AbstractSyntaxTrees.BotList;
 import sse2project.AbstractSyntaxTrees.BotsProgram;
+import sse2project.AbstractSyntaxTrees.Collaboration;
+import sse2project.AbstractSyntaxTrees.CollaborationList;
+import sse2project.AbstractSyntaxTrees.Identifier;
+import sse2project.AbstractSyntaxTrees.Identifier2;
+import sse2project.AbstractSyntaxTrees.IntegerLiteral;
+import sse2project.AbstractSyntaxTrees.OperationList;
+import sse2project.AbstractSyntaxTrees.Operations;
+import sse2project.AbstractSyntaxTrees.SequentialBot;
+import sse2project.AbstractSyntaxTrees.SequentialCollaboration;
+import sse2project.AbstractSyntaxTrees.SequentialOperation;
+import sse2project.AbstractSyntaxTrees.Terminal;
+import sse2project.AbstractSyntaxTrees.Visitor;
 
-public class Compiler
+public class Compiler implements Visitor
 {
     private static Scanner scanner;
     private static Parser parser;
@@ -33,9 +47,100 @@ public class Compiler
         scanner = new Scanner(source);
         parser = new Parser(scanner);
         theAST = parser.parseBotsProgram();
-
-        theAST.visit(null, this);
-
+        
+        
+        theAST.visit(this, this);        
         return true;
+    }
+
+    public Object visitBot(Bot b, Object o) {
+       System.out.println("visitBot");
+       b.INTLIT.visit(this, o);
+       return null;
+    }
+
+    public Object visitBotList(BotList bl, Object o) {
+        System.out.println("visitBotList");
+        bl.visit(this, o);
+        return null;
+    }
+
+    public Object visitBotsProgram(BotsProgram bp, Object o) {
+        System.out.println("visitBotsProgram");
+        bp.CL.visit(this, o);
+        return    null;
+    }
+
+    public Object visitCollaboration(Collaboration c, Object o) {
+        System.out.println("visitCollaboration");
+        c.BL.visit(this, o);
+        c.ID.visit(this, o);
+        c.OL.visit(this, o);
+        return null;
+    }
+
+    public Object visitCollaborationList(CollaborationList cl, Object o) {
+        System.out.println("visitCollaborationList");
+        cl.visit(this, o);
+        return null;
+    }
+
+    public Object visitIdentifier(Identifier i, Object o) {
+        System.out.print("visitIdentifier");
+        System.out.println("<"+i.spelling+">");
+        return null;
+    }
+
+    public Object visitIdentifier2(Identifier2 i, Object o) {
+        System.out.print("visitIdentifier2");
+        System.out.println("<"+i.spelling+">");
+        return null;
+    }
+
+    public Object visitIntegerLiteral(IntegerLiteral il, Object o) {
+        System.out.print("visitIntegerLiteral");
+        System.out.println("<"+il.spelling+">");
+        return null;
+    }
+
+    public Object visitOperationList(OperationList ol, Object o) {
+        System.out.println("visitOperationList");
+        ol.visit(this, o);
+        return null;
+    }
+
+    public Object visitOperations(Operations op, Object o) {
+        System.out.println("visitOperations");
+        op.ID2.visit(this, o);
+        op.INTLIT.visit(this, o);
+        return null;
+    }
+
+    public Object visitSequentialBot(SequentialBot sb, Object o) {
+        System.out.println("visitSequentialBot");
+        sb.B1.visit(this, o);
+        ///sb.B2.visit(this, o);//repair this
+        ///sb.INTLIT.visit(this, o);//repair this
+        return null;
+    }
+
+    public Object visitSequentialCollaboration(SequentialCollaboration sc, Object o) {
+        System.out.println("visitSequentialCollaboration");
+        sc.C1.visit(this, o);
+        sc.C2.visit(this, o);
+        return null;
+    }
+
+    public Object visitSequentialOperation(SequentialOperation so, Object o) {
+        System.out.println("visitSequentialOperation");
+        so.O1.visit(this, o);
+        so.O2.visit(this, o);
+        return null;
+    }
+
+    public Object visitTerminal(Terminal t, Object o) {
+        System.out.println("visitTerminal");
+        t.visit(this, o);
+        return null;
     }
 }
