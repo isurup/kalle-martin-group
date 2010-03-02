@@ -74,8 +74,8 @@ public class Compiler implements Visitor
     public Object visitCollaboration(Collaboration c, Object o) {
         System.out.println("visitCollaboration");
 
-        c.BL.visit(this, o);
         c.ID.visit(this, o);
+        c.BL.visit(this, o);
         c.OL.visit(this, o);
         return null;
     }
