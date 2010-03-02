@@ -73,6 +73,7 @@ public class Compiler implements Visitor
 
     public Object visitCollaboration(Collaboration c, Object o) {
         System.out.println("visitCollaboration");
+
         c.BL.visit(this, o);
         c.ID.visit(this, o);
         c.OL.visit(this, o);
@@ -119,8 +120,10 @@ public class Compiler implements Visitor
     public Object visitSequentialBot(SequentialBot sb, Object o) {
         System.out.println("visitSequentialBot");
         sb.B1.visit(this, o);
-        ///sb.B2.visit(this, o);//repair this
-        ///sb.INTLIT.visit(this, o);//repair this
+        if(sb.B2!=null)
+        sb.B2.visit(this, o);//repair this
+        if(sb.INTLIT!=null)
+        sb.INTLIT.visit(this, o);//repair this
         return null;
     }
 
