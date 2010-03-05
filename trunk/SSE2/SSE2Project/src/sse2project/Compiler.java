@@ -37,7 +37,7 @@ public class Compiler implements Visitor
         this.sourceName = sourceName;        
     }
 
-    boolean CompileProgram() throws IOException
+    boolean CompileProgram() //throws IOException
     {
         SourceFile source = new SourceFile(sourceName);            
 

@@ -9,6 +9,8 @@ import java.io.FileWriter;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import sse2project.AbstractSyntaxTrees.Bot;
 import sse2project.AbstractSyntaxTrees.BotList;
 import sse2project.AbstractSyntaxTrees.BotsProgram;
@@ -42,11 +44,17 @@ public class Encoder implements  Visitor{
          out = new File("Text.txt");
     }
     public final void encodeRun (BotsProgram theAST, boolean showingTable) 
-            throws IOException {
+             {
         theAST.visit(this, out);
-     FileWriter fw = new FileWriter(out);
-     fw.write(str);
-     fw.close();
+     FileWriter fw;
+        try {
+            fw = new FileWriter(out);
+             fw.write(str);
+            fw.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Encoder.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
   }
     // Appends an instruction, with the given fields, to the object code.
   private void emit (int op, int n, int r, int d) {
