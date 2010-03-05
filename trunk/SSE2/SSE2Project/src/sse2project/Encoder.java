@@ -5,6 +5,9 @@
 
 package sse2project;
 
+import java.io.FileWriter;
+
+import java.io.File;
 import java.io.IOException;
 import sse2project.AbstractSyntaxTrees.Bot;
 import sse2project.AbstractSyntaxTrees.BotList;
@@ -22,42 +25,34 @@ import sse2project.AbstractSyntaxTrees.SequentialOperation;
 import sse2project.AbstractSyntaxTrees.Terminal;
 import sse2project.AbstractSyntaxTrees.Visitor;
 
-public class Compiler implements Visitor
-{
-    private static Scanner scanner;
-    private static Parser parser;
-    private static Encoder encoder;
-    private static BotsProgram theAST;
+/**
+ *
+ * @author Administrator
+ */
 
-    public  String sourceName;
-    
-    public Compiler(){
-    }
-    public Compiler(String sourceName){
-        this.sourceName = sourceName;        
-    }
+public class Encoder implements  Visitor{
 
-    boolean CompileProgram() throws IOException
+    BotsProgram AST;
+    File out;
+    String str="";
+
+    String temp = "";
+    public Encoder()
     {
-        SourceFile source = new SourceFile(sourceName);            
-
-        if (source == null) {
-            System.out.println("Can't access source file " + sourceName);
-            System.exit(1);
-        }
-
-        scanner = new Scanner(source);
-        parser = new Parser(scanner);
-        theAST = parser.parseBotsProgram();
-        
-        
-        theAST.visit(this, this);
-        encoder =new Encoder();
-        encoder.encodeRun(theAST, true);
-        return true;
+         out = new File("Text.txt");
     }
+    public final void encodeRun (BotsProgram theAST, boolean showingTable) 
+            throws IOException {
+        theAST.visit(this, out);
+     FileWriter fw = new FileWriter(out);
+     fw.write(str);
+     fw.close();
+  }
+    // Appends an instruction, with the given fields, to the object code.
+  private void emit (int op, int n, int r, int d) {
+  }
 
-    public Object visitBot(Bot b, Object o) {
+     public Object visitBot(Bot b, Object o) {
        System.out.println("visitBot");
        b.INTLIT.visit(this, o);
        return null;
@@ -80,24 +75,27 @@ public class Compiler implements Visitor
         c.ID.visit(this, o);
         c.BL.visit(this, o);
         c.OL.visit(this, o);
+
+        //temp = str;
+        str += "Collaborations"+"["+"No"+"]"+"="+"new Collaboration();"+"\r\n";
+        str+="{\r\n";
+        str +=temp;
+        str+="}\r\n";
+
+        temp="";
         return null;
     }
 
-    public Object visitCollaborationList(CollaborationList cl, Object o) {
-        System.out.println("visitCollaborationList");
+    public Object visitCollaborationList(CollaborationList cl, Object o) {       
         cl.visit(this, o);
         return null;
     }
 
-    public Object visitIdentifier(Identifier i, Object o) {
-        System.out.print("visitIdentifier");
-        System.out.println("<"+i.spelling+">");
+    public Object visitIdentifier(Identifier i, Object o) {       
         return null;
     }
 
-    public Object visitIdentifier2(Identifier2 i, Object o) {
-        System.out.print("visitIdentifier2");
-        System.out.println("<"+i.spelling+">");
+    public Object visitIdentifier2(Identifier2 i, Object o) {      
         return null;
     }
 
@@ -117,6 +115,16 @@ public class Compiler implements Visitor
         System.out.println("visitOperations");
         op.ID2.visit(this, o);
         op.INTLIT.visit(this, o);
+
+       //temp=null;
+       if(op.ID2.spelling.toUpperCase().compareTo("WORK")==0){         
+            temp += "Collaborations[No-1].include(new BotMethod.botWork(),Bot.bots["+op.INTLIT.spelling+"]);"+"\r\n";
+        }
+       else  if(op.ID2.spelling.toUpperCase().compareTo("MOVE")==0){            
+            temp += "Collaborations[No-1].include(new BotMethod.botMove(),Bot.bots["+op.INTLIT.spelling+ "]);"+"\r\n";
+        }
+
+
         return null;
     }
 
@@ -131,7 +139,7 @@ public class Compiler implements Visitor
     }
 
     public Object visitSequentialCollaboration(SequentialCollaboration sc, Object o) {
-        System.out.println("visitSequentialCollaboration");                
+        System.out.println("visitSequentialCollaboration");
         sc.C1.visit(this, o);
         sc.C2.visit(this, o);
         return null;
@@ -147,6 +155,10 @@ public class Compiler implements Visitor
     public Object visitTerminal(Terminal t, Object o) {
         System.out.println("visitTerminal");
         t.visit(this, o);
+
+
         return null;
     }
+
+
 }
