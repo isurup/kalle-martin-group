@@ -28,5 +28,5 @@ public interface  Visitor {
     public abstract Object visitSequentialOperation(SequentialOperation so,Object o);
     public abstract Object visitTerminal(Terminal t,Object o);
 
-    public Object visitCollaboration(Synchronization aThis, Object o);
+    //public Object visitCollaboration(Synchronization aThis, Object o);
 }
