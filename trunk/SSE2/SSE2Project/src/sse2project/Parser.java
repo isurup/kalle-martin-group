@@ -14,6 +14,7 @@ import sse2project.AbstractSyntaxTrees.BotsProgram;
 import sse2project.AbstractSyntaxTrees.CollaborationList;
 import sse2project.AbstractSyntaxTrees.Collaboration;
 import sse2project.AbstractSyntaxTrees.SequentialCollaboration;
+import sse2project.AbstractSyntaxTrees.Synchronization;
 import sse2project.AbstractSyntaxTrees.BotList;
 import sse2project.AbstractSyntaxTrees.Bot;
 import sse2project.AbstractSyntaxTrees.SequentialBot;
@@ -136,6 +137,27 @@ public class Parser {
         accept(Token.RBRACKET);
         cAST = new Collaboration(ID, b1, o1);
         return cAST;
+    }
+    
+///////////////////////////////////////////////////////////////////////////////
+//
+// SYNCHRONIZATION
+//
+///////////////////////////////////////////////////////////////////////////////
+    
+Synchronization parseSynchronization() throws SyntaxError{
+        Synchronization sAST;// = parseCollaboration();
+        accept(Token.SYNC);
+        accept(Token.LPAREN);
+        Operations o1 = parseOperation();
+        Bot b1 = parseBot();
+        accept(Token.COMMA);
+        Operations o2 = parseOperation();
+        Bot b2 = parseBot();
+        
+        accept(Token.RPAREN);
+        sAST = new Synchronization(o1, b1, o2, b2);
+        return sAST;
     }
 
 ///////////////////////////////////////////////////////////////////////////////

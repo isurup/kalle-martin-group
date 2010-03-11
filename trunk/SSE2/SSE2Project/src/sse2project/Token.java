@@ -77,18 +77,21 @@ final class Token extends Object {
   	BETWEEN 		= 2,
   	BY 				= 3,
   	COLLABORATION 	= 4,
+        SYNC = 5,
 
     // punctuation...
-    SEMICOLON	= 5,
-    COMMA		= 6,
+    SEMICOLON	= 6,
+    COMMA		= 7,
 
     // brackets...
-    LBRACKET	= 7,
-    RBRACKET	= 8,
+    LPAREN      = 8,
+    RPAREN      = 9,
+    LBRACKET	= 10,
+    RBRACKET	= 11,
 
     // special tokens...
-    EOT			= 9,
-    ERROR		= 10;
+    EOT			= 12,
+    ERROR		= 13;
 
   private static String[] tokenTable = new String[] {
     "<int>",
@@ -97,10 +100,12 @@ final class Token extends Object {
 	"between",
 	"by",
 	"collaboration",
+        "sync",
 
     ";",
     ",",
-
+    "(",
+    ")",
     "[",
     "]",
 
@@ -109,6 +114,6 @@ final class Token extends Object {
   };
 
   private final static int	firstReservedWord = Token.BETWEEN,
-  				lastReservedWord  = Token.COLLABORATION;
+  				lastReservedWord  = Token.SYNC;
 
 }

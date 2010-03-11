@@ -18,7 +18,7 @@ public class Main {
      */
     public static void main(String[] args) throws IOException {
         System.out.println("<GROUP 1> SSE2: BoCoLa");
-        String path  = "C:\\Documents and Settings\\Administrator\\My Documents\\Source Insight\\Projects\\Triangle";
+        String path  = "D:";
         String fileName = "\\"+"tam2.txt";
         Compiler comp = new Compiler(path+fileName);
         comp.CompileProgram();
