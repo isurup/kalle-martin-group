@@ -146,13 +146,13 @@ public final class Scanner {
     //  takeIt();
     //  return Token.IS;
 
-    //case '(':
-    //  takeIt();
-    //  return Token.LPAREN;
+    case '(':
+      takeIt();
+      return Token.LPAREN;
 
-    //case ')':
-    //  takeIt();
-    //  return Token.RPAREN;
+    case ')':
+      takeIt();
+      return Token.RPAREN;
 
     case '[':
       takeIt();

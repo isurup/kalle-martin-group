@@ -11,6 +11,7 @@ import sse2project.AbstractSyntaxTrees.BotList;
 import sse2project.AbstractSyntaxTrees.BotsProgram;
 import sse2project.AbstractSyntaxTrees.Collaboration;
 import sse2project.AbstractSyntaxTrees.CollaborationList;
+import sse2project.AbstractSyntaxTrees.Synchronization;
 import sse2project.AbstractSyntaxTrees.Identifier;
 import sse2project.AbstractSyntaxTrees.Identifier2;
 import sse2project.AbstractSyntaxTrees.IntegerLiteral;
@@ -89,6 +90,15 @@ public class Compiler implements Visitor
         return null;
     }
 
+     public Object visitSynchronization(Synchronization sync, Object o) {//BotList BL1AST, OperationList OL1AST, BotList BL2AST, OperationList OL2AST
+        System.out.println("visitSynchronization");
+        sync.B1.visit(this, o);
+        sync.O1.visit(this, o);
+        sync.B2.visit(this, o);
+        sync.O1.visit(this, o);
+        return null;
+    }
+
     public Object visitIdentifier(Identifier i, Object o) {
         System.out.print("visitIdentifier");
         System.out.println("<"+i.spelling+">");
@@ -148,5 +158,9 @@ public class Compiler implements Visitor
         System.out.println("visitTerminal");
         t.visit(this, o);
         return null;
+    }
+
+    public Object visitCollaboration(Synchronization aThis, Object o) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

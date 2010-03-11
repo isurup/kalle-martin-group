@@ -24,6 +24,7 @@ import sse2project.AbstractSyntaxTrees.Operations;
 import sse2project.AbstractSyntaxTrees.SequentialBot;
 import sse2project.AbstractSyntaxTrees.SequentialCollaboration;
 import sse2project.AbstractSyntaxTrees.SequentialOperation;
+import sse2project.AbstractSyntaxTrees.Synchronization;
 import sse2project.AbstractSyntaxTrees.Terminal;
 import sse2project.AbstractSyntaxTrees.Visitor;
 
@@ -94,6 +95,13 @@ public class Encoder implements  Visitor{
         return null;
     }
 
+    public Object visitSynchronization(Synchronization sync, Object o) {//BotList BL1AST, OperationList OL1AST, BotList BL2AST, OperationList OL2AST
+        System.out.println("visitSynchronization");
+
+        str += "Collaborations[No-1].include("+sync.O1.visit(this, o)+","+sync.O2.visit(this, o)+")\r\n";
+        return null;
+    }
+
     public Object visitCollaborationList(CollaborationList cl, Object o) {       
         cl.visit(this, o);
         return null;
@@ -121,19 +129,22 @@ public class Encoder implements  Visitor{
 
     public Object visitOperations(Operations op, Object o) {
         System.out.println("visitOperations");
+        String temp1="";
         op.ID2.visit(this, o);
         op.INTLIT.visit(this, o);
 
        //temp=null;
        if(op.ID2.spelling.toUpperCase().compareTo("WORK")==0){         
             temp += "Collaborations[No-1].include(new BotMethod.botWork(),Bot.bots["+op.INTLIT.spelling+"]);"+"\r\n";
+            temp1 ="new BotMethod.botWork(),Bot.bots["+op.INTLIT.spelling+"]";
         }
        else  if(op.ID2.spelling.toUpperCase().compareTo("MOVE")==0){            
             temp += "Collaborations[No-1].include(new BotMethod.botMove(),Bot.bots["+op.INTLIT.spelling+ "]);"+"\r\n";
+            temp1 ="new BotMethod.botMove(),Bot.bots["+op.INTLIT.spelling+"]";
         }
 
 
-        return null;
+        return temp1;
     }
 
     public Object visitSequentialBot(SequentialBot sb, Object o) {
@@ -166,6 +177,11 @@ public class Encoder implements  Visitor{
 
 
         return null;
+    }
+
+
+    public Object visitCollaboration(Synchronization aThis, Object o) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
 
