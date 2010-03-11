@@ -92,10 +92,10 @@ public class Compiler implements Visitor
 
      public Object visitSynchronization(Synchronization sync, Object o) {//BotList BL1AST, OperationList OL1AST, BotList BL2AST, OperationList OL2AST
         System.out.println("visitSynchronization");
-        sync.B1.visit(this, o);
+       // sync.B1.visit(this, o);
         sync.O1.visit(this, o);
-        sync.B2.visit(this, o);
-        sync.O1.visit(this, o);
+       // sync.B2.visit(this, o);
+        sync.O2.visit(this, o);
         return null;
     }
 
@@ -125,6 +125,14 @@ public class Compiler implements Visitor
 
     public Object visitOperations(Operations op, Object o) {
         System.out.println("visitOperations");
+        if(op.sync!=null){
+            System.out.println("visitSync");
+            //op.sync.B1.visit(this, o);
+            //op.sync.B2.visit(this, o);
+            op.sync.O1.visit(this, o);
+            op.sync.O2.visit(this, o);   
+            return null;
+        }        
         op.ID2.visit(this, o);
         op.INTLIT.visit(this, o);
         return null;
@@ -151,6 +159,7 @@ public class Compiler implements Visitor
         System.out.println("visitSequentialOperation");
         so.O1.visit(this, o);
         so.O2.visit(this, o);
+
         return null;
     }
 

@@ -16,15 +16,15 @@ public class Synchronization extends CollaborationList{
 
       B1 = B1AST;
       O1 = O1AST;
-      B2 = B1AST;
-      O2 = O1AST;
+      B2 = B2AST;
+      O2 = O2AST;
   }
 
     public Synchronization(OperationList o1, BotList b1, OperationList o2, BotList b2) {
         throw new UnsupportedOperationException("Not yet implemented");
     }
   public Object visit(Visitor v, Object o) {
-    return v.visitCollaboration(this, o);
+    return v.visitSynchronization(this, o);
   }
   public BotList B1;
   public OperationList O1;

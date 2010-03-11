@@ -2,7 +2,6 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package sse2project;
 
 /**
@@ -128,6 +127,7 @@ public class Parser {
 //
 ///////////////////////////////////////////////////////////////////////////////
     Collaboration parseCollaboration() throws SyntaxError{
+
         Collaboration cAST;// = parseCollaboration();
         accept(Token.COLLABORATION);    
         Identifier ID = parseIdentifier();       
@@ -150,13 +150,12 @@ Synchronization parseSynchronization() throws SyntaxError{
         accept(Token.SYNC);
         accept(Token.LPAREN);
         Operations o1 = parseOperation();
-        Bot b1 = parseBot();
         accept(Token.COMMA);
+        //Bot b1 = parseBot();
         Operations o2 = parseOperation();
-        Bot b2 = parseBot();
-        
+        //Bot b2 = parseBot();
         accept(Token.RPAREN);
-        sAST = new Synchronization(o1, b1, o2, b2);
+        sAST = new Synchronization(o1, null, o2, null);
         return sAST;
     }
 
@@ -196,7 +195,7 @@ Synchronization parseSynchronization() throws SyntaxError{
 ///////////////////////////////////////////////////////////////////////////////
     OperationList parseOperationList() throws SyntaxError {
         OperationList o1AST =  parseOperation();
-        
+        //
         while(currentToken.kind == Token.SEMICOLON){
              accept(Token.SEMICOLON);
              if(currentToken.kind == Token.RBRACKET)
@@ -214,12 +213,18 @@ Synchronization parseSynchronization() throws SyntaxError{
 ///////////////////////////////////////////////////////////////////////////////
     Operations parseOperation()throws SyntaxError {
         Operations OAST=null;// = parseOperation();
-        Identifier2 ID2 = new Identifier2(currentToken.spelling, previousTokenPosition);
-        accept(Token.IDENTIFIER);        
-        accept(Token.BY);
-        IntegerLiteral IL =   parseIntegerLiteral();
-        accept(Token.INTLITERAL);
-        OAST  = new Operations(ID2, IL, previousTokenPosition);
+
+        if(currentToken.kind == currentToken.SYNC){
+            Synchronization sync = parseSynchronization();
+            OAST = new Operations(sync, previousTokenPosition);
+        }else{
+            Identifier2 ID2 = new Identifier2(currentToken.spelling, previousTokenPosition);
+            accept(Token.IDENTIFIER);
+            accept(Token.BY);
+            IntegerLiteral IL =   parseIntegerLiteral();
+            accept(Token.INTLITERAL);
+            OAST  = new Operations(ID2, IL, previousTokenPosition);
+        }
         return OAST;
     }
 

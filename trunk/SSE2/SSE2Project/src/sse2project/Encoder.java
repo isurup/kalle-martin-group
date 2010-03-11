@@ -61,26 +61,22 @@ public class Encoder implements  Visitor{
   private void emit (int op, int n, int r, int d) {
   }
 
-     public Object visitBot(Bot b, Object o) {
-       System.out.println("visitBot");
+     public Object visitBot(Bot b, Object o) {       
        b.INTLIT.visit(this, o);
        return null;
     }
 
-    public Object visitBotList(BotList bl, Object o) {
-        System.out.println("visitBotList");
+    public Object visitBotList(BotList bl, Object o) {        
         bl.visit(this, o);
         return null;
     }
 
-    public Object visitBotsProgram(BotsProgram bp, Object o) {
-        System.out.println("visitBotsProgram");
+    public Object visitBotsProgram(BotsProgram bp, Object o) {        
         bp.CL.visit(this, o);
         return    null;
     }
 
-    public Object visitCollaboration(Collaboration c, Object o) {
-        System.out.println("visitCollaboration");
+    public Object visitCollaboration(Collaboration c, Object o) {        
         c.ID.visit(this, o);
         c.BL.visit(this, o);
         c.OL.visit(this, o);
@@ -94,11 +90,8 @@ public class Encoder implements  Visitor{
         temp="";
         return null;
     }
-
-    public Object visitSynchronization(Synchronization sync, Object o) {//BotList BL1AST, OperationList OL1AST, BotList BL2AST, OperationList OL2AST
-        System.out.println("visitSynchronization");
-
-        str += "Collaborations[No-1].include("+sync.O1.visit(this, o)+","+sync.O2.visit(this, o)+")\r\n";
+    public Object visitSynchronization(Synchronization sync, Object o) {
+        temp += "Collaborations[No-1].include("+sync.O1.visit(this, o)+","+sync.O2.visit(this, o)+")\r\n";
         return null;
     }
 
@@ -115,21 +108,22 @@ public class Encoder implements  Visitor{
         return null;
     }
 
-    public Object visitIntegerLiteral(IntegerLiteral il, Object o) {
-        System.out.print("visitIntegerLiteral");
-        System.out.println("<"+il.spelling+">");
+    public Object visitIntegerLiteral(IntegerLiteral il, Object o) {        
         return null;
     }
 
-    public Object visitOperationList(OperationList ol, Object o) {
-        System.out.println("visitOperationList");
+    public Object visitOperationList(OperationList ol, Object o) {        
         ol.visit(this, o);
         return null;
     }
 
-    public Object visitOperations(Operations op, Object o) {
-        System.out.println("visitOperations");
+    public Object visitOperations(Operations op, Object o) {        
         String temp1="";
+
+        if(op.sync!=null){
+            op.sync.visit(this, o);
+            return null;
+        }
         op.ID2.visit(this, o);
         op.INTLIT.visit(this, o);
 
@@ -147,8 +141,7 @@ public class Encoder implements  Visitor{
         return temp1;
     }
 
-    public Object visitSequentialBot(SequentialBot sb, Object o) {
-        System.out.println("visitSequentialBot");
+    public Object visitSequentialBot(SequentialBot sb, Object o) {        
         sb.B1.visit(this, o);
         if(sb.B2!=null)
         sb.B2.visit(this, o);//repair this
@@ -157,32 +150,20 @@ public class Encoder implements  Visitor{
         return null;
     }
 
-    public Object visitSequentialCollaboration(SequentialCollaboration sc, Object o) {
-        System.out.println("visitSequentialCollaboration");
+    public Object visitSequentialCollaboration(SequentialCollaboration sc, Object o) {    
         sc.C1.visit(this, o);
         sc.C2.visit(this, o);
         return null;
     }
 
-    public Object visitSequentialOperation(SequentialOperation so, Object o) {
-        System.out.println("visitSequentialOperation");
+    public Object visitSequentialOperation(SequentialOperation so, Object o) {        
         so.O1.visit(this, o);
         so.O2.visit(this, o);
         return null;
     }
 
-    public Object visitTerminal(Terminal t, Object o) {
-        System.out.println("visitTerminal");
+    public Object visitTerminal(Terminal t, Object o) {        
         t.visit(this, o);
-
-
         return null;
     }
-
-
-    public Object visitCollaboration(Synchronization aThis, Object o) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-
 }
