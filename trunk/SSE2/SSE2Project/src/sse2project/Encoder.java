@@ -91,7 +91,7 @@ public class Encoder implements  Visitor{
         return null;
     }
     public Object visitSynchronization(Synchronization sync, Object o) {
-        temp += "Collaborations[No-1].include("+sync.O1.visit(this, o)+","+sync.O2.visit(this, o)+")\r\n";
+        temp += "Collaborations[No-1].include("+sync.O1.visit(this, o)+","+sync.O2.visit(this, o)+");\r\n";
         return null;
     }
 
