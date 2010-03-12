@@ -7,6 +7,7 @@ public class Lock {
 
    public Lock(int no) {
       c = no;
+	  //kjaskdsj
    };
 
    synchronized public void ready() {
