@@ -1,0 +1,77 @@
+/////////BoCoLa Program
+
+collaboration c1
+between 1, 2, 3
+[
+move by 3;
+sync(move by 1, work by 2);
+]
+collaboration c2
+between 4,5,6
+[
+move by 5;
+work by 4;
+move by 6;
+]
+
+
+///////////AST tree
+visitBotsProgram
+visitSequentialCollaboration
+visitCollaboration
+visitIdentifier<c1>
+visitSequentialBot
+visitSequentialBot
+visitBot
+visitIntegerLiteral<1>
+visitBot
+visitIntegerLiteral<2>
+visitBot
+visitIntegerLiteral<3>
+visitSequentialOperation
+visitOperations
+visitIdentifier2<move>
+visitIntegerLiteral<3>
+visitOperations
+visitSync
+visitOperations
+visitIdentifier2<move>
+visitIntegerLiteral<1>
+visitOperations
+visitIdentifier2<work>
+visitIntegerLiteral<2>
+visitCollaboration
+visitIdentifier<c2>
+visitSequentialBot
+visitSequentialBot
+visitBot
+visitIntegerLiteral<4>
+visitBot
+visitIntegerLiteral<5>
+visitBot
+visitIntegerLiteral<6>
+visitSequentialOperation
+visitSequentialOperation
+visitOperations
+visitIdentifier2<move>
+visitIntegerLiteral<5>
+visitOperations
+visitIdentifier2<work>
+visitIntegerLiteral<4>
+visitOperations
+visitIdentifier2<move>
+visitIntegerLiteral<6>
+
+
+///////////BoCoLa -> Java
+Collaborations[No]=new Collaboration();
+{
+Collaborations[No-1].include(new BotMethod.botMove(),Bot.bots[3]);
+Collaborations[No-1].include(new BotMethod.botMove(),Bot.bots[1],new BotMethod.botWork(),Bot.bots[2]);
+}
+Collaborations[No]=new Collaboration();
+{
+Collaborations[No-1].include(new BotMethod.botMove(),Bot.bots[5]);
+Collaborations[No-1].include(new BotMethod.botWork(),Bot.bots[4]);
+Collaborations[No-1].include(new BotMethod.botMove(),Bot.bots[6]);
+}
