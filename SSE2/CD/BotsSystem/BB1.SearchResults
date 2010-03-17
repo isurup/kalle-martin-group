@@ -1,0 +1,23 @@
+---- bots Matches (22 in 11 files) ----
+Activity.java (src\bots):package bots;
+Bot.java (src\bots):package bots;
+Bot.java (src\bots):      bots[no] = this;
+Bot.java (src\bots):   static public Bot [] bots = new Bot[10];
+BotMethod.java (src\bots):package bots;
+Bots.java (src\bots):package bots;
+Collaboration.java (src\bots):package bots;
+Collaboration.java (src\bots):BotMethod.botMove bm = new BotMethod.botMove(); //... Bot.bots[0];
+Collaboration.java (src\bots)://Bot.bots[0].work(Color.RED);
+Collaboration.java (src\bots)://Bot.bots[0].actList
+Collaboration.java (src\bots)://bm.execute(Bot.bots[0], Collaborations[0]);
+Collaboration.java (src\bots):Collaborations[0].include(bm, Bot.bots[0]);
+Context.java (src\bots):package bots;
+Graphical_BotSystem.java (src\bots):package bots;
+Graphical_BotSystem.java (src\bots):         Simulator.Bot ebi = e.bots[i];
+Graphical_BotSystem.java (src\bots):         bots[botNo++] = xb;
+Graphical_BotSystem.java (src\bots):      Bot [] bots = new Bot[10];//9
+Lock.java (src\bots):package bots;
+Method.java (src\bots):package bots;
+Participant.java (src\bots):package bots;
+Visualization.java (src\bots):package bots;
+Visualization.java (src\bots):         Bot b = Bot.bots[i];
