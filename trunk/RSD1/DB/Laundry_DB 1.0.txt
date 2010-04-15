@@ -1,0 +1,18 @@
+--Tables
+
+--Person
+CREATE TABLE Person(CPR VARCHAR(13),type enum('elder','admin'),pictureURL VARCHAR(100),PRIMARY KEY(CPR));
+
+--Clothes
+CREATE TABLE Clothes(id INT,type enum('Sweater','Shirt','Pants','Underwear','WashingBag','Dress','Shorts','Towel','BedLinen'),color enum('Colored','White'),washingTemperature enum('Degree30','Degree40','Degree60','Degree95','Handwash'),dryRecipe enum('HangDry','Tumbling'),fabric enum('Cotton','Synthetic','Wool'),weight INT,CPRNo VARCHAR(13),PRIMARY KEY(id),FOREIGN KEY (CPRNo) REFERENCES Person (CPR));
+
+--Tags
+CREATE TABLE Tags(Id INT,YEAR decimal(4),MONTH decimal(2),PRIMARY KEY (Id));
+
+--Name
+CREATE TABLE Name(name VARCHAR(30),surname VARCHAR(30),middleName VARCHAR(30),CPRno VARCHAR(13),FOREIGN KEY (CPRNo) REFERENCES Person (CPR));
+
+--Address
+CREATE TABLE Address(street VARCHAR(30), buildingNo VARCHAR(30), roomNo VARCHAR(30), city VARCHAR(30), postCode VARCHAR(30), country VARCHAR(30), CPRno VARCHAR(13), FOREIGN KEY (CPRNo) REFERENCES Person (CPR));
+
+
