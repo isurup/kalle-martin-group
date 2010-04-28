@@ -1,6 +1,0 @@
-D:\From My documents\Visual Studio 2008\Projects\DBconnection\MySQLLibrary\bin\Release\MySQLLibrary.dll
-D:\From My documents\Visual Studio 2008\Projects\DBconnection\MySQLLibrary\bin\Release\MySQLLibrary.pdb
-D:\From My documents\Visual Studio 2008\Projects\DBconnection\MySQLLibrary\bin\Release\MySql.Data.dll
-D:\From My documents\Visual Studio 2008\Projects\DBconnection\MySQLLibrary\obj\Release\ResolveAssemblyReference.cache
-D:\From My documents\Visual Studio 2008\Projects\DBconnection\MySQLLibrary\obj\Release\MySQLLibrary.dll
-D:\From My documents\Visual Studio 2008\Projects\DBconnection\MySQLLibrary\obj\Release\MySQLLibrary.pdb
