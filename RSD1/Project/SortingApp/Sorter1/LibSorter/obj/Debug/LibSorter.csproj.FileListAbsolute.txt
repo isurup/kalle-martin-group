@@ -1,0 +1,5 @@
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\Sorter1\LibSorter\bin\Debug\LibSorter.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\Sorter1\LibSorter\bin\Debug\LibSorter.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\Sorter1\LibSorter\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\Sorter1\LibSorter\obj\Debug\LibSorter.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\Sorter1\LibSorter\obj\Debug\LibSorter.pdb

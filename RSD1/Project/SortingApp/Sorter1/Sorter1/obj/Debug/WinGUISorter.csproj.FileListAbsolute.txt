@@ -1,0 +1,16 @@
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\Sorter1\Sorter1\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\Sorter1\Sorter1\obj\Debug\Sorter1.SensitivyControl.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\Sorter1\Sorter1\obj\Debug\Sorter1.Form1.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\Sorter1\Sorter1\obj\Debug\Sorter1.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\Sorter1\Sorter1\obj\Debug\WinGUISorter.csproj.GenerateResource.Cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\Sorter1\Sorter1\obj\Debug\Sorter1.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\Sorter1\Sorter1\bin\Debug\Sorter1.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\Sorter1\Sorter1\bin\Debug\Sorter1.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\Sorter1\Sorter1\obj\Debug\Sorter1.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\Sorter1\Sorter1\bin\Debug\StorageLib.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\Sorter1\Sorter1\bin\Debug\StorageLib.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\Sorter1\Sorter1\bin\Debug\SorterLib.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\Sorter1\Sorter1\bin\Debug\SorterLib.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\Sorter1\Sorter1\obj\Debug\Sorter1.ClothesValueControl.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\Sorter1\Sorter1\obj\Debug\Sorter1.WashingAlternatives.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\Sorter1\Sorter1\obj\Debug\Sorter1.Report.resources

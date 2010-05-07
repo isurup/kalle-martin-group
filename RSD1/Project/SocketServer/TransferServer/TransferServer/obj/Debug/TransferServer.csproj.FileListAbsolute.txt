@@ -1,0 +1,12 @@
+C:\Documents and Settings\Administrator\Local Settings\Application Data\Temporary Projects\TransferServer\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Local Settings\Application Data\Temporary Projects\TransferServer\bin\Debug\TransferServer.exe
+C:\Documents and Settings\Administrator\Local Settings\Application Data\Temporary Projects\TransferServer\bin\Debug\TransferServer.pdb
+C:\Documents and Settings\Administrator\Local Settings\Application Data\Temporary Projects\TransferServer\obj\Debug\TransferServer.exe
+C:\Documents and Settings\Administrator\Local Settings\Application Data\Temporary Projects\TransferServer\obj\Debug\TransferServer.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\TransferServer\TransferServer\obj\Debug\TransferServer.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\TransferServer\TransferServer\obj\Debug\TransferServer.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\TransferServer\TransferServer\bin\Debug\TransferServer.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\TransferServer\TransferServer\bin\Debug\TransferServer.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\TransferServer\TransferServer\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\TransferServer\TransferServer\bin\Debug\MySql.Data.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\TransferServer\TransferServer\bin\Debug\MySQLLibrary.dll
