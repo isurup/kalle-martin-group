@@ -1,0 +1,59 @@
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<a1:ArrayList id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/ns/System.Collections">
+<_items href="#ref-2"/>
+<_size>8</_size>
+<_version>8</_version>
+</a1:ArrayList>
+<SOAP-ENC:Array id="ref-2" SOAP-ENC:arrayType="xsd:anyType[8]">
+<item href="#ref-3"/>
+<item href="#ref-4"/>
+<item href="#ref-5"/>
+<item href="#ref-6"/>
+<item href="#ref-7"/>
+<item href="#ref-8"/>
+<item href="#ref-9"/>
+<item href="#ref-10"/>
+</SOAP-ENC:Array>
+<a3:ClothesValueData id="ref-3" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/SorterLib/SorterLib%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<type>31</type>
+<numberOfClothes>15</numberOfClothes>
+<mashine_total_value>1</mashine_total_value>
+</a3:ClothesValueData>
+<a3:ClothesValueData id="ref-4" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/SorterLib/SorterLib%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<type>32</type>
+<numberOfClothes>16</numberOfClothes>
+<mashine_total_value>1</mashine_total_value>
+</a3:ClothesValueData>
+<a3:ClothesValueData id="ref-5" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/SorterLib/SorterLib%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<type>33</type>
+<numberOfClothes>18</numberOfClothes>
+<mashine_total_value>1</mashine_total_value>
+</a3:ClothesValueData>
+<a3:ClothesValueData id="ref-6" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/SorterLib/SorterLib%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<type>34</type>
+<numberOfClothes>28</numberOfClothes>
+<mashine_total_value>1</mashine_total_value>
+</a3:ClothesValueData>
+<a3:ClothesValueData id="ref-7" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/SorterLib/SorterLib%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<type>35</type>
+<numberOfClothes>14</numberOfClothes>
+<mashine_total_value>1</mashine_total_value>
+</a3:ClothesValueData>
+<a3:ClothesValueData id="ref-8" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/SorterLib/SorterLib%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<type>36</type>
+<numberOfClothes>10</numberOfClothes>
+<mashine_total_value>1</mashine_total_value>
+</a3:ClothesValueData>
+<a3:ClothesValueData id="ref-9" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/SorterLib/SorterLib%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<type>37</type>
+<numberOfClothes>30</numberOfClothes>
+<mashine_total_value>1</mashine_total_value>
+</a3:ClothesValueData>
+<a3:ClothesValueData id="ref-10" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/SorterLib/SorterLib%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<type>38</type>
+<numberOfClothes>18</numberOfClothes>
+<mashine_total_value>1</mashine_total_value>
+</a3:ClothesValueData>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

@@ -1,0 +1,7 @@
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\TransferServer\TransferServer\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\TransferServer\TransferServer\bin\Release\TransferServer.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\TransferServer\TransferServer\bin\Release\TransferServer.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\TransferServer\TransferServer\bin\Release\MySQLLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\TransferServer\TransferServer\bin\Release\MySql.Data.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\TransferServer\TransferServer\obj\Release\TransferServer.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Examples\TransferServer\TransferServer\obj\Release\TransferServer.pdb
