@@ -1,0 +1,45 @@
+CREATE TABLE Person(CPR VARCHAR(13),type enum('elder','admin'),pictureURL VARCHAR(150),PRIMARY KEY(CPR));
+
+CREATE TABLE Clothes(id VARCHAR(30),type enum('Sweater','Shirt','Pants','Underwear','WashingBag','Dress','Shorts','Towel','BedLinen'),color enum('Colored','White'),washingTemperature enum('Degree30','Degree40','Degree60','Degree95','Handwash'),dryRecipe enum('HangDry','Tumbling'),fabric enum('Cotton','Synthetic','Wool'),weight INT, state INT, binId INT,CPRNo VARCHAR(13),PRIMARY KEY(id),FOREIGN KEY (CPRNo) REFERENCES Person (CPR));
+
+CREATE TABLE Tags(Id VARCHAR(30),YEAR decimal(4),MONTH decimal(2),DAY decimal(2),washCount INT, CPRno VARCHAR(13),PRIMARY KEY (Id),FOREIGN KEY (CPRNo) REFERENCES Person (CPR));
+
+CREATE TABLE Name(name VARCHAR(50),surname VARCHAR(30),middleName VARCHAR(30),CPRno VARCHAR(13),FOREIGN KEY (CPRNo) REFERENCES Person (CPR));
+
+CREATE TABLE Address(street VARCHAR(30), buildingNo VARCHAR(30), roomNo VARCHAR(30), city VARCHAR(30), postCode VARCHAR(30), country VARCHAR(30), CPRno VARCHAR(13),PRIMARY KEY(CPRno), FOREIGN KEY (CPRNo) REFERENCES Person (CPR));
+
+
+
+
+--new tables
+
+CREATE TABLE PositionServerServiceConfigurationData(Id INT AUTO_INCREMENT,ServiceConfig VARCHAR(50),PRIMARY KEY(Id));
+
+CREATE TABLE PositionServerServiceLog(Id INT AUTO_INCREMENT,__ID VARCHAR(30),DateTime VARCHAR(20),ServiceType VARCHAR(50), MessageType VARCHAR(50),Message VARCHAR(50),PRIMARY KEY(Id));
+
+CREATE TABLE EkahauPositionServiceProviderConfigurationData(Id INT AUTO_INCREMENT,IP VARCHAR(20),Port INT, ServerName VARCHAR(50),ServiceConfig VARCHAR(50),PRIMARY KEY(Id));
+
+CREATE TABLE EkahauPositionServiceProviderTagData(Id INT AUTO_INCREMENT,RobotId VARCHAR(20),TagID VARCHAR(30),PRIMARY KEY(Id));
+
+CREATE TABLE LRscanServiceProviderConfigurationData(Id INT AUTO_INCREMENT,IP VARCHAR(20),Port INT,ServerName VARCHAR(50),ServiceConfig VARCHAR(50),PRIMARY KEY(Id));
+
+CREATE TABLE iRobotServiceProviderConfigurationData(Id INT AUTO_INCREMENT,IP VARCHAR(20),Port INT,ServerName VARCHAR(50),ServiceConfig VARCHAR(50),PRIMARY KEY(Id));
+
+CREATE TABLE EkahauPositionData(Id INT AUTO_INCREMENT,RobotId VARCHAR(20),TagID VARCHAR(30),timestamp1 VARCHAR(20),timestamp2 VARCHAR(20),Xcoordinate INT,Ycoordinate INT,Site VARCHAR(100),Zone VARCHAR(100),PRIMARY KEY(Id));
+
+CREATE TABLE LRscanData(Id INT AUTO_INCREMENT,RobotId VARCHAR(20),timestamp VARCHAR(20),Angle DECIMAL(7,4), Dist DECIMAL(7,4), PRIMARY KEY(Id));
+
+
+
+
+--Below old tables
+
+
+CREATE TABLE OdometerData(Id INT AUTO_INCREMENT,RobotId VARCHAR(20),DateTime VARCHAR(20),relAngle INT,relDist INT, PRIMARY KEY(Id));
+
+CREATE TABLE EkahauPositionServiceConfigurationData(Id INT AUTO_INCREMENT,RobotId VARCHAR(20),PollInterval INT,PRIMARY KEY(Id));
+
+CREATE TABLE LRscanServicesConfigurationData(Id INT AUTO_INCREMENT,IP VARCHAR(20),Port INT,ServiceConfig VARCHAR(50),PollInterval INT,PRIMARY KEY(Id));
+
+CREATE TABLE OIdometerServicesConfigurationData(Id INT AUTO_INCREMENT,IP VARCHAR(20),Port INT,ServiceConfig VARCHAR(50),PollInterval INT,PRIMARY KEY(Id));
+
