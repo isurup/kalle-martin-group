@@ -39,7 +39,7 @@ namespace Reader
         {
             List<String> tagID = new List<String>();
 
-            tagID = rr.TagList();
+            tagID = RFIDReader.TagList();
             if (tagID != null)
             {
                 Console.WriteLine("No of Tags read " + rr.GetNumberOfTagID());
