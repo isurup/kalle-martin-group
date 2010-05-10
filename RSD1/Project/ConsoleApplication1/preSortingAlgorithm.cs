@@ -12,7 +12,7 @@ namespace Scanner
 
         }
 
-        public void receivedTags()
+        public void startSort()
         {
 
         }
