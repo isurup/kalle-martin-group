@@ -1,35 +1,61 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Timers;
 using System.Text;
 
 namespace Scanner
 {
     class preSortingAlgorithm
     {
+        Timer time;
         public preSortingAlgorithm()
         {
-
+            Sort();
         }
-
+        
         public void startSort()
         {
+            int tmp = RFIDReader.TagList().Count();
 
+            List<String> tmpList = new List<String>();
+            time = new Timer();
+            time.Elapsed += new ElapsedEventHandler(tagTimer);
+            time.Interval = 200;
+            time.Enabled = true;
+
+            while(true)
+            {
+                if (RFIDReader.TagList().Count() > tmp)
+                {
+                    tmpList = RFIDReader.TagList();
+                }
+            }
         }
 
-        public string tagColor(string Color)
+        private void Sort()
+        {
+        }
+
+        private void tagTimer(object sender, EventArgs e)
+        {
+        
+        }
+
+
+        private string tagColor(string Color)
         {
 
             return Color;
         }
 
-        public string tagTemp(string Temp)
+        private string tagTemp(string Temp)
         {
 
             return Temp;
         }
 
-        public string tagType(string Type)
+        private string tagType(string Type)
         {
 
             return Type;

@@ -12,7 +12,7 @@ namespace Scanner
 		
         private Timer isoReadTimer;
         private Timer epcReadTimer;
-        private List<String> tagIDlist;
+        private static List<String> tagIDlist;
         private RfidApi rfidAPI = new RfidApi();
         private String isoCard = "ISO";
         private String epcCard = "EPC";
@@ -201,7 +201,7 @@ namespace Scanner
 		///This method returns a string list of tagID
 		///</summary>
         ///<returns>Returns a list of strings</returns>
-		public List<String> TagList()
+		public static List<String> TagList()
 		{
             try
             {

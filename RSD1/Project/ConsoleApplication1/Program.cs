@@ -16,8 +16,8 @@
 
             runReader rr = new runReader();
             preSortingAlgorithm sort = new preSortingAlgorithm();
-            sort.startSort();
             rr.startReading();
+            sort.startSort();
      
            System.Console.ReadLine();
         }
