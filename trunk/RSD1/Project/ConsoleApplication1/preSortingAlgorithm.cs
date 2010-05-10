@@ -9,6 +9,8 @@ namespace Scanner
     class preSortingAlgorithm
     {
         Timer time;
+        List<String> tmpList = new List<String>();
+        int tmp = RFIDReader.TagList().Count();
         public preSortingAlgorithm()
         {
             Sort();
@@ -16,30 +18,27 @@ namespace Scanner
         
         public void startSort()
         {
-            int tmp = RFIDReader.TagList().Count();
-
-            List<String> tmpList = new List<String>();
             time = new Timer();
             time.Elapsed += new ElapsedEventHandler(tagTimer);
             time.Interval = 200;
             time.Enabled = true;
+        }
 
-            while(true)
+        private void Sort()
+        {
+
+        }
+
+        private void tagTimer(object sender, EventArgs e)
+        {
+
+            while (true)
             {
                 if (RFIDReader.TagList().Count() > tmp)
                 {
                     tmpList = RFIDReader.TagList();
                 }
-            }
-        }
-
-        private void Sort()
-        {
-        }
-
-        private void tagTimer(object sender, EventArgs e)
-        {
-        
+            }        
         }
 
 
