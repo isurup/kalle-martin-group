@@ -9,6 +9,8 @@ namespace Scanner
 {
     class preSortingAlgorithm
     {
+        int BinSize = 100;
+        int BinNumber = 0;
         MySQLConnection con;
         Functions f;
         string tag;
