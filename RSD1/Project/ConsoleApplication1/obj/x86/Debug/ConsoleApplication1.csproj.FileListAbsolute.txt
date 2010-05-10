@@ -1,1 +1,10 @@
 Z:\iZ On My Mac\Dropbox\RSD\NewVersion of the ScannerLib\ConsoleApplication-Use of testing\ConsoleApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Martin\Desktop\Personal\projectwork\RSD1\Project\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\Martin\Desktop\Personal\projectwork\RSD1\Project\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\Martin\Desktop\Personal\projectwork\RSD1\Project\ConsoleApplication1\bin\Debug\MySQLLibrary.dll
+C:\Users\Martin\Desktop\Personal\projectwork\RSD1\Project\ConsoleApplication1\bin\Debug\RfidApiLib.dll
+C:\Users\Martin\Desktop\Personal\projectwork\RSD1\Project\ConsoleApplication1\bin\Debug\MySql.Data.dll
+C:\Users\Martin\Desktop\Personal\projectwork\RSD1\Project\ConsoleApplication1\bin\Debug\MySQLLibrary.pdb
+C:\Users\Martin\Desktop\Personal\projectwork\RSD1\Project\ConsoleApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Martin\Desktop\Personal\projectwork\RSD1\Project\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.exe
+C:\Users\Martin\Desktop\Personal\projectwork\RSD1\Project\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.pdb
