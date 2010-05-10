@@ -311,8 +311,20 @@ namespace MySQLLibrary
                 return result;   
             }
             return -1;
-        }       
+        }
 
+        public String[] getTagIds(String BinId)
+        {
+            String[] str = null;
+            if (BinId == null) { return null; }
+            str = con.SendMySqlCmd__("SELECT id FROM Clothes WHERE binId=" + BinId + ";");
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                Console.Out.WriteLine(str[i]);
+            }
+            return str;
+        }
 
 
         private bool isTagId(String tagId)
