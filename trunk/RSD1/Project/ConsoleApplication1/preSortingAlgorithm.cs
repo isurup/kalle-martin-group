@@ -32,9 +32,9 @@ namespace Scanner
             string ClothesType = f.getClothesType(tag);
             int ClothesBin = f.getBinId(tag);
             
-            Console.Out.WriteLine(WashTemp);
-            Console.Out.WriteLine(ClothesColor);
-            Console.Out.WriteLine(ClothesType);
+            Console.Out.WriteLine(tagTemp(tag));
+            Console.Out.WriteLine(tagColor(tag));
+            Console.Out.WriteLine(tagType(tag));
             Console.Out.WriteLine(ClothesBin);
             Console.In.ReadLine();
             /*time = new Timer();
@@ -62,23 +62,22 @@ namespace Scanner
         }*/
 
 
-        private string tagColor(string Color)
+        private string tagColor(string tag)
         {
-
-            
-            return Color;
+            string ClothesColor = f.getClothesColor(tag);
+            return ClothesColor;
         }
 
-        private string tagTemp(string Temp)
+        private string tagTemp(string tag)
         {
-
-            return Temp;
+            string WashTemp = f.getClothesWashingTemp(tag);
+            return WashTemp;
         }
 
-        private string tagType(string Type)
+        private string tagType(string tag)
         {
-
-            return Type;
+            string ClothesType = f.getClothesType(tag);
+            return ClothesType;
         }
     }
 }
