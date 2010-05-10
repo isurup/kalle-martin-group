@@ -16,5 +16,23 @@ namespace Scanner
         {
 
         }
+
+        public string tagColor(string Color)
+        {
+
+            return Color;
+        }
+
+        public string tagTemp(string Temp)
+        {
+
+            return Temp;
+        }
+
+        public string tagType(string Type)
+        {
+
+            return Type;
+        }
     }
 }
