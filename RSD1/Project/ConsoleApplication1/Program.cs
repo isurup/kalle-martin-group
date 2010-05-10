@@ -15,6 +15,8 @@
         {
 
             runReader rr = new runReader();
+            preSortingAlgorithm sort = new preSortingAlgorithm();
+            sort.receivedTags();
             rr.startReading();
      
            System.Console.ReadLine();
