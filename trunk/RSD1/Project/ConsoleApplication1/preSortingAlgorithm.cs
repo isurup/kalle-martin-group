@@ -26,8 +26,16 @@ namespace Scanner
         public void startSort()
         {
             tag = "0234567890A1234567891230";
-            String WashTemp = f.getClothesWashingTemp(tag);
+            f.setBinId(tag, 12);
+            string WashTemp = f.getClothesWashingTemp(tag);
+            string ClothesColor = f.getClothesColor(tag);
+            string ClothesType = f.getClothesType(tag);
+            int ClothesBin = f.getBinId(tag);
+            
             Console.Out.WriteLine(WashTemp);
+            Console.Out.WriteLine(ClothesColor);
+            Console.Out.WriteLine(ClothesType);
+            Console.Out.WriteLine(ClothesBin);
             Console.In.ReadLine();
             /*time = new Timer();
             time.Elapsed += new ElapsedEventHandler(tagTimer);
