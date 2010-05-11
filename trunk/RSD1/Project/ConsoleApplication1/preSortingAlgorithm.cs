@@ -50,14 +50,10 @@ namespace Scanner
 
         private void tagTimer(object sender, EventArgs e)
         {
-
-            while (true)
-            {
                 if (RFIDReader.TagList().Count() > tmp)
                 {
                     tmpList = RFIDReader.TagList();
-                }
-            }        
+                }      
         }
 
         private string tagColor(string tag)
