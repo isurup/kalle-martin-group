@@ -22,7 +22,6 @@ namespace Scanner
             /*Admin*/
             con = new MySQLConnection("tek-sweat-2.tek.c.sdu.dk", "rsd1", "rsd1_admin", "3306", "qAhuF_3Uw#");
             f = new Functions(con);
-            Sort();
         }
 
         public void startSort()
@@ -37,19 +36,19 @@ namespace Scanner
             Console.Out.WriteLine(tagType(tag));
             Console.Out.WriteLine(ClothesBin);
             Console.In.ReadLine();
-            /*time = new Timer();
+            time = new Timer();
             time.Elapsed += new ElapsedEventHandler(tagTimer);
             time.Interval = 200;
-            time.Enabled = true;*/
+            time.Enabled = true;
         }
 
-        private void Sort()
+        public static void Sort(List<string> sortList)
         {
             
 
         }
 
-        /*private void tagTimer(object sender, EventArgs e)
+        private void tagTimer(object sender, EventArgs e)
         {
 
             while (true)
@@ -59,7 +58,7 @@ namespace Scanner
                     tmpList = RFIDReader.TagList();
                 }
             }        
-        }*/
+        }
 
 
         private string tagColor(string tag)
