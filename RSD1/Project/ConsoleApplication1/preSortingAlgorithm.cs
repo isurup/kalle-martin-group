@@ -13,7 +13,7 @@ namespace Scanner
         int BinNumber = 0;
         MySQLConnection con;
         Functions f;
-        string tag;
+
         Timer time;
         List<String> tmpList = new List<String>();
         //int tmp = RFIDReader.TagList().Count();
@@ -27,11 +27,9 @@ namespace Scanner
 
         public void startSort()
         {
-            tag = "0234567890A1234567891230";
+            string tag = "0234567890A1234567891230";
             f.setBinId(tag, 12);
-            string WashTemp = f.getClothesWashingTemp(tag);
-            string ClothesColor = f.getClothesColor(tag);
-            string ClothesType = f.getClothesType(tag);
+
             int ClothesBin = f.getBinId(tag);
             
             Console.Out.WriteLine(tagTemp(tag));
