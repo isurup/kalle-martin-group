@@ -16,12 +16,13 @@ namespace Scanner
 
         Timer time;
         List<String> tmpList = new List<String>();
-        int tmp = RFIDReader.TagList().Count();
+        int tmp;
         public preSortingAlgorithm()
         {
             /*Admin*/
             con = new MySQLConnection("tek-sweat-2.tek.c.sdu.dk", "rsd1", "rsd1_admin", "3306", "qAhuF_3Uw#");
             f = new Functions(con);
+            tmp = RFIDReader.TagList().Count();
         }
 
         public void startSort()
