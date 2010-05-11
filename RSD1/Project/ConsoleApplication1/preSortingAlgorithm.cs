@@ -60,7 +60,6 @@ namespace Scanner
             }        
         }
 
-
         private string tagColor(string tag)
         {
             string ClothesColor = f.getClothesColor(tag);
