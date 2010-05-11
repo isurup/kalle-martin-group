@@ -16,7 +16,7 @@ namespace Scanner
 
         Timer time;
         List<String> tmpList = new List<String>();
-        //int tmp = RFIDReader.TagList().Count();
+        int tmp = RFIDReader.TagList().Count();
         public preSortingAlgorithm()
         {
             /*Admin*/
