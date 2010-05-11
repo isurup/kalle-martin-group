@@ -17,6 +17,7 @@ namespace Scanner
         Timer time;
         List<String> tmpList = new List<String>();
         int tmp;
+
         public preSortingAlgorithm()
         {
             /*Admin*/
@@ -28,14 +29,13 @@ namespace Scanner
         public void startSort()
         {
             string tag = "0234567890A1234567891230";
-            f.setBinId(tag, 12);
 
-            int ClothesBin = f.getBinId(tag);
+            //int ClothesBin = f.getBinId(tag);
             
             Console.Out.WriteLine(tagTemp(tag));
             Console.Out.WriteLine(tagColor(tag));
             Console.Out.WriteLine(tagType(tag));
-            Console.Out.WriteLine(ClothesBin);
+            //Console.Out.WriteLine(ClothesBin);
             Console.In.ReadLine();
             time = new Timer();
             time.Elapsed += new ElapsedEventHandler(tagTimer);
@@ -45,6 +45,7 @@ namespace Scanner
 
         public static void Sort(List<string> sortList)
         {
+            List<String> tmpList = new List<String>();
             
 
         }
@@ -73,6 +74,11 @@ namespace Scanner
         {
             string ClothesType = f.getClothesType(tag);
             return ClothesType;
+        }
+
+        private void setBinId(string tag, int BinNr)
+        {
+            f.setBinId(tag, BinNr);
         }
     }
 }
