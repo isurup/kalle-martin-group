@@ -47,8 +47,13 @@ namespace TransferServer
                                f = new Functions(con);
         }
         //test
-        //string[] ids = { "0234567890A1234567891230", "1234567890A1234567891231", "2224567890J1234B678912C2", "3204567890A123456F891233" };
-            string[] ids = { "0234567890A1234567891230", "1234567890A1291231", "2224567890J1234B2C2", "3204567890A123456F891233" };
+        string[] ids = { "0234567890A1234567891230", "1234567890A1234567891231", "2224567890J1234B678912C2", "3204567890A123456F891233" };
+
+        //string[] ids = { "0234567890A1234567891230", "1234567890A1234567891231"};
+
+        //string[] ids = { "3204567890A123456F891233" };
+
+        
 
         public void Start()
         {            
@@ -84,7 +89,7 @@ namespace TransferServer
                         //send 4 byte BinId number
                         str = byteToString(data, index);
                         if (str.Length != 24) { Console.WriteLine("Tag ID != 24 byte"); return packet; }
-                        int binID = f.getBinId(str);                        
+                        float binID = f.getBinId(str);                        
                         temp_data = BitConverter.GetBytes(binID);
                         packet = new byte[COMMAND_SIZE + COMMAND_SIZE + BIN_NUMBER_SIZE];
                         append(ref packet, DB_PROTOCOL);
@@ -97,17 +102,24 @@ namespace TransferServer
                         //get 4 byte scanner number
                         //return tag IDs
                         str = byteToString(data, index);//scanner number
+
+                       
                         //str = con.SendMySqlCmd("SELECT id ");//return all IDs
                         if (ids.Length == 0) { Console.WriteLine("No Ids"); return packet; }
 
-                        int size = ids.Length;
+                        float size = ids.Length;
 
                         temp_data = convertTo24ByteData(ids);
 
-                        packet = new byte[COMMAND_SIZE + COMMAND_SIZE + size*TAG_ID_SIZE];
+                        packet = new byte[COMMAND_SIZE + COMMAND_SIZE+ 4 + (int)size*TAG_ID_SIZE];
+                        byte[] size1 = new byte[4];
+
+                         size1 = BitConverter.GetBytes(size);                         
+
                         append(ref packet, DB_PROTOCOL);
                         append(ref packet, GET_TAG_ID);
-                        append(ref packet, temp_data);                        
+                        append(ref packet, size1,2*COMMAND_SIZE,size1.Length);
+                        append(ref packet, temp_data, 2 * COMMAND_SIZE + size1.Length, temp_data.Length);                        
                         return packet;
                     }
 
@@ -193,11 +205,19 @@ namespace TransferServer
             if (data == null) { return null; }
             if (data.Length == 0) { return null; }
                         
-            char[] values = null;
+            char[] values = new char[TAG_ID_SIZE];
             byte[] data_temp = new byte[TAG_ID_SIZE * data.Length];
 
             for(int i = 0; i < data.Length; i++){                
-                values =  data[i].ToCharArray();
+                char[] temp=  data[i].ToCharArray();
+
+
+
+                for (int x = 0; x < temp.Length; x++)
+                {
+                    values[x] = temp[x];
+                }
+                
                 if (values == null) { return null; }
 
                 for(int j = 0; j < TAG_ID_SIZE; j++){
@@ -211,10 +231,29 @@ namespace TransferServer
             if ( isCommand(cmd) && (cmd==expected_cmd) ) {return true;}
             return false;
         }
-        private byte[] append(ref byte[] where, byte from)
+
+        private byte[] append(ref byte[] where, byte[] from, int start, int size)
         {
             if (where == null) { return null; }
             if (from == null) { return where; }
+
+            if (where.Length <= from.Length) { return where; }
+
+            int index = start, i = 0;
+
+
+            while (size > i)// || where != null || from != null
+            {
+                where[index + i] = from[i];
+                i++;
+            }
+            return where;
+        }
+
+        private byte[] append(ref byte[] where, byte from)
+        {
+            if (where == null) { return null; }
+            if (from == 0) { return where; }
             if (where.Length <= 0) { return where; }
 
             int index = 0;
