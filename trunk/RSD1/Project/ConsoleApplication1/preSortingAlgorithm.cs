@@ -4,6 +4,7 @@ using System.Linq;
 using System.Timers;
 using System.Text;
 using MySQLLibrary;
+using SorterLib;
 
 namespace Scanner
 {
@@ -43,9 +44,26 @@ namespace Scanner
             time.Enabled = true;
         }
 
-        public static void Sort(List<string> sortList)
+        public  void Sort(List<string> sortList)
         {
-            List<String> tmpList = new List<String>();
+            //List<String> tmpList = new List<String>();
+            
+
+            //sortList is list of tagIds
+
+            Algorithm a = new Algorithm();
+
+
+            Bins bins = a.createBinIDs(sortList);
+
+            Bin[] currentBin = bins.getBins();
+
+            for (int i = 0; i < bins.Count; i++)
+            {
+
+                setBinId("tagId", currentBin[i].binID);
+               
+            }
             
 
         }
@@ -55,7 +73,9 @@ namespace Scanner
                 if (RFIDReader.TagList().Count() > tmp)
                 {
                     tmpList = RFIDReader.TagList();
-                }      
+                    Sort(tmpList);
+                }
+                
         }
 
         private string tagColor(string tag)

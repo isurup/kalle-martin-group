@@ -14,8 +14,6 @@ namespace SorterLib
         public int fabric;
         public int numberOfClothes;
 
-        public string tagId;
-
         public int binID=1;
 
         public Bin(int color, int wTemp, int fabric)
@@ -24,15 +22,6 @@ namespace SorterLib
             this.wTemp = wTemp;
             this.fabric = fabric;
         }
-
-        public Bin(int color, int wTemp, int fabric,string tagId)
-        {
-            this.color = color;
-            this.wTemp = wTemp;
-            this.fabric = fabric;
-            this.tagId = tagId;
-        }
-
         public Bin()
         {
         }

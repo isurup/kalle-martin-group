@@ -60,6 +60,10 @@
       <Project>{2DA69A81-0C4C-4282-B1B0-955D0924AD75}</Project>
       <Name>MySQLLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SortingApp\Sorter1\LibSorter\SorterLib.csproj">
+      <Project>{1C528161-1E42-426A-9B0E-D3C315BC3896}</Project>
+      <Name>SorterLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
