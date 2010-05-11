@@ -30,12 +30,12 @@ namespace Scanner
         {
             string tag = "0234567890A1234567891230";
 
-            //int ClothesBin = f.getBinId(tag);
-            
+            setBinId(tag, 12);
+
             Console.Out.WriteLine(tagTemp(tag));
             Console.Out.WriteLine(tagColor(tag));
             Console.Out.WriteLine(tagType(tag));
-            //Console.Out.WriteLine(ClothesBin);
+            Console.Out.WriteLine(getBinId(tag));
             Console.In.ReadLine();
             time = new Timer();
             time.Elapsed += new ElapsedEventHandler(tagTimer);
@@ -79,6 +79,11 @@ namespace Scanner
         private void setBinId(string tag, int BinNr)
         {
             f.setBinId(tag, BinNr);
+        }
+
+        private int getBinId(string tag)
+        {
+            return f.getBinId(tag);
         }
     }
 }
