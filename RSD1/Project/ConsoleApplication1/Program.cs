@@ -13,14 +13,14 @@
    
         static void Main(string[] args)
         {
-            preSortingAlgorithm sort = new preSortingAlgorithm();
-            sort.startSort();
-            //runReader rr = new runReader();
+            //preSortingAlgorithm sort = new preSortingAlgorithm();
+            //sort.startSort();
+            runReader rr = new runReader();
             
-            //rr.startReading();
+            rr.startReading();
             
      
-           //System.Console.ReadLine();
+           System.Console.ReadLine();
         }
         
 

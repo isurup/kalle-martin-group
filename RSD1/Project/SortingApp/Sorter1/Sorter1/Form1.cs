@@ -38,7 +38,7 @@ namespace Sorter1
         }
         private void btnSort_Click(object sender, EventArgs e)
         {   
-            
+            /*
             if (check_cvc()){
                 pictureCVC_status.Image = pictureCVC_status.InitialImage;
             }
@@ -46,24 +46,34 @@ namespace Sorter1
                 pictureSC_status.Image = pictureSC_status.InitialImage;
             }
             if (check_cvc() & check_sc())
-            {
+            {*/
+
+
 
                 CreateDummyData dd = new CreateDummyData();
                 object clothes = dd.createData(100);
+                
+           
+           
+                Algorithm a = new Algorithm();
 
-                Algorithm a = new Algorithm(sc.data, cvc.data);
                 Bins bins = a.createBinIDs(clothes);
+
                 bins = a.fillBins(clothes, bins);
+           
+
                 int total = a.getNumberOfClothes(bins);
 
-                Report r = new Report("0", a.ToString());                
+                string str = a.ToString();
+                Report r = new Report("0", str);                
                 r.Show();
 
-                Bin[] b = bins.getBins();
+                /*Bin[] b = bins.getBins();
                 double cnt = a.washCount(clothes,b[0]);
                 Report r1= new Report("Wash count","[0] cnt: "+cnt);
                 r1.Show();
-            }
+                 **/
+            //}
         }
 
         private bool check_cvc()

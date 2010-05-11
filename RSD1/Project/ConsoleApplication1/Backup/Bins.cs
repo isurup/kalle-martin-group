@@ -25,12 +25,6 @@ namespace SorterLib
         {
             return bins;
         }
-
-        public void AddBin(int color, int wTemp, int fabric,string tagId)
-        {
-            bins[binID++] = new Bin(color, wTemp, fabric, tagId);
-        }
-
         public void AddBin(int color, int wTemp, int fabric)
         {            
             bins[binID++] = new Bin(color, wTemp, fabric);

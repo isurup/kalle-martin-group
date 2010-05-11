@@ -146,8 +146,7 @@ namespace SorterLib
                 Clothes c =  (Clothes)data[i];
                 if (!isBin(c, bins))
                 {
-                    bins.AddBin(((int)c.color), ((int)c.wTemperature), ((int)c.fabric)); 
-                 
+                    bins.AddBin(((int)c.color), ((int)c.wTemperature), ((int)c.fabric));                  
                 }
             }
             return bins;
