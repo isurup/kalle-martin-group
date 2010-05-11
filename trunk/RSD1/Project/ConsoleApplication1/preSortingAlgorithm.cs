@@ -38,7 +38,7 @@ namespace Scanner
             Console.In.ReadLine();
             time = new Timer();
             time.Elapsed += new ElapsedEventHandler(tagTimer);
-            time.Interval = 200;
+            time.Interval = 3000;
             time.Enabled = true;
         }
 
