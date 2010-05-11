@@ -8,3 +8,12 @@ C:\Users\Martin\Desktop\Personal\projectwork\RSD1\Project\ConsoleApplication1\bi
 C:\Users\Martin\Desktop\Personal\projectwork\RSD1\Project\ConsoleApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Martin\Desktop\Personal\projectwork\RSD1\Project\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.exe
 C:\Users\Martin\Desktop\Personal\projectwork\RSD1\Project\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.pdb
+D:\RSD1\Project\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+D:\RSD1\Project\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+D:\RSD1\Project\ConsoleApplication1\bin\Debug\MySQLLibrary.dll
+D:\RSD1\Project\ConsoleApplication1\bin\Debug\RfidApiLib.dll
+D:\RSD1\Project\ConsoleApplication1\bin\Debug\MySql.Data.dll
+D:\RSD1\Project\ConsoleApplication1\bin\Debug\MySQLLibrary.pdb
+D:\RSD1\Project\ConsoleApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\RSD1\Project\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.exe
+D:\RSD1\Project\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.pdb

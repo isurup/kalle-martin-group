@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="ConsoleApplication1">
+</Property><Property Name="Solution File" Value="D:\RSD1\Project\ConsoleApplication1\ConsoleApplication1.sln">
+</Property><Property Name="Date" Value="11. maj 2010">
+</Property><Property Name="Time" Value="16:31:20">
+</Property></Properties><Event ErrorLevel="0" Project="SorterLib" Source="..\SortingApp\Sorter1\LibSorter\SorterLib.csproj" Description="Project file successfully backed up as D:\RSD1\Project\ConsoleApplication1\Backup\SorterLib.csproj">
+</Event><Event ErrorLevel="0" Project="SorterLib" Source="..\SortingApp\Sorter1\LibSorter\Algorithm.cs" Description="File successfully backed up as D:\RSD1\Project\ConsoleApplication1\Backup\Algorithm.cs">
+</Event><Event ErrorLevel="0" Project="SorterLib" Source="..\SortingApp\Sorter1\LibSorter\Bin.cs" Description="File successfully backed up as D:\RSD1\Project\ConsoleApplication1\Backup\Bin.cs">
+</Event><Event ErrorLevel="0" Project="SorterLib" Source="..\SortingApp\Sorter1\LibSorter\Bins.cs" Description="File successfully backed up as D:\RSD1\Project\ConsoleApplication1\Backup\Bins.cs">
+</Event><Event ErrorLevel="0" Project="SorterLib" Source="..\SortingApp\Sorter1\LibSorter\Clothes.cs" Description="File successfully backed up as D:\RSD1\Project\ConsoleApplication1\Backup\Clothes.cs">
+</Event><Event ErrorLevel="0" Project="SorterLib" Source="..\SortingApp\Sorter1\LibSorter\ClothesValueData.cs" Description="File successfully backed up as D:\RSD1\Project\ConsoleApplication1\Backup\ClothesValueData.cs">
+</Event><Event ErrorLevel="0" Project="SorterLib" Source="..\SortingApp\Sorter1\LibSorter\CreateDummyData.cs" Description="File successfully backed up as D:\RSD1\Project\ConsoleApplication1\Backup\CreateDummyData.cs">
+</Event><Event ErrorLevel="0" Project="SorterLib" Source="..\SortingApp\Sorter1\LibSorter\DataValues.cs" Description="File successfully backed up as D:\RSD1\Project\ConsoleApplication1\Backup\DataValues.cs">
+</Event><Event ErrorLevel="0" Project="SorterLib" Source="..\SortingApp\Sorter1\LibSorter\Parser.cs" Description="File successfully backed up as D:\RSD1\Project\ConsoleApplication1\Backup\Parser.cs">
+</Event><Event ErrorLevel="0" Project="SorterLib" Source="..\SortingApp\Sorter1\LibSorter\Properties\AssemblyInfo.cs" Description="File successfully backed up as D:\RSD1\Project\ConsoleApplication1\Backup\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="SorterLib" Source="..\SortingApp\Sorter1\LibSorter\SensitivyData.cs" Description="File successfully backed up as D:\RSD1\Project\ConsoleApplication1\Backup\SensitivyData.cs">
+</Event><Event ErrorLevel="0" Project="SorterLib" Source="..\SortingApp\Sorter1\LibSorter\Tools.cs" Description="File successfully backed up as D:\RSD1\Project\ConsoleApplication1\Backup\Tools.cs">
+</Event><Event ErrorLevel="0" Project="SorterLib" Source="..\SortingApp\Sorter1\LibSorter\WashingAlternativesData.cs" Description="File successfully backed up as D:\RSD1\Project\ConsoleApplication1\Backup\WashingAlternativesData.cs">
+</Event><Event ErrorLevel="0" Project="SorterLib" Source="..\SortingApp\Sorter1\LibSorter\SorterLib.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="SorterLib" Source="..\SortingApp\Sorter1\LibSorter\SorterLib.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="SorterLib" Source="..\SortingApp\Sorter1\LibSorter\SorterLib.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>
