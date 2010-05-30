@@ -1,5 +1,22 @@
 \begin{thebibliography}{10}
 
+\bibitem{bib10}
+Nicholas~A. Diakopoulos and David~A. Shamma.
+\newblock {\em Characterizing Debate Performance via Aggregated Twitter
+  Sentiment}.
+\newblock ACM, 2010.
+
+\bibitem{bib5}
+Owen Phelan, Kevin McCarthy, and Barry Smyth.
+\newblock {\em Using Twitter to Recommend Real-Time Topical News}.
+\newblock ACM, 2009.
+
+\bibitem{bib7}
+Takeshi Sakaki, Makoto Okazaki, and Yutaka Matsuo.
+\newblock {\em Earthquake Shakes Twitter Users: Real-time Event Detection by
+  Social Sensors}.
+\newblock ACM, 2010.
+
 \bibitem{bib1}
 Satyen Abrol and Latifur Khan.
 \newblock {\em TWinner: Understanding News Queries with Geo-content using
@@ -23,20 +40,9 @@ Matthew Rowe.
   Web: A User Study}.
 \newblock ACM, 2010.
 
-\bibitem{bib5}
-Owen Phelan, Kevin McCarthy, and Barry Smyth.
-\newblock {\em Using Twitter to Recommend Real-Time Topical News}.
-\newblock ACM, 2009.
-
 \bibitem{bib6}
 Haewoon Kwak, Changhyun Lee, Hosung Park, and Sue Moon.
 \newblock {\em What is Twitter, a Social Network or a News Media?}
-\newblock ACM, 2010.
-
-\bibitem{bib7}
-Takeshi Sakaki, Makoto Okazaki, and Yutaka Matsuo.
-\newblock {\em Earthquake Shakes Twitter Users: Real-time Event Detection by
-  Social Sensors}.
 \newblock ACM, 2010.
 
 \bibitem{bib8}
@@ -50,12 +56,6 @@ Vivek~K. Singh and Ramesh Jain.
 \newblock {\em Structural Analysis of the Emerging Event-web}.
 \newblock ACM, 2010.
 
-\bibitem{bib10}
-Nicholas~A. Diakopoulos and David~A. Shamma.
-\newblock {\em Characterizing Debate Performance via Aggregated Twitter
-  Sentiment}.
-\newblock ACM, 2010.
-
 \bibitem{bib11}
 Bernard~J. Jansen, Gerry Campbell, and Matthew Gregg.
 \newblock {\em Real Time Search User Behavior}.
@@ -65,5 +65,13 @@ Bernard~J. Jansen, Gerry Campbell, and Matthew Gregg.
 Amanda Lenhart and Susannah Fox.
 \newblock {\em Twitter and status updating}.
 \newblock ACM, 2009.
+
+\bibitem{bib13}
+{\em uls:}.
+\newblock \\
+  \url{http://news.yahoo.com/s/nm/20100429/wr_nm/us_venezuela_chavez}\\
+  \url{http://cheatedbylife.com/2010/05/08/twitter-facts-figures-infographic/}%
+\\ \url{http://www.physorg.com/news189750438.html}\\
+  \url{http://theweek.com/article/index/202378/When_world_leaders_tweet}\\.
 
 \end{thebibliography}
