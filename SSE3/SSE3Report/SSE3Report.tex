@@ -12,20 +12,29 @@
 
 \begin{document}
 
+
+
 \title{Real-Time Knowledge Management and Data-mining with Twitter}   % type title between braces
 \author{Martin Moghadam, Kalle Grafstr\"{o}m}         % type author(s) between braces
 \maketitle
 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1]{Twitter_Icon.png}
+\end{figure}
+
 \begin{abstract}
-  Real-time tracking of human behavior on Twitter for survey, marketing and analysis. \\     * The research focus (i.e. statement of the problem(s)/research issue(s) addressed);
-    * The research methods used (experimental research, case studies, questionnaires, etc.);
-    * The results/findings of the research; and
-    * The main conclusions and recommendations
+  Real-time tracking of human behavior on Twitter for survey, marketing and analysis. \\  The project focuses on Twitter for social network analysis, and the possibilities and exploits of using twitter as a data source for network analysis, exploring real-time analysis and analyzing a period of time. \\ Articles and research is examined and discussed, and a C\# client is developed for data gathering of Twitter streams. The client gathers the data, sorts and prepares the data for knowledge management, analysis of the knowledge collected is beyond the time and scope of this project. \\ Twitter has proven to be a very good source for social network analysis, because of the simple structure of the data and the ease of access. The data is freely available and the are no privacy concerns. Developing a C\# application is very straight forward with Web Services client model. \\ The application developed as a web service client could be expanded to gather data from other sources. Further development and knowledge management is discussed.
 
 \end{abstract}
 
+
+
+
+
+%=======================================
 \section{Introduction}
-Knowledge management used to identify and represent insights and experiences gained from data collected from Twitter, can prove useful in many circumstances. Some of which will be discussed in this article, others are left for further development, see discussion section. \\ The validity and credibility of the users identity is not discussed  in detail, we simply assume the user has a valid identity, see references for further details on "The Credibility of Digital Identity Information of the Social Web". \\ The project uses Twitter as a data source to comprise the knowledge, the Tweets all have dates and time allowing use to develop a systems that is updated minute by minute, gathering Information in real-time. This makes it possible to examine a period of time to extract knowledge from the Tweets in that period, for instance a debate performance\cite{bib10}.\\ 
+Knowledge management used to identify and represent insights and experiences gained from data collected from Twitter, can prove useful in many circumstances. Some of which will be discussed in this article, others are left for further development, see discussion section. \\ The validity and credibility of the users identity is not discussed  in detail, we simply assume the user has a valid identity, see references for further details on "The Credibility of Digital Identity Information of the Social Web". \\ The project uses Twitter as a data source to comprise the knowledge, the Tweets all have dates and time allowing use to develop a systems that is updated minute by minute, gathering Information in real-time. This makes it possible to examine a period of time to extract knowledge from the Tweets in that period, for instance a debate performance\cite{bib10}.\\  The project work with the data gathering for the knowledge management, creating a Twitter traffic monitoring client application.
 
 	
 \subsection{Twitter}
@@ -36,8 +45,9 @@ Twitter is a microblogging and social network service allowing users to send and
 \includegraphics[scale=1]{Content_of_Tweets_Graphed.png}
 \caption{Content of Tweets: Source Wikipedia}
 \label{figContent}
-\end{figure} 
-Searching the entire web for this kind of information would yield poor results because of the wast amount of trash data that needs to be sorted though. Such trash data is almost not present in Twitter. People commonly use Twitter to share information of what they are doing and where they are. \\ The knowledge we are interested in, is extracted from the conversational and pass along value data. The data from Twitter is available freely, and there are currently no privacy issues with gathering data.
+\end{figure}
+ 
+Searching the entire web for this kind of information would yield poor results because of the wast amount of trash data that needs to be sorted though. Such trash data is almost not present in Twitter. People commonly use Twitter to share information of what they are doing and where they are. Which included the geographical information on the user.\\ The knowledge we are interested in, is extracted from the conversational and pass along value data. The data from Twitter is available freely, and there are currently no privacy issues with gathering data.
 
 \subsection{Premise and Usage}
 Twitter can and has been used to gather knowledge for:
@@ -53,18 +63,32 @@ Twitter can and has been used to gather knowledge for:
 
 A few people have used Twitter to make bomb treats, and encouraged assassination of politicians, these treats were not detected or monitored by an application, most of the threats were reported to the authorities by other users of the service but investigation  led to no results, because the threats were not serious just pointless babble. Generally people don't announce acts of terrorism on Twitter, and there has not been any evidence of a terrorists using Twitter, making it unsuitable for counter-terrorism. \\ Twitter already has been used for social network analysis some of which the results can be found in the references.
 
+%=======================================
 \section{Knowledge Management}
 The knowledge management discipline we work with is social networks analysis, extracting data from the social networks and examining; likes dislikes, friendships, kinship, sexual relationships, beliefs, opinions, and connections to others. The interdependencies can be represented as nodes. \\ These nodes can be graphically represented, the data providing a useful structured collection of knowledge. \\  The knowledge can provide a 
 
 \subsection{Real-time Knowledge}
 
+
+%=======================================
 \section{Data Source}
+
+For the development of the application we used C\# 4.0 and Visual Studio 2010, since we are already familiar with development environment and the language, it was merely a choice of convenience without much forethought.
+
+\subsection{Twitter API and development}
+
 \subsection{Twitter Streams}
+
 \subsection{Real-time Data}
+
 \subsection{Code Example}
+
 \subsection{Test and Development}
+
 No substantial test was preformed, and the development was modifying the acquired code to simplify the application and to customize it for our project. 
-       
+
+
+%=======================================       
 \section{Discussion}
 
 The Twitter social network analysis has great potential to monitor and gather information on human behavior and the premise we started with was validated, further development is discussed. 
@@ -76,6 +100,7 @@ Creating a more complete application of social network analysis for Twitter is p
 \begin{itemize}
 	\item Betweenness, Closeness, Measures in social network analysis.
 	\item Relationship detection, using the tag and link information to determine interdependencies.
+	\item Geographic information gathering.
 	\item Node Structuring, using the detected interdependencies to form a large node structure of the social network.
 	\item Graphical representation, showing the interdependencies as nodes making the relationship and connection clear and easy to understand.
 	\item Identity Credibility, create a identity credibility system to improve the accuracy of the interdependencies.
