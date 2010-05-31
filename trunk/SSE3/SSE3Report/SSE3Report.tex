@@ -48,7 +48,14 @@ Twitter is a microblogging and social network service allowing users to send and
 \end{figure}
  
 
-Searching the entire web for this kind of information would yield poor results because of the wast amount of trash data that needs to be sorted though. Such trash data is almost not present in Twitter. People commonly use Twitter to share information of what they are doing and where they are. Which included the geographical information on the user.\\ The knowledge we are interested in, is extracted from the conversational and pass along value data. The data from Twitter is available freely, and there are currently no privacy issues with gathering data.
+Searching the entire web for this kind of information would yield poor results because of the wast amount of trash data that needs to be sorted though. Such trash data is almost not present in Twitter. People commonly use Twitter to share information of what they are doing and where they are. Which included the geographical information on the user.\\ The knowledge we are interested in, is extracted from the conversational and pass along value data. The data from Twitter is available freely, and there are currently no privacy issues with gathering data. See figure \ref{figTweet} for an example of a tweet with; date, time and profile name.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1]{tweet.png}
+\caption{Example of a tweet with, date and time}
+\label{figTweet}
+\end{figure}
 
 \subsection{Premise and Usage}
 Twitter can and has been used to gather knowledge for:
@@ -97,22 +104,24 @@ For the development of the application we used C\# 4.0 and Visual Studio 2010, s
 
 \subsection{Twitter API and development}
 
-Twitter provides an API (actually three APIs), which is entirely HTTP based, the API has limits to calls, follow requests, updates or direct message made each day. The API also has other limitation which will not be discussed here. \\ There are already a wast amount of libraries for Twitter, including libraries for languages like C++, C\# and Java. There are also a wast amount of open source clients. \\ For the educational project none of the libraries nor the Twitter API was used. The project was develop entirely as a  Web Services client using Dot Net.
+Twitter provides an API (actually three APIs), which is entirely HTTP based, the API has limits to calls, follow requests, updates or direct message made each day. The API also has other limitation which will not be discussed here. \\ There are already a wast amount of libraries for Twitter, including libraries for languages like C++, C\# and Java. There are also a wast amount of open source clients. \\ For the educational project none of the libraries nor the Twitter API was used, but was used as a reference. The project was develop entirely as a  Web Services client using Dot Net.
 
 \subsection{Twitter Streams}
 
 Our application is designed to use one stream at a time, that means we gather data form one user or tag at a time. The application needs the stream to be define, for instance \url{http://twitter.com/OPRAH}, the application then gathers data from that user, for an entire data gathering of the Twittersphere, crawling is needed (like a web crawler), which is beyond the scope of our project.
 
-\subsection{Real-time Data}
+\subsection{Code Example}
+
+The code uses and is passed on and open source Twitter client. The client is a command-line client.The application was developed as a web service client based on HTTP.
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=1]{tweet.png}
-\caption{Example of a tweet with, date and time}
-\label{figTweet}
+\includegraphics[scale=1]{code1.png}
+\caption{Code exert}
+\label{figCode1}
 \end{figure}
 
-\subsection{Code Example}
+The code exert in figure \ref{figCode1}, show the basic class of get, set method used for the client, the client does not use the set method but the were kept for further development, only get methods are used to gather the data and serialize it into a text file. The data is sorted according to time and date, and some basic search and sort was attempted to extract knowledge from the data, no graphical interface or representation of the knowledge was created.\\ Due to time constraints no further sorting or knowledge extraction is performed, and no further details of the client is discussed.
 
 \subsection{Test and Development}
 
