@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.1.18)  31 MAY 2010 01:58
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.1.18)  31 MAY 2010 02:33
 entering extended mode
 **C:/Users/Martin/Desktop/Personal/projectwork/SSE3/SSE3Report/SSE3Report.tex
 (C:/Users/Martin/Desktop/Personal/projectwork/SSE3/SSE3Report/SSE3Report.tex
@@ -140,34 +140,38 @@ ersonal/projectwork/SSE3/SSE3Report/Twitter_Icon.png>] [2]
 File: Content_of_Tweets_Graphed.png Graphic file (type png)
 
 <use Content_of_Tweets_Graphed.png>
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 57.
+<tweet.png, id=18, 328.22626pt x 42.91031pt>
+File: tweet.png Graphic file (type png)
+ <use tweet.png>
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 64.
 
 ("C:\Program Files\MiKTeX 2.8\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 57.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 64.
  [3 <C:/Users/Martin/Desktop/Personal/projectwork/SSE3/SSE3Report/Content_of_Tw
-eets_Graphed.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 69--70
+eets_Graphed.png> <C:/Users/Martin/Desktop/Personal/projectwork/SSE3/SSE3Report
+/tweet.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
 
  []
 
-<twitter2010.png, id=23, 304.88907pt x 168.63pt>
+<twitter2010.png, id=25, 304.88907pt x 168.63pt>
 File: twitter2010.png Graphic file (type png)
  <use twitter2010.png> [4 <C:/Users/Martin/Desktop/Personal/projectwork/SSE3/SS
 E3Report/twitter2010.png>]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 104.
+(Font)              <7> on input line 111.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 104.
+(Font)              <5> on input line 111.
 
-<tweet.png, id=28, 328.22626pt x 42.91031pt>
-File: tweet.png Graphic file (type png)
- <use tweet.png> [5 <C:/Users/Martin/Desktop/Personal/projectwork/SSE3/SSE3Repo
-rt/tweet.png>]
+<code1.png, id=30, 328.22626pt x 352.31625pt>
+File: code1.png Graphic file (type png)
+ <use code1.png> [5] [6 <C:/Users/Martin/Desktop/Personal/projectwork/SSE3/SSE3
+Report/code1.png (PNG copy)>]
 (C:\Users\Martin\Desktop\Personal\projectwork\SSE3\SSE3Report\SSE3Report.bbl
-[6]
+[7]
 Overfull \hbox (44.5524pt too wide) in paragraph at lines 70--76
 $\OT1/cmtt/m/n/10 http : / / cheatedbylife . com / 2010 / 05 / 08 / twitter-[]f
 acts-[]figures-[]infographic/$ 
@@ -179,14 +183,14 @@ $\OT1/cmtt/m/n/10 http : / / theweek . com / article / index / 202378 / When _
 world _ leaders _$
  []
 
-) [7]
+) [8]
 (C:\Users\Martin\Desktop\Personal\projectwork\SSE3\SSE3Report\SSE3Report.aux) )
  
 Here is how much of TeX's memory you used:
- 2424 strings out of 495285
- 34206 string characters out of 3180391
- 88463 words of memory out of 3000000
- 5635 multiletter control sequences out of 15000+200000
+ 2430 strings out of 495285
+ 34280 string characters out of 3180391
+ 87471 words of memory out of 3000000
+ 5640 multiletter control sequences out of 15000+200000
  8708 words of font info for 31 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  26i,7n,32p,1262b,252s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -199,9 +203,9 @@ lic/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfon
 ts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cm
 ti10.pfb><C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmtt10.pfb
 >
-Output written on SSE3Report.pdf (7 pages, 323943 bytes).
+Output written on SSE3Report.pdf (8 pages, 344856 bytes).
 PDF statistics:
- 71 PDF objects out of 1000 (max. 8388607)
+ 75 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
