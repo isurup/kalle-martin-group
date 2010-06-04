@@ -1,0 +1,47 @@
+\documentclass[]{article}  % list options between brackets
+\usepackage{}              % list packages between braces
+\usepackage{url}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{enumitem}
+
+% type user-defined commands here
+
+\begin{document}
+
+\title{Real-Time Knowledge Management and Data-mining with Twitter}   % type title between braces
+\author{Martin Moghadam, Kalle Grafstr\"{o}m}         % type author(s) between braces
+\maketitle
+
+
+\begin{abstract}
+RSD1 Project
+\end{abstract}
+
+%=======================================
+
+\setcounter{page}{1}
+\pagenumbering{roman}
+
+\tableofcontents
+\newpage
+
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+\input{introduction.tex}
+\newpage
+\input{conclusion.tex}
+
+
+%=======================================       
+
+% Creates entry in bibliography even if it isn't cited.
+\nocite{bib1} 
+\nocite{bib2}
+
+\bibliographystyle{unsrt} % references appear in order of citations
+\bibliography{references}
+
+\end{document}
