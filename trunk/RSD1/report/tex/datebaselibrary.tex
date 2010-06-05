@@ -13,6 +13,13 @@ To keep above mentioned requirement and features, decided to create a DLL (dynam
 	\item Functions – general library for laundry data base.
 \end{itemize}
 
+\begin{figure}[h]
+	\centering
+		\includegraphics{classLibrary}
+	\caption{Class library of the data base connection}
+	\label{fig:planning}
+\end{figure}
+
 \subsection{Implementation}
 
 Software development was related to unified process (UP) – iterative incremental process.  Iterative incremental process model [5] was used during the implementation.  
@@ -26,6 +33,21 @@ Let us explain everything in more detail. Project were created using class Libra
 	\item Password
 \end{enumerate}
 
+\begin{figure}[h]
+	\centering
+		\includegraphics{connectionToData}
+	\caption{Connection to data base server and save new person}
+	\label{fig:planning}
+\end{figure}
+
 Class functions uses created instance of MySQLConnection library. And throw the variable f can be connected to all created methods. At the figure 6.2 shows an example of creation new person. As we can see there used methods send queries to data base. New CPR inserted into table person by query: “INSERT INTO Person (CPR) Values (‘1234567890’)”.
+
+
+\begin{figure}[h]
+	\centering
+		\includegraphics{exampleSavePerson}
+	\caption{Example of save person method}
+	\label{fig:planning}
+\end{figure}
 
 \subsection{Future work}
