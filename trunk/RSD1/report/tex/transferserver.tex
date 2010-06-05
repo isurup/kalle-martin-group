@@ -12,9 +12,43 @@ Another more general approach is to use socket communication [6] protocol. Many 
 
 To start design and implement our software we need to define protocol. Throw the protocol we communicate and change information. General protocol description showed in the table 7.1. Start command defines protocol type and always communication string start with 0xFE. Command type range allocated from 0x11 to 0x90, where is one byte describing command. The last one is value where is a content of data.
 
+\begin{table}[h]
+	\centering
+    \begin{tabular}{ | p{4cm} | p{5cm} | p{4cm} | }
+    \hline
+    \textbf{Start Command} [0xFE] & \textbf{Command type} [0x11 - 0x90] & \textbf{Value}  \\ \hline
+    1 byte & 1 byte & 4 or 24 bytes  \\ \hline
+    \end{tabular}
+	\caption{General protocol specification}
+	\label{tab:AdDis}
+\end{table}
+
 Example 7.1: Subtask 4 wants to get a bin number for particular tag. So they sending string like this: 
 “0xFE 0x12 0x30 0x30 0x30 0x30 0x31 0x32 0x33 0x34 0x31 0x32 0x33 0x34 0x41 0x41 0x31 0x32 0x33 0x34 0x35 0x36 0x41 0x34 0x35 0x36”, where at the beginning defined protocol type and command type, rest of the hexadecimal values are tag id. If there are no errors in the string transfer server converts tag id to ASCII characters and sends constructed query to data base. Response from data base will be ASCII character which will be converted to hexadecimal and constructed packet send back to the client: “0xFE 0x12 0x00 0x00 0x00 0x00”.
 
+\begin{table}[h]
+	\centering
+    \begin{tabular}{ | p{1cm} | p{3cm} | p{3cm} | p{5cm} |}
+    \hline
+	& \textbf{Protocol type} & \textbf{Command type} & \textbf{Value}  \\ \hline
+	Value & 0xFE & 0x12 & 000012341234AA123456A456 \\ \hline
+	Bytes & 1 & 1 & 24  \\ \hline
+    \end{tabular}
+	\caption{Command packet (from client to server)}
+	\label{tab:AdDis}
+\end{table}
+
+\begin{table}[h]
+	\centering
+    \begin{tabular}{ | p{1cm} | p{3cm} | p{3cm} | p{5cm} |}
+    \hline
+	& \textbf{Protocol type} & \textbf{Command type} & \textbf{Value}  \\ \hline
+	Value & 0xFE & 0x12 & 0 \\ \hline
+	Bytes & 1 & 1 & 4  \\ \hline
+    \end{tabular}
+	\caption{Command packet (from server to client)}
+	\label{tab:AdDis}
+\end{table}
 
 \subsection{Design and implementation}
 
