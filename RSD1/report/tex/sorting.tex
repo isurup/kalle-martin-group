@@ -49,6 +49,17 @@ A lot of laundry institution sorting clothes similar but not the same. One of th
 \\
 Each of clothe has sewed label which defines temperature, fabric and it would be great to prioritize clothes by sensitive. Purpose of that is to sort by priorities; more sensitive clothes have more privileges than low priority clothes. Same color and same washing temperature clothes could have different priorities, for instance one clothe is from wool and another from synthetic, so synthetic (possible) is lower priority than wool and should be washed considering wool. Clothes of the lower priority washed considering higher priority and highest priority washed like it have to be washed. Figure 8.1 (left) presents an example of configured priorities. \\ Most significant clothes are in the top of list (\textbf{example}: Cotton: Hand wash: 95, Wool: Degree 30: 90) and have the highest priority and least significant down in the list. \\ Different institutions have different washing machine sizes, and all of them during one washing cycle want to utilize max clothes. That is why included parameters like total washing machine size and each clothe size figure 8.1 (right). Total washing machine size defines the threshold (in that case 87\%) which defines when is not optimal to wash. In other words washing machine utilization bellow 87\% is not optimal and can not be washed. Another configuration of size is how many units of particular type of clothe can fit in one washing machine. 
 
+
+\begin{equation}
+TBU=ClotheType1\cdot K1+ClotheType2\cdot K2+...+ClotheType(n)\cdot K(n) \label{eq:eq1}
+\end{equation}
+
+
+\begin{equation}
+NBR=\frac{TBU}{100\%},\textrm{Round by 87\%} \label{eq:eq2}
+\end{equation}
+
+
 \newpage
 Last feature included is washing alternatives, in other words what to do then clothe can not be washed in particular case. Figure 8.2 presents alternatives of cotton: 30 degree. As we can see this kind of clothe can be washed with the wool: 30 degree (plan B) or Synthetic: 30 degree (plan C) or wool: 40 degree (worst plan if before two does not fit). Each clothes could have any size of plans. All above mentioned parameters can be saved, loaded or updated for the next time use. As we can see many features provides quite wide range of washing possibilities.
 
