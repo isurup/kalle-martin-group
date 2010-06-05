@@ -5,7 +5,7 @@ Another more general approach is to use socket communication [6] protocol. Many 
 
 \begin{itemize}
 	\item Created socket transfer server and specified protocol can be used and understand by any programming language.
-	\item Easy update and maintain – new requirements only updates protocol specification, does not need to change server.
+	\item Easy update and maintain new requirements only updates protocol specification, does not need to change server.
 \end{itemize}
 
 \subsection{Socket protocol specification}
@@ -23,8 +23,8 @@ To start design and implement our software we need to define protocol. Throw the
 	\label{tab:AdDis}
 \end{table}
 
-Example 7.1: Subtask 4 wants to get a bin number for particular tag. So they sending string like this: 
-“0xFE 0x12 0x30 0x30 0x30 0x30 0x31 0x32 0x33 0x34 0x31 0x32 0x33 0x34 0x41 0x41 0x31 0x32 0x33 0x34 0x35 0x36 0x41 0x34 0x35 0x36”, where at the beginning defined protocol type and command type, rest of the hexadecimal values are tag id. If there are no errors in the string transfer server converts tag id to ASCII characters and sends constructed query to data base. Response from data base will be ASCII character which will be converted to hexadecimal and constructed packet send back to the client: “0xFE 0x12 0x00 0x00 0x00 0x00”.
+\textbf{Example 7.1}: Subtask 4 wants to get a bin number for particular tag. So they sending string like this: 
+"\textbf{0xFE 0x12} 0x30 0x30 0x30 0x30 0x31 0x32 0x33 0x34 0x31 0x32 0x33 0x34 0x41 0x41 0x31 0x32 0x33 0x34 0x35 0x36 0x41 0x34 0x35 0x36", where at the beginning defined protocol type and command type, rest of the hexadecimal values are tag id. If there are no errors in the string transfer server converts tag id to ASCII characters and sends constructed query to data base. Response from data base will be ASCII character which will be converted to hexadecimal and constructed packet send back to the client: "\textbf{0xFE 0x12} 0x00 0x00 0x00 0x00".
 
 \begin{table}[h]
 	\centering
@@ -63,7 +63,7 @@ When protocol specified we can start design and implement software. Class diagra
 
 \begin{figure}[h]
 	\centering
-		\includegraphics{socketClassDiagram}
+		\includegraphics[scale=0.7]{socketClassDiagram}
 	\caption{Class diagram of the socket transfer server}
 	\label{fig:planning}
 \end{figure}

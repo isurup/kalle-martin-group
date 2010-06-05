@@ -36,7 +36,7 @@ Algorithm presented in figure 8.1 is one of the simplest, which is also implemen
 
 \begin{figure}[h]
 	\centering
-		\includegraphics{sortingByColorTemp}
+		\includegraphics[scale=1]{sortingByColorTemp}
 	\caption{Sorting algorithm by color and temperature}
 	\label{fig:planning}
 \end{figure}
@@ -46,10 +46,10 @@ This kind of algorithm is not optimal, because one clothe can be washed as well.
 \subsubsection{Sorting algorithm using configurable parameters}
 
 A lot of laundry institution sorting clothes similar but not the same. One of them has different size washing machines others wash at the higher temperature and all of them have distinct criteria’s.   So question is: how can be created software which satisfied all user requirements. \\  Here presented software based on C\# language, software consists of two parts: configuration and sorting algorithm. Configuration part is finished, however sorting algorithm do not finished. Purpose of the configuration is to save and load sorting criteria’s created by user. 
+\\
+Each of clothe has sewed label which defines temperature, fabric and it would be great to prioritize clothes by sensitive. Purpose of that is to sort by priorities; more sensitive clothes have more privileges than low priority clothes. Same color and same washing temperature clothes could have different priorities, for instance one clothe is from wool and another from synthetic, so synthetic (possible) is lower priority than wool and should be washed considering wool. Clothes of the lower priority washed considering higher priority and highest priority washed like it have to be washed. Figure 8.1 (left) presents an example of configured priorities. \\ Most significant clothes are in the top of list (\textbf{example}: Cotton: Hand wash: 95, Wool: Degree 30: 90) and have the highest priority and least significant down in the list. \\ Different institutions have different washing machine sizes, and all of them during one washing cycle want to utilize max clothes. That is why included parameters like total washing machine size and each clothe size figure 8.1 (right). Total washing machine size defines the threshold (in that case 87\%) which defines when is not optimal to wash. In other words washing machine utilization bellow 87\% is not optimal and can not be washed. Another configuration of size is how many units of particular type of clothe can fit in one washing machine. 
 
-Each of clothe has sewed label which defines temperature, fabric and it would be great to prioritize clothes by sensitive. Purpose of that is to sort by priorities; more sensitive clothes have more privileges than low priority clothes. Same color and same washing temperature clothes could have different priorities, for instance one clothe is from wool and another from synthetic, so synthetic (possible) is lower priority than wool and should be washed considering wool. Clothes of the lower priority washed considering higher priority and highest priority washed like it have to be washed. Figure 8.1 (left) presents an example of configured priorities. Most significant clothes are in the top of list (example: Cotton: Hand wash: 95, Wool: Degree 30: 90) and have the highest priority and least significant down in the list. \\ Different institutions have different washing machine sizes, and all of them during one washing cycle want to utilize max clothes. That is why included parameters like total washing machine size and each clothe size figure 8.1 (right). Total washing machine size defines the threshold (in that case 87\%) which defines when is not optimal to wash. In other words washing machine utilization bellow 87\% is not optimal and can not be washed. Another configuration of size is how many units of particular type of clothe can fit in one washing machine. 
-
-
+\newpage
 Last feature included is washing alternatives, in other words what to do then clothe can not be washed in particular case. Figure 8.2 presents alternatives of cotton: 30 degree. As we can see this kind of clothe can be washed with the wool: 30 degree (plan B) or Synthetic: 30 degree (plan C) or wool: 40 degree (worst plan if before two does not fit). Each clothes could have any size of plans. All above mentioned parameters can be saved, loaded or updated for the next time use. As we can see many features provides quite wide range of washing possibilities.
 
 Further presented sorting algorithm which shown in the figure 8.3. There are four parts (Init, I, II, III) describing algorithm in more abstract level. There is one input for incoming clothes and three outputs for outgoing results of the sort. Incoming clothes have parameters like: color, washing temperature, clothe type and fabric and result is a bin designated to current clothe.  Let us explain those four parts in more detail:
@@ -63,7 +63,7 @@ Further presented sorting algorithm which shown in the figure 8.3. There are fou
 
 \begin{figure}[h]
 	\centering
-		\includegraphics{sortingAlgorithm}
+		\includegraphics[scale=1]{sortingAlgorithm}
 	\caption{Sorting algorithm}
 	\label{fig:planning}
 \end{figure}
@@ -92,6 +92,7 @@ Loop is going I, II, I, III, I... while do not get efficiency greater than 87\% 
 	\label{tab:AdDis}
 \end{table}
 
+\newpage
 Current state of the sorting is respresented by table where all values mutate during sort. Quantity of incomming clothes set bin ids and total bin utilization (TBU). TBU – how many times need to be washed it calculated by 8.1 formula:
 
 Where clothe type can be: Sweater, Shirt, Pants, Underwear, WashingBag, Dress, Shorts, Towel and BedLinen. 
@@ -103,7 +104,7 @@ Efficiency can be calculated considering rest, diagram shown in figure 8.4. Effi
 
 \begin{figure}[h]
 	\centering
-		\includegraphics{efficiencyCalculation}
+		\includegraphics[scale=1]{efficiencyCalculation}
 	\caption{Efficiency calculation diagram}
 	\label{fig:planning}
 \end{figure}
@@ -112,7 +113,7 @@ At the beginning incoming clothes are toke one after another and moved to the pa
 
 \begin{figure}[h]
 	\centering
-		\includegraphics{diagramInit}
+		\includegraphics[scale=1]{diagramInit}
 	\caption{Diagram Init}
 	\label{fig:planning}
 \end{figure}
@@ -122,7 +123,7 @@ Second move of algorithm is check for success and for time-out, figure 8.6. If a
 
 \begin{figure}[h]
 	\centering
-		\includegraphics{diagramI}
+		\includegraphics[scale=1]{diagramI}
 	\caption{Diagram I}
 	\label{fig:planning}
 \end{figure}
@@ -131,7 +132,7 @@ Last two moves are very similar. Both of them try something to change when estim
 
 \begin{figure}[h]
 	\centering
-		\includegraphics{diagramII}
+		\includegraphics[scale=1]{diagramII}
 	\caption{Diagram II}
 	\label{fig:planning}
 \end{figure}
@@ -140,7 +141,7 @@ At the figure 8.6 sorting algorithm trying to change the current state by moving
 
 \begin{figure}[h]
 	\centering
-		\includegraphics{diagramIII}
+		\includegraphics[scale=1]{diagramIII}
 	\caption{Diagram III}
 	\label{fig:planning}
 \end{figure}
