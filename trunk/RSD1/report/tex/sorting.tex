@@ -34,6 +34,13 @@ Mostly all of the clothes have the sewed label (tag). There are defined informat
 
 Algorithm presented in figure 8.1 is one of the simplest, which is also implemented. When list of clothes comes to sort, then each clothe are moved to particular bin. First are sorted by color and then by temperature. Number of total possible bins is ten – five for colored and five for white. Bins are numbered automatically.
 
+\begin{figure}[h]
+	\centering
+		\includegraphics{sortingByColorTemp}
+	\caption{Sorting algorithm by color and temperature}
+	\label{fig:planning}
+\end{figure}
+
 This kind of algorithm is not optimal, because one clothe can be washed as well. Of course if time is not so important, then clothes from the bin should be washed when bin is full.
 
 \subsubsection{Sorting algorithm using configurable parameters}
@@ -54,7 +61,36 @@ Further presented sorting algorithm which shown in the figure 8.3. There are fou
 	\item 6. III – try to decrease number of clothes. For example at the table 8.1 rows two and nine utilization is the same 818\%, however efficiency is different. One uses 8 bins and not efficiency another pass then uses 9 bins (times to be washed).
 \end{itemize}
 
+\begin{figure}[h]
+	\centering
+		\includegraphics{sortingAlgorithm}
+	\caption{Sorting algorithm}
+	\label{fig:planning}
+\end{figure}
+
 Loop is going I, II, I, III, I... while do not get efficiency greater than 87\% (like set in configuration). By default if there are no configurations set, then algorithm works like presented in above chapter (sorting by color and temperature).
+
+\begin{table}[h]
+	
+    \begin{tabular}{ | p{0.4cm} | p{1cm} | p{2cm} | p{1.7cm} |p{2cm} |p{1cm} |p{1.3cm} |p{1.2cm} |p{1.3cm} |}
+    \hline
+	Bin Id & Color & Washing Temperature & TotalBin Utilization (TBU) & NumberOf Bins Require (NBR) & Rest & Efficiency & Reserve & Success\\ \hline
+	1 & White & 95 & 448\% & 4 & 48\% & 48\% & 52 \% & Fail \\ \hline
+	2 & White & 60 & 818\% & 8 & 18\% & 18\% & 82 \% & Fail \\ \hline
+	3 & White & 40 & 89\% & 1 & 0\% & 89\% & 11 \% & Pass \\ \hline
+	4 & White & 30 & 639\% & 6 & 39\% & 39\% & 61 \% & Fail \\ \hline
+	5 & White & HW & 159\% & - & - & - & - & - \\ \hline
+	6 & Colored & 95 & 698\% & 7 & 0\% & 99\% & 2 \% & Pass \\ \hline
+	7 & Colored & 60 & 2110\% & 21 & 10\% & 10\% & 90 \% & Fail \\ \hline
+	8 & Colored & 40 & 788\% & 8 & 0\% & 98.5\% & 1.5 \% & Pass \\ \hline
+	9 & Colored & 30 & 818\% & 9 & 0\% & 90.8\% & 9.2 \% & Pass \\ \hline
+	10 & Colored & HW & 420\% & - & - & - & - & - \\ \hline
+	11 & ... & ... & ... & ... & ... & ... & ... & ... \\ \hline
+	- & - & - & - & - & - & Total: 62.54\% & - & All: No \\ \hline
+    \end{tabular}
+	\caption{Example of current state (when: Total washing machine value 87 \%)}
+	\label{tab:AdDis}
+\end{table}
 
 Current state of the sorting is respresented by table where all values mutate during sort. Quantity of incomming clothes set bin ids and total bin utilization (TBU). TBU – how many times need to be washed it calculated by 8.1 formula:
 
@@ -64,15 +100,50 @@ Where clothe type can be: Sweater, Shirt, Pants, Underwear, WashingBag, Dress, S
 
 Efficiency can be calculated considering rest, diagram shown in figure 8.4. Efficiency describes is there cost-efficiency to wash or not. Wash is cost efficient than efficiency is greater 87\%.
 
+
+\begin{figure}[h]
+	\centering
+		\includegraphics{efficiencyCalculation}
+	\caption{Efficiency calculation diagram}
+	\label{fig:planning}
+\end{figure}
+
 At the beginning incoming clothes are toke one after another and moved to the particular bin. If there are no clothes left than check how many distinct bins require. If there are more than zero bins than calculated and set current state like shown in the 8.1 table. If there are no clothes therefore there are no bins and algorithm is ended.
+
+\begin{figure}[h]
+	\centering
+		\includegraphics{diagramInit}
+	\caption{Diagram Init}
+	\label{fig:planning}
+\end{figure}
 
 
 Second move of algorithm is check for success and for time-out, figure 8.6. If all bins are greater efficiency than 87\% than current state is satisfied and clothes can be washed. In other case there is time-out algorithm also stopped. Purpose of the time-out added to avoid infinitive loop.
 
+\begin{figure}[h]
+	\centering
+		\includegraphics{diagramI}
+	\caption{Diagram I}
+	\label{fig:planning}
+\end{figure}
+
 Last two moves are very similar. Both of them try something to change when estimate current state and compare with previous. If new state is better than previous then state is set to current, in other case keep the last state. 
+
+\begin{figure}[h]
+	\centering
+		\includegraphics{diagramII}
+	\caption{Diagram II}
+	\label{fig:planning}
+\end{figure}
 
 At the figure 8.6 sorting algorithm trying to change the current state by moving clothes from bins which have rests to bins which have reserves and if result is better then new state set to current. 
 
+\begin{figure}[h]
+	\centering
+		\includegraphics{diagramIII}
+	\caption{Diagram III}
+	\label{fig:planning}
+\end{figure}
 
 At the figure 8.7 sorting algorithm trying to change number of clothes in particular type of bin. For instance quantity of 818\% gives result for 8 bins and 18\% rest. However efficiency of 8 bins is 100\% and for the last one is only 18\%. Eight bins can be washed however the rest should be wait. So if there will be decreased number of clothes during one wash then could be increased efficiency. If 818\% of clothes we wash by 9 bins then we get efficiency of 90.8\% and reserve 9.2\%. So this is optimal and new state is set.
 
