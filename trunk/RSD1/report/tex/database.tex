@@ -1,11 +1,11 @@
 %
 \section{Database design}
 
-Around the world there are a lot of different types of databases [1]. However we used mySQL most popular – relational database. Relational databases are easily understand [2] and use. In general relational databases - collection of relations and also it fit all our requirements.
+Around the world there are a lot of different types of databases \cite{bib1}. We have chosen to use MySQL, the most popular - relational database. Relational databases are easy to understand \cite{bib2} and use. Relational databases are collections of relations, this organization and structure of the data set meets our requirements, and can be used for our project.
 
 \subsection{Why MySQL?}
 
-Amount of different relational databases are huge [3] and sometimes are difficult to choose. Our choice was MySQL database, because it is:
+There are many different relational databases [3] and choosing one can be difficult. Our choice was MySQL database, because it is:
 
 \begin{itemize}
 	\item Open source database
@@ -13,12 +13,12 @@ Amount of different relational databases are huge [3] and sometimes are difficul
 	\item Fast performance
 	\item Reliable 
 	\item Most popular open source DB in the world
-	\item It is used by Yahoo!, Alcatel-Lucent, Google, Nokia, YouTube and others
+	\item It is used by Yahoo!, Alcatel-Lucent, Google, Nokia, YouTube and many others
 \end{itemize}
 
 \subsection{ER diagram}
 
-Design of the database mostly starts from modeling database. One of the most popular approaches is conceptual modeling by using entity relational diagram (ER) [4]. Entity relational diagram shows collections of relations in modeling database. ER diagram allow easily understand concept of the database. Another methodology to model database can be used UML diagram. Most of the OOP programmers are familiar to UML and it make so popular. In our design we used ER diagram and later it were converted to UML [Appendix B].
+Design of the database starts at the modeling phase. One of the most popular approaches is conceptual modeling, using entity relational diagram (ER) \cite{bib4}. Entity relational diagrams shows collections of relations in the modeling database. ER diagram makes it easy understand the concept of the database. Another methodology to model databases is UML diagrams. Most OOP programmers are familiar with UML. In the modeling and design phases ER diagrams was used and later it were converted to UML [Appendix B].
 
 \begin{figure}[h]
 	\centering
@@ -29,18 +29,17 @@ Design of the database mostly starts from modeling database. One of the most pop
 
 \subsection{Implementation}
 
-Make database to work we need create tables and move them into database. Database tables were created by using query language like shown in the figure 5.1. All the code was written into text file and text file uploaded directly to database by using created configurator tool.
+Before making the database it is needed to create tables and move them into database. Database tables were created by using a query language like shown in the figure \ref{fig:personAndNamesTable}. All the code was written into a text file and the text file was uploaded directly to database by using the created configurator tool.
 
 \begin{figure}[h]
 	\centering
 		\includegraphics[scale=0.6]{personAndNamesTable}
 	\caption{Person and Name tables}
-	\label{fig:planning}
+	\label{fig:personAndNamesTable}
 \end{figure}
 
-Table person have three attributes: CPR, type and pictureURL and primary key for CPR. Primary key makes table to be unique, without a key table become weak entity type, note that always is good to have tables of strong entity types [4]. Foreign key makes table name also unique. In other words table name have one unique reference to table person and table person is unique. \\ Make easy for database management were created database configurator, which is able connect to database and configure by query language or send files with configuration sentences. This manner let faster update and change without writing. 
+The person table has three attributes: CPR, type and pictureURL and primary key for CPR. The primary key makes table unique, without a key the table would become a weak entity type, note that it is always good to have tables with strong entity types \cite{bib4}. Foreign key makes table name also unique. The table name has one unique reference to the person table and the person table is unique. \\ A configurator was created to make it easy to management the database, which is able connect to database and configure by a query language or send files with configuration sentences. This makes it faster to update and change without the need of writing database code. 
 
 \subsection{Future work}
 
-Usage of all tables is not optimal and some attributes do not used at all so space usage can be decreased.
-Speed increased
+The usage of all tables is not optimal and/or optimized and some attributes can be unnecessary and are not used at all, the space usage can be decreased. The system has not been design with speed considerations in mind and the speed can be increased.
