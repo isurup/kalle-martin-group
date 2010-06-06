@@ -10,7 +10,7 @@ Another more general approach is to use socket communication \cite{bib6} protoco
 
 \subsection{Socket protocol specification}
 
-To start design and implement our software we need to define protocol. Throw the protocol we communicate and change information. General protocol description showed in the table 7.1. Start command defines protocol type and always communication string start with 0xFE. Command type range allocated from 0x11 to 0x90, where is one byte describing command. The last one is value where is a content of data.
+The design and implement phase of the software starts with defining the protocol. General protocol description showed in the table \ref{tab:protocolSpec}. Start command defines protocol type and always starts with 0xFE string. Command type range allocated from 0x11 to 0x90, where is one byte describing command. The last one is value, containing the data.
 
 \begin{table}[h]
 	\centering
@@ -24,7 +24,7 @@ To start design and implement our software we need to define protocol. Throw the
 \end{table}
 
 \textbf{Example 7.1}: Subtask 4 wants to get a bin number for particular tag. So they sending string like this: 
-"\textbf{0xFE 0x12} 0x30 0x30 0x30 0x30 0x31 0x32 0x33 0x34 0x31 0x32 0x33 0x34 0x41 0x41 0x31 0x32 0x33 0x34 0x35 0x36 0x41 0x34 0x35 0x36", where at the beginning defined protocol type and command type, rest of the hexadecimal values are tag id. If there are no errors in the string transfer server converts tag id to ASCII characters and sends constructed query to database. Response from database will be ASCII character which will be converted to hexadecimal and constructed packet send back to the client: "\textbf{0xFE 0x12} 0x00 0x00 0x00 0x00".
+"\textbf{0xFE 0x12} 0x30 0x30 0x30 0x30 0x31 0x32 0x33 0x34 0x31 0x32 0x33 0x34 0x41 0x41 0x31 0x32 0x33 0x34 0x35 0x36 0x41 0x34 0x35 0x36", where at the beginning defined protocol type and command type, rest of the hexadecimal values are tag id. If there are no errors in the string, the transfer server converts tag id to ASCII characters and sends constructed query to database. Response from database will be ASCII character, which will be converted to hexadecimal, then the constructed packet is sent back to the client: "\textbf{0xFE 0x12} 0x00 0x00 0x00 0x00".
 
 \begin{table}[h]
 	\centering
@@ -52,7 +52,7 @@ To start design and implement our software we need to define protocol. Throw the
 
 \subsection{Design and implementation}
 
-When protocol specified we can start design and implement software. Class diagram shown in the figure \ref{fig:socketClassDiagram}. \\ Here we can see four part:
+Once the protocol is specified, the design and implement software begins. Class diagram shown in the figure \ref{fig:socketClassDiagram}. \\ Which shows the four parts:
 
 \begin{enumerate}
 	\item Starts server and stops main thread forever.
@@ -70,4 +70,4 @@ When protocol specified we can start design and implement software. Class diagra
 
 \subsection{Future work}
 
-In the future socket transfer server can be extended to have files transferring features and some security. File transferring protocol already defined however do not implemented. It could be used save elder picture. Security could be used to make safe transfer. However both of above mentioned features are not important. Picture is just additional feature and does not make sense to project. Security only necessary if transferring server will be placed out of the domain. In other case local LAN is already have security.
+The socket transfer server can be extended to having files transferring features and security. File transferring protocol is already defined, however not implemented. It could be used to save a profile picture. Security could be used to make safe transfers. Both of above mentioned features are not important. Picture is just additional feature and does not make sense to project. Security only necessary if transferring server will be placed out of the domain, in a public domain.
