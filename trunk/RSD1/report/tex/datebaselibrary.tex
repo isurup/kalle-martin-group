@@ -1,12 +1,13 @@
 %
 \section{Laundry database library}
 
-Mostly of the project subtasks decided to use one programming language to make easy work together. Sometimes different languages can be difficult connect and work together. That is why decided to use one object oriented language – C\#. As we know C\# is a new generation language which provides a lot of advance features like garbage collector and more others. This kind of language makes easier developer write programs, because here do not need take care about low level features like memory allocation or lost pointer. So this kind of language can decrease development process and increase code efficiency. \\
-Our case design was to store and provide data about the elders. All data were stored in MySQL database. So many of subtask would like to use it and that is why were decided to create general library for any to use. Main design requirement is to create general library which has features:  reliable, easy maintain, simple to use, and easy update.
+Most of the project subtask groups decided to use one programming language to make it easier to work together. Sometimes different languages can be difficult connect and operate together. Therefore it was decided to use one object oriented language - C\#. As we know C\# is a one of the new generation languages, which provides a lot of advance features like strong type checking, a garbage collector, robustness and durability. \\ This kind of language makes it easier to develop programs like the subtask, because there is not needed take care of low level features like memory allocation or lost pointer, since low level design is not essential for this subtask. So this kind of language can decrease the duration of the development process and increase code efficiency. \\
+
+All data were stored in MySQL database. Many of subtasks would need access to it and that is why were decided to create a library providing access for any subtask to use. The design requirement is to create a general library which has the features of:  reliability, easy maintenance and simple to use.
 
 \subsection{Design phase}
 
-To keep above mentioned requirement and features, decided to create a DLL (dynamic link library) which can be executable and contain inside code, data, and resources. Our design library inside have two classes:
+Due to the mentioned requirements and features it was decided to create a DLL (dynamic link library). The library inside has two classes:
 
 \begin{itemize}
 	\item MySQLConnection – database connector which responsible for connection to database and send/receive queries.
@@ -23,7 +24,7 @@ To keep above mentioned requirement and features, decided to create a DLL (dynam
 \newpage
 \subsection{Implementation}
 
-Software development was related to unified process (UP) – iterative incremental process.  Iterative incremental process model [5] was used during the implementation.  
+Software development was related to unified process (UP) – iterative incremental process.  Iterative incremental process model \cite{bib5} was used during the implementation.  
 Let us explain everything in more detail. Project were created using class Library in Microsoft Visual C\# .NET 3.5. To have database connection were included MySQL Connector Net 1.0.10 into references. To use created library we need include it into new project (Console or Win or else) and start our library. For example we insert our library into console project, so connection to database is like shown in the figure 6.1. After successful connection we can use class functions and manage laundry database. 
 
 \begin{figure}[h]
