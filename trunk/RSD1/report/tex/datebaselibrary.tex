@@ -24,17 +24,17 @@ Due to the mentioned requirements and features it was decided to create a DLL (d
 \newpage
 \subsection{Implementation}
 
-Software development was related to unified process (UP) – iterative incremental process.  Iterative incremental process model \cite{bib5} was used during the implementation.  
-Let us explain everything in more detail. Project were created using class Library in Microsoft Visual C\# .NET 3.5. To have database connection were included MySQL Connector Net 1.0.10 into references. To use created library we need include it into new project (Console or Win or else) and start our library. For example we insert our library into console project, so connection to database is like shown in the figure 6.1. After successful connection we can use class functions and manage laundry database. 
+Software development was related to unified process (UP) - iterative incremental process.  Iterative incremental process model \cite{bib5} was used during the implementation.  
+The project was created using the class Library in Microsoft Visual C\# know as the .NET 3.5 framework. The database connection was included by adding MySQL Connector Net 1.0.10 into references. The created library was include it into the other/new projects (Console or Win or else) and the library was utilized. For example the library was  inserted into a console project, a connection to database was created, shown in the figure \ref{fig:connectionToData}. After a successful connection the library class functions are usable and manage the laundry database. 
 
 \begin{figure}[h]
 	\centering
 		\includegraphics[scale=0.7]{connectionToData}
 	\caption{Connection to database server and save new person}
-	\label{fig:planning}
+	\label{fig:connectionToData}
 \end{figure}
 
-Numbers explain database connection parameters:
+Numbers explaining the database connection parameters:
 
 \begin{enumerate}
 	\item IP address or domain
@@ -44,13 +44,13 @@ Numbers explain database connection parameters:
 	\item Password
 \end{enumerate}
 
-Class functions uses created instance of MySQLConnection library. And throw the variable f can be connected to all created methods. At the figure 6.2 shows an example of creation new person. As we can see there used methods send queries to database. New CPR inserted into table person by query: “INSERT INTO Person (CPR) Values (‘1234567890’)”.
+Class functions are used to created instances of the MySQLConnection library, and through the variable f can be connected to all created methods. The figure \ref{fig:exampleSavePerson} shows an example of a creating a new person. Shown on the figure, there is used methods to send queries to the database. New CPR is inserted into the person table by query: “INSERT INTO Person (CPR) Values (‘1234567890’)”.
 
 \begin{figure}[h]
 	\centering
 		\includegraphics[scale=0.7]{exampleSavePerson}
 	\caption{Example of save person method}
-	\label{fig:planning}
+	\label{fig:exampleSavePerson}
 \end{figure}
 
 \subsection{Future work}
