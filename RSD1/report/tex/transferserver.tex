@@ -20,7 +20,7 @@ To start design and implement our software we need to define protocol. Throw the
     1 byte & 1 byte & 4 or 24 bytes  \\ \hline
     \end{tabular}
 	\caption{General protocol specification}
-	\label{tab:AdDis}
+	\label{tab:protocolSpec}
 \end{table}
 
 \textbf{Example 7.1}: Subtask 4 wants to get a bin number for particular tag. So they sending string like this: 
@@ -35,7 +35,7 @@ To start design and implement our software we need to define protocol. Throw the
 	Bytes & 1 & 1 & 24  \\ \hline
     \end{tabular}
 	\caption{Command packet (from client to server)}
-	\label{tab:AdDis}
+	\label{tab:FromClient}
 \end{table}
 
 \begin{table}[h]
@@ -47,7 +47,7 @@ To start design and implement our software we need to define protocol. Throw the
 	Bytes & 1 & 1 & 4  \\ \hline
     \end{tabular}
 	\caption{Command packet (from server to client)}
-	\label{tab:AdDis}
+	\label{tab:FromServer}
 \end{table}
 
 \subsection{Design and implementation}
