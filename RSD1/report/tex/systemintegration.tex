@@ -1,15 +1,15 @@
 %
 \section{Entire System Integration}
 
-To make sure that all parts work, need connect them all to one software mechanism or control flow goes throw one point. Other case design could be multi agent systems (MAS) where all software will be separate agent.
+To insure that all parts work, it is needed ti connect them all to one software mechanism or control flow going through one point. Another design could be multi-agent systems (MAS) where all software will be separate agent.
 
-Sorting algorithm, RFID reader, MySQL Library, socket transfer server
+The Sorting algorithm, RFID reader, MySQL Library, socket transfer server are connected:
 
 \begin{figure}[h]
 	\centering
 		\includegraphics[scale=0.6]{softwareInteraction}
 	\caption{Interaction between the different elements}
-	\label{fig:planning}
+	\label{fig:softwareInteraction}
 \end{figure}
 
 
@@ -32,7 +32,7 @@ Sorting algorithm, RFID reader, MySQL Library, socket transfer server
 
 \begin{enumerate}
 	\item Database function very well, no errors during period
-	\item MySQL library function well, however some exceptions during project period. Problems with MySQL connector library. Assumption that exceptions comes than some one tries to change database during usage or problems with multithreading.
+	\item MySQL library function well, however some exceptions during project period. Problems with MySQL connector library. Assumption that exceptions come than some one tries to change database during usage or problems with multithreading.
 	\item Socket transfer server functions OK, however do not tested for 100\% and could be errors.
 	\item RFID reader works OK, do not tested at all this is library taken from other group
 	\item Sorting algorithm works OK, however do not tested for 100\%.
