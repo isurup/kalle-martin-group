@@ -1,11 +1,11 @@
 %
 \section{Socket transfer server}
 
-Another more general approach is to use socket communication [6] protocol. Many applications – from the networks to the mobile phones [7] use sockets. Designing software requirement is communicate with the clients and provide database information. Also keep multiple connections at the time and keep it simple.  Socket transfer server also like MySQLLIbrary was designed by using C\# programming language. It is reasonable to use one programming language during all project, therefore connection to other part be easier. \\ In general sockets very usable to use: 
+Another more general approach is to use socket communication \cite{bib6} protocol to communicate and transfer data to the database. Many applications, from networks to mobile phones \cite{bib7} use sockets. \\  The software requirements are to communicate with the clients and provide database information, also keep multiple connections at the same time and keep it simple.  Socket transfer server was designed using the C\# programming language, like MySQLLIbrary. It is reasonable to use only one programming language for the entire project, therefore it is easier to connect to other parts/programs. \\ The sockets are used for: 
 
 \begin{itemize}
-	\item Created socket transfer server and specified protocol can be used and understand by any programming language.
-	\item Easy update and maintain new requirements only updates protocol specification, does not need to change server.
+	\item Created socket transfer server, specified protocol can be used and understood by any programming language.
+	\item Easy update and maintenance, new requirements only updates protocol specification, does not need to change server.
 \end{itemize}
 
 \subsection{Socket protocol specification}
@@ -52,7 +52,7 @@ To start design and implement our software we need to define protocol. Throw the
 
 \subsection{Design and implementation}
 
-When protocol specified we can start design and implement software. Class diagram shown in the figure 7.1. \\ Here we can see four part:
+When protocol specified we can start design and implement software. Class diagram shown in the figure \ref{fig:socketClassDiagram}. \\ Here we can see four part:
 
 \begin{enumerate}
 	\item Starts server and stops main thread forever.
@@ -65,9 +65,8 @@ When protocol specified we can start design and implement software. Class diagra
 	\centering
 		\includegraphics[scale=0.7]{socketClassDiagram}
 	\caption{Class diagram of the socket transfer server}
-	\label{fig:planning}
+	\label{fig:socketClassDiagram}
 \end{figure}
-
 
 \subsection{Future work}
 
