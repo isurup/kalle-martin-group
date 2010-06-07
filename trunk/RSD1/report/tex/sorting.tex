@@ -54,7 +54,7 @@ Different institutions have different washing machine sizes, and all of them dur
 \begin{figure}[h]
 	\centering
 		\includegraphics[scale=0.5]{sortinControls}
-	\caption{Left: clothes sensitive control; Right: clothes value control}
+	\caption{Left: clothes sensitivity control; Right: clothes value control}
 	\label{fig:sortinControls}
 \end{figure}
 
@@ -65,15 +65,15 @@ Different institutions have different washing machine sizes, and all of them dur
 	\label{fig:alternativeRules}
 \end{figure}
 
-Washing alternatives, what to do when clothe can not be washed in particular case. Figure \ref{fig:sortinControls} presents alternatives of cotton: 30 degree. Shown of the figure this kind of clothe can be washed with the wool: 30 degree (plan B) or Synthetic: 30 degree (plan C) or wool: 40 degree (worst plan if before two does not fit). Each piece of clothes could have any size of plans. All above mentioned parameters can be saved, loaded or updated for the next time use. As shown many features provides quite wide range of washing possibilities.
+Washing alternatives, what to do when clothe can not be washed in particular case. Figure \ref{fig:sortinControls} presents alternatives of cotton: 30 degree. Shown in the figure this kind of clothe can be washed with the wool: 30 degree (plan B) or Synthetic: 30 degree (plan C) or wool: 40 degree (worst plan if before two does not fit). Each piece of clothes could have any size of plans. All above mentioned parameters can be saved, loaded or updated for the next time use. As shown, many features provides quite a wide range of washing possibilities.
 \\
-Further presented sorting algorithm is shown in figure \ref{fig:alternativeRules}. There are four parts (Init, I, II, III) describing the algorithm in a more abstract level. There is one input for incoming clothes and three outputs for outgoing results of the sort. Incoming clothes have parameters like: color, washing temperature, clothe type and fabric and result is a bin designated to current clothe.  Let us explain those four parts in more detail:
+Further presented sorting algorithm is shown in figure \ref{fig:alternativeRules}. There are four parts (Init, I, II, III) describing the algorithm in a more abstract level. There is one input for incoming clothes and three outputs for outgoing results of the sort. Incoming clothes have parameters like: color, washing temperature, clothe type and fabric and result is a bin assigned to current clothe.  Lets explain those four parts in more detail:
 
 \begin{itemize}
-	\item 3. Init – all incoming clothes sorted by color and washing temperature. By default all clothes get bin ids and calculated current state. Current state – defines if it is sorted efficiently.
-	\item 4. I – check for success. That part check is current state is efficient. If it is than algorithm stops, or emerge time out.
-	\item 5. II – try to move clothes from rest to reserve, using washing alternative rules. 
-	\item 6. III – try to decrease number of clothes. For example at the table \ref{tab:currentState} rows two and nine utilization is the same 818\%, however efficiency is different. One uses 8 bins and is not efficient, another passes then uses 9 bins (times to be washed).
+	\item 3. Init - all incoming clothes are sorted by color and washing temperature. By default all clothes get bin id's and calculated current state. Current state – defines if it is sorted efficiently.
+	\item 4. I - check for success. This partly checks if current state is efficient. If it is then the algorithm stops, or triggers a time out.
+	\item 5. II - try to move clothes from the rest to reserve, using washing alternative rules. 
+	\item 6. III - try to decrease number of clothes. For example at the table \ref{tab:currentState} rows two and nine utilization is the same 818\%, however efficiency is different. One uses 8 bins and is not efficient, another passes then uses 9 bins (times to be washed).
 \end{itemize}
 
 \begin{figure}[h]
@@ -83,7 +83,7 @@ Further presented sorting algorithm is shown in figure \ref{fig:alternativeRules
 	\label{fig:sortingAlgorithm}
 \end{figure}
 
-The algorithms loops;  I, II, I, III, I... while the efficiency is not greater than 87\% (like set in configuration). By default if there are no configurations set, then algorithm works like presented in above chapter (sorting by color and temperature).
+The algorithm loops;  I, II, I, III, I... while the efficiency is not greater than 87\% (like set in configuration). By default if there are no configurations set, then algorithm works like presented in above chapter (sorting by color and temperature).
 
 \begin{table}[h]
 	
@@ -109,7 +109,7 @@ The algorithms loops;  I, II, I, III, I... while the efficiency is not greater t
 
 \newpage
 
-Current state of the sorting is represented by table \ref{tab:currentState} where all values mutate and adjust during sorting. Quantity of incoming clothes set bin ids and total bin utilization (TBU). TBU defines how many times it is needs to be washed, and is calculated by formula 1:
+Current state of the sorting is represented by table \ref{tab:currentState} where all values mutate and adjust during sorting. Quantity of incoming clothes set bin id's and total bin utilization (TBU). TBU defines how many times it is needs to be washed, and is calculated by equation 1:
 
 \begin{equation}
 TBU=ClotheType1\cdot K1+ClotheType2\cdot K2+...+ClotheType(n)\cdot K(n) \label{eq:eq1}
@@ -132,7 +132,7 @@ Rest=TBU-NBR\cdot 100\% \label{eq:eq3}
 
 When the results are negative than there is no rest, else rest is necessary. Rest means how many percent of clothes left and can not be washed, because of a to small amount. So rest can be zero or lesser than 87 \%, because greater then 87\% indicates smaller entity which can be washed.
 \\
-Efficiency can be calculated considering rest, diagram shown in figure \ref{fig:efficiencyCalculation}. Efficiency describes is there cost-efficiency to wash or not. Wash is done when the cost efficiency is greater then 87\%.
+Efficiency can be calculated considering rest, diagram shown in figure \ref{fig:efficiencyCalculation}. Efficiency describes if it is cost-efficient to wash or not. Washing is done when the cost efficiency is greater then 87\%.
 
 \begin{figure}[h]
 	\centering
@@ -141,7 +141,7 @@ Efficiency can be calculated considering rest, diagram shown in figure \ref{fig:
 	\label{fig:efficiencyCalculation}
 \end{figure}
 
-Incoming clothes are taken one after another and moved to the particular bin. If there are no clothes left then the algorithm checks how many bins are required. If there are more than zero bins then the current state is calculated and set, like shown in the table \ref{tab:currentState}. Once all the clothes and bins have been set and there is nothing left then the algorithm has ended. \newpage
+Incoming clothes are taken one after another and moved to the particular bin. If there are no clothes left then the algorithm checks how many bins are required. If there are more than zero bins then the current state is calculated and set, like shown in the table \ref{tab:currentState}. Once all the clothes and bins have been set and there is nothing left then the algorithm is finished. \newpage
 
 \begin{figure}[h]
 	\centering
@@ -178,6 +178,7 @@ The figure \ref{fig:diagramI} of the sorting algorithm is changing the current s
 \end{figure}
 There are concurrency between II and III, if something changes at II then III can also possibly change and vice versa.
 \\
-The figure \ref{fig:diagramII} of the sorting algorithm change the number of clothes in particular type of bin. For instance the quantity of 818\% gives result for 8 bins and 18\% rest. However efficiency of 8 bins is 100\% and for the last one is only 18\%. Eight bins can be washed and the last must rest and should wait. If 818\% of clothes we wash by 9 bins then we get efficiency of 90.8\% and reserve 9.2\%. This would be optimal and new state is set.
+The figure \ref{fig:diagramII} of the sorting algorithm change the number of clothes in particular type of bin. For instance the quantity of 818\% gives result for 8 bins and 18\% rest. However efficiency of 8 bins is 100\% and for the last one is only 18\%. Eight bins can be washed and the last rest should wait. If 818\% of clothes we wash by 9 bins then we get efficiency of 90.9\% and reserve 9.1\%. This would be optimal and new state is set.
 
 \subsection{Future Work}
+An optimization of the washing algorithm could be, to optimize the usage of bins to use as few as possible by filling them up with clothes from other temperatures through migration, but never blend white and colored clothes in the same bin. \\ For this optimization a static bin size must be set according to how much volume a washing machine can take, this means that the specifications of the particular machine needs to be examined i.e. the volume and weight it can wash. Then an examination of how large a volume of a particular clothe type will fill is needed to determine the size value of this clothe type. This is a one time examination of all the various clothe types. Then the size is enumerated for all existing clothe types in the database, this gives the possibility to optimize every bin to be as filled as possible by various clothe types. The first thing the algorithm will do is to sort all clothes according to color and temperature in ten lists, i.e. for every clothe color and temperature. The next part is to figure out the size(volume) that every list will fill starting with the wool at 30 degrees and just fill this list if it do not fill up a washing bin, with the clothes from the list which is closest in temperature e.g. 40 degrees  of the same color. This will iterate until a number of bins are as small as possible for this particular color, then process the other color of the two with the same procedure of iterations. This could be called the migrating clothes algorithm. 
