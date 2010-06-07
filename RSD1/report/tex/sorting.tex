@@ -8,13 +8,13 @@ It is common knowledge that washing black and white together is a bad idea, ther
 Most clothes have sewed label (tag) in them.The label contain manufacture defined information about fabric, washing temperature and how to clean the cloths. Fabric defines the material of clothe - how clothe is sensitive, wool is more sensitive then synthetic or clothe which can be washed 40 degree is more sensitive than clothe which can be washed 95 degree. Of course sometimes 40 degree clothe can be washed on 30, clothe can often be washed on lower degrees. \\ \\ The general criteria used to create sorting algorithm are:
 
 \begin{itemize}
-	\item Colour – often there are bad idea wash white and black together, so this criteria defines that clothes of colored and white should be distinguished and washed separately. 
-	\item Washing temperature – some clothes are more sensitive than other, so clothe should be washed on temperature defined by label in other case there could be possibility to damage clothe.
-	\item Fabric – defines material of the clothes. For instance wool, cotton, synthetic and etc. All those material types have different sensitive criterion's. Comparing wool and synthetic of the same color and temperature we should take in to account that wool is higher priority clothe and same synthetic clothe should be washed regarding rules of wool.
-	\item Weight – defines bin size of washing machine size. In other words how many clothes can fit to washing machine and be washed.
+	\item Color – often there are bad idea to wash white and black together, so this criteria defines that clothes of colored and white should be distinguished and washed separately. 
+	\item Washing temperature – some clothes are more sensitive than other, the clothe should be washed on temperature defined by the label, to avoid the possibility of damage to the clothe.
+	\item Fabric – defines material of the clothes. For instance wool, cotton, synthetic, etc. All those material types have different sensitivity criteria. Comparing wool and synthetic of the same color and temperature we should take in to account that wool is higher priority clothe and the synthetic clothe should then be washed regarding rules of wool.
+	\item Weight – defines bin size of washing machine size. How many clothes can fit to washing machine and be washed.
 \end{itemize}
 
-Abstract criterion defines how clothes can be washed:
+Abstract criteria defines how clothes can be washed:
 
 \begin{itemize}
 	\item White and light clothes can be washed together
@@ -32,13 +32,13 @@ Abstract criterion defines how clothes can be washed:
 
 \subsubsection{Sorting by color and temperature}
 
-Algorithm presented in figure 8.1 is one of the simplest, which is also implemented. When list of clothes comes to sort, then each clothe are moved to particular bin. First are sorted by color and then by temperature. Number of total possible bins is ten – five for colored and five for white. Bins are numbered automatically. \\ \\
+Algorithm presented in figure \ref{fig:sortingByColorTemp} is one of the simplest, which is also implemented. When list of clothes comes to sort, then each clothe are moved to particular bin. First are sorted by color and then by temperature. Number of total possible bins is ten – five for colored and five for white. Bins are numbered automatically. \\ \\
 
 \begin{figure}[h]
 	\centering
 		\includegraphics[scale=0.7]{sortingByColorTemp}
 	\caption{Sorting algorithm by color and temperature}
-	\label{fig:planning}
+	\label{fig:sortingByColorTemp}
 \end{figure}
 
 This kind of algorithm is not optimal, because one clothe can be washed as well. Of course if time is not so important, then clothes from the bin should be washed when bin is full.
@@ -47,40 +47,40 @@ This kind of algorithm is not optimal, because one clothe can be washed as well.
 
 A lot of laundry institution sorting clothes similar but not the same. One of them has different size washing machines others wash at the higher temperature and all of them have distinct criteria.   So question is: how can be created software which satisfied all user requirements. \\  Here presented software based on C\# language, software consists of two parts: configuration and sorting algorithm. Configuration part is finished, however sorting algorithm do not finished. Purpose of the configuration is to save and load sorting criteria created by user. 
 \\
-Each of clothe has sewed label which defines temperature, fabric and it would be great to prioritize clothes by sensitive. Purpose of that is to sort by priorities; more sensitive clothes have more privileges than low priority clothes. Same color and same washing temperature clothes could have different priorities, for instance one clothe is from wool and another from synthetic, so synthetic (possible) is lower priority than wool and should be washed considering wool. Clothes of the lower priority washed considering higher priority and highest priority washed like it have to be washed. Figure 8.1 (left) presents an example of configured priorities. \\ Most significant clothes are in the top of list (\textbf{example}: Cotton: Hand wash: 95, Wool: Degree 30: 90) and have the highest priority and least significant down in the list. 
+Each of clothe has sewed label which defines temperature, fabric and it would be great to prioritize clothes by sensitive. Purpose of that is to sort by priorities; more sensitive clothes have more privileges than low priority clothes. Same color and same washing temperature clothes could have different priorities, for instance one clothe is from wool and another from synthetic, so synthetic (possible) is lower priority than wool and should be washed considering wool. Clothes of the lower priority washed considering higher priority and highest priority washed like it have to be washed. Figure \ref{fig:sortingByColorTemp} (left) presents an example of configured priorities. \\ Most significant clothes are in the top of list (\textbf{example}: Cotton: Hand wash: 95, Wool: Degree 30: 90) and have the highest priority and least significant down in the list. 
 \\
-Different institutions have different washing machine sizes, and all of them during one washing cycle want to utilize max clothes. That is why included parameters like total washing machine size and each clothe size figure 8.1 (right). Total washing machine size defines the threshold (in that case 87\%) which defines when is not optimal to wash. In other words washing machine utilization bellow 87\% is not optimal and can not be washed. Another configuration of size is how many units of particular type of clothe can fit in one washing machine. For instance in one washing machine can fit 30 shorts (Shorts: 30), so size of the shorts is approximately $\frac{1}{30}$ or utilization of washing machine is about 3.33 \%. So min size of same units can be:$\frac{87\%}{3.33\%}\approx 26$. \\
+Different institutions have different washing machine sizes, and all of them during one washing cycle want to utilize max clothes. That is why included parameters like total washing machine size and each clothe size figure \ref{fig:sortingByColorTemp} (right). Total washing machine size defines the threshold (in that case 87\%) which defines when is not optimal to wash. In other words washing machine utilization bellow 87\% is not optimal and can not be washed. Another configuration of size is how many units of particular type of clothe can fit in one washing machine. For instance in one washing machine can fit 30 shorts (Shorts: 30), so size of the shorts is approximately $\frac{1}{30}$ or utilization of washing machine is about 3.33 \%. So min size of same units can be:$\frac{87\%}{3.33\%}\approx 26$. \\
 
 \begin{figure}[h]
 	\centering
 		\includegraphics[scale=0.5]{sortinControls}
 	\caption{Left: clothes sensitive control; Right: clothes value control}
-	\label{fig:planning}
+	\label{fig:sortinControls}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
 		\includegraphics[scale=0.5]{alternativeRules}
 	\caption{Washing alternative rules}
-	\label{fig:planning}
+	\label{fig:alternativeRules}
 \end{figure}
 
-Last feature included is washing alternatives, in other words what to do then clothe can not be washed in particular case. Figure 8.2 presents alternatives of cotton: 30 degree. As we can see this kind of clothe can be washed with the wool: 30 degree (plan B) or Synthetic: 30 degree (plan C) or wool: 40 degree (worst plan if before two does not fit). Each clothes could have any size of plans. All above mentioned parameters can be saved, loaded or updated for the next time use. As we can see many features provides quite wide range of washing possibilities.
+Last feature included is washing alternatives, in other words what to do then clothe can not be washed in particular case. Figure \ref{fig:sortinControls} presents alternatives of cotton: 30 degree. As we can see this kind of clothe can be washed with the wool: 30 degree (plan B) or Synthetic: 30 degree (plan C) or wool: 40 degree (worst plan if before two does not fit). Each clothes could have any size of plans. All above mentioned parameters can be saved, loaded or updated for the next time use. As we can see many features provides quite wide range of washing possibilities.
 
-Further presented sorting algorithm which shown in the figure 8.3. There are four parts (Init, I, II, III) describing algorithm in more abstract level. There is one input for incoming clothes and three outputs for outgoing results of the sort. Incoming clothes have parameters like: color, washing temperature, clothe type and fabric and result is a bin designated to current clothe.  Let us explain those four parts in more detail:
+Further presented sorting algorithm which shown in the figure \ref{fig:alternativeRules}. There are four parts (Init, I, II, III) describing algorithm in more abstract level. There is one input for incoming clothes and three outputs for outgoing results of the sort. Incoming clothes have parameters like: color, washing temperature, clothe type and fabric and result is a bin designated to current clothe.  Let us explain those four parts in more detail:
 
 \begin{itemize}
 	\item 3. Init – all incoming clothes sorted by color and washing temperature. By default all clothes get bin ids and calculated current state. Current state – defines is sort is enough efficiency.
 	\item 4. I – check for success. That part check is current state enough efficiency. If it is than algorithm stops, or emerge time out.
 	\item 5. II – try to move clothes from rest to reserve using washing alternative rules. 
-	\item 6. III – try to decrease number of clothes. For example at the table 8.1 rows two and nine utilization is the same 818\%, however efficiency is different. One uses 8 bins and not efficiency another pass then uses 9 bins (times to be washed).
+	\item 6. III – try to decrease number of clothes. For example at the table \ref{tab:currentState} rows two and nine utilization is the same 818\%, however efficiency is different. One uses 8 bins and not efficiency another pass then uses 9 bins (times to be washed).
 \end{itemize}
 
 \begin{figure}[h]
 	\centering
 		\includegraphics[scale=1]{sortingAlgorithm}
 	\caption{Sorting algorithm}
-	\label{fig:planning}
+	\label{fig:sortingAlgorithm}
 \end{figure}
 
 Loop is going I, II, I, III, I... while do not get efficiency greater than 87\% (like set in configuration). By default if there are no configurations set, then algorithm works like presented in above chapter (sorting by color and temperature).
@@ -108,7 +108,7 @@ Loop is going I, II, I, III, I... while do not get efficiency greater than 87\% 
 \end{table}
 
 \newpage
-Current state of the sorting is represented by table where all values mutate during sort. Quantity of incoming clothes set bin ids and total bin utilization (TBU). TBU - how many times need to be washed it calculated by 8.1 formula:
+Current state of the sorting is represented by table where all values mutate during sort. Quantity of incoming clothes set bin ids and total bin utilization (TBU). TBU - how many times need to be washed it calculated by formula 1:
 
 \begin{equation}
 TBU=ClotheType1\cdot K1+ClotheType2\cdot K2+...+ClotheType(n)\cdot K(n) \label{eq:eq1}
@@ -118,7 +118,7 @@ TBU=ClotheType1\cdot K1+ClotheType2\cdot K2+...+ClotheType(n)\cdot K(n) \label{e
 Where clothe type can be: Sweater, Shirt, Pants, Underwear, WashingBag, Dress, Shorts, Towel and BedLinen. 
 
 Clothes coefficients: k1,k2,k3,...k(n) set by clothes value control.
-Calculation of how many number of bins require (NBR) done by 8.2 formula:  
+Calculation of how many number of bins require (NBR) done by formula 2:  
 
 \begin{equation}
 NBR=\frac{TBU}{100\%},\textrm{Round by 87\%} \label{eq:eq2}
@@ -134,17 +134,17 @@ Rest=TBU-NBR\cdot 100\% \label{eq:eq3}
 When the reusult are negative than there is no rest, else rest. Rest means how many percent of clothes left and can not be washed, because of to small amount. So rest can be zero or lesser than 87 \%, because 87\% indicates smaller entity which can be washed.
 
 
-Efficiency can be calculated considering rest, diagram shown in figure 8.4. Efficiency describes is there cost-efficiency to wash or not. Wash is cost efficient than efficiency is greater 87\%.
+Efficiency can be calculated considering rest, diagram shown in figure \ref{fig:efficiencyCalculation}. Efficiency describes is there cost-efficiency to wash or not. Wash is cost efficient than efficiency is greater 87\%.
 
 
 \begin{figure}[h]
 	\centering
 		\includegraphics[scale=0.7]{efficiencyCalculation}
 	\caption{Efficiency calculation diagram}
-	\label{fig:planning}
+	\label{fig:efficiencyCalculation}
 \end{figure}
 
-At the beginning incoming clothes are toke one after another and moved to the particular bin. If there are no clothes left than check how many distinct bins require. If there are more than zero bins than calculated and set current state like shown in the 8.1 table. If there are no clothes therefore there are no bins and algorithm is ended. \newpage
+At the beginning incoming clothes are toke one after another and moved to the particular bin. If there are no clothes left than check how many distinct bins require. If there are more than zero bins than calculated and set current state like shown in the table \ref{tab:currentState}. If there are no clothes therefore there are no bins and algorithm is ended. \newpage
 
 \begin{figure}[h]
 	\centering
@@ -160,7 +160,7 @@ Second move of algorithm is check for success and for time-out, figure 8.6. If a
 	\centering
 		\includegraphics[scale=0.7]{diagramI}
 	\caption{Diagram I}
-	\label{fig:planning}
+	\label{fig:diagramI}
 \end{figure}
 
 Last two moves are very similar. Both of them try something to change when estimate current state and compare with previous. If new state is better than previous then state is set to current, in other case keep the last state.  \newpage
@@ -169,7 +169,7 @@ Last two moves are very similar. Both of them try something to change when estim
 	\centering
 		\includegraphics[scale=0.5]{diagramII}
 	\caption{Diagram II}
-	\label{fig:planning}
+	\label{fig:diagramII}
 \end{figure}
 
 At the figure 8.6 sorting algorithm trying to change the current state by moving clothes from bins which have rests to bins which have reserves and if result is better then new state set to current. 
@@ -178,7 +178,7 @@ At the figure 8.6 sorting algorithm trying to change the current state by moving
 	\centering
 		\includegraphics[scale=0.5]{diagramIII}
 	\caption{Diagram III}
-	\label{fig:planning}
+	\label{fig:diagramIII}
 \end{figure}
 
 At the figure 8.7 sorting algorithm trying to change number of clothes in particular type of bin. For instance quantity of 818\% gives result for 8 bins and 18\% rest. However efficiency of 8 bins is 100\% and for the last one is only 18\%. Eight bins can be washed however the rest should be wait. So if there will be decreased number of clothes during one wash then could be increased efficiency. If 818\% of clothes we wash by 9 bins then we get efficiency of 90.8\% and reserve 9.2\%. So this is optimal and new state is set.
