@@ -1,11 +1,11 @@
 %
-\section{Laundry database library}
+\section{Laundry Database Library}
 
 Most of the project subtask groups decided to use one programming language to make it easier to work together. Sometimes different languages can be difficult to connect and operate together. Therefore it was decided to use one object oriented language - C\#. As we know C\# is a one of the new generation languages, which provides a lot of advanced features like strong type checking, a garbage collector, robustness and durability. \\ This kind of language makes it easier to develop programs like this subtask, because there is no need for taking care of low level features like memory allocation or lost pointers, since low level design is not essential for this subtask. This kind of language can decrease the duration of the development process and increase code efficiency. \\
 
 All data were stored in MySQL database. Many of the other subtasks would need an access to it and that is why we decided to create a library providing access for any subtask to use. The design requirement is to create a general library which has the features of:  reliability, easy maintenance and simple to use.
 
-\subsection{Design phase}
+\subsection{Design Phase}
 
 Due to the mentioned requirements and features it was decided to create a DLL (dynamic link library). The library inside has two classes:
 
