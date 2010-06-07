@@ -17,14 +17,14 @@ The Sorting algorithm, RFID reader, MySQL Library, socket transfer server are co
 
 \begin{table}[h]
 	
-    \begin{tabular}{ | p{0.5cm} | p{3.8cm} | p{1.6cm} | p{1.8cm} |p{1.6cm} |p{1.7cm} |p{1cm} |}
+    \begin{tabular}{ | p{0.5cm} | p{3.8cm} |p{1cm} |}
     \hline
-	No &  & Audrius Palisaitis & Kalle Grafstrom & Martin Moghadam & Robertas Jacauskas & Total\\ \hline
-	1 & Database & 100\% & 100\% & 100\% & 100\% & 100\% \\ \hline
-	2 & MySQL library &  &  &  & 90\% &  \\ \hline
-	3 & Socket Transfer server &  &  &  & 70\% &  \\ \hline
-	4 & RFID reader &  &  &  &  &  \\ \hline
-	5 & Sorting Algorithm &  &  &  & 70\% &  \\ \hline
+	No & Modules & Total\\ \hline
+	1 & Database & 100\% \\ \hline
+	2 & MySQL library &  90\% \\ \hline
+	3 & Socket Transfer server &  100\% \\ \hline
+	4 & RFID reader &  100\% \\ \hline
+	5 & Sorting Algorithm &  100\% \\ \hline
     \end{tabular}
 	\caption{Estimation in percents of current system}
 	\label{tab:percentSystem}
@@ -32,10 +32,10 @@ The Sorting algorithm, RFID reader, MySQL Library, socket transfer server are co
 
 \begin{enumerate}
 	\item Database function very well, no errors during period
-	\item MySQL library function well, however some exceptions during project period. Problems with MySQL connector library. Assumption that exceptions come than some one tries to change database during usage or problems with multithreading.
-	\item Socket transfer server functions OK, however do not tested for 100\% and could be errors.
-	\item RFID reader works OK, do not tested at all this is library taken from other group
-	\item Sorting algorithm works OK, however do not tested for 100\%.
+	\item MySQL library function very well, however some exceptions occured during the project period. Problems with MySQL connector library. Assumption that exceptions come when some one tries to change database during usage or it can be problems with multithreading. They were reported by subtask 6. We do not think this will be a big problem.
+	\item Socket transfer server functions 100\%.
+	\item RFID reader works for this subtasks usage, it were not tested extensively by us, because it is a library that is provided by subtask 6.
+	\item Sorting algorithm seem to work ok, however it is not tested 100\% due to time constraints.
 \end{enumerate}
 
 \subsection{Future Work}
