@@ -176,7 +176,6 @@ The figure \ref{fig:diagramI} of the sorting algorithm is changing the current s
 	\caption{Diagram III}
 	\label{fig:diagramIII}
 \end{figure}
-
-The figure \ref{fig:diagramII} of the sorting algorithm change the number of clothes in particular type of bin. For instance the quantity of 818\% gives result for 8 bins and 18\% rest. However efficiency of 8 bins is 100\% and for the last one is only 18\%. Eight bins can be washed and the last must rest and should wait. So if there will be decreased number of clothes during one wash then could be increased efficiency. If 818\% of clothes we wash by 9 bins then we get efficiency of 90.8\% and reserve 9.2\%. So this is optimal and new state is set.
+There are concurrency between II and III, if something changes at II then III can also possibly change and vice versa.
 \\
-As we can see there are concurrency between II and III. If something changed at II then III have also possibilities to change and vice versa. Concurrency is essential to get a progress and mutation of states.
+The figure \ref{fig:diagramII} of the sorting algorithm change the number of clothes in particular type of bin. For instance the quantity of 818\% gives result for 8 bins and 18\% rest. However efficiency of 8 bins is 100\% and for the last one is only 18\%. Eight bins can be washed and the last must rest and should wait. If 818\% of clothes we wash by 9 bins then we get efficiency of 90.8\% and reserve 9.2\%. This would be optimal and new state is set.
