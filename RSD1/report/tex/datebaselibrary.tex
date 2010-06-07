@@ -10,7 +10,7 @@ All data were stored in MySQL database. Many of the other subtasks would need an
 Due to the mentioned requirements and features it was decided to create a DLL (dynamic link library). The library inside has two classes:
 
 \begin{itemize}
-	\item MySQLConnection – database connector which responsible for connection to database and send/receive queries.
+	\item MySQLConnection \textendash database connector which responsible for connection to database and send/receive queries.
 	\item Functions \textendash general library for laundry database.
 \end{itemize}
 
@@ -24,8 +24,8 @@ Due to the mentioned requirements and features it was decided to create a DLL (d
 \newpage
 \subsection{Implementation}
 
-Software development was related to unified process (UP) - iterative incremental process.  Iterative incremental process model \cite{bib5} was used during the implementation.  
-The project was created using the class Library in Microsoft Visual C\# know as the .NET 3.5 framework. The database connection was included by adding MySQL Connector Net 1.0.10 into references. The created library was include it into the other/new projects (Console or Win or else) and the library was utilized. For example the library was  inserted into a console project, a connection to database was created, shown in the figure \ref{fig:connectionToData}. After a successful connection the library class functions are usable and manage the laundry database. 
+Software development was related to the unified process (UP) - iterative incremental process.  Iterative incremental process model \cite{bib5} was used during the implementation.  
+The project was created using the class Library in Microsoft Visual C\# known as the .NET 3.5 framework. The database connection was included by adding MySQL Connector Net 1.0.10 into references. The created library was included into the other/new projects (Console or Win or something else) and the library was utilized. For example the library was  inserted into a console project, a connection to database was created, shown in the figure \ref{fig:connectionToData}. After a successful connection to the library class functions are usable and enables management of the laundry database.
 
 \begin{figure}[h]
 	\centering
@@ -44,7 +44,7 @@ Numbers explaining the database connection parameters:
 	\item Password
 \end{enumerate}
 
-Class functions are used to created instances of the MySQLConnection library, and through the variable f can be connected to all created methods. The figure \ref{fig:exampleSavePerson} shows an example of a creating a new person. Shown on the figure, there is used methods to send queries to the database. New CPR is inserted into the person table by query: “INSERT INTO Person (CPR) Values (‘1234567890’)”.
+Class functions are used to create instances of the MySQLConnection library, and through the variable f all the created methods can be called. The figure \ref{fig:exampleSavePerson} shows an example of the creation of a new person. Shown on the figure, there is used methods to send queries to the database. New CPR is inserted into the person table by query: “INSERT INTO Person (CPR) Values (‘1234567890’)”.
 
 \begin{figure}[h]
 	\centering
@@ -52,5 +52,3 @@ Class functions are used to created instances of the MySQLConnection library, an
 	\caption{Example of save person method}
 	\label{fig:exampleSavePerson}
 \end{figure}
-
-\subsection{Future work}
