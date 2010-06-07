@@ -1,17 +1,17 @@
 %
-\section{Sorting algorithms}
+\section{Sorting Algorithms}
 
-It is common knowledge that washing black and white together is a bad idea, there are a lot of criteria to distinguish and prepare clothes for washing. This chapter presents several sorting algorithms for the preparation to wash. 
+It is common knowledge that washing colored and white clothes together is a bad idea, there are a lot of criteria to distinguish and prepare clothes for washing. This chapter presents several sorting algorithms for the preparation to wash. 
 
-\subsection{Requirements/criteria}
+\subsection{Requirements/Criteria}
 
-Most clothes have sewed label (tag) in them.The label contain manufacture defined information about fabric, washing temperature and how to clean the clothes. Fabric defines the material of clothe - how clothe is sensitive, wool is more sensitive then synthetic or clothe which can be washed 40 degree is more sensitive than clothe which can be washed 95 degree. Of course sometimes 40 degree clothe can be washed on 30, clothe can often be washed on lower degrees. \\ \\ The general criteria used to create sorting algorithm are:
+Most clothes have a sewed label (RFID tag) in them.The label contains manufacture defined information about fabric, washing temperature and how to clean the clothes, i.e. the tag is added to a database with this information connected to it. Fabric defines the material of clothe - how sensitive the particular clothe is, e.g. wool is more sensitive then synthetic or clothes which can be washed at 40 degree is more sensitive than clothes which can be washed at 95 degree. Of course sometimes 40 degree clothes can be washed at 30 degrees, i.e. clothes can often be washed at lower degrees. \\ \\ The general criteria used to create the sorting algorithm are:
 
 \begin{itemize}
-	\item Color – often there are bad idea to wash white and black together, so this criteria defines that clothes of colored and white should be distinguished and washed separately. 
-	\item Washing temperature – some clothes are more sensitive than other, the clothe should be washed on temperature defined by the label, to avoid the possibility of damage to the clothe.
-	\item Fabric – defines material of the clothes. For instance wool, cotton, synthetic, etc. All those material types have different sensitivity criteria. Comparing wool and synthetic of the same color and temperature we should take in to account that wool is higher priority clothe and the synthetic clothe should then be washed regarding rules of wool.
-	\item Weight – defines bin size of washing machine size. How many clothes can fit to washing machine and be washed.
+	\item Color - often it is a bad idea to wash white and colored together, so this criteria defines that colored and white clothes should be distinguished and washed separately. 
+	\item Washing temperature - some clothes are more sensitive than others, the clothes should be washed at the temperature defined by the label, to avoid the possibility of damage to the clothes.
+	\item Fabric - defines material of the clothes. For instance wool, cotton, synthetic, etc. All those material types have different sensitivity criteria. Comparing wool and synthetic of the same color and temperature we should take into account that wool is a higher priority clothe and the synthetic clothe should then be washed regarding the rules of wool.
+	\item Weight - defines bin size of washing machine size. How many clothes can fit into the washing machine and be washed.
 \end{itemize}
 
 Abstract criteria defines how clothes can be washed:
@@ -24,15 +24,15 @@ Abstract criteria defines how clothes can be washed:
 	\item Daily clothes temperatures around 60 degree
 	\item Work clothes temperatures around 90 degree
 	\item Washing temperature of wool is low (below 40 degree)
-	\item Cotton more sensitive than synthetic
-	\item Wool more sensitive than cotton
+	\item Cotton is more sensitive than synthetic
+	\item Wool is more sensitive than cotton
 \end{itemize}
 
-\subsection{Sorting algorithm designs}
+\subsection{Sorting Algorithm Designs}
 
-\subsubsection{Sorting by color and temperature}
+\subsubsection{Sorting by Color and Temperature}
 
-Algorithm presented in figure \ref{fig:sortingByColorTemp} is one of the simplest, which is also implemented. When list of clothes comes to sort, each clothe is moved to particular bin. First they are sorted by color and then by temperature. Number of total possible bins is ten – five for colored and five for white. Bins are numbered automatically. \\ \\
+Algorithm presented in figure \ref{fig:sortingByColorTemp} is one of the simplest, which is also implemented. When the list of clothes comes to the sorting algorithm, each clothe is moved to a particular bin. First they are sorted by color and then by temperature. Number of total possible bins is ten – five for colored and five for white. Bins are numbered automatically. \\ \\
 
 \begin{figure}[h]
 	\centering
@@ -45,9 +45,9 @@ This kind of algorithm is not optimal, nor is it optimized. Of course if time is
 
 \subsubsection{Sorting algorithm using configurable parameters}
 
-Laundry institutions, sorting clothes, are very similar to each other, but not exactly the same. One of them may have different size washing machines, the other washes at a higher temperature and all of them have distinct criteria.  Meeting the different need is accomplished by having a flexible system, and software which satisfied all user requirements. \\  The presented software is based on the C\# language, software consists of two parts: configuration and sorting algorithm. Configuration part is finished, however the sorting algorithm is not finished. Purpose of the configuration is to save and load sorting criteria created by user. 
+Laundry institutions, are very similar to each other when it comes to sorting clothes, but they are not exactly the same. They may have different sized washing machines, the other washes at a higher temperature and all of them have distinct criteria. Meeting the different needs is accomplished by having a flexible system, and software which satisfies all user requirements. \\  The presented software is based on the C\# language, software consists of two parts: configuration and sorting algorithm. Configuration part is finished, however the sorting algorithm is not finished. Purpose of the configuration is to save and load sorting criteria created by user. 
 \\
-Fabric is to sorted by priorities; more sensitive clothes have more privileges than low priority clothes. Same color and same washing temperature clothes could have different priorities, for instance if one clothe is wool and another is synthetic, so synthetic is (possible) lower priority than wool and should be washed using the wool laundry settings. Clothes of the lower priority is washed using higher priority settings and highest priority clothes is washed, according to its label. Figure \ref{fig:sortingByColorTemp} (left) presents an example of configured priorities. \\ Most significant clothes are in the top of list (\textbf{example}: Cotton: Hand wash: 95, Wool: Degree 30: 90),  have the highest priority and the least significant are lowest in the list. 
+Fabric is sorted by priorities; more sensitive clothes have more privileges than low priority clothes. Same color and same washing temperature clothes could have different priorities, for instance if one clothe is wool and another is synthetic, so synthetic is (possible) lower priority than wool and should be washed using the wool laundry settings. Clothes of the lower priority is washed using higher priority settings and highest priority clothes is washed, according to its label. Figure \ref{fig:sortingByColorTemp} (left) presents an example of configured priorities. \\ Most significant clothes are in the top of list (\textbf{example}: Cotton: Hand wash: 95, Wool: Degree 30: 90),  have the highest priority and the least significant are lowest in the list. 
 \\
 Different institutions have different washing machine sizes, and all of them during one washing cycle want to utilize the max clothes, making the machine as efficient as possible. Therefore there has been included parameters like total washing machine size and each clothe size, shown on figure \ref{fig:sortingByColorTemp} (right). Total washing machine size defines the threshold (in that case 87\%), which defines when it is not optimal to wash. In other words washing machine utilization bellow 87\% is not optimal and can not be washed. Another configuration of size is how many units of particular type of clothe can fit in one washing machine. For instance in one washing machine can fit 30 shorts (Shorts: 30), so size of the shorts is approximately $\frac{1}{30}$ or utilization of washing machine is about 3.33 \%. So min size of same units can be:$\frac{87\%}{3.33\%}\approx 26$. \\
 
@@ -180,4 +180,4 @@ There are concurrency between II and III, if something changes at II then III ca
 \\
 The figure \ref{fig:diagramII} of the sorting algorithm change the number of clothes in particular type of bin. For instance the quantity of 818\% gives result for 8 bins and 18\% rest. However efficiency of 8 bins is 100\% and for the last one is only 18\%. Eight bins can be washed and the last must rest and should wait. If 818\% of clothes we wash by 9 bins then we get efficiency of 90.8\% and reserve 9.2\%. This would be optimal and new state is set.
 
-\subsection{Future work}
+\subsection{Future Work}
