@@ -32,7 +32,7 @@ Abstract criteria defines how clothes can be washed:
 
 \subsubsection{Sorting by color and temperature}
 
-Algorithm presented in figure \ref{fig:sortingByColorTemp} is one of the simplest, which is also implemented. When list of clothes comes to sort, then each clothe are moved to particular bin. First are sorted by color and then by temperature. Number of total possible bins is ten – five for colored and five for white. Bins are numbered automatically. \\ \\
+Algorithm presented in figure \ref{fig:sortingByColorTemp} is one of the simplest, which is also implemented. When list of clothes comes to sort, each cloth is moved to particular bin. First they are sorted by color and then by temperature. Number of total possible bins is ten – five for colored and five for white. Bins are numbered automatically. \\ \\
 
 \begin{figure}[h]
 	\centering
@@ -41,7 +41,7 @@ Algorithm presented in figure \ref{fig:sortingByColorTemp} is one of the simples
 	\label{fig:sortingByColorTemp}
 \end{figure}
 
-This kind of algorithm is not optimal, because one clothe can be washed as well. Of course if time is not so important, then clothes from the bin should be washed when bin is full.
+This kind of algorithm is not optimal, nor is it optimized. Of course if time is not an important factor, then clothes from the bin should be washed when bin is full.
 
 \subsubsection{Sorting algorithm using configurable parameters}
 
@@ -131,7 +131,7 @@ Rest calculated by:
 Rest=TBU-NBR\cdot 100\% \label{eq:eq3}
 \end{equation}
 
-When the reusult are negative than there is no rest, else rest. Rest means how many percent of clothes left and can not be washed, because of to small amount. So rest can be zero or lesser than 87 \%, because 87\% indicates smaller entity which can be washed.
+When the results are negative than there is no rest, else rest. Rest means how many percent of clothes left and can not be washed, because of to small amount. So rest can be zero or lesser than 87 \%, because 87\% indicates smaller entity which can be washed.
 
 
 Efficiency can be calculated considering rest, diagram shown in figure \ref{fig:efficiencyCalculation}. Efficiency describes is there cost-efficiency to wash or not. Wash is cost efficient than efficiency is greater 87\%.
@@ -154,7 +154,7 @@ At the beginning incoming clothes are toke one after another and moved to the pa
 \end{figure}
 
 
-Second move of algorithm is check for success and for time-out, figure 8.6. If all bins are greater efficiency than 87\% than current state is satisfied and clothes can be washed. In other case there is time-out algorithm also stopped. Purpose of the time-out added to avoid infinitive loop.
+Second move of algorithm is check for success and for time-out, figure \ref{fig:diagramI}. If all bins are greater efficiency than 87\% than current state is satisfied and clothes can be washed. In other case there is time-out algorithm also stopped. Purpose of the time-out added to avoid infinitive loop.
 
 \begin{figure}[h]
 	\centering
@@ -172,7 +172,7 @@ Last two moves are very similar. Both of them try something to change when estim
 	\label{fig:diagramII}
 \end{figure}
 
-At the figure 8.6 sorting algorithm trying to change the current state by moving clothes from bins which have rests to bins which have reserves and if result is better then new state set to current. 
+At the figure \ref{fig:diagramI} sorting algorithm trying to change the current state by moving clothes from bins which have rests to bins which have reserves and if result is better then new state set to current. 
 
 \begin{figure}[h]
 	\centering
@@ -181,6 +181,6 @@ At the figure 8.6 sorting algorithm trying to change the current state by moving
 	\label{fig:diagramIII}
 \end{figure}
 
-At the figure 8.7 sorting algorithm trying to change number of clothes in particular type of bin. For instance quantity of 818\% gives result for 8 bins and 18\% rest. However efficiency of 8 bins is 100\% and for the last one is only 18\%. Eight bins can be washed however the rest should be wait. So if there will be decreased number of clothes during one wash then could be increased efficiency. If 818\% of clothes we wash by 9 bins then we get efficiency of 90.8\% and reserve 9.2\%. So this is optimal and new state is set.
+At the figure \ref{fig:diagramII} sorting algorithm trying to change number of clothes in particular type of bin. For instance quantity of 818\% gives result for 8 bins and 18\% rest. However efficiency of 8 bins is 100\% and for the last one is only 18\%. Eight bins can be washed however the rest should be wait. So if there will be decreased number of clothes during one wash then could be increased efficiency. If 818\% of clothes we wash by 9 bins then we get efficiency of 90.8\% and reserve 9.2\%. So this is optimal and new state is set.
 
 As we can see there are concurrency between II and III. If something changed at II then III have also possibilities to change and vice versa. Concurrency is essential to get a progress and mutation of states.
