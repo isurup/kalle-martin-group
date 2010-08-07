@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- XML Standard Simulation Template. (Random moving turtles emitting flavors + an advanced viewer + a gradient builder + a flavor cleaner -->
+<Simulation Name="Pheromones and Viewers Demos" Width="100" Height="100" TorusMode="true" Refresh="100" CyclePause="10">
+		<Flavors>
+			<RandomFlavors Name="random" Evaporation="0.01" Diffusion="0.4" Number="4"/>
+			<Flavor Name="noise" Evaporation="0" Diffusion = "0"/>
+		</Flavors>
+		<Agents>
+			<Agent AgentClass="turtlekit2.demos.EmitMovingTurtle" NbAgents="40">
+        			 <Parameters FlavorToEmit1="random0" FlavorToEmit2="random1" Quantity="100"/>
+			 </Agent>
+			 <Agent AgentClass="turtlekit2.demos.EmitMovingTurtle" NbAgents="40">
+        			 <Parameters FlavorToEmit1="random2" FlavorToEmit2="random3" Quantity="100"/>
+			 </Agent>
+		</Agents>
+		<Viewers>
+			<Viewer ViewerClass="turtlekit2.tools.Viewer2D"  CellSize="3"/>
+			<Viewer ViewerClass="turtlekit2.tools.Viewer3D"  CellSize="3"/>
+			
+		</Viewers>
+		<Observers>
+			<Observer ObserverClass="turtlekit2.tools.Charter" Pheromone="random0"/>
+			<Observer ObserverClass="turtlekit2.tools.Phero3d" Pheromone="random0"/>		
+			<Observer ObserverClass="turtlekit2.tools.NoiseGenerator" Flavor="noise" method="hybrid"/>
+			
+		</Observers>
+</Simulation>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Simulation Name="Simulation Template" Width="100" Height="100" TorusMode="true" CyclePause="50">
+		<Flavors>
+		</Flavors>
+		<Agents>
+			<Agent AgentClass="myAgentClass" NbAgents="100">
+				<Parameters  Parameter1="0.1"/>
+			 </Agent>
+		</Agents>
+		<Viewers>
+			<Viewer ViewerClass="turtlekit2.tools.Viewer2D" CellSize="3"/>
+			<Viewer ViewerClass="turtlekit2.tools.Viewer3D" CellSize="3"/>
+		</Viewers>
+		<Observers>
+			<Observer ObserverClass="myObserverClass" Parameter1="0.1"/>
+		</Observers>
+</Simulation>
