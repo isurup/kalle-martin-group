@@ -1,8 +1,12 @@
 package launcher;
 
+import turtlekit.kernel.Launcher;
 import agents.Explorer;
+import agents.SpaceShip;
 import agents.Transporter;
-import turtlekit.kernel.*;
+
+
+
 
 public class PlanetXLauncher extends Launcher {
 
@@ -13,13 +17,37 @@ public class PlanetXLauncher extends Launcher {
 	/**
 	 * env variables
 	 */
-	private static final int nbOfExplorers = 10;
-	private static final int nbOfTransporters = 9;
+	public static int nbOfExplorers = 10;
+	public static int nbOfTransporters = 9;
+	public static int nbOfSpaceShips = 1;
+	public static float densityRate = 0.2f;
+
+	
+	
+	public PlanetXLauncher() {
+		setSimulationName("Star-Hores");
+		setHeight(200);
+		setWidth(200);
+		setWrapModeOn(true);
+	}
+	
+	
+
+
 	
 	public void addSimulationAgents()
 	{
-	  addViewer(3); // we choose a default viewer with a cell size of 3
+	  addViewer(4); // we choose a default viewer with a cell size of 3
 
+	  /**
+	   * Add the Spaceships
+	   */
+	  for (int i = 0; i < nbOfSpaceShips; i++) //add the Explorers
+	  {
+		  addTurtle(new SpaceShip());
+	  }
+
+	  
 	  for (int i = 0; i < nbOfExplorers; i++) //add the Explorers
 	  {
 		  addTurtle(new Explorer());
@@ -30,8 +58,9 @@ public class PlanetXLauncher extends Launcher {
 		  addTurtle(new Transporter());
 	  }
 
+
 	  // this method adds the PatchInitializer (an Observer) with no GUI (false)
-	  //addObserver(new PatchInitializer(nbOfExplorers),false);
+	  addObserver(new PatchInitializer(densityRate),false);
 	}
 
 }
