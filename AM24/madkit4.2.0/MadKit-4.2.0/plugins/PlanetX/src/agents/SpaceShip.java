@@ -21,7 +21,8 @@ public class SpaceShip extends Turtle {
 		setColor(Color.PINK);
 
 		 List<Integer> spaceList = new ArrayList<Integer>();
-		 spaceList.add(1,3); // index 1, value 3 
+		 spaceList.add(1,3); // index 1, value 3
+		 spaceList.get(1); // get from index 1
 		 
 
 	}
