@@ -16,10 +16,12 @@ public class Transporter extends Turtle {
 	private static final long serialVersionUID = 1L;
 	private static Queue<PlanetJob> jobList = null;
 	double energyLeft = 0;
+	private int w=0;
 	int movingCost = 4;
 	int perceptionCost = 3;
-	private int envWidth, envHeight, xBase, yBase;
-	private int xOre, yOre; 
+	private int envWidth, envHeight;
+	private double xBase, yBase;
+	private double xOre, yOre; 
 	private boolean collisionDetection;
 	
 
@@ -43,7 +45,6 @@ public class Transporter extends Turtle {
 	public String pullJobList(){
 		xOre = 0;
 		yOre = 0;
-		int a = 2;
 		PlanetJob tst = jobList.poll();
 		if (tst !=null){
 			xOre = PlanetJob.x;
@@ -57,8 +58,16 @@ public class Transporter extends Turtle {
 	}
 	
 	public String executeJob(){
-		
+		boolean oreNotReached=true;
+		while(oreNotReached){
 		towards(xOre,yOre);
+		fd(1);
+		
+		if((xcor()==xOre)&&(ycor()==yOre))
+			oreNotReached=false;
+			else oreNotReached=true;		
+		}
+		w++;
 		return ("goToBase");
 	}
 	
@@ -66,10 +75,26 @@ public class Transporter extends Turtle {
 		return ("goToBase");
 	}
 	
-	void wiggle() {
+	public String goToBase(){
+		boolean baseNotReached=true;
+		while(baseNotReached){
+		towards(xBase,yBase);
 		fd(1);
-		turnRight(Math.random() * 45);
-		turnLeft(Math.random() * 45);
+		
+		if((xcor()==xBase)&&(ycor()==yBase))
+			baseNotReached=false;
+			else baseNotReached=true;		
+		}
+		PlanetConstraints.C--;
+		w=0;
+		energyLeft = (Math.sqrt(envWidth)+Math.sqrt(envHeight))*2*movingCost*Math.sqrt(perceptionCost);
+		return ("pullJobList");
 	}
+	
+//	void wiggle() {
+//		fd(1);
+//		turnRight(Math.random() * 45);
+//		turnLeft(Math.random() * 45);
+//	}
 
 }
