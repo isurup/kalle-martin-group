@@ -14,18 +14,15 @@
 	     Add the required plugins to the classpath for compiling sources (madkitkernel.jar at least)
 	-->
 	<fileset id="project.class.path" dir="${jars.dir}">
+		<include name="analysistools.jar"/>
 		<include name="madkitkernel.jar"/>
-		<include name="messages.jar"/>
 		<include name="simulation.jar"/>
+		<include name="messages.jar"/>
+		<include name="turtlekit.jar"/>
 		<include name="pythonlib.jar"/>
 		<include name="madkitutils.jar"/>
 		<include name="jython.jar"/>
-		<include name="analysistools.jar"/>
-		<include name="turtlekit.jar"/>
-		
-		<!-- <include name="other1.jar"/> -->
-		<!-- <include name="other2.jar"/> -->
-	</fileset>
+</fileset>
 
  	<!--
 	     Specify the plugin basic informations:
@@ -36,11 +33,11 @@
 	     . description: a short description of what the plugin does
 	-->
 	<property name="src.dir" value="src"/>
-	<property name="version"  value="1.0"/>
-	<property name="author"  value="unknown"/>
-	<property name="depend"  value="analysistools, madkitkernel, simulation, messages,turtlekit,pythonlib,madkitutils"/> <!-- value="madkitkernel, messages, other1, other2" for instance (you will need madkitkernel at least) -->
+	<property name="version" value="1.0.0"/>
+	<property name="author" value="unknown"/>
+	<property name="depend" value="analysistools, madkitkernel, simulation, messages,turtlekit,pythonlib,madkitutils"/> <!-- value="madkitkernel, messages, other1, other2" for instance (you will need madkitkernel at least) -->
 	<property name="requires" value="jython.jar"/> <!-- value="boo.jar", "images.jar", all the external jars that you would need -->
-	<property name="description"  value="A simple turtlekit project"/>
+	<property name="description" value="A simple turtlekit project"/>
 	<property name="project.category" value="turtlekit"/>
 	<property name="docfile" value="turtlepack.html"/>
 	<!--
