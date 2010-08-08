@@ -21,11 +21,7 @@ public class SpaceShip extends Turtle {
 		playRole("spaceship");
 		setColor(Color.PINK);
 		
-		List<Object> spaceList = new ArrayList<Object>();
-		spaceList.add(1,3); // index 1, value 3
-		spaceList.get(1); // get from index 1
-		
-		 Queue<PlanetJob> jobList = new LinkedList<PlanetJob>();
+		Queue<PlanetJob> jobList = new LinkedList<PlanetJob>();
 	}
 
 }
