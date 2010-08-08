@@ -13,6 +13,4 @@ public class PlanetConstraints {
 	public static int C; //The capacity C of the base is limited.
 	public static int W; //Robots have a limited capacity W of ore
 	public static int T; //When the base is full of ore or after a given time T, robots alive return to the base.
-	
-
 }
