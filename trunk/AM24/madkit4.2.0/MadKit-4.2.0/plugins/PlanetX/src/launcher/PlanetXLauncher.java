@@ -42,25 +42,25 @@ public class PlanetXLauncher extends Launcher {
 	  /**
 	   * Add the Spaceships
 	   */
-	  for (int i = 0; i < nbOfSpaceShips; i++) //add the Explorers
+	 /* for (int i = 0; i < nbOfSpaceShips; i++) //add the Explorers
 	  {
 		  addTurtle(new SpaceShip());
 	  }
 
-	  
+	 */ 
 	  for (int i = 0; i < nbOfExplorers; i++) //add the Explorers
 	  {
 		  addTurtle(new Explorer());
 	  }
-	  
+	  /*
 	  for (int i = 0; i < nbOfTransporters; i++) //add the Transporters
 	  {
 		  addTurtle(new Transporter());
 	  }
-
+*/
 
 	  // this method adds the PatchInitializer (an Observer) with no GUI (false)
-	  addObserver(new PatchInitializer(densityRate),false);
+	  //addObserver(new PatchInit(densityRate),false);
 	}
 
 }
