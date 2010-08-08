@@ -3,62 +3,62 @@ package util;
 public class PlanetConstraints {
 	
 	/***
-	 * Number of bases.
+	 * N - Number of bases.
 	 */
-	public static int N; //number of bases.
+	public static int N;
 	
 	/***
-	 * Density of ore, as a percentage.
+	 * D - Density of ore, as a percentage.
 	 */
-	public static int D; //density of ore, as a percentage.
+	public static int D;
 	
 	/***
-	 * Size of the grid.
+	 * G - Size of the grid.
 	 */
-	public static int G; //size of the grid.
+	public static int G;
 	
 	/**
-	 * Coordination mode between bases,cooperative = 1 or competitive = 0.
+	 * M - Coordination mode between bases,cooperative = 1 or competitive = 0.
 	 */
-	public static int M; //coordination mode between bases,cooperative = 1 or competitive = 0.
+	public static int M;
 	
 	/*** 
-	 * Number of explorers per base.
+	 * X - Number of explorers per base.
 	 */
-	public static int X; //number of explorers per base.
+	public static int X;
 
 	/***
-	 * Number of transporters per base.
+	 * Y - Number of transporters per base.
 	 */
-	public static int Y; //number of transporters per base.
+	public static int Y;
 	
 	/***
-	 * Initial perception scope.
+	 * P - Initial perception scope.
 	 */
-	public static int P; //initial perception scope.
+	public static int P;
 	
 	/***
-	 * fixed communication scope.
+	 * I - fixed communication scope.
 	 */
-	public static int I; //fixed communication scope.
+	public static int I;
 	
 	/***
-	 * memory size of each robot(S < X+Y).
+	 * S - memory size of each robot(S < X+Y).
 	 */
-	public static int S; //memory size of each robot(S < X+Y).
+	public static int S;
 	
 	/***
-	 * Capacity of each base in number of ore samples.
+	 * C - Capacity of each base in number of ore samples.
 	 */
-	public static int C; //capacity of each base in number of ore samples.
+	public static int C;
 	
 	/***
-	 * Maximal number of ore a robot can grab and/or carry.
+	 * W - Maximal number of ore a robot can grab and/or carry.
 	 */
-	public static int W; //maximal number of ore a robot can grab and/or carry.
+	public static int W;
 	
 	/***
-	 * Maximal number of cycles.
+	 * T - Maximal number of cycles.
 	 */
-	public static int T; //maximal number of cycles.
+	public static int T;
 }
