@@ -6,8 +6,6 @@ import agents.SpaceShip;
 import agents.Transporter;
 
 
-
-
 public class PlanetXLauncher extends Launcher {
 
 	/**
@@ -17,7 +15,7 @@ public class PlanetXLauncher extends Launcher {
 	/**
 	 * env variables
 	 */
-	public static int nbOfExplorers = 10;
+	public static int nbOfExplorers = 100;
 	public static int nbOfTransporters = 9;
 	public static int nbOfSpaceShips = 1;
 	public static float densityRate = 0.2f;
@@ -26,8 +24,6 @@ public class PlanetXLauncher extends Launcher {
 	
 	public PlanetXLauncher() {
 		setSimulationName("Star-Hores");
-		setHeight(200);
-		setWidth(200);
 		setWrapModeOn(true);
 	}
 	
@@ -42,17 +38,17 @@ public class PlanetXLauncher extends Launcher {
 	  /**
 	   * Add the Spaceships
 	   */
-	 /* for (int i = 0; i < nbOfSpaceShips; i++) //add the Explorers
+	  for (int i = 0; i < nbOfSpaceShips; i++) //add the Explorers
 	  {
 		  addTurtle(new SpaceShip());
 	  }
 
-	 */ 
+	  
 	  for (int i = 0; i < nbOfExplorers; i++) //add the Explorers
 	  {
 		  addTurtle(new Explorer());
 	  }
-	  /*
+	/*  
 	  for (int i = 0; i < nbOfTransporters; i++) //add the Transporters
 	  {
 		  addTurtle(new Transporter());
@@ -60,7 +56,7 @@ public class PlanetXLauncher extends Launcher {
 */
 
 	  // this method adds the PatchInitializer (an Observer) with no GUI (false)
-	  //addObserver(new PatchInit(densityRate),false);
+	  addObserver(new PatchInit(densityRate),false);
 	}
 
 }

@@ -3,16 +3,19 @@ package agents;
 import java.awt.Color;
 
 import turtlekit.kernel.Turtle;
+import madkit.kernel.Message;
+
+
 
 public class Explorer extends Turtle {
 
 	public Explorer() {
-		super();
+		super("searchForOre");
 	}
 
 	public void setup() {
 		playRole("explorer");
-		setColor(Color.red);
+		setColor(Color.RED);
 		setHeading(West);
 	}
 
