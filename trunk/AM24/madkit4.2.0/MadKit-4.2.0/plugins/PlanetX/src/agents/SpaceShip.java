@@ -21,6 +21,7 @@ public class SpaceShip extends Turtle {
 		playRole("spaceship");
 		setColor(Color.WHITE);
 		
+		PlanetConstraints.C++; 
 	}
 
 }
