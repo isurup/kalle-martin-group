@@ -19,10 +19,12 @@ public class SpaceShip extends Turtle {
 	public void setup(){
 		playRole("spaceship");
 		setColor(Color.PINK);
-
-		 List<Object> spaceList = new ArrayList<Object>();
-		 spaceList.add(1,3); // index 1, value 3
-		 spaceList.get(1); // get from index 1
+		
+		List<Object> spaceList = new ArrayList<Object>();
+		spaceList.add(1,3); // index 1, value 3
+		spaceList.get(1); // get from index 1
+		
+		 Queue<Object> jobList = new LinkedList<Object>();
 	}
 
 }
