@@ -4,11 +4,12 @@ import turtlekit.kernel.TurtleScheduler;
 
 public class PlanetScheduler extends TurtleScheduler {
 
+	String group;
 	private static final long serialVersionUID = 1L;
 	
-	public PlanetScheduler(String arg0) {
-		super(arg0);
-		// TODO Auto-generated constructor stub
+	public PlanetScheduler(String group) {
+		super(group);
+		this.group=group;
 	}
 
 }
