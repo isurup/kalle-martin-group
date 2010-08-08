@@ -21,11 +21,6 @@ public class SpaceShip extends Turtle {
 	public void setup(){
 		playRole("spaceship");
 		setColor(Color.WHITE);
-		
-<<<<<<< .mine
-=======
-		Queue<PlanetJob> jobList = new LinkedList<PlanetJob>();
->>>>>>> .r783
 	}
 
 }
