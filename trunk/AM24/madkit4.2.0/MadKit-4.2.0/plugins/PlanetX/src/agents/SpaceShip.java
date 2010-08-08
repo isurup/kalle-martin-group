@@ -11,16 +11,16 @@ public class SpaceShip extends Turtle {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private static int strCapasity = 200;
-	
-	
+	private static PlanetConstraints constrains;
+
 	public SpaceShip() {
 		super();
 	}
-	
-	public void setup(){
+
+	public void setup() {
 		playRole("spaceship");
 		setColor(Color.WHITE);
+		
 	}
 
 }
