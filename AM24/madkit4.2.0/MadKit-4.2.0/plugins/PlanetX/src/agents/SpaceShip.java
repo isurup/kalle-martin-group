@@ -3,6 +3,7 @@ package agents;
 import java.awt.Color;
 import java.util.*;
 import turtlekit.kernel.Turtle;
+import util.*;
 
 public class SpaceShip extends Turtle {
 
@@ -24,7 +25,7 @@ public class SpaceShip extends Turtle {
 		spaceList.add(1,3); // index 1, value 3
 		spaceList.get(1); // get from index 1
 		
-		 Queue<Object> jobList = new LinkedList<Object>();
+		 Queue<PlanetJob> jobList = new LinkedList<PlanetJob>();
 	}
 
 }
