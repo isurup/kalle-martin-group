@@ -41,8 +41,8 @@ public class Transporter extends Turtle {
 	}
 	
 	public String pullJobList(){
-		int xOre = 0;
-		int yOre = 0;
+		xOre = 0;
+		yOre = 0;
 		int a = 2;
 		PlanetJob tst = jobList.poll();
 		if (tst !=null){
