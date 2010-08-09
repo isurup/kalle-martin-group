@@ -19,14 +19,18 @@
 package am24.agents;
 
 import java.awt.Color;
+import java.util.concurrent.ArrayBlockingQueue;
 
-import am24.util.PlanetConstraints;
+import am24.util.*;
 import turtlekit.kernel.Turtle;
 
 
  public class AM24Explorer extends Turtle 
  {
 	 int count=10;
+	 private ArrayBlockingQueue<AM24Job> jobList = null;
+	 
+	 AM24Job homeJob;
 	 
 	 public AM24Explorer(){
 	 	super();
@@ -39,6 +43,10 @@ import turtlekit.kernel.Turtle;
 	  	randomHeading();
 	  	setColor(Color.WHITE);
 	  	playRole("explorer");
+	  	jobList = new ArrayBlockingQueue<AM24Job>(PlanetConstraints.robotMemorySize);
+	  	
+	  	AM24Job homeJob = new AM24Job(xcor(), ycor(), xcor(), ycor());
+	  	jobList.add(homeJob);
 	  }
 	
 	 public String walk(){
@@ -62,11 +70,14 @@ import turtlekit.kernel.Turtle;
 		  return("walk");
   }
 	 public void OreWithinPerception(){
+		
+		 int Ptmp = PlanetConstraints.robotPerceptionScope;
 		 
-		 for(int i = xcor(); i <= PlanetConstraints.robotPerceptionScope; i++){
-			 for(int j = ycor(); j<= PlanetConstraints.robotPerceptionScope; j++){
+		 for(int i = xcor()- Ptmp; i <= Ptmp + xcor(); i++){
+			 for(int j = ycor()- Ptmp; j<= Ptmp + ycor(); j++){
 				 if(getPatchColorAt(i,j) == Color.pink){
-					 
+					 AM24Job job = new AM24Job( i, j , homeJob.getBasePosX(), homeJob.getBasePosY());
+					 jobList.add(job);
 				 }
 			 }
 		 }
