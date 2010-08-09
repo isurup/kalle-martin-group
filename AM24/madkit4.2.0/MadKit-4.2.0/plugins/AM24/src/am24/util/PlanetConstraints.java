@@ -47,7 +47,7 @@ public class PlanetConstraints {
 	/***
 	 * robotPerceptionScope
 	 */
-	public static final int robotPerceptionScope = 5;
+	public static final int robotPerceptionScope = 2;
 	
 	/***
 	 * I - fixed communication scope.
