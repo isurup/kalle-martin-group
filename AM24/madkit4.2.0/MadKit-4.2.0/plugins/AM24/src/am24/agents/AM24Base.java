@@ -19,7 +19,9 @@
 package am24.agents;
 
 import java.awt.Color;
+import java.util.concurrent.ArrayBlockingQueue;
 
+import am24.util.AM24Job;
 import am24.util.PlanetConstraints;
 import turtlekit.kernel.Turtle;
 
@@ -32,6 +34,8 @@ import turtlekit.kernel.Turtle;
 
  public class AM24Base extends Turtle 
  {	 
+	 public static int thisBaseCapacity = 0;
+	 
 	 public AM24Base(){
 	 	super();
 	 }
@@ -40,6 +44,7 @@ import turtlekit.kernel.Turtle;
 	  {super(s);}
 	
 	 public void setup(){
+		 thisBaseCapacity = PlanetConstraints.baseCapacity;
 	  	randomHeading();
 	  	playRole("base");
 	  	setColor(Color.GREEN);

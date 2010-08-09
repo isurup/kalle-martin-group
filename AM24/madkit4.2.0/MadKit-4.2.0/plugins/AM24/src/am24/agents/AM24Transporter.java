@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.util.concurrent.ArrayBlockingQueue;
 
 import am24.util.*;
+import am24.agents.*;
 import turtlekit.kernel.Turtle;
 
 public class AM24Transporter extends Turtle {
@@ -15,7 +16,10 @@ public class AM24Transporter extends Turtle {
 	private int xOre = 0, yOre = 0;
 	private ArrayBlockingQueue<AM24Job> jobList = null;
 	private int capacity = PlanetConstraints.transporterOreCapacity;
+	private int tmpCapacity = PlanetConstraints.transporterOreCapacity;
 	private boolean oreNotReached=true;
+
+	
 	
 	public AM24Transporter() {}
 	
@@ -31,13 +35,14 @@ public class AM24Transporter extends Turtle {
 	}
 
 	 public String walk(){
+		 //Refill jobList if not already updated from messages!!!!! TODO!!!!
 		 while (!jobList.isEmpty()){
 			 AM24Job job = jobList.poll();
 			 xOre = job.getOrePosX();
 			 yOre = job.getOrePosY();
 			 xBase = job.getBasePosX();
 			 yBase = job.getBasePosY();
-			 if((distance(xOre,yOre)+Math.sqrt((Math.pow(xOre-xBase,2) + (Math.pow(yOre-yBase,2)))*4) < energyLeft)){
+			 if((distance(xOre,yOre)+Math.sqrt((Math.pow(xOre-xBase,2) + (Math.pow(yOre-yBase,2)))*PlanetConstraints.movingCost) < energyLeft)){
 				 return ("executeJob");
 			 }
 		 }
@@ -52,17 +57,34 @@ public class AM24Transporter extends Turtle {
 		if (oreNotReached==true){
 			towards(xOre,yOre);
 			fd(1);
-			energyLeft = energyLeft-3;
+			energyLeft = energyLeft-PlanetConstraints.movingCost;
 			
 			if((xcor()==xOre)&&(ycor()==yOre)){
 				oreNotReached=false;
 			}
 			else oreNotReached=true;		
-			capacity++;
+			capacity--;
 			return ("walk");
 			}
 			else return("executeJob");
-		}
+	 }
+	 
+	 public String returnToBase(){
+		 if((xcor() != xBase)&&(ycor() != yBase)){
+			 towards(xBase,yBase);
+			 fd(1);
+			 energyLeft = energyLeft-PlanetConstraints.movingCost;
+			 return("returnToBase");	 
+		 }
+		 else
+			tmpCapacity = PlanetConstraints.transporterOreCapacity -capacity;
+		 
+		 	AM24Base.thisBaseCapacity = AM24Base.thisBaseCapacity - tmpCapacity;	// Decrement the base capacity with tmpCapacity, NOT SURE
+		 																			// IF THIS IS THE CORRECT WAY TO DO IT!!!!!
+		 
+			 capacity = PlanetConstraints.transporterOreCapacity;
+		 return("walk");
+	 }
 		
 		 
 }
