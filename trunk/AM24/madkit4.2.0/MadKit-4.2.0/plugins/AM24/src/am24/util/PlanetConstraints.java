@@ -73,4 +73,9 @@ public class PlanetConstraints {
 	 * maxSimulationTime  - Maximal number of cycles.
 	 */
 	public static final int maxSimulationTime = 10000;
+	
+	/***
+	 * movingCost - The cost to make one patch move
+	 */
+	public static final int movingCost = 4;
 }
