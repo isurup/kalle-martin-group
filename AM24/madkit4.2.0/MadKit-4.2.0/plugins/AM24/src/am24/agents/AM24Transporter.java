@@ -14,7 +14,8 @@ public class AM24Transporter extends Turtle {
 	private int yBase = 0;
 	private int xOre = 0, yOre = 0;
 	private ArrayBlockingQueue<AM24Job> jobList = null;
-	private int capacity = PlanetConstraints.transporterOreCapacity;;
+	private int capacity = PlanetConstraints.transporterOreCapacity;
+	private boolean oreNotReached=true;
 	
 	public AM24Transporter() {}
 	
@@ -30,58 +31,38 @@ public class AM24Transporter extends Turtle {
 	}
 
 	 public String walk(){
-		 if (jobList.size() == PlanetConstraints.robotMemorySize){
-			 
+		 while (!jobList.isEmpty()){
 			 AM24Job job = jobList.poll();
 			 xOre = job.getOrePosX();
 			 yOre = job.getOrePosY();
 			 xBase = job.getBasePosX();
 			 yBase = job.getBasePosY();
-			 if((distance(xOre,yOre)+Math.sqrt((Math.pow(xOre-xBase,2) + (Math.pow(yOre-yBase,2)))*7) < energyLeft)){
-				 return ("executeJob"); 
-				 else 
+			 if((distance(xOre,yOre)+Math.sqrt((Math.pow(xOre-xBase,2) + (Math.pow(yOre-yBase,2)))*4) < energyLeft)){
+				 return ("executeJob");
+			 }
 		 }
-		 else return("walk");
-		 
+		 if((xcor() != xBase)&&(ycor() != yBase)){
+			 return("returnToBase");	 
+		 }
+		 else
+		 return ("walk"); 
 		}
-	 
-	 /*public String computeJob(){
-		 if (jobList.size() == 0){			 
-			 return("walk");			 
-		 }
-		 else{
-		 AM24Job job = jobList.poll();
-		 xOre = job.getOrePosX();
-		 yOre = job.getOrePosY();
-		 xBase = job.getBasePosX();
-		 yBase = job.getBasePosY();
-		 if((distance(xOre,yOre)+Math.sqrt((Math.pow(xOre-xBase,2) + (Math.pow(yOre-yBase,2)))*7) < energyLeft))
-			 return ("executeJob");
-		 else return ("computeJob");}
-		 
-	 }*/
 	 
 	 public String executeJob(){
-		 
-			boolean oreNotReached=true;
-			while(oreNotReached){
+		if (oreNotReached==true){
 			towards(xOre,yOre);
 			fd(1);
+			energyLeft = energyLeft-3;
 			
-			if((xcor()==xOre)&&(ycor()==yOre))
+			if((xcor()==xOre)&&(ycor()==yOre)){
 				oreNotReached=false;
-				else oreNotReached=true;		
 			}
+			else oreNotReached=true;		
 			capacity++;
-			return ("computeJob");
+			return ("walk");
+			}
+			else return("executeJob");
 		}
 		
-		 public String change(){
-			  randomHeading();
-			  /*if (getHeading() > South) setColor(Color.red);
-			  else if (getHeading() > West) setColor(Color.blue);
-			    else if (getHeading() > North) setColor(Color.green);
-			      else setColor(Color.yellow);*/
-			  return("walk");
-	  }
+		 
 }
