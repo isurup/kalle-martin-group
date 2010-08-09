@@ -21,6 +21,7 @@ package am24.agents;
 import java.awt.Color;
 import turtlekit.kernel.Turtle;
 
+
  public class AM24Explorer extends Turtle 
  {
 	 int count=10;
@@ -58,6 +59,15 @@ import turtlekit.kernel.Turtle;
 		      else setColor(Color.yellow);*/
 		  return("walk");
   }
+	 public boolean OreWithinPerception(){
+		 
+		 if(getPatchColor() == Color.pink){
+			 return true;			 
+		 }
+		 else{
+			 return false;
+		 }
+	 }
 
 }
 
