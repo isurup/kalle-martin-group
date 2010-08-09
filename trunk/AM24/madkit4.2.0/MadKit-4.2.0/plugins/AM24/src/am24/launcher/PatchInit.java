@@ -1,3 +1,9 @@
+/***
+ * AM24 - Project
+ * 
+ * @author Morten Knudsen
+ */
+
 package am24.launcher;
 
 import java.awt.Color;
