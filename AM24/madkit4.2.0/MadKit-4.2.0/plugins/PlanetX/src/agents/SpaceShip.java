@@ -11,7 +11,6 @@ public class SpaceShip extends Turtle {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private static PlanetConstraints constrains;
 
 	public SpaceShip() {
 		super();
@@ -21,7 +20,5 @@ public class SpaceShip extends Turtle {
 		playRole("spaceship");
 		setColor(Color.WHITE);
 		
-		PlanetConstraints.C++; 
 	}
-
 }
