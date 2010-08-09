@@ -21,28 +21,28 @@ public class AM24Job {
 	/**
 	 * @return the orePosX
 	 */
-	protected int getOrePosX() {
+	public int getOrePosX() {
 		return orePosX;
 	}
 
 	/**
 	 * @return the orePosY
 	 */
-	protected int getOrePosY() {
+	public int getOrePosY() {
 		return orePosY;
 	}
 
 	/**
 	 * @return the basePosX
 	 */
-	protected int getBasePosX() {
+	public int getBasePosX() {
 		return basePosX;
 	}
 
 	/**
 	 * @return the basePosY
 	 */
-	protected int getBasePosY() {
+	public int getBasePosY() {
 		return basePosY;
 	}
 
