@@ -19,6 +19,8 @@
 package am24.agents;
 
 import java.awt.Color;
+
+import am24.util.PlanetConstraints;
 import turtlekit.kernel.Turtle;
 
 
@@ -59,13 +61,14 @@ import turtlekit.kernel.Turtle;
 		      else setColor(Color.yellow);*/
 		  return("walk");
   }
-	 public boolean OreWithinPerception(){
+	 public void OreWithinPerception(){
 		 
-		 if(getPatchColor() == Color.pink){
-			 return true;			 
-		 }
-		 else{
-			 return false;
+		 for(int i = xcor(); i <= PlanetConstraints.robotPerceptionScope; i++){
+			 for(int j = ycor(); j<= PlanetConstraints.robotPerceptionScope; j++){
+				 if(getPatchColorAt(i,j) == Color.pink){
+					 
+				 }
+			 }
 		 }
 	 }
 
