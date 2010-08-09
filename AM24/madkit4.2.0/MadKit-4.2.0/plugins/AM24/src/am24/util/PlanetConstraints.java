@@ -10,7 +10,7 @@ public class PlanetConstraints {
 	/***
 	 * nbOfBases - Number of bases.
 	 */
-	public static final int nbOfBases = 2;
+	public static final int nbOfBases = 1;
 	
 	/***
 	 * oreDensity - Density of ore.
