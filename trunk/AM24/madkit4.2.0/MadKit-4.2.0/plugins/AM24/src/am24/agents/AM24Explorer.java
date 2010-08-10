@@ -68,7 +68,7 @@ import turtlekit.kernel.Turtle;
 		      else setColor(Color.yellow);*/
 		  return("walk");
   }
-	 public void OreWithinPerception(){
+	 public void FindOreWithWarp(){
 		
 		 int Ptmp = AM24Constraints.robotPerceptionScope;
 		 
@@ -115,6 +115,29 @@ import turtlekit.kernel.Turtle;
 				 }
 			 }
 		 }
+	 }
+	 
+	 public void FindOreWithoutWarp(){
+			
+		 int Ptmp = AM24Constraints.robotPerceptionScope;
+		 
+		// Wrapping of grid
+		 int itmp = xcor()- Ptmp;
+		 int jtmp = ycor()- Ptmp;
+	
+		 // find ore, add job
+		 for(int i = itmp; i == Ptmp + xcor() || i > AM24Constraints.gridSizeWidth; i++)
+		 {
+			 for(int j = jtmp; j == Ptmp + ycor() || j > AM24Constraints.gridSizeHeight; j++)
+			 {
+				 if(getPatchColorAt(i,j) == Color.pink)
+				 {
+					 AM24Job job = new AM24Job( i, j );
+					 jobList.add(job);
+				 }
+			 }
+		 }
+		 
 	 }
 
 // the end
