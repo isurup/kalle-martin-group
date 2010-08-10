@@ -37,7 +37,7 @@ public class AM24Constraints {
 	/*** 
 	 * nbOfExplorers - Number of explorers per base.
 	 */
-	public static final int nbOfExplorers = 1;
+	public static final int nbOfExplorers = 10;
 
 	/***
 	 * nbOfTransporter - Number of transporters per base.
