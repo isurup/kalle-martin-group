@@ -32,6 +32,8 @@ public class AM24Transporter extends Turtle {
 	  	setColor(Color.BLUE);
 	  	playRole("Transporter");
 	  	jobList = new ArrayBlockingQueue<AM24Job>(AM24Constraints.robotMemorySize-AM24Constraints.nbOfBases);
+	  	xBase = xcor();
+	  	yBase = ycor();
 	}
 
 	 public String walk() {			//throws InvalidAddressException
