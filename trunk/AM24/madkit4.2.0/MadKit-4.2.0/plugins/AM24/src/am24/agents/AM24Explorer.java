@@ -29,6 +29,7 @@ import turtlekit.kernel.Turtle;
  {
 	 int count=10;
 	 
+	 private double energyLeft = AM24Constraints.robotEnergy;
 	 private ArrayBlockingQueue<AM24QueueObject> jobList = null;
 	 
 	 public AM24Explorer(){
@@ -50,6 +51,7 @@ import turtlekit.kernel.Turtle;
 	
 	 public String walk(){
 		fd(1);
+		energyLeft = energyLeft-AM24Constraints.movingCost;
 	   	if (count < 0) {
 	      count = (int) (Math.random()*90);
 	      return("change");
@@ -66,6 +68,10 @@ import turtlekit.kernel.Turtle;
 		  else if (getHeading() > West) setColor(Color.blue);
 		    else if (getHeading() > North) setColor(Color.green);
 		      else setColor(Color.yellow);*/
+			 if(distance(xBase,yBase)*AM24Constraints.movingCost < energyLeft){
+				 return("returnToBase");
+			 }
+		  
 		  return("walk");
   }
 	 private void FindOreWithWarp(){
