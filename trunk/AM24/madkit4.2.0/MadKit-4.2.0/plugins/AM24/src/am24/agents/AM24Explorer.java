@@ -73,9 +73,36 @@ import turtlekit.kernel.Turtle;
 		
 		 int Ptmp = PlanetConstraints.robotPerceptionScope;
 		 
-		 for(int i = xcor()- Ptmp; i <= Ptmp + xcor(); i++){
-			 for(int j = ycor()- Ptmp; j<= Ptmp + ycor(); j++){
-				 if(getPatchColorAt(i,j) == Color.pink){
+		// Wrapping of grid
+		 int itmp;
+		 int jtmp;
+		 
+		 if(xcor()- Ptmp>PlanetConstraints.gridSizeWidth)
+		 {
+			 itmp = PlanetConstraints.gridSizeWidth - xcor()- Ptmp;
+		 }
+		 else
+		 {
+			 itmp = xcor()- Ptmp;
+		 }
+		 
+		 if(xcor()- Ptmp>PlanetConstraints.gridSizeHeight)
+		 {
+			 jtmp = PlanetConstraints.gridSizeHeight - ycor()- Ptmp;
+		 }
+		 else
+		 {
+			 jtmp = ycor()- Ptmp;
+		 }
+		 //
+		 
+		 // find ore, add job
+		 for(int i =itmp; i <= Ptmp + xcor() || i < PlanetConstraints.gridSizeWidth; i++)
+		 {
+			 for(int j = jtmp; j<= Ptmp + ycor() || j < PlanetConstraints.gridSizeHeight; j++)
+			 {
+				 if(getPatchColorAt(i,j) == Color.pink)
+				 {
 					 AM24Job job = new AM24Job( i, j , homeJob.getBasePosX(), homeJob.getBasePosY());
 					 jobList.add(job);
 				 }
