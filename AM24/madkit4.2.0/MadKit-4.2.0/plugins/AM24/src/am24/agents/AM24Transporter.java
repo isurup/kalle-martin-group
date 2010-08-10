@@ -84,14 +84,18 @@ public class AM24Transporter extends Turtle {
 	}
 	 
 	 public String returnToBase(){
-		 if((xcor() != xBase)&&(ycor() != yBase)){
-			 towards(xBase,yBase);
-			 fd(1);
-			 AM24Base.addToTotalEnergyUsed(AM24Constraints.movingCost);
-			 energyLeft = energyLeft-AM24Constraints.movingCost;
-			 return("returnToBase");	 
-		 }
+		 println("Going To Base!!!!!");
+			if(xBase!=xcor()&&yBase!=ycor()){		
+				 setHeading(towards(xBase,yBase));
+				 println("Moving towards Base!: "+xcor() +" " +ycor());
+				 fd(1);
+				 AM24Base.addToTotalEnergyUsed(AM24Constraints.movingCost);
+				 energyLeft = energyLeft-AM24Constraints.movingCost;
+				 return ("returnToBase");
+			}
 		 else
+			println("Where The Explorer thinks the base is: "+xcor()+" "+ycor());
+			println("Initial Base Position: "+xBase+" "+yBase);
 			tmpCapacity = AM24Constraints.transporterOreCapacity -capacity;
 		 
 		 	AM24Base.thisBaseCapacity = AM24Base.thisBaseCapacity - tmpCapacity;	// Decrement the base capacity with tmpCapacity, NOT SURE
