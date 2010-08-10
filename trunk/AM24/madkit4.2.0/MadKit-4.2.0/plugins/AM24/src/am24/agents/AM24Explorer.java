@@ -78,18 +78,18 @@ import turtlekit.kernel.Turtle;
 		 int itmp;
 		 int jtmp;
 		 
-		 if(xcor()- Ptmp>PlanetConstraints.gridSizeWidth)
+		 if(xcor()- Ptmp>AM24Constraints.gridSizeWidth)
 		 {
-			 itmp = PlanetConstraints.gridSizeWidth - xcor()- Ptmp;
+			 itmp = AM24Constraints.gridSizeWidth - xcor()- Ptmp;
 		 }
 		 else
 		 {
 			 itmp = xcor()- Ptmp;
 		 }
 		 
-		 if(xcor()- Ptmp>PlanetConstraints.gridSizeHeight)
+		 if(xcor()- Ptmp>AM24Constraints.gridSizeHeight)
 		 {
-			 jtmp = PlanetConstraints.gridSizeHeight - ycor()- Ptmp;
+			 jtmp = AM24Constraints.gridSizeHeight - ycor()- Ptmp;
 		 }
 		 else
 		 {
@@ -98,9 +98,9 @@ import turtlekit.kernel.Turtle;
 		 //
 		 
 		 // find ore, add job
-		 for(int i = itmp; i <= Ptmp + xcor() || i < PlanetConstraints.gridSizeWidth; i++)
+		 for(int i = itmp; i <= Ptmp + xcor() || i < AM24Constraints.gridSizeWidth; i++)
 		 {
-			 for(int j = jtmp; j <= Ptmp + ycor() || j < PlanetConstraints.gridSizeHeight; j++)
+			 for(int j = jtmp; j <= Ptmp + ycor() || j < AM24Constraints.gridSizeHeight; j++)
 			 {
 				 if(getPatchColorAt(i,j) == Color.pink)
 				 {
