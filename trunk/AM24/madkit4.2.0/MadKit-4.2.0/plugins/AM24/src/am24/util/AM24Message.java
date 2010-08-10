@@ -1,9 +1,9 @@
 package am24.util;
 
 import madkit.kernel.Message;
-
+@SuppressWarnings("serial")
 public class AM24Message extends Message {
-	@SuppressWarnings("serial")
+	
 		private int orePosX;
 		private int orePosY;
 		
@@ -12,7 +12,9 @@ public class AM24Message extends Message {
 			this.orePosX = orePosX;
 			this.orePosY = orePosY;
 		}
-		
+		/**
+		 * @return the orePosX
+		 */
 		public int getOrePosX() {
 			return orePosX;
 		}
@@ -22,6 +24,18 @@ public class AM24Message extends Message {
 		 */
 		public int getOrePosY() {
 			return orePosY;
+		}
+		
+		/**
+		 * @set the orePosX
+		 */
+		public void setOrePosX() {
+		}
+		
+		/**
+		 * @set the orePosX
+		 */
+		public void setOrePosY() {
 		}
 	}
 
