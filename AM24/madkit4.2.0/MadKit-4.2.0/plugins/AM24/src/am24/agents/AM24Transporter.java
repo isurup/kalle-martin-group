@@ -45,9 +45,10 @@ public class AM24Transporter extends Turtle {
 		}
 		/**
 		 * @Pulls a job from the jobList and checks if the Transporter has enough energy to execute it
-		 * The Transporter will return to base if its energy is too low to execute any job from the jobList 
+		 * The Transporter will return to base if its energy is too low to execute any job from the jobList
+		 * or its capacity is used. 
 		 */
-		 while (!jobList.isEmpty()){
+		 while (!jobList.isEmpty() && capacity!=0){
 			 AM24QueueObject job = jobList.poll();
 			 // Ore Position
 			 if (job instanceof AM24Job) {
@@ -102,7 +103,7 @@ public class AM24Transporter extends Turtle {
 		 
 		 	AM24Base.thisBaseCapacity = AM24Base.thisBaseCapacity - tmpCapacity;	// Decrement the base capacity with tmpCapacity, NOT SURE
 		 																			// IF THIS IS THE CORRECT WAY TO DO IT!!!!!
-		 
+		 	energyLeft = AM24Constraints.robotEnergy;
 			 capacity = AM24Constraints.transporterOreCapacity;
 		 return("walk");
 	 }
