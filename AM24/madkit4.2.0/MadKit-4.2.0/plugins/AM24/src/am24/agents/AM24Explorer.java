@@ -99,18 +99,19 @@ public class AM24Explorer extends Turtle
 
 	public String returnToBase(){
 		println("Going To Base!!!!!");
-		if(((xcor()== xBase)&&(ycor()== yBase))==false){
-			
-			 towards(xBase,yBase);
+		if(xBase!=xcor()&&yBase!=ycor()){		
+			 setHeading(towards(xBase,yBase));
 			 println("Moving towards Base!: "+xcor() +" " +ycor());
 			 fd(1);
 			 return ("returnToBase");
 			 /*AM24Base.addToTotalEnergyUsed(AM24Constraints.movingCost);
 			 energyLeft = energyLeft-AM24Constraints.movingCost;*/	 
-		 }
+		}
+		else
+		
 		 
 			 println("Where The Explorer thinks the base is: "+xcor()+" "+ycor());
-		println("Initial Base Position: "+xBase+" "+yBase);
+			 println("Initial Base Position: "+xBase+" "+yBase);
 			//sendToAgent();
 		 	energyLeft = AM24Constraints.robotEnergy;
 			 
