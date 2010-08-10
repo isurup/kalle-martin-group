@@ -70,7 +70,7 @@ public class AM24Launcher extends Launcher {
 
 		addViewer(6);
 
-		addObserver(new PatchInit(AM24Constraints.oreDensity), false);
+		addObserver(new AM24PatchInit(AM24Constraints.oreDensity), false);
 	}
 
 }

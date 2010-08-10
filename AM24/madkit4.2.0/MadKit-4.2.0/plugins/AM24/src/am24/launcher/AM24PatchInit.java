@@ -9,13 +9,13 @@ package am24.launcher;
 import java.awt.Color;
 import turtlekit.kernel.Observer;
 
-public class PatchInit extends Observer {
+public class AM24PatchInit extends Observer {
 
 	double densityRate;
 	
-	public PatchInit() {}
+	public AM24PatchInit() {}
 	
-	public PatchInit(double densityRate){
+	public AM24PatchInit(double densityRate){
 		this.densityRate = densityRate;
 	}
 	
