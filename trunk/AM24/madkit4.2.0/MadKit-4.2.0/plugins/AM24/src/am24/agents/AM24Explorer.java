@@ -100,7 +100,7 @@ public class AM24Explorer extends Turtle
 			 return("returnToBase");	 
 		 }
 		 else
-			
+			sendToAgent();
 		 	energyLeft = AM24Constraints.robotEnergy;
 			 
 		 return("walk");
