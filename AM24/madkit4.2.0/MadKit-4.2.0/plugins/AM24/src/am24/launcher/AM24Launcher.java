@@ -41,7 +41,7 @@ public class AM24Launcher extends Launcher {
 	public void setup() {
 		setWidth(AM24Constraints.gridSizeWidth);
 		setHeight(AM24Constraints.gridSizeHeight);
-		setWrapModeOn(true);
+		setWrapModeOn(AM24Constraints.wrapOn);
 				
 	}
 
@@ -69,7 +69,8 @@ public class AM24Launcher extends Launcher {
 		}
 
 		addViewer(6);
-
+		
+		// Set the enviroment variable
 		addObserver(new AM24PatchInit(AM24Constraints.oreDensity), false);
 	}
 

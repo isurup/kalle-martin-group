@@ -78,4 +78,9 @@ public class AM24Constraints {
 	 * movingCost - The cost to make one patch move
 	 */
 	public static final int movingCost = 4;
+	
+	/***
+	 * is wrap on
+	 */
+	public static final boolean wrapOn = true;
 }
