@@ -33,7 +33,7 @@ public class AM24Explorer extends Turtle
 	int yBase;
 	boolean fullQueue = false;
 
-	private double energyLeft = AM24Constraints.robotEnergy;
+	private double energyLeft = 0;
 	private ArrayBlockingQueue<AM24QueueObject> jobList = null;
 	AM24BasePos basePos;
 
@@ -49,26 +49,32 @@ public class AM24Explorer extends Turtle
 		setColor(Color.WHITE);
 		playRole("explorer");
 		jobList = new ArrayBlockingQueue<AM24QueueObject>(AM24Constraints.robotMemorySize-AM24Constraints.nbOfBases);
-
+		energyLeft = AM24Constraints.robotEnergy;
 		AM24BasePos basePos = new AM24BasePos(xcor(), ycor());
 		xBase = basePos.getBasePosX();
 		yBase = basePos.getBasePosY();
+		
 	}
 
 	public String walk(){
+		
+		println("energyLeft "+energyLeft);
 		if(fullQueue)
 		{
 			return("returnToBase");
 		}
+		else
 		fd(1);
 		energyLeft = energyLeft-AM24Constraints.movingCost;
-		if((distance(xBase,yBase)*AM24Constraints.movingCost)+ 2 < energyLeft){
+		
+		/*if((distance(xBase,yBase)*AM24Constraints.movingCost)+ 2 < energyLeft){
 			return("returnToBase");
 		}
-		 if((xcor() == xBase)&&(ycor() == yBase)){
+		else*/
+		 /*if((xcor() == xBase)&&(ycor() == yBase)){
 			 sendToAgent();
 			 energyLeft = AM24Constraints.robotEnergy;	 
-		 }
+		 }*/
 		if (count < 0) {
 			count = (int) (Math.random()*90);
 			checkPerceptionScope(Color.pink);
@@ -92,15 +98,18 @@ public class AM24Explorer extends Turtle
 	}
 
 	public String returnToBase(){
-		if((xcor() != xBase)&&(ycor() != yBase)){
+		println("Going To Base!!!!!");
+		while((xcor() != xBase)&&(ycor() != yBase)){
 			 towards(xBase,yBase);
+			 println("Moving towards Base!!!!!");
 			 fd(1);
-			 AM24Base.addToTotalEnergyUsed(AM24Constraints.movingCost);
-			 energyLeft = energyLeft-AM24Constraints.movingCost;
-			 return("returnToBase");	 
+			 /*AM24Base.addToTotalEnergyUsed(AM24Constraints.movingCost);
+			 energyLeft = energyLeft-AM24Constraints.movingCost;*/	 
 		 }
-		 else
-			sendToAgent();
+		 
+			 println("Where The Explorer thinks the base is: "+xcor()+" "+ycor());
+		println("Initial Base Position: "+xBase+" "+yBase);
+			//sendToAgent();
 		 	energyLeft = AM24Constraints.robotEnergy;
 			 
 		 return("walk");
