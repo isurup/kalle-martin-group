@@ -29,6 +29,8 @@ import turtlekit.kernel.Turtle;
 public class AM24Explorer extends Turtle 
 {
 	int count=10;
+	int xBase;
+	int yBase;
 	boolean fullQueue = false;
 
 	private double energyLeft = AM24Constraints.robotEnergy;
@@ -46,20 +48,22 @@ public class AM24Explorer extends Turtle
 		randomHeading();
 		setColor(Color.WHITE);
 		playRole("explorer");
-		jobList = new ArrayBlockingQueue<AM24QueueObject>(AM24Constraints.robotMemorySize);
+		jobList = new ArrayBlockingQueue<AM24QueueObject>(AM24Constraints.robotMemorySize-AM24Constraints.nbOfBases);
 
 		AM24BasePos basePos = new AM24BasePos(xcor(), ycor());
-		jobList.add(basePos);
+		xBase = basePos.getBasePosX();
+		yBase = basePos.getBasePosY();
 	}
 
 	public String walk(){
 		if(fullQueue)
 		{
+			sendToAgent();
 			return("returnToBase");
 		}
 		fd(1);
 		energyLeft = energyLeft-AM24Constraints.movingCost;
-		if((distance(basePos.getBasePosX(),basePos.getBasePosY())*AM24Constraints.movingCost)+ 2 < energyLeft){
+		if((distance(xBase,yBase)*AM24Constraints.movingCost)+ 2 < energyLeft){
 			return("returnToBase");
 		}
 		if (count < 0) {
@@ -110,7 +114,6 @@ public class AM24Explorer extends Turtle
 							try {
 								if(jobList.offer(new AM24Job(i,j))) {
 									println("found ore at(x,y): " + i +","+j);
-									sendToAgent();
 								} else {
 									// memory is full go home
 									println("Memory is full go home to base");
@@ -140,11 +143,10 @@ public class AM24Explorer extends Turtle
 							j = j - getWorldHeight();
 						}
 						if (checkPathFor(c,i,j)) {
-							
+
 							try {
 								if(jobList.offer(new AM24Job(i,j))) {
 									println("found ore at(x,y): " + i +","+j);
-									sendToAgent();
 								} else {
 									// memory is full go home
 									println("Memory is full go home to base");
@@ -167,11 +169,10 @@ public class AM24Explorer extends Turtle
 					for(int j = ycor()-iPerceptionScope; j < ycor() + iPerceptionScope ; j++)
 					{
 						if (checkPathFor(c,i,j)) {
-							
+
 							try {
 								if(jobList.offer(new AM24Job(i,j))) {
 									println("found ore at(x,y): " + i +","+j);
-									sendToAgent();
 								} else {
 									// memory is full go home
 									println("Memory is full go home to base");
@@ -200,18 +201,20 @@ public class AM24Explorer extends Turtle
 			return false;
 		}
 	}
-	
+
 	private void sendToAgent()
 	{
-		AM24Job job = (AM24Job) jobList.poll();
-		AM24Message ExplorerMessage = new AM24Message(job);
-		Random rand = new Random();		
-		Turtle[] ts = turtlesAt(basePos.getBasePosX(),basePos.getBasePosY());
-		int tsRand = 0;
-		if (ts != null)
-		{
-			 tsRand = rand.nextInt(ts.length);
-			 sendMessage(ts[tsRand].getAddress(),ExplorerMessage);
+		while (!jobList.isEmpty()){
+			AM24Job job = (AM24Job) jobList.poll();
+			AM24Message ExplorerMessage = new AM24Message(job);
+			Random rand = new Random();		
+			Turtle[] ts = turtlesAt(xBase,yBase);
+			int tsRand = 0;
+			if (ts != null)
+			{
+				tsRand = rand.nextInt(ts.length);
+				sendMessage(ts[tsRand].getAddress(),ExplorerMessage);
+			}
 		}
 	}
 }
