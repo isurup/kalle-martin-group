@@ -71,9 +71,9 @@ import turtlekit.kernel.Turtle;
 		      else setColor(Color.yellow);*/
 		  
 		  // + 2 for extra precaution
-			 if((distance(basePos.getBasePosX(),basePos.getBasePosY())*AM24Constraints.movingCost)+ 2 < energyLeft){
-				 return("returnToBase");
-			 }
+		  if((distance(basePos.getBasePosX(),basePos.getBasePosY())*AM24Constraints.movingCost)+ 2 < energyLeft){
+			  return("returnToBase");
+		  }
 		  
 		  return("walk");
   }
