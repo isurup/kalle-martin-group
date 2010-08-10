@@ -42,15 +42,12 @@ public class AM24Transporter extends Turtle {
 			 sendMessage(ts[tsRand].getAddress(),new ExplorerMessage());}
 			 else*/
 			 
-		if (!isMessageBoxEmpty()){
+		while (!isMessageBoxEmpty()){
 			 AM24Message recievedMess = (AM24Message) nextMessage();		
 			jobList.offer(recievedMess.getJob());
 			
 		}
-		/*AgentAddress r = new AgentAddress(getAddress().getLocalID());
-		 ACLMessage aclmessage = new ACLMessage(ACLMessage());
-		 aclmessage.addReceiver(r);*/
-		 //Refill jobList if not already updated from messages!!!!! TODO!!!!
+		
 		 while (!jobList.isEmpty()){
 			 AM24QueueObject job = jobList.poll();
 			 // Base Positions
