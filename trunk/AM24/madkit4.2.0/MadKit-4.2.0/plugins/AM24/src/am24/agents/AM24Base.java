@@ -34,7 +34,9 @@ import turtlekit.kernel.Turtle;
 
  public class AM24Base extends Turtle 
  {	 
-	 public static int thisBaseCapacity = 0;
+	 public static int thisBaseCapacity = AM24Constraints.baseCapacity;
+	 int simCounter = 0;
+	 int totalEnergyUsed = 0;
 	 
 	 public AM24Base(){
 	 	super();
@@ -50,6 +52,19 @@ import turtlekit.kernel.Turtle;
 	  	setColor(Color.GREEN);
 	  }	 
 	
+	 
+	 public void addToTotalEnergyUsed(int add) {
+		 totalEnergyUsed += add;
+	 }
+	 
+	 public String Counter(){
+		 simCounter++;
+		 println("simCount: " + simCounter);
+		 if (simCounter == AM24Constraints.maxSimulationTime ){
+			 return null;
+		 }
+		 return("Counter");
+	 }
 	
 	 
 }
