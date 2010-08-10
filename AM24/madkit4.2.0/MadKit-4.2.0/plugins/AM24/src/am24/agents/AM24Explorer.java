@@ -97,9 +97,9 @@ import turtlekit.kernel.Turtle;
 		 //
 		 
 		 // find ore, add job
-		 for(int i =itmp; i <= Ptmp + xcor() || i < PlanetConstraints.gridSizeWidth; i++)
+		 for(int i = itmp; i <= Ptmp + xcor() || i < PlanetConstraints.gridSizeWidth; i++)
 		 {
-			 for(int j = jtmp; j<= Ptmp + ycor() || j < PlanetConstraints.gridSizeHeight; j++)
+			 for(int j = jtmp; j <= Ptmp + ycor() || j < PlanetConstraints.gridSizeHeight; j++)
 			 {
 				 if(getPatchColorAt(i,j) == Color.pink)
 				 {
