@@ -46,7 +46,7 @@ import turtlekit.kernel.Turtle;
 	  	playRole("explorer");
 	  	jobList = new ArrayBlockingQueue<AM24QueueObject>(AM24Constraints.robotMemorySize);
 	  	
-	  	AM24BasePos basePos = new AM24BasePos(xcor(), ycor());
+	  	basePos = new AM24BasePos(xcor(), ycor());
 	  	jobList.add(basePos);
 	  }
 	
