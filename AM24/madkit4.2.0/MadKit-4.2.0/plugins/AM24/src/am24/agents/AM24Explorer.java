@@ -78,7 +78,7 @@ import turtlekit.kernel.Turtle;
 		 int itmp;
 		 int jtmp;
 		 
-		 if(xcor()- Ptmp>AM24Constraints.gridSizeWidth)
+		 if(AM24Constraints.gridSizeWidth - xcor()- Ptmp<AM24Constraints.gridSizeWidth)
 		 {
 			 itmp = AM24Constraints.gridSizeWidth - xcor()- Ptmp;
 		 }
@@ -87,7 +87,7 @@ import turtlekit.kernel.Turtle;
 			 itmp = xcor()- Ptmp;
 		 }
 		 
-		 if(ycor()- Ptmp>AM24Constraints.gridSizeHeight)
+		 if(AM24Constraints.gridSizeHeight - ycor()- Ptmp<AM24Constraints.gridSizeHeight)
 		 {
 			 jtmp = AM24Constraints.gridSizeHeight - ycor()- Ptmp;
 		 }
