@@ -36,20 +36,19 @@ public class AM24Transporter extends Turtle {
 	  	yBase = ycor();
 	}
 
-	 public String walk() {			//throws InvalidAddressException
-		
+	 public String walk() {
+		 /**
+			 * @Fills up the Transporter jobList
+			 */
 		while (!isMessageBoxEmpty()){
 			 AM24Message recievedMess = (AM24Message) nextMessage();		
 			jobList.offer(recievedMess.getJob());			
 		}
-		
+		/**
+		 * @Pulls a job from the jobList and checks if the Transporter has enough energy to execute it
+		 */
 		 while (!jobList.isEmpty()){
 			 AM24QueueObject job = jobList.poll();
-			 // Base Positions
-			 if (job instanceof AM24BasePos) {
-				 xBase = ((AM24BasePos) job).getBasePosX();
-				 yBase = ((AM24BasePos) job).getBasePosY();
-			 }
 			 // Ore Position
 			 if (job instanceof AM24Job) {
 				 xOre = ((AM24Job) job).getOrePosX();
