@@ -3,19 +3,15 @@
  */
 package am24.util;
 
-public class AM24Job {
+public class AM24Job extends AM24QueueObject{
 	
 	private int orePosX;
 	private int orePosY;
-	private int basePosX;
-	private int basePosY;
 	
-	public AM24Job(int orePosX, int orePosY, int basePosX, int basePosY)
+	public AM24Job(int orePosX, int orePosY)
 	{
 		this.orePosX = orePosX;
 		this.orePosY = orePosY;
-		this.basePosX = basePosX;
-		this.basePosY = basePosY;
 	}
 
 	/**
@@ -30,20 +26,6 @@ public class AM24Job {
 	 */
 	public int getOrePosY() {
 		return orePosY;
-	}
-
-	/**
-	 * @return the basePosX
-	 */
-	public int getBasePosX() {
-		return basePosX;
-	}
-
-	/**
-	 * @return the basePosY
-	 */
-	public int getBasePosY() {
-		return basePosY;
 	}
 
 }

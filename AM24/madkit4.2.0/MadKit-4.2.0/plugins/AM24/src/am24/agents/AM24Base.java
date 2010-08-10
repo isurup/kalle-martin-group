@@ -22,7 +22,7 @@ import java.awt.Color;
 import java.util.concurrent.ArrayBlockingQueue;
 
 import am24.util.AM24Job;
-import am24.util.PlanetConstraints;
+import am24.util.AM24Constraints;
 import turtlekit.kernel.Turtle;
 
 /** the only thing is to walk and change color 
@@ -44,7 +44,7 @@ import turtlekit.kernel.Turtle;
 	  {super(s);}
 	
 	 public void setup(){
-		 thisBaseCapacity = PlanetConstraints.baseCapacity;
+		 thisBaseCapacity = AM24Constraints.baseCapacity;
 	  	randomHeading();
 	  	playRole("base");
 	  	setColor(Color.GREEN);

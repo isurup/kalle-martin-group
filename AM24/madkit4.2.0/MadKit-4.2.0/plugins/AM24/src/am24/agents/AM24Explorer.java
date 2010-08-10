@@ -28,7 +28,8 @@ import turtlekit.kernel.Turtle;
  public class AM24Explorer extends Turtle 
  {
 	 int count=10;
-	 private ArrayBlockingQueue<AM24Job> jobList = null;
+	 
+	 private ArrayBlockingQueue<AM24QueueObject> jobList = null;
 	 
 	 AM24Job homeJob;
 	 
@@ -43,10 +44,10 @@ import turtlekit.kernel.Turtle;
 	  	randomHeading();
 	  	setColor(Color.WHITE);
 	  	playRole("explorer");
-	  	jobList = new ArrayBlockingQueue<AM24Job>(PlanetConstraints.robotMemorySize);
+	  	jobList = new ArrayBlockingQueue<AM24QueueObject>(AM24Constraints.robotMemorySize);
 	  	
-	  	AM24Job homeJob = new AM24Job(xcor(), ycor(), xcor(), ycor());
-	  	jobList.add(homeJob);
+	  	AM24BasePos basePos = new AM24BasePos(xcor(), ycor());
+	  	jobList.add(basePos);
 	  }
 	
 	 public String walk(){
@@ -71,7 +72,7 @@ import turtlekit.kernel.Turtle;
   }
 	 public void OreWithinPerception(){
 		
-		 int Ptmp = PlanetConstraints.robotPerceptionScope;
+		 int Ptmp = AM24Constraints.robotPerceptionScope;
 		 
 		// Wrapping of grid
 		 int itmp;
@@ -103,7 +104,7 @@ import turtlekit.kernel.Turtle;
 			 {
 				 if(getPatchColorAt(i,j) == Color.pink)
 				 {
-					 AM24Job job = new AM24Job( i, j , homeJob.getBasePosX(), homeJob.getBasePosY());
+					 AM24Job job = new AM24Job( i, j );
 					 jobList.add(job);
 				 }
 			 }

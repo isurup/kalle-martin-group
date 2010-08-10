@@ -1,6 +1,6 @@
 package am24.util;
 
-public class PlanetConstraints {
+public class AM24Constraints {
 	
 	/***
 	 * RobotEnergy - the amount of energy a robot has

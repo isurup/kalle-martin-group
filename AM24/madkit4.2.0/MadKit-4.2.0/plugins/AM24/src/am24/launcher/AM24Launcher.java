@@ -22,25 +22,32 @@ import java.util.Random;
 
 import turtlekit.kernel.Launcher;
 import turtlekit.kernel.Turtle;
+import madkit.kernel.Message;
+import madkit.lib.messages.ACLMessage;
 import am24.agents.*;
-import am24.util.PlanetConstraints;
+import am24.util.AM24Constraints;
 
 
 public class AM24Launcher extends Launcher {
+
+	
+
+	private ACLMessage messages;
 
 	public AM24Launcher() {
 		setSimulationName("AM24Planet");
 	}
 
 	public void setup() {
-		setWidth(PlanetConstraints.gridSizeWidth);
-		setHeight(PlanetConstraints.gridSizeHeight);
+		setWidth(AM24Constraints.gridSizeWidth);
+		setHeight(AM24Constraints.gridSizeHeight);
 		setWrapModeOn(true);
+				
 	}
 
 	public void addSimulationAgents() {
 
-		for (int i = 0; i < PlanetConstraints.nbOfBases; i++) {
+		for (int i = 0; i < AM24Constraints.nbOfBases; i++) {
 
 			Turtle nt = new AM24Base();
 			//int basePosX = (int) Math.random()* getWidth();
@@ -50,12 +57,12 @@ public class AM24Launcher extends Launcher {
 			addTurtle(new AM24Base(), basePosX, basePosY);
 
 			// deploy Explorers
-			for (int e = 0; e < PlanetConstraints.nbOfExplorers; e++) {
+			for (int e = 0; e < AM24Constraints.nbOfExplorers; e++) {
 				addTurtle(new AM24Explorer("walk"), basePosX, basePosY);
 			}
 
 			// deploy Transportes
-			for (int t = 0; t < PlanetConstraints.nbOfTransporter; t++) {
+			for (int t = 0; t < AM24Constraints.nbOfTransporter; t++) {
 				addTurtle(new AM24Transporter("walk"), basePosX, basePosY);
 			}
 
@@ -63,7 +70,7 @@ public class AM24Launcher extends Launcher {
 
 		addViewer(6);
 
-		addObserver(new PatchInit(PlanetConstraints.oreDensity), false);
+		addObserver(new PatchInit(AM24Constraints.oreDensity), false);
 	}
 
 }
