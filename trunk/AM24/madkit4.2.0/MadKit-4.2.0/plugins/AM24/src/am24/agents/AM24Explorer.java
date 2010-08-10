@@ -20,7 +20,7 @@ package am24.agents;
 
 import java.awt.Color;
 import java.util.concurrent.ArrayBlockingQueue;
-
+import java.util.Random;
 import am24.util.*;
 import turtlekit.kernel.Turtle;
 
@@ -198,4 +198,11 @@ public class AM24Explorer extends Turtle
 	}
 }
 
+/*Random rand = new Random();		
+Turtle[] ts = turtlesAt(xBase,yBase);
+int tsRand = 0;
+if (ts != null){
+	 tsRand = rand.nextInt(ts.length);
+	 sendMessage(ts[tsRand].getAddress(),new ExplorerMessage());}
+	 else*/
 

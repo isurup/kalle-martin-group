@@ -35,18 +35,10 @@ public class AM24Transporter extends Turtle {
 	}
 
 	 public String walk() {			//throws InvalidAddressException
-		 /*Random rand = new Random();		
-		 Turtle[] ts = turtlesAt(xBase,yBase);
-		 int tsRand = 0;
-		 if (ts != null){
-			 tsRand = rand.nextInt(ts.length);
-			 sendMessage(ts[tsRand].getAddress(),new ExplorerMessage());}
-			 else*/
-			
+		
 		while (!isMessageBoxEmpty()){
 			 AM24Message recievedMess = (AM24Message) nextMessage();		
-			jobList.offer(recievedMess.getJob());
-			
+			jobList.offer(recievedMess.getJob());			
 		}
 		
 		 while (!jobList.isEmpty()){
