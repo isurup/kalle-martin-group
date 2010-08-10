@@ -28,7 +28,6 @@ public class AM24Transporter extends Turtle {
 	}
 	
 	public void setup() {
-	  	//randomHeading();
 	  	setColor(Color.BLUE);
 	  	playRole("Transporter");
 	  	jobList = new ArrayBlockingQueue<AM24Job>(AM24Constraints.robotMemorySize-AM24Constraints.nbOfBases);
@@ -46,6 +45,7 @@ public class AM24Transporter extends Turtle {
 		}
 		/**
 		 * @Pulls a job from the jobList and checks if the Transporter has enough energy to execute it
+		 * The Transporter will return to base if its energy is too low to execute any job from the jobList 
 		 */
 		 while (!jobList.isEmpty()){
 			 AM24QueueObject job = jobList.poll();
