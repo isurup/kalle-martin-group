@@ -31,8 +31,6 @@ import turtlekit.kernel.Turtle;
 	 
 	 private ArrayBlockingQueue<AM24QueueObject> jobList = null;
 	 
-	 AM24Job homeJob;
-	 
 	 public AM24Explorer(){
 	 	super();
 	 }
