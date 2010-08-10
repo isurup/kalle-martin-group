@@ -22,6 +22,7 @@ import java.awt.Color;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.Random;
 import am24.util.*;
+import madkit.kernel.Message;
 import turtlekit.kernel.Turtle;
 
 
@@ -109,6 +110,7 @@ public class AM24Explorer extends Turtle
 							try {
 								if(jobList.offer(new AM24Job(i,j))) {
 									println("found ore at(x,y): " + i +","+j);
+									sendToAgent();
 								} else {
 									// memory is full go home
 									println("Memory is full go home to base");
@@ -138,10 +140,11 @@ public class AM24Explorer extends Turtle
 							j = j - getWorldHeight();
 						}
 						if (checkPathFor(c,i,j)) {
-
+							
 							try {
 								if(jobList.offer(new AM24Job(i,j))) {
 									println("found ore at(x,y): " + i +","+j);
+									sendToAgent();
 								} else {
 									// memory is full go home
 									println("Memory is full go home to base");
@@ -164,10 +167,11 @@ public class AM24Explorer extends Turtle
 					for(int j = ycor()-iPerceptionScope; j < ycor() + iPerceptionScope ; j++)
 					{
 						if (checkPathFor(c,i,j)) {
-
+							
 							try {
 								if(jobList.offer(new AM24Job(i,j))) {
 									println("found ore at(x,y): " + i +","+j);
+									sendToAgent();
 								} else {
 									// memory is full go home
 									println("Memory is full go home to base");
@@ -196,13 +200,20 @@ public class AM24Explorer extends Turtle
 			return false;
 		}
 	}
+	
+	private void sendToAgent()
+	{
+		AM24Job job = (AM24Job) jobList.poll();
+		AM24Message ExplorerMessage = new AM24Message(job);
+		Random rand = new Random();		
+		Turtle[] ts = turtlesAt(basePos.getBasePosX(),basePos.getBasePosY());
+		int tsRand = 0;
+		if (ts != null)
+		{
+			 tsRand = rand.nextInt(ts.length);
+			 sendMessage(ts[tsRand].getAddress(),ExplorerMessage);
+		}
+	}
 }
 
-/*Random rand = new Random();		
-Turtle[] ts = turtlesAt(xBase,yBase);
-int tsRand = 0;
-if (ts != null){
-	 tsRand = rand.nextInt(ts.length);
-	 sendMessage(ts[tsRand].getAddress(),new ExplorerMessage());}
-	 else*/
 
