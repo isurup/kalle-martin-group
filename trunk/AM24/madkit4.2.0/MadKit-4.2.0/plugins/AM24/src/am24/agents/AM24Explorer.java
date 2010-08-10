@@ -58,7 +58,7 @@ public class AM24Explorer extends Turtle
 		}
 		fd(1);
 		energyLeft = energyLeft-AM24Constraints.movingCost;
-		if((distance(basePos.getBasePosX(),basePos.getBasePosY())*AM24Constraints.movingCost) < energyLeft){
+		if((distance(basePos.getBasePosX(),basePos.getBasePosY())*AM24Constraints.movingCost)+ 2 < energyLeft){
 			return("returnToBase");
 		}
 		if (count < 0) {
