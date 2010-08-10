@@ -70,7 +70,7 @@ public class AM24Transporter extends Turtle {
 	
 
 	public String executeJob(){
-		if (oreNotReached==true){
+		while (oreNotReached==true){
 			towards(xOre,yOre);
 			fd(1);
 			AM24Base.addToTotalEnergyUsed(AM24Constraints.movingCost);
@@ -80,15 +80,13 @@ public class AM24Transporter extends Turtle {
 				oreNotReached=false;
 			}
 			else oreNotReached=true;
+		}
 			if(getPatchColorAt(xOre,yOre) == Color.pink){
 				capacity--;
 				setPatchColorAt(Color.black, xcor(), ycor());
 			}
-			
-			return ("walk");
-			}
-			else return("executeJob");
-	 }
+		return ("walk");
+	}
 	 
 	 public String returnToBase(){
 		 if((xcor() != xBase)&&(ycor() != yBase)){
