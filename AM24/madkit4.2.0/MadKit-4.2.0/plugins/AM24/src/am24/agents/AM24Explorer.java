@@ -58,8 +58,6 @@ public class AM24Explorer extends Turtle
 	public String walk(){
 		if(fullQueue)
 		{
-			sendToAgent();
-			energyLeft = energyLeft-1;
 			return("returnToBase");
 		}
 		fd(1);
@@ -67,6 +65,10 @@ public class AM24Explorer extends Turtle
 		if((distance(xBase,yBase)*AM24Constraints.movingCost)+ 2 < energyLeft){
 			return("returnToBase");
 		}
+		 if((xcor() == xBase)&&(ycor() == yBase)){
+			 sendToAgent();
+			 energyLeft = AM24Constraints.robotEnergy;	 
+		 }
 		if (count < 0) {
 			count = (int) (Math.random()*90);
 			checkPerceptionScope(Color.pink);
@@ -217,6 +219,7 @@ public class AM24Explorer extends Turtle
 				sendMessage(ts[tsRand].getAddress(),ExplorerMessage);
 			}
 		}
+		energyLeft = energyLeft-1;
 	}
 }
 
