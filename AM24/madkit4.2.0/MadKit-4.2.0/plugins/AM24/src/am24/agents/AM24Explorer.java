@@ -30,6 +30,7 @@ public class AM24Explorer extends Turtle
 	int count=10;
 	boolean fullQueue = false;
 
+	private double energyLeft = AM24Constraints.robotEnergy;
 	private ArrayBlockingQueue<AM24QueueObject> jobList = null;
 
 	public AM24Explorer(){
@@ -50,7 +51,12 @@ public class AM24Explorer extends Turtle
 	}
 
 	public String walk(){
+		if(fullQueue)
+		{
+			return("returnToBase");
+		}
 		fd(1);
+		energyLeft = energyLeft-AM24Constraints.movingCost;
 		if (count < 0) {
 			count = (int) (Math.random()*90);
 			checkPerceptionScope(Color.pink);
