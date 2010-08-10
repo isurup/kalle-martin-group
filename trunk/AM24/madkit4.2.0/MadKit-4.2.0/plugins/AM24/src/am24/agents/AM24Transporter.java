@@ -30,7 +30,7 @@ public class AM24Transporter extends Turtle {
 	  	//randomHeading();
 	  	setColor(Color.BLUE);
 	  	playRole("Transporter");
-	  	jobList = new ArrayBlockingQueue<AM24Job>(AM24Constraints.robotMemorySize);
+	  	jobList = new ArrayBlockingQueue<AM24Job>(AM24Constraints.robotMemorySize-AM24Constraints.nbOfBases);
 	}
 
 	 public String walk() {			//throws InvalidAddressException
@@ -41,7 +41,7 @@ public class AM24Transporter extends Turtle {
 			 tsRand = rand.nextInt(ts.length);
 			 sendMessage(ts[tsRand].getAddress(),new ExplorerMessage());}
 			 else*/
-			 
+			
 		while (!isMessageBoxEmpty()){
 			 AM24Message recievedMess = (AM24Message) nextMessage();		
 			jobList.offer(recievedMess.getJob());
