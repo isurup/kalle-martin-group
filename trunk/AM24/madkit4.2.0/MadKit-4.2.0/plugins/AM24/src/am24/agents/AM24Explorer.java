@@ -32,6 +32,7 @@ public class AM24Explorer extends Turtle
 
 	private double energyLeft = AM24Constraints.robotEnergy;
 	private ArrayBlockingQueue<AM24QueueObject> jobList = null;
+	AM24BasePos basePos;
 
 	public AM24Explorer(){
 		super();
@@ -57,6 +58,9 @@ public class AM24Explorer extends Turtle
 		}
 		fd(1);
 		energyLeft = energyLeft-AM24Constraints.movingCost;
+		if((distance(basePos.getBasePosX(),basePos.getBasePosY())*AM24Constraints.movingCost)+ 2 < energyLeft){
+			return("returnToBase");
+		}
 		if (count < 0) {
 			count = (int) (Math.random()*90);
 			checkPerceptionScope(Color.pink);
@@ -65,6 +69,7 @@ public class AM24Explorer extends Turtle
 		else {
 			count--;
 			checkPerceptionScope(Color.pink);
+			energyLeft = energyLeft-(AM24Constraints.robotPerceptionScope*AM24Constraints.robotPerceptionScope+1);
 			return ("walk");
 		}
 	}  
