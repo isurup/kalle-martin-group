@@ -59,6 +59,7 @@ public class AM24Explorer extends Turtle
 		if(fullQueue)
 		{
 			sendToAgent();
+			energyLeft = energyLeft-1;
 			return("returnToBase");
 		}
 		fd(1);
