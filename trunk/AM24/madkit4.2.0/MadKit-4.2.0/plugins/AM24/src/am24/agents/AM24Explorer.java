@@ -68,6 +68,8 @@ import turtlekit.kernel.Turtle;
 		  else if (getHeading() > West) setColor(Color.blue);
 		    else if (getHeading() > North) setColor(Color.green);
 		      else setColor(Color.yellow);*/
+		  
+		  // + 5 for extra precaution
 			 if((distance(xBase,yBase)*AM24Constraints.movingCost)+ 5 < energyLeft){
 				 return("returnToBase");
 			 }
