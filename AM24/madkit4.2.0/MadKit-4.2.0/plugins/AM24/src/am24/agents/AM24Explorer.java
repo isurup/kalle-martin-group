@@ -31,6 +31,7 @@ import turtlekit.kernel.Turtle;
 	 
 	 private double energyLeft = AM24Constraints.robotEnergy;
 	 private ArrayBlockingQueue<AM24QueueObject> jobList = null;
+	 AM24BasePos basePos;
 	 
 	 public AM24Explorer(){
 	 	super();
@@ -70,7 +71,7 @@ import turtlekit.kernel.Turtle;
 		      else setColor(Color.yellow);*/
 		  
 		  // + 2 for extra precaution
-			 if((distance(xBase,yBase)*AM24Constraints.movingCost)+ 2 < energyLeft){
+			 if((distance(basePos.getBasePosX(),basePos.getBasePosY())*AM24Constraints.movingCost)+ 2 < energyLeft){
 				 return("returnToBase");
 			 }
 		  
