@@ -99,10 +99,12 @@ public class AM24Explorer extends Turtle
 
 	public String returnToBase(){
 		println("Going To Base!!!!!");
-		while((xcor() != xBase)&&(ycor() != yBase)){
+		if(((xcor()== xBase)&&(ycor()== yBase))==false){
+			
 			 towards(xBase,yBase);
-			 println("Moving towards Base!!!!!");
+			 println("Moving towards Base!: "+xcor() +" " +ycor());
 			 fd(1);
+			 return ("returnToBase");
 			 /*AM24Base.addToTotalEnergyUsed(AM24Constraints.movingCost);
 			 energyLeft = energyLeft-AM24Constraints.movingCost;*/	 
 		 }
