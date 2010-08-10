@@ -98,10 +98,18 @@ import turtlekit.kernel.Turtle;
 		 //
 		 
 		 // find ore, add job
-		 for(int i = itmp; i <= Ptmp + xcor() || i < AM24Constraints.gridSizeWidth; i++)
+		 for(int i = itmp; i == Ptmp + xcor() || i == AM24Constraints.gridSizeWidth + xcor()+ Ptmp ; i++)
 		 {
-			 for(int j = jtmp; j <= Ptmp + ycor() || j < AM24Constraints.gridSizeHeight; j++)
+			 if (i < AM24Constraints.gridSizeWidth)
 			 {
+				 
+			 }
+			 for(int j = jtmp; j == Ptmp + ycor() || j == AM24Constraints.gridSizeHeight + ycor()+ Ptmp; j++)
+			 {
+				 if(j < AM24Constraints.gridSizeHeight)
+				 {
+					 
+				 }
 				 if(getPatchColorAt(i,j) == Color.pink)
 				 {
 					 AM24Job job = new AM24Job( i, j );
