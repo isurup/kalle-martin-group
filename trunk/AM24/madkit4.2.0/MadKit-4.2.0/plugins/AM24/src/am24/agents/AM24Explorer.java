@@ -68,7 +68,7 @@ import turtlekit.kernel.Turtle;
 		      else setColor(Color.yellow);*/
 		  return("walk");
   }
-	 public void FindOreWithWarp(){
+	 private void FindOreWithWarp(){
 		
 		 int Ptmp = AM24Constraints.robotPerceptionScope;
 		 
@@ -117,7 +117,7 @@ import turtlekit.kernel.Turtle;
 		 }
 	 }
 	 
-	 public void FindOreWithoutWarp(){
+	 private void FindOreWithoutWarp(){
 			
 		 int Ptmp = AM24Constraints.robotPerceptionScope;
 		 
@@ -138,6 +138,18 @@ import turtlekit.kernel.Turtle;
 			 }
 		 }
 		 
+	 }
+	 
+	 public void FindOre(){
+		 
+		 if(AM24Constraints.wrapOn)
+		 {
+			 FindOreWithWarp();
+		 }
+		 else
+		 {
+			 FindOreWithoutWarp();
+		 }
 	 }
 
 // the end
