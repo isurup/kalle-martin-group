@@ -78,13 +78,18 @@ public class AM24Transporter extends Turtle {
 		if (oreNotReached==true){
 			towards(xOre,yOre);
 			fd(1);
+			
 			energyLeft = energyLeft-AM24Constraints.movingCost;
 			
 			if((xcor()==xOre)&&(ycor()==yOre)){
 				oreNotReached=false;
 			}
-			else oreNotReached=true;		
-			capacity--;
+			else oreNotReached=true;
+			if(getPatchColorAt(xOre,yOre) == Color.pink){
+				capacity--;
+				setPatchColorAt(Color.black, xcor(), ycor());
+			}
+			
 			return ("walk");
 			}
 			else return("executeJob");
