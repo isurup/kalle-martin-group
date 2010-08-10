@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.util.concurrent.ArrayBlockingQueue;
 import am24.util.*;
 import turtlekit.kernel.Turtle;
+import am24.agents.AM24Base;
 
 public class AM24Transporter extends Turtle {
 	
@@ -78,7 +79,7 @@ public class AM24Transporter extends Turtle {
 		if (oreNotReached==true){
 			towards(xOre,yOre);
 			fd(1);
-			
+			AM24Base.addToTotalEnergyUsed(AM24Constraints.movingCost);
 			energyLeft = energyLeft-AM24Constraints.movingCost;
 			
 			if((xcor()==xOre)&&(ycor()==yOre)){
@@ -99,6 +100,7 @@ public class AM24Transporter extends Turtle {
 		 if((xcor() != xBase)&&(ycor() != yBase)){
 			 towards(xBase,yBase);
 			 fd(1);
+			 AM24Base.addToTotalEnergyUsed(AM24Constraints.movingCost);
 			 energyLeft = energyLeft-AM24Constraints.movingCost;
 			 return("returnToBase");	 
 		 }

@@ -36,7 +36,7 @@ import turtlekit.kernel.Turtle;
  {	 
 	 public static int thisBaseCapacity = AM24Constraints.baseCapacity;
 	 int simCounter = 0;
-	 int totalEnergyUsed = 0;
+	 static int totalEnergyUsed = 0;
 	 
 	 public AM24Base(){
 	 	super();
@@ -53,7 +53,7 @@ import turtlekit.kernel.Turtle;
 	  }	 
 	
 	 
-	 public void addToTotalEnergyUsed(int add) {
+	 public static void addToTotalEnergyUsed(int add) {
 		 totalEnergyUsed += add;
 	 }
 	 
