@@ -194,8 +194,6 @@ public class AM24Explorer extends Turtle
 		}
 	}
 
-
-
 	private Boolean checkPathFor(Color c, int xcor, int ycor) {
 
 		if (getPatchColorAt(xcor, ycor) == c) {
