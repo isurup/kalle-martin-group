@@ -1,18 +1,9 @@
 package am24.agents;
 
 import java.awt.Color;
-import java.util.Random;
+//import java.util.Random;
 import java.util.concurrent.ArrayBlockingQueue;
-import madkit.kernel.AbstractAgent;
-import madkit.kernel.AgentAddress;
-import madkit.lib.messages.ACLMessage;
-import madkit.kernel.InvalidAddressException;
-import madkit.kernel.Message;
-import madkit.kernel.Probe;
-import java.util.Random;
-
 import am24.util.*;
-import am24.agents.*;
 import turtlekit.kernel.Turtle;
 
 public class AM24Transporter extends Turtle {
@@ -36,23 +27,25 @@ public class AM24Transporter extends Turtle {
 	}
 	
 	public void setup() {
-	  	randomHeading();
+	  	//randomHeading();
 	  	setColor(Color.BLUE);
 	  	playRole("Transporter");
 	  	jobList = new ArrayBlockingQueue<AM24Job>(AM24Constraints.robotMemorySize);
 	}
 
 	 public String walk() {			//throws InvalidAddressException
-		 Random rand = new Random();		
+		 /*Random rand = new Random();		
 		 Turtle[] ts = turtlesAt(xBase,yBase);
 		 int tsRand = 0;
 		 if (ts != null){
 			 tsRand = rand.nextInt(ts.length);
 			 sendMessage(ts[tsRand].getAddress(),new ExplorerMessage());}
-			 else
+			 else*/
 			 
 		if (!isMessageBoxEmpty()){
-			Message recievedMess = nextMessage();
+			 AM24Message recievedMess = (AM24Message) nextMessage();		
+			jobList.offer(recievedMess.getJob());
+			
 		}
 		/*AgentAddress r = new AgentAddress(getAddress().getLocalID());
 		 ACLMessage aclmessage = new ACLMessage(ACLMessage());
@@ -81,15 +74,8 @@ public class AM24Transporter extends Turtle {
 		 return ("walk"); 
 		}
 	 
-	 private void recieveMessage() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private String ACLMessage() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	 
+	
 
 	public String executeJob(){
 		if (oreNotReached==true){
@@ -126,7 +112,4 @@ public class AM24Transporter extends Turtle {
 		
 		 
 }
-@SuppressWarnings("serial")
-class ExplorerMessage extends Message {
-	
-}
+

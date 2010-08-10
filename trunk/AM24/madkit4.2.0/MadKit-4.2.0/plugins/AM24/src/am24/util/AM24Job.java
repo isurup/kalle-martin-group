@@ -27,5 +27,9 @@ public class AM24Job extends AM24QueueObject{
 	public int getOrePosY() {
 		return orePosY;
 	}
+	
+	public void setOresPosX() {
+		//return orePosX;
+	}
 
 }
