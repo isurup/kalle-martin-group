@@ -121,7 +121,7 @@ import turtlekit.kernel.Turtle;
 			
 		 int Ptmp = AM24Constraints.robotPerceptionScope;
 		 
-		// Wrapping of grid
+		// No Warping of grid
 		 int itmp = xcor()- Ptmp;
 		 int jtmp = ycor()- Ptmp;
 	
