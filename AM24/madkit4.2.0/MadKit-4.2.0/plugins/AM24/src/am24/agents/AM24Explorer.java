@@ -91,6 +91,21 @@ public class AM24Explorer extends Turtle
 		return("walk");
 	}
 
+	public String returnToBase(){
+		if((xcor() != xBase)&&(ycor() != yBase)){
+			 towards(xBase,yBase);
+			 fd(1);
+			 AM24Base.addToTotalEnergyUsed(AM24Constraints.movingCost);
+			 energyLeft = energyLeft-AM24Constraints.movingCost;
+			 return("returnToBase");	 
+		 }
+		 else
+			
+		 	energyLeft = AM24Constraints.robotEnergy;
+			 
+		 return("walk");
+	 }
+		
 
 	private void checkPerceptionScope(Color c)
 	{
