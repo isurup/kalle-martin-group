@@ -129,21 +129,19 @@ public class AM24Explorer extends Turtle
 		//check if we wrap is on
 		if (AM24Constraints.wrapOn)
 		{
-
 			for (int i = xcor() - pScope; i <= xcor()+ pScope; i++)
 			{
 				if(i>gWidth) // Warp X
 				{
-					i = gWidth - Math.abs(i);
+					i = i - gWidth;
 				}
 				if(i <= 0)
 				{
-					i = gWidth - Math.abs(i);
+					i = gWidth + i;
 				}
 				if (i >= 0 && i < gWidth) { // check x boundaries
 					for (int j = ycor() - pScope; j <= ycor()+ pScope; j++)
 					{
-
 						if(i>gHeight) // Warp y
 						{
 							j = j - gHeight;
