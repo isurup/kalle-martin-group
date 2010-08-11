@@ -43,7 +43,7 @@ public class AM24Transporter extends Turtle {
 		 
 		 //println("MessagBox Size: "+getMessageBoxSize());
 		 //println("Is messageBox empty? "+ isMessageBoxEmpty());
-		 if(isMessageBoxEmpty()==false){
+		 while(isMessageBoxEmpty()==false){
 			 println("Recieve Message!!!");
 			 AM24Message recievedMess = (AM24Message) nextMessage();		
 				jobList.offer(recievedMess.getJob());
