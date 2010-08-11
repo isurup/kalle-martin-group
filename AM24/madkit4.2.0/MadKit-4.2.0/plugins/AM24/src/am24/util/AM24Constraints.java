@@ -37,12 +37,12 @@ public class AM24Constraints {
 	/*** 
 	 * nbOfExplorers - Number of explorers per base.
 	 */
-	public static final int nbOfExplorers = 10;
+	public static final int nbOfExplorers = 1;
 
 	/***
 	 * nbOfTransporter - Number of transporters per base.
 	 */
-	public static final int nbOfTransporter = 10;
+	public static final int nbOfTransporter = 1;
 	
 	/***
 	 * robotPerceptionScope

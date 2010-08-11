@@ -71,7 +71,8 @@ public class AM24Explorer extends Turtle
 		if (count < 0) {
 			count = (int) (Math.random()*90);
 			checkPerceptionScope(Color.pink);
-			return("change");
+			randomHeading();
+			return("walk");
 		}
 		else {
 			count--;
@@ -83,18 +84,13 @@ public class AM24Explorer extends Turtle
 		return("returnToBase");
 	}  
 
-	public String change(){
-		randomHeading();
-		return("walk");
-	}
+	
 
 	public String returnToBase(){
 		if(xBase!=xcor()&&yBase!=ycor()){		
 			setHeading(towards(xBase,yBase));
 			return ("moveRobot");
 		}
-		//println("Where The Explorer thinks the base is: "+xcor()+" "+ycor());
-		//println("Initial Base Position: "+xBase+" "+yBase);
 		fullQueue=false;
 		return("explorerWaitForTransporter");  
 
