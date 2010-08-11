@@ -133,6 +133,10 @@ public class AM24Explorer extends Turtle
 				{
 					i = i - getWorldWidth();
 				}
+				if(i < 0)
+				{
+					i = getWorldWidth() + i;
+				}
 				if (i > 0 && i <= getWorldWidth()) { // check x boundaries
 					for (int j = ycor() - iPerceptionScope; j <= ycor()+ iPerceptionScope; j++)
 					{
@@ -140,6 +144,10 @@ public class AM24Explorer extends Turtle
 						if(i>getWorldHeight()) // Warp y
 						{
 							j = j - getWorldHeight();
+						}
+						if(j < 0)
+						{
+							j = getWorldHeight() + j;
 						}
 						if (j > 0 && j <= getWorldHeight()) { // check y boundaries
 							println("For ITeration Loop(x,y): " + i + ","+ j+" " +xcor()+","+ycor());
