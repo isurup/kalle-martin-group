@@ -21,6 +21,7 @@ package am24.agents;
 import java.awt.Color;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.Random;
+import java.lang.Math;
 import am24.util.*;
 import madkit.kernel.Message;
 import turtlekit.kernel.Turtle;
@@ -131,13 +132,13 @@ public class AM24Explorer extends Turtle
 				{
 					if (i > getWorldWidth()) // warp x
 					{
-						i = i - getWorldWidth();
+						 i = Math.abs(i - getWorldWidth());
 					}
 					for(int j = ycor()-iPerceptionScope; j < ycor() + iPerceptionScope ; j++)
 					{
 						if(j > getWorldHeight()) // warp y
 						{
-							j = j - getWorldHeight();
+							j = Math.abs(j - getWorldHeight());
 						}
 						if (checkPathFor(c,i,j)) {
 
@@ -164,13 +165,13 @@ public class AM24Explorer extends Turtle
 				{
 					if (i > getWorldWidth()) // warp x
 					{
-						i = i - getWorldWidth();
+						i = Math.abs(i - getWorldWidth());
 					}
 					for(int j = ycor()-iPerceptionScope; j < ycor() + iPerceptionScope ; j++)
 					{
 						if(j > getWorldHeight()) // warp y
 						{
-							j = j - getWorldHeight();
+							j = Math.abs(j - getWorldHeight());
 						}
 						if (checkPathFor(c,i,j)) {
 
