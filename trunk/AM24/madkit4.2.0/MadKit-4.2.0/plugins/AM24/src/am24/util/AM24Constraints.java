@@ -21,13 +21,13 @@ public class AM24Constraints {
 	/***
 	 * gridSizeHeight - The Height;
 	 */
-	public static final int gridSizeHeight = 200;
+	public static final int gridSizeHeight = 100;
 	
 
 	/***
 	 * gridSizeWidth - The Width;
 	 */
-	public static final int gridSizeWidth = 200;
+	public static final int gridSizeWidth = 100;
 	
 	/**
 	 * mode - Coordination mode between bases,cooperative = 1 or competitive = 0.

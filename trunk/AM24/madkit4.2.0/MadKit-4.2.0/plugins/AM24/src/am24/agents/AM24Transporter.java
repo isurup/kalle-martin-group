@@ -90,10 +90,10 @@ public class AM24Transporter extends Turtle {
 			AM24Base.addToTotalEnergyUsed(AM24Constraints.movingCost);
 			energyLeft = energyLeft-AM24Constraints.movingCost;
 		}
-			if(getPatchColorAt(xOre,yOre) == Color.pink){
+			if(getPatchColor()==Color.YELLOW){
 				capacity--;
 				println("Collecting Ore at patch: "+xOre  +","+yOre);
-				//setPatchColorAt(Color.black, xcor(), ycor());
+				setPatchColor(Color.black);
 			}
 		return ("walk");
 	}
