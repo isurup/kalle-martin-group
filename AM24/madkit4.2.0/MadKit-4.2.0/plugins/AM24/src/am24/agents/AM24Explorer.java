@@ -129,20 +129,22 @@ public class AM24Explorer extends Turtle
 		//check if we wrap is on
 		if (AM24Constraints.wrapOn)
 		{
+
 			for (int i = xcor() - pScope; i <= xcor()+ pScope; i++)
 			{
-//				if(i>gWidth) // Warp X
-//				{
-//					i = i - gWidth;
-//				}
-//				if(i <= 0)
-//				{
-//					i = gWidth + i;
-//				}
+				if(i>=gWidth) // Warp X
+				{
+					i = gWidth - Math.abs(i);
+				}
+				if(i <= 0)
+				{
+					i = gWidth - Math.abs(i);
+				}
 				if (i >= 0 && i < gWidth) { // check x boundaries
 					for (int j = ycor() - pScope; j <= ycor()+ pScope; j++)
 					{
-						if(i>gHeight) // Warp y
+
+						if(i>=gHeight) // Warp y
 						{
 							j = j - gHeight;
 						}
@@ -201,6 +203,14 @@ public class AM24Explorer extends Turtle
 			AM24Message ExplorerMessage = new AM24Message(job);
 			//Random rand = new Random();		
 			Turtle[] ts = turtlesAt(xBase-xcor(),yBase-ycor());//turtlesAt(xBase,yBase);
+			println("Base position: "+xBase+","+yBase);
+			
+			print("TurtlesAt: ");
+			for(Turtle t: ts) {
+				print(t.getName()+" ");
+			}
+			println("");
+			
 			//int tsRand = 0;
 			println("Send Message!!!");
 			if (ts != null)
