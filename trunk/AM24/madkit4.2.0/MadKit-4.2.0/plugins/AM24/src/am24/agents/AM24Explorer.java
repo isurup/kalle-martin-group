@@ -111,10 +111,11 @@ public class AM24Explorer extends Turtle
 		else 		 
 			 println("Where The Explorer thinks the base is: "+xcor()+" "+ycor());
 			 println("Initial Base Position: "+xBase+" "+yBase);
-			//sendToAgent();   GIVES EXCEPTIONS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			 fullQueue=false;
+			return("sendToAgent");   //GIVES EXCEPTIONS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		 	//energyLeft = AM24Constraints.robotEnergy;
-			 
-		 return("returnToBase");
+			
+		 //return("walk");
 	 }
 		
 
@@ -229,21 +230,36 @@ public class AM24Explorer extends Turtle
 		}
 	}
 
-	private void sendToAgent()
+	public String sendToAgent()
 	{
-		while (!jobList.isEmpty()){
+		
+		if (!jobList.isEmpty()){
+			AM24Base.addToTotalEnergyUsed(1);
+			 energyLeft = energyLeft-1;
+			 
 			AM24Job job = (AM24Job) jobList.poll();
+			println("Job: "+jobList.size());
 			AM24Message ExplorerMessage = new AM24Message(job);
 			Random rand = new Random();		
-			Turtle[] ts = turtlesAt(xBase,yBase);
+			Turtle[] ts = turtlesHere();//turtlesAt(xBase,yBase);
 			int tsRand = 0;
+			println("Send Message!!!");
 			if (ts != null)
+				tsRand = rand.nextInt(ts.length);
+			    println("RandomTransporter: "+tsRand);
+				 //for (int i=0; i < ts.length;i++)
+					 if (ts[tsRand].getColor() == Color.BLUE)
+						 sendMessage(ts[tsRand].getAddress(),ExplorerMessage);
+			/*if (ts != null)
 			{
 				tsRand = rand.nextInt(ts.length);
 				sendMessage(ts[tsRand].getAddress(),ExplorerMessage);
-			}
+				
+			}*/
+			energyLeft = energyLeft-1;
+			return ("sendToAgent");
 		}
-		energyLeft = energyLeft-1;
+		return ("walk");
 	}
 }
 

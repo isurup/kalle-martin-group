@@ -6,6 +6,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 import am24.util.*;
 import turtlekit.kernel.Turtle;
 import am24.agents.AM24Base;
+import madkit.kernel.AbstractAgent;
 
 public class AM24Transporter extends Turtle {
 	
@@ -39,10 +40,22 @@ public class AM24Transporter extends Turtle {
 		 /**
 			 * @Fills up the Transporter jobList
 			 */
-		while (!isMessageBoxEmpty()){
+		 
+		 //println("MessagBox Size: "+getMessageBoxSize());
+		 //println("Is messageBox empty? "+ isMessageBoxEmpty());
+		 if(isMessageBoxEmpty()==false){
+			 println("Recieve Message!!!");
+			 AM24Message recievedMess = (AM24Message) nextMessage();		
+				jobList.offer(recievedMess.getJob());
+				println("Transporter jobList size: "+jobList.size());
+			 
+		 }
+		
+		/*while (!isMessageBoxEmpty()){
+			println("Recieve Message!!!");
 			 AM24Message recievedMess = (AM24Message) nextMessage();		
 			jobList.offer(recievedMess.getJob());			
-		}
+		}*/
 		/**
 		 * @Pulls a job from the jobList and checks if the Transporter has enough energy to execute it
 		 * The Transporter will return to base if its energy is too low to execute any job from the jobList
@@ -57,6 +70,7 @@ public class AM24Transporter extends Turtle {
 			 }
 			 if((distance(xOre,yOre)+Math.sqrt((Math.pow(xOre-xBase,2) + (Math.pow(yOre-yBase,2)))*AM24Constraints.movingCost) < energyLeft)){
 				 return ("executeJob");
+				 
 			 }
 		 }
 		 if((xcor() != xBase)&&(ycor() != yBase)){
@@ -70,8 +84,9 @@ public class AM24Transporter extends Turtle {
 	
 
 	public String executeJob(){
+		println("Executing Job!");
 		while ((xcor()!=xOre)&&(ycor()!=yOre)){
-			towards(xOre,yOre);
+			setHeading(towards(xOre,yOre));
 			fd(1);
 			AM24Base.addToTotalEnergyUsed(AM24Constraints.movingCost);
 			energyLeft = energyLeft-AM24Constraints.movingCost;
@@ -99,7 +114,7 @@ public class AM24Transporter extends Turtle {
 			tmpCapacity = AM24Constraints.transporterOreCapacity -capacity;
 		 
 		 	AM24Base.thisBaseCapacity = AM24Base.thisBaseCapacity - tmpCapacity;	// Decrement the base capacity with tmpCapacity, NOT SURE
-		 																			// IF THIS IS THE CORRECT WAY TO DO IT!!!!!
+		 	println("Total Base Capacity: "+AM24Base.thisBaseCapacity);																		// IF THIS IS THE CORRECT WAY TO DO IT!!!!!
 		 	energyLeft = AM24Constraints.robotEnergy;
 			 capacity = AM24Constraints.transporterOreCapacity;
 		 return("walk");
