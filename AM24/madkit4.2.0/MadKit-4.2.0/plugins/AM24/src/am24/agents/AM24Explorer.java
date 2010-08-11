@@ -194,9 +194,12 @@ public class AM24Explorer extends Turtle
 			if (ts != null)
 				tsRand = rand.nextInt(ts.length);
 			    println("RandomTransporter: "+tsRand);
+			    for (int i=0; i < ts.length;i++)
+					 if (ts[i].getColor() == Color.blue)
+						 sendMessage(ts[i].getAddress(),ExplorerMessage);
 				 //for (int i=0; i < ts.length;i++)
-					 if (ts[tsRand].getColor() == Color.BLUE)
-						 sendMessage(ts[tsRand].getAddress(),ExplorerMessage);
+					 /*if (ts[tsRand].getColor() == Color.BLUE)
+						 sendMessage(ts[tsRand].getAddress(),ExplorerMessage);*/
 			/*if (ts != null)
 			{
 				tsRand = rand.nextInt(ts.length);
