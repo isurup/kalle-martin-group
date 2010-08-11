@@ -59,7 +59,7 @@ public class AM24Explorer extends Turtle
 
 	public String walk(){
 		
-		println("energyLeft "+energyLeft);
+		//println("energyLeft "+energyLeft);
 		if(fullQueue)
 		{
 			return("returnToBase");
@@ -99,10 +99,10 @@ public class AM24Explorer extends Turtle
 	}
 
 	public String returnToBase(){
-		println("Going To Base!!!!!");
+		//println("Going To Base!!!!!");
 		if(xBase!=xcor()&&yBase!=ycor()){		
 			 setHeading(towards(xBase,yBase));
-			 println("Moving towards Base!: "+xcor() +" " +ycor());
+			 //println("Moving towards Base!: "+xcor() +" " +ycor());
 			 fd(1);
 			 AM24Base.addToTotalEnergyUsed(AM24Constraints.movingCost);
 			 energyLeft = energyLeft-AM24Constraints.movingCost;
@@ -145,8 +145,8 @@ public class AM24Explorer extends Turtle
 
 								try {
 									if (jobList.offer(new AM24Job(i, j))) {
-										println("found ore at(x,y): " + i + ","
-												+ j);
+										setPatchColorAt(Color.YELLOW, i, j);
+										println("found ore at(x,y): " + i + ","+ j+" " +xcor()+","+ycor());
 									} else {
 										// memory is full go home
 										println("Memory is full go home to base");
@@ -167,6 +167,7 @@ public class AM24Explorer extends Turtle
 	private Boolean checkPathFor(Color c, int xcor, int ycor) {
 
 		if (getPatchColorAt(xcor, ycor) == c) {
+			//setPatchColorAt(Color.YELLOW, xcor, ycor);
 			return true;
 		} else {
 			return false;
