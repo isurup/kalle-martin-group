@@ -122,34 +122,37 @@ public class AM24Explorer extends Turtle
 
 	private void checkPerceptionScope(Color c)
 	{
-		int iPerceptionScope = AM24Constraints.robotPerceptionScope;
+		int pScope = AM24Constraints.robotPerceptionScope;
+		int gWidth = getWorldWidth();
+		int gHeight = getWorldHeight();
+		
 		//check if we wrap is on
 		if (AM24Constraints.wrapOn)
 		{
 
-			for (int i = xcor() - iPerceptionScope; i <= xcor()+ iPerceptionScope; i++)
+			for (int i = xcor() - pScope; i <= xcor()+ pScope; i++)
 			{
-				if(i>getWorldWidth()) // Warp X
+				if(i>gWidth) // Warp X
 				{
-					i = i - getWorldWidth();
+					i = i - gWidth;
 				}
 				if(i < 0)
 				{
-					i = getWorldWidth() + i;
+					i = gWidth + i;
 				}
-				if (i > 0 && i <= getWorldWidth()) { // check x boundaries
-					for (int j = ycor() - iPerceptionScope; j <= ycor()+ iPerceptionScope; j++)
+				if (i > 0 && i <= gWidth) { // check x boundaries
+					for (int j = ycor() - pScope; j <= ycor()+ pScope; j++)
 					{
 						
-						if(i>getWorldHeight()) // Warp y
+						if(i>gHeight) // Warp y
 						{
-							j = j - getWorldHeight();
+							j = j - gHeight;
 						}
 						if(j < 0)
 						{
-							j = getWorldHeight() + j;
+							j = gHeight + j;
 						}
-						if (j > 0 && j <= getWorldHeight()) { // check y boundaries
+						if (j > 0 && j <= gHeight) { // check y boundaries
 							println("For ITeration Loop(x,y): " + i + ","+ j+" " +xcor()+","+ycor());
 							if (checkPathFor(c, i, j)) {
 
