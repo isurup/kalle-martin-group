@@ -46,8 +46,8 @@ public class AM24Explorer extends Turtle
 	{super(s);}
 
 	public void setup(){
-		randomHeading();
-		setColor(Color.WHITE);
+		//randomHeading();
+		setColor(Color.RED);
 		playRole("explorer");
 		jobList = new ArrayBlockingQueue<AM24QueueObject>(AM24Constraints.robotMemorySize-AM24Constraints.nbOfBases);
 		energyLeft = AM24Constraints.robotEnergy;
@@ -99,26 +99,37 @@ public class AM24Explorer extends Turtle
 	}
 
 	public String returnToBase(){
+		energyLeft = AM24Constraints.robotEnergy;
 		//println("Going To Base!!!!!");
 		if(xBase!=xcor()&&yBase!=ycor()){		
 			setHeading(towards(xBase,yBase));
-			//println("Moving towards Base!: "+xcor() +" " +ycor());
-			fd(1);
-			AM24Base.addToTotalEnergyUsed(AM24Constraints.movingCost);
-			energyLeft = energyLeft-AM24Constraints.movingCost;
-			return ("returnToBase");
-
+			return ("moveRobot");
 		}
-		else 		 
-			println("Where The Explorer thinks the base is: "+xcor()+" "+ycor());
+		println("Where The Explorer thinks the base is: "+xcor()+" "+ycor());
 		println("Initial Base Position: "+xBase+" "+yBase);
 		fullQueue=false;
-		return("sendToAgent");   //GIVES EXCEPTIONS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		return("explorerWaitForTransporter");  
 		//energyLeft = AM24Constraints.robotEnergy;
 
-		//return("walk");
+		
 	}
-
+	public String moveRobot(){
+		fd(1);
+		AM24Base.addToTotalEnergyUsed(AM24Constraints.movingCost);
+		energyLeft = energyLeft-AM24Constraints.movingCost;
+		if(xBase!=xcor()||yBase!=ycor())
+		return ("moveRobot");
+		else{
+//			if(distance(xBase,yBase)<2){
+//				moveTo(xBase, yBase);
+//			return ("returnToBase");	
+//			}
+//			else{
+				return ("returnToBase");
+			}
+			
+		
+	}
 
 	private void checkPerceptionScope(Color c)
 	{
@@ -132,14 +143,16 @@ public class AM24Explorer extends Turtle
 
 			for (int i = xcor() - pScope; i <= xcor()+ pScope; i++)
 			{
-				if(i>=gWidth) // Warp X
-				{
-					i = gWidth - Math.abs(i);
-				}
-				if(i <= 0)
-				{
-					i = gWidth - Math.abs(i);
-				}
+
+//				if(i>gWidth) // Warp X
+//				{
+//					i = i - gWidth;
+//				}
+//				if(i <= 0)
+//				{
+//					i = gWidth + i;
+//				}
+
 				if (i >= 0 && i < gWidth) { // check x boundaries
 					for (int j = ycor() - pScope; j <= ycor()+ pScope; j++)
 					{
@@ -191,6 +204,16 @@ public class AM24Explorer extends Turtle
 		}
 	}
 
+	public String explorerWaitForTransporter()
+	{
+		Turtle[] ts = turtlesAt(xBase-xcor(),yBase-ycor());//turtlesAt(xBase,yBase);
+		if (ts.length > 1) {
+			return("sendToAgent"); 
+		} else {
+			return("explorerWaitForTransporter");
+		}
+	}
+	
 	public String sendToAgent()
 	{
 
