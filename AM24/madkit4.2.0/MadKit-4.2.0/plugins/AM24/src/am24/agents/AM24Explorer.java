@@ -67,7 +67,7 @@ public class AM24Explorer extends Turtle
 		else
 			fd(1);
 		energyLeft = energyLeft-AM24Constraints.movingCost;
-
+		if((distance(xBase,yBase))*AM24Constraints.movingCost < energyLeft){
 		if (count < 0) {
 			count = (int) (Math.random()*90);
 			checkPerceptionScope(Color.pink);
@@ -79,6 +79,8 @@ public class AM24Explorer extends Turtle
 			energyLeft = energyLeft-(AM24Constraints.robotPerceptionScope*AM24Constraints.robotPerceptionScope+1);
 			return ("walk");
 		}
+		}
+		return("returnToBase");
 	}  
 
 	public String change(){
