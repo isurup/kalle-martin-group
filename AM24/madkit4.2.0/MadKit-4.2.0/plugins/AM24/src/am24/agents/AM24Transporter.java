@@ -41,21 +41,14 @@ public class AM24Transporter extends Turtle {
 			 * @Fills up the Transporter jobList
 			 */
 		 
-		 //println("MessagBox Size: "+getMessageBoxSize());
-		 //println("Is messageBox empty? "+ isMessageBoxEmpty());
-		 while(isMessageBoxEmpty()==false){
+		 if(!isMessageBoxEmpty()){
 			 println("Recieve Message!!!");
 			 AM24Message recievedMess = (AM24Message) nextMessage();		
 				jobList.offer(recievedMess.getJob());
 				println("Transporter jobList size: "+jobList.size());
-			 
+			return("walk");
 		 }
-		
-		/*while (!isMessageBoxEmpty()){
-			println("Recieve Message!!!");
-			 AM24Message recievedMess = (AM24Message) nextMessage();		
-			jobList.offer(recievedMess.getJob());			
-		}*/
+		 
 		/**
 		 * @Pulls a job from the jobList and checks if the Transporter has enough energy to execute it
 		 * The Transporter will return to base if its energy is too low to execute any job from the jobList
@@ -84,12 +77,20 @@ public class AM24Transporter extends Turtle {
 
 	public String executeJob(){
 		//println("Executing Job!");
-		while ((xcor()!=xOre)&&(ycor()!=yOre)){
+		if ((xcor()!=xOre)||(ycor()!=yOre)){
 			setHeading(towards(xOre,yOre));
 			fd(1);
 			AM24Base.addToTotalEnergyUsed(AM24Constraints.movingCost);
 			energyLeft = energyLeft-AM24Constraints.movingCost;
+			return("executeJob");
 		}
+		int xTmp = xcor()-xOre;
+		int yTmp = ycor()-yOre;
+		if(xTmp!=0 && yTmp!=0){
+			setHeading(towards((xcor()+xTmp),(ycor()+yTmp)));
+			fd(1);
+		}
+		
 			if(getPatchColor()==Color.YELLOW){
 				capacity--;
 				println("Collecting Ore at patch: "+xOre  +","+yOre);
@@ -99,8 +100,7 @@ public class AM24Transporter extends Turtle {
 	}
 	 
 	 public String returnToBase(){
-		 //println("Going To Base!!!!!");
-			if(xBase!=xcor()&&yBase!=ycor()){		
+			if(xBase!=xcor()||yBase!=ycor()){		
 				 setHeading(towards(xBase,yBase));
 				 //println("Moving towards Base!: "+xcor() +" " +ycor());
 				 fd(1);
