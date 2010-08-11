@@ -41,12 +41,12 @@ public class AM24Transporter extends Turtle {
 			 * @Fills up the Transporter jobList
 			 */
 		 energyLeft = AM24Constraints.robotEnergy;
-		 if(!isMessageBoxEmpty()){
+		 while(!isMessageBoxEmpty()){
 			 println("Recieve Message!!!");
 			 AM24Message recievedMess = (AM24Message) nextMessage();		
 				jobList.offer(recievedMess.getJob());
 				println("Transporter jobList size: "+jobList.size());
-			return("walk");
+			//return("walk");
 		 }
 		 
 		/**
