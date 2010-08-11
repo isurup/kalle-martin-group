@@ -124,101 +124,43 @@ public class AM24Explorer extends Turtle
 	{
 		int iPerceptionScope = AM24Constraints.robotPerceptionScope;
 		//check if we wrap is on
-		if (AM24Constraints.wrapOn) {
+		if (AM24Constraints.wrapOn)
+		{
 
-			if (xcor()+iPerceptionScope > getWorldWidth()) { 			 // check if we are in right side of the world
-
-				for(int i = xcor()-iPerceptionScope; i < xcor() + iPerceptionScope || i < getWorldWidth(); i++)
+			for (int i = xcor() - iPerceptionScope; i < xcor()+ iPerceptionScope; i++)
+			{
+				if(i>getWorldWidth())
 				{
-					if (i > getWorldWidth()) // warp x
-					{
-						 i = Math.abs(i - getWorldWidth());
-					}
-					for(int j = ycor()-iPerceptionScope; j < ycor() + iPerceptionScope || j < getWorldHeight(); j++)
-					{
-						if(j > getWorldHeight()) // warp y
-						{
-							j = Math.abs(j - getWorldHeight());
-						}
-						if (checkPathFor(c,i,j)) {
-
-							try {
-								if(jobList.offer(new AM24Job(i,j))) {
-									println("found ore at(x,y): " + i +","+j);
-								} else {
-									// memory is full go home
-									println("Memory is full go home to base");
-									fullQueue = true;
-									break;
-								}
-							} catch(Exception e)
-							{
-								//HMM hehe
-							}
-						}
-					}
+					i = i - getWorldWidth();
 				}
-
-			} else if (xcor()-iPerceptionScope < 0) { 			 // check if we are in left side of the world
-
-				for(int i = xcor()-iPerceptionScope; i < xcor() + iPerceptionScope || i < getWorldWidth(); i++)
-				{
-					if (i > getWorldWidth()) // warp x
+				if (i < 0 && i < getWorldWidth()) {
+					for (int j = ycor() - iPerceptionScope; j < ycor()+ iPerceptionScope; j++)
 					{
-						i = Math.abs(i - getWorldWidth());
-					}
-					for(int j = ycor()-iPerceptionScope; j < ycor() + iPerceptionScope || j < getWorldHeight(); j++)
-					{
-						if(j > getWorldHeight()) // warp y
+						if(i>getWorldHeight())
 						{
-							j = Math.abs(j - getWorldHeight());
+							j = j - getWorldHeight();
 						}
-						if (checkPathFor(c,i,j)) {
+						if (j < 0 && j < getWorldHeight()) {
+							if (checkPathFor(c, i, j)) {
 
-							try {
-								if(jobList.offer(new AM24Job(i,j))) {
-									println("found ore at(x,y): " + i +","+j);
-								} else {
-									// memory is full go home
-									println("Memory is full go home to base");
-									fullQueue = true;
-									break;
+								try {
+									if (jobList.offer(new AM24Job(i, j))) {
+										println("found ore at(x,y): " + i + ","
+												+ j);
+									} else {
+										// memory is full go home
+										println("Memory is full go home to base");
+										fullQueue = true;
+										break;
+									}
+								} catch (Exception e) {
+									// HMM hehe
 								}
-							} catch(Exception e)
-							{
-								//HMM hehe
-							}
-						}
-					}
-				}
-			} 
-			else {
-				// no need to wrap anything
-
-				for(int i = xcor()-iPerceptionScope; i < xcor() + iPerceptionScope || i < getWorldWidth(); i++)
-				{
-					for(int j = ycor()-iPerceptionScope; j < ycor() + iPerceptionScope || j < getWorldHeight() ; j++)
-					{
-						if (checkPathFor(c,i,j)) {
-
-							try {
-								if(jobList.offer(new AM24Job(i,j))) {
-									println("found ore at(x,y): " + i +","+j);
-								} else {
-									// memory is full go home
-									println("Memory is full go home to base");
-									fullQueue = true;
-									break;
-								}
-							} catch(Exception e)
-							{
-								//HMM hehe
 							}
 						}
 					}
 				}
 			}
-
 		}
 	}
 
