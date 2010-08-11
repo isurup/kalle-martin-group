@@ -132,7 +132,7 @@ public class AM24Explorer extends Turtle
 
 			for (int i = xcor() - pScope; i <= xcor()+ pScope; i++)
 			{
-				if(i>=gWidth) // Warp X
+				if(i>gWidth) // Warp X
 				{
 					i = gWidth - Math.abs(i);
 				}
@@ -144,7 +144,7 @@ public class AM24Explorer extends Turtle
 					for (int j = ycor() - pScope; j <= ycor()+ pScope; j++)
 					{
 
-						if(i>=gHeight) // Warp y
+						if(i>gHeight) // Warp y
 						{
 							j = j - gHeight;
 						}
