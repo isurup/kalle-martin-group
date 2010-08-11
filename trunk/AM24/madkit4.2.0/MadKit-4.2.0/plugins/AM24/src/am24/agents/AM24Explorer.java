@@ -132,27 +132,27 @@ public class AM24Explorer extends Turtle
 
 			for (int i = xcor() - pScope; i <= xcor()+ pScope; i++)
 			{
-				if(i>gWidth) // Warp X
+				if(i>=gWidth) // Warp X
 				{
 					i = i - gWidth;
 				}
-				if(i < 0)
+				if(i <= 0)
 				{
 					i = gWidth + i;
 				}
-				if (i > 0 && i <= gWidth) { // check x boundaries
+				if (i >= 0 && i < gWidth) { // check x boundaries
 					for (int j = ycor() - pScope; j <= ycor()+ pScope; j++)
 					{
 
-						if(i>gHeight) // Warp y
+						if(i>=gHeight) // Warp y
 						{
 							j = j - gHeight;
 						}
-						if(j < 0)
+						if(j <= 0)
 						{
 							j = gHeight + j;
 						}
-						if (j > 0 && j <= gHeight) { // check y boundaries
+						if (j >= 0 && j < gHeight) { // check y boundaries
 							println("For ITeration Loop(x,y): " + i + ","+ j+" " +xcor()+","+ycor());
 							if (checkPathFor(c, i, j)) {
 
