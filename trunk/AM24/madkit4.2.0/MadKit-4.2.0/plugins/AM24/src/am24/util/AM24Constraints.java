@@ -42,7 +42,7 @@ public class AM24Constraints {
 	/***
 	 * nbOfTransporter - Number of transporters per base.
 	 */
-	public static final int nbOfTransporter = 10;
+	public static final int nbOfTransporter = 1;
 	
 	/***
 	 * robotPerceptionScope
