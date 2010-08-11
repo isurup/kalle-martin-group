@@ -76,7 +76,6 @@ public class AM24Transporter extends Turtle {
 		 if((xcor() != xBase)&&(ycor() != yBase)){
 			 return("returnToBase");	 
 		 }
-		 else
 		 return ("walk"); 
 		}
 	 
@@ -84,7 +83,7 @@ public class AM24Transporter extends Turtle {
 	
 
 	public String executeJob(){
-		println("Executing Job!");
+		//println("Executing Job!");
 		while ((xcor()!=xOre)&&(ycor()!=yOre)){
 			setHeading(towards(xOre,yOre));
 			fd(1);
@@ -93,23 +92,24 @@ public class AM24Transporter extends Turtle {
 		}
 			if(getPatchColorAt(xOre,yOre) == Color.pink){
 				capacity--;
-				setPatchColorAt(Color.black, xcor(), ycor());
+				println("Collecting Ore at patch: "+xOre  +","+yOre);
+				//setPatchColorAt(Color.black, xcor(), ycor());
 			}
 		return ("walk");
 	}
 	 
 	 public String returnToBase(){
-		 println("Going To Base!!!!!");
+		 //println("Going To Base!!!!!");
 			if(xBase!=xcor()&&yBase!=ycor()){		
 				 setHeading(towards(xBase,yBase));
-				 println("Moving towards Base!: "+xcor() +" " +ycor());
+				 //println("Moving towards Base!: "+xcor() +" " +ycor());
 				 fd(1);
 				 AM24Base.addToTotalEnergyUsed(AM24Constraints.movingCost);
 				 energyLeft = energyLeft-AM24Constraints.movingCost;
 				 return ("returnToBase");
 			}
 		 else
-			println("Where The Explorer thinks the base is: "+xcor()+" "+ycor());
+			println("Where The Transporter thinks the base is: "+xcor()+" "+ycor());
 			println("Initial Base Position: "+xBase+" "+yBase);
 			tmpCapacity = AM24Constraints.transporterOreCapacity -capacity;
 		 
