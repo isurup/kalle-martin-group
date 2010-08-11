@@ -134,7 +134,7 @@ public class AM24Explorer extends Turtle
 			{
 				if(i>=gWidth) // Warp X
 				{
-					i = i - gWidth;
+					i = gWidth - i;
 				}
 				if(i <= 0)
 				{
