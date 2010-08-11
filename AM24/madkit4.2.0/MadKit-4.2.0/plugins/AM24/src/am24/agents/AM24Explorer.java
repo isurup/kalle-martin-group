@@ -128,13 +128,13 @@ public class AM24Explorer extends Turtle
 
 			if (xcor()+iPerceptionScope > getWorldWidth()) { 			 // check if we are in right side of the world
 
-				for(int i = xcor()-iPerceptionScope; i < xcor() + iPerceptionScope ; i++)
+				for(int i = xcor()-iPerceptionScope; i < xcor() + iPerceptionScope || i < getWorldWidth(); i++)
 				{
 					if (i > getWorldWidth()) // warp x
 					{
 						 i = Math.abs(i - getWorldWidth());
 					}
-					for(int j = ycor()-iPerceptionScope; j < ycor() + iPerceptionScope ; j++)
+					for(int j = ycor()-iPerceptionScope; j < ycor() + iPerceptionScope || j < getWorldHeight(); j++)
 					{
 						if(j > getWorldHeight()) // warp y
 						{
@@ -161,13 +161,13 @@ public class AM24Explorer extends Turtle
 
 			} else if (xcor()-iPerceptionScope < 0) { 			 // check if we are in left side of the world
 
-				for(int i = xcor()-iPerceptionScope; i < xcor() + iPerceptionScope ; i++)
+				for(int i = xcor()-iPerceptionScope; i < xcor() + iPerceptionScope || i < getWorldWidth(); i++)
 				{
 					if (i > getWorldWidth()) // warp x
 					{
 						i = Math.abs(i - getWorldWidth());
 					}
-					for(int j = ycor()-iPerceptionScope; j < ycor() + iPerceptionScope ; j++)
+					for(int j = ycor()-iPerceptionScope; j < ycor() + iPerceptionScope || j < getWorldHeight(); j++)
 					{
 						if(j > getWorldHeight()) // warp y
 						{
