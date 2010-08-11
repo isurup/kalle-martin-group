@@ -226,8 +226,9 @@ public class AM24Explorer extends Turtle
 			for (int i=0; i < ts.length;i++)
 			if (ts[tsRand].getColor() == Color.BLUE)
 						 sendMessage(ts[tsRand].getAddress(),ExplorerMessage);
-			energyLeft = AM24Constraints.robotEnergy;
+			
 		}
+		energyLeft = AM24Constraints.robotEnergy;
 		return ("walk");
 	}
 }
