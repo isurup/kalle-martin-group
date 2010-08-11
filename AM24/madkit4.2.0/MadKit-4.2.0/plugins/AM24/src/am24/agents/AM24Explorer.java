@@ -187,13 +187,13 @@ public class AM24Explorer extends Turtle
 			AM24Job job = (AM24Job) jobList.poll();
 			println("Job: "+jobList.size());
 			AM24Message ExplorerMessage = new AM24Message(job);
-			Random rand = new Random();		
-			Turtle[] ts = turtlesHere();//turtlesAt(xBase,yBase);
-			int tsRand = 0;
+			//Random rand = new Random();		
+			Turtle[] ts = turtlesAt(xBase-xcor(),yBase-ycor());//turtlesAt(xBase,yBase);
+			//int tsRand = 0;
 			println("Send Message!!!");
 			if (ts != null)
-				tsRand = rand.nextInt(ts.length);
-			    println("RandomTransporter: "+tsRand);
+				//tsRand = rand.nextInt(ts.length);
+			    //println("RandomTransporter: "+tsRand);
 			    for (int i=0; i < ts.length;i++)
 					 if (ts[i].getColor() == Color.blue)
 						 sendMessage(ts[i].getAddress(),ExplorerMessage);
