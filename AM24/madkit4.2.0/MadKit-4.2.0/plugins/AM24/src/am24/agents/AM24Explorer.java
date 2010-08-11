@@ -127,27 +127,30 @@ public class AM24Explorer extends Turtle
 		if (AM24Constraints.wrapOn)
 		{
 
-			for (int i = xcor() - iPerceptionScope; i < xcor()+ iPerceptionScope; i++)
+			for (int i = xcor() - iPerceptionScope; i <= xcor()+ iPerceptionScope; i++)
 			{
 				if(i>getWorldWidth()) // Warp X
 				{
 					i = i - getWorldWidth();
 				}
 				if (i > 0 && i <= getWorldWidth()) { // check x boundaries
-					for (int j = ycor() - iPerceptionScope; j < ycor()+ iPerceptionScope; j++)
+					for (int j = ycor() - iPerceptionScope; j <= ycor()+ iPerceptionScope; j++)
 					{
+						
 						if(i>getWorldHeight()) // Warp y
 						{
 							j = j - getWorldHeight();
 						}
 						if (j > 0 && j <= getWorldHeight()) { // check y boundaries
+							println("For ITeration Loop(x,y): " + i + ","+ j+" " +xcor()+","+ycor());
 							if (checkPathFor(c, i, j)) {
 
 								try {
 									if (jobList.offer(new AM24Job(i, j))) {
-										setPatchColorAt(Color.YELLOW, i, j);
+										
 										println("found ore at(x,y): " + i + ","+ j+" " +xcor()+","+ycor());
 									} else {
+										
 										// memory is full go home
 										println("Memory is full go home to base");
 										fullQueue = true;
@@ -166,8 +169,8 @@ public class AM24Explorer extends Turtle
 
 	private Boolean checkPathFor(Color c, int xcor, int ycor) {
 
-		if (getPatchColorAt(xcor, ycor) == c) {
-			//setPatchColorAt(Color.YELLOW, xcor, ycor);
+		if (getPatchColorAt(xcor-xcor(), ycor-ycor()) == c) {
+			setPatchColorAt(Color.YELLOW,xcor-xcor(),ycor-ycor());
 			return true;
 		} else {
 			return false;

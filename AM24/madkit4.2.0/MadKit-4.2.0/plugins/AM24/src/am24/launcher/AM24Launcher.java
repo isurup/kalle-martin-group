@@ -36,17 +36,17 @@ public class AM24Launcher extends Launcher {
 
 	public AM24Launcher() {
 		setSimulationName("AM24Planet");
+		setHeight(AM24Constraints.gridSizeHeight);
+		setWidth(AM24Constraints.gridSizeWidth);
 	}
 
 	public void setup() {
-		setWidth(AM24Constraints.gridSizeWidth);
-		setHeight(AM24Constraints.gridSizeHeight);
 		setWrapModeOn(AM24Constraints.wrapOn);
-				
+			
 	}
 
 	public void addSimulationAgents() {
-
+		
 		for (int i = 0; i < AM24Constraints.nbOfBases; i++) {
 
 			Turtle nt = new AM24Base();
@@ -69,7 +69,6 @@ public class AM24Launcher extends Launcher {
 		}
 
 		addViewer(6);
-		
 		// Set the enviroment variable
 		addObserver(new AM24PatchInit(AM24Constraints.oreDensity), false);
 	}
