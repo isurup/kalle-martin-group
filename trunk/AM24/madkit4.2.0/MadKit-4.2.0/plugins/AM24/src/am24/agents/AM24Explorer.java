@@ -131,14 +131,14 @@ public class AM24Explorer extends Turtle
 		{
 			for (int i = xcor() - pScope; i <= xcor()+ pScope; i++)
 			{
-				if(i>gWidth) // Warp X
-				{
-					i = i - gWidth;
-				}
-				if(i <= 0)
-				{
-					i = gWidth + i;
-				}
+//				if(i>gWidth) // Warp X
+//				{
+//					i = i - gWidth;
+//				}
+//				if(i <= 0)
+//				{
+//					i = gWidth + i;
+//				}
 				if (i >= 0 && i < gWidth) { // check x boundaries
 					for (int j = ycor() - pScope; j <= ycor()+ pScope; j++)
 					{
