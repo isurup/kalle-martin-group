@@ -185,18 +185,23 @@ public class AM24Explorer extends Turtle
 
 	public String explorerWaitForTransporter()
 	{
-		Turtle[] ts = turtlesAt(xBase-xcor(),yBase-ycor());//turtlesAt(xBase,yBase);
-		if (ts.length > 1) {
-			return("sendToAgent"); 
-		} else {
-			return("explorerWaitForTransporter");
-		}
+		Turtle[] ts = turtlesAt(xBase-xcor(),yBase-ycor());
+		if (ts != null){
+			for (int i=0; i < ts.length;i++)
+				if (ts[i].getColor() == Color.BLUE){
+					//return("sendToAgent");
+		
+		}  
+			return("sendToAgent");
+		
+	}
+		else return"exploreWaitForTransporter";
 	}
 	
 	public String sendToAgent()
 	{
 
-		if (!jobList.isEmpty()){
+		while (!jobList.isEmpty()){
 			AM24Base.addToTotalEnergyUsed(1);
 			energyLeft = energyLeft-1;
 
@@ -222,9 +227,9 @@ public class AM24Explorer extends Turtle
 					if (ts[i].getColor() == Color.blue)
 						sendMessage(ts[i].getAddress(),ExplorerMessage);*/
 			for (int i=0; i < ts.length;i++)
-			if (ts[tsRand].getColor() == Color.BLUE)
-						 sendMessage(ts[tsRand].getAddress(),ExplorerMessage);
-			
+			if (ts[i].getColor() == Color.BLUE)
+						 sendMessage(ts[i].getAddress(),ExplorerMessage);
+		//return("sendToAgent");
 		}
 		energyLeft = AM24Constraints.robotEnergy;
 		return ("walk");
