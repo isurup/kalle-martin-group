@@ -54,25 +54,25 @@ public class AM24Explorer extends Turtle
 		AM24BasePos basePos = new AM24BasePos(xcor(), ycor());
 		xBase = basePos.getBasePosX();
 		yBase = basePos.getBasePosY();
-		
+
 	}
 
 	public String walk(){
-		
+
 		//println("energyLeft "+energyLeft);
 		if(fullQueue)
 		{
 			return("returnToBase");
 		}
 		else
-		fd(1);
+			fd(1);
 		energyLeft = energyLeft-AM24Constraints.movingCost;
-		
+
 		/*if((distance(xBase,yBase)*AM24Constraints.movingCost)+ 2 < energyLeft){
 			return("returnToBase");
 		}
 		else*/
-		 /*if((xcor() == xBase)&&(ycor() == yBase)){
+		/*if((xcor() == xBase)&&(ycor() == yBase)){
 			 sendToAgent();
 			 energyLeft = AM24Constraints.robotEnergy;	 
 		 }*/
@@ -101,31 +101,31 @@ public class AM24Explorer extends Turtle
 	public String returnToBase(){
 		//println("Going To Base!!!!!");
 		if(xBase!=xcor()&&yBase!=ycor()){		
-			 setHeading(towards(xBase,yBase));
-			 //println("Moving towards Base!: "+xcor() +" " +ycor());
-			 fd(1);
-			 AM24Base.addToTotalEnergyUsed(AM24Constraints.movingCost);
-			 energyLeft = energyLeft-AM24Constraints.movingCost;
-			 return ("returnToBase");
-			 	 
+			setHeading(towards(xBase,yBase));
+			//println("Moving towards Base!: "+xcor() +" " +ycor());
+			fd(1);
+			AM24Base.addToTotalEnergyUsed(AM24Constraints.movingCost);
+			energyLeft = energyLeft-AM24Constraints.movingCost;
+			return ("returnToBase");
+
 		}
 		else 		 
-			 println("Where The Explorer thinks the base is: "+xcor()+" "+ycor());
-			 println("Initial Base Position: "+xBase+" "+yBase);
-			 fullQueue=false;
-			return("sendToAgent");   //GIVES EXCEPTIONS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		 	//energyLeft = AM24Constraints.robotEnergy;
-			
-		 //return("walk");
-	 }
-		
+			println("Where The Explorer thinks the base is: "+xcor()+" "+ycor());
+		println("Initial Base Position: "+xBase+" "+yBase);
+		fullQueue=false;
+		return("sendToAgent");   //GIVES EXCEPTIONS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		//energyLeft = AM24Constraints.robotEnergy;
+
+		//return("walk");
+	}
+
 
 	private void checkPerceptionScope(Color c)
 	{
 		int pScope = AM24Constraints.robotPerceptionScope;
 		int gWidth = getWorldWidth();
 		int gHeight = getWorldHeight();
-		
+
 		//check if we wrap is on
 		if (AM24Constraints.wrapOn)
 		{
@@ -143,7 +143,7 @@ public class AM24Explorer extends Turtle
 				if (i > 0 && i <= gWidth) { // check x boundaries
 					for (int j = ycor() - pScope; j <= ycor()+ pScope; j++)
 					{
-						
+
 						if(i>gHeight) // Warp y
 						{
 							j = j - gHeight;
@@ -156,12 +156,15 @@ public class AM24Explorer extends Turtle
 							println("For ITeration Loop(x,y): " + i + ","+ j+" " +xcor()+","+ycor());
 							if (checkPathFor(c, i, j)) {
 
-								try {
-									if (jobList.offer(new AM24Job(i, j))) {
-										
+								try 
+								{
+									if (jobList.offer(new AM24Job(i, j)))
+									{
 										println("found ore at(x,y): " + i + ","+ j+" " +xcor()+","+ycor());
-									} else {
-										
+									}
+									else
+									{
+
 										// memory is full go home
 										println("Memory is full go home to base");
 										fullQueue = true;
@@ -190,11 +193,11 @@ public class AM24Explorer extends Turtle
 
 	public String sendToAgent()
 	{
-		
+
 		if (!jobList.isEmpty()){
 			AM24Base.addToTotalEnergyUsed(1);
-			 energyLeft = energyLeft-1;
-			 
+			energyLeft = energyLeft-1;
+
 			AM24Job job = (AM24Job) jobList.poll();
 			println("Job: "+jobList.size());
 			AM24Message ExplorerMessage = new AM24Message(job);
@@ -204,18 +207,18 @@ public class AM24Explorer extends Turtle
 			println("Send Message!!!");
 			if (ts != null)
 				//tsRand = rand.nextInt(ts.length);
-			    //println("RandomTransporter: "+tsRand);
-			    for (int i=0; i < ts.length;i++)
-					 if (ts[i].getColor() == Color.blue)
-						 sendMessage(ts[i].getAddress(),ExplorerMessage);
-				 //for (int i=0; i < ts.length;i++)
-					 /*if (ts[tsRand].getColor() == Color.BLUE)
+				//println("RandomTransporter: "+tsRand);
+				for (int i=0; i < ts.length;i++)
+					if (ts[i].getColor() == Color.blue)
+						sendMessage(ts[i].getAddress(),ExplorerMessage);
+			//for (int i=0; i < ts.length;i++)
+			/*if (ts[tsRand].getColor() == Color.BLUE)
 						 sendMessage(ts[tsRand].getAddress(),ExplorerMessage);*/
 			/*if (ts != null)
 			{
 				tsRand = rand.nextInt(ts.length);
 				sendMessage(ts[tsRand].getAddress(),ExplorerMessage);
-				
+
 			}*/
 			energyLeft = energyLeft-1;
 			return ("sendToAgent");
