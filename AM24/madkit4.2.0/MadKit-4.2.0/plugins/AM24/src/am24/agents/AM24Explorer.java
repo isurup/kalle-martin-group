@@ -133,14 +133,14 @@ public class AM24Explorer extends Turtle
 				{
 					i = i - getWorldWidth();
 				}
-				if (i >= 0 && i <= getWorldWidth()) { // check x boundaries
+				if (i > 0 && i <= getWorldWidth()) { // check x boundaries
 					for (int j = ycor() - iPerceptionScope; j < ycor()+ iPerceptionScope; j++)
 					{
 						if(i>getWorldHeight()) // Warp y
 						{
 							j = j - getWorldHeight();
 						}
-						if (j >= 0 && j <= getWorldHeight()) { // check y boundaries
+						if (j > 0 && j <= getWorldHeight()) { // check y boundaries
 							if (checkPathFor(c, i, j)) {
 
 								try {
