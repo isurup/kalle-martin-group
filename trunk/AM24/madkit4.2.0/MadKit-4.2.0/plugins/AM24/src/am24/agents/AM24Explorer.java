@@ -189,13 +189,13 @@ public class AM24Explorer extends Turtle
 		if (ts != null){
 			for (int i=0; i < ts.length;i++)
 				if (ts[i].getColor() == Color.BLUE){
-					//return("sendToAgent");
+					return("sendToAgent");
 		
 		}  
-			return("sendToAgent");
+			return("explorerWaitForTransporter");
 		
 	}
-		else return"exploreWaitForTransporter";
+		else return("explorerWaitForTransporter");
 	}
 	
 	public String sendToAgent()
