@@ -21,13 +21,13 @@ public class AM24Constraints {
 	/***
 	 * gridSizeHeight - The Height;
 	 */
-	public static final int gridSizeHeight = 100;
+	public static final int gridSizeHeight = 200;
 	
 
 	/***
 	 * gridSizeWidth - The Width;
 	 */
-	public static final int gridSizeWidth = 100;
+	public static final int gridSizeWidth = 200;
 	
 	/**
 	 * mode - Coordination mode between bases,cooperative = 1 or competitive = 0.
@@ -37,12 +37,12 @@ public class AM24Constraints {
 	/*** 
 	 * nbOfExplorers - Number of explorers per base.
 	 */
-	public static final int nbOfExplorers = 1;
+	public static final int nbOfExplorers = 10;
 
 	/***
 	 * nbOfTransporter - Number of transporters per base.
 	 */
-	public static final int nbOfTransporter = 1;
+	public static final int nbOfTransporter = 10;
 	
 	/***
 	 * robotPerceptionScope

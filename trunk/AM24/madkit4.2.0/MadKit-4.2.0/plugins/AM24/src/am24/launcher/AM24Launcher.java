@@ -68,7 +68,7 @@ public class AM24Launcher extends Launcher {
 
 		}
 
-		addViewer(6);
+		addViewer(3);
 		// Set the enviroment variable
 		addObserver(new AM24PatchInit(AM24Constraints.oreDensity), false);
 	}
