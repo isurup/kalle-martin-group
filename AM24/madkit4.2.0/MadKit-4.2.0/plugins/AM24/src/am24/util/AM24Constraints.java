@@ -5,82 +5,82 @@ public class AM24Constraints {
 	/***
 	 * RobotEnergy - the amount of energy a robot has
 	 */
-	public static final int robotEnergy = 5000;
+	public final int robotEnergy = 5000;
 	
 	/***
 	 * nbOfBases - Number of bases.
 	 */
-	public static final int nbOfBases = 1;
+	public final int nbOfBases = 10;
 	
 	/***
 	 * oreDensity - Density of ore.
 	 */
-	public static final double oreDensity = 0.05;
+	public final double oreDensity = 0.05;
 	
 	
 	/***
 	 * gridSizeHeight - The Height;
 	 */
-	public static final int gridSizeHeight = 200;
+	public final int gridSizeHeight = 200;
 	
 
 	/***
 	 * gridSizeWidth - The Width;
 	 */
-	public static final int gridSizeWidth = 200;
+	public final int gridSizeWidth = 200;
 	
 	/**
 	 * mode - Coordination mode between bases,cooperative = 1 or competitive = 0.
 	 */
-	public static final int mode = 1;
+	public final int mode = 1;
 	
 	/*** 
 	 * nbOfExplorers - Number of explorers per base.
 	 */
-	public static final int nbOfExplorers = 1;
+	public  final int nbOfExplorers = 13;
 
 	/***
 	 * nbOfTransporter - Number of transporters per base.
 	 */
-	public static final int nbOfTransporter = 1;
+	public final int nbOfTransporter = 7;
 	
 	/***
 	 * robotPerceptionScope
 	 */
-	public static final int robotPerceptionScope = 2;
+	public final int robotPerceptionScope = 2;
 	
 	/***
 	 * I - fixed communication scope.
 	 */
-	public static final int fixedRobotCommunicationScope = 10;
+	public final int fixedRobotCommunicationScope = 10;
 	
 	/***
 	 * robotMemorySize
 	 */
-	public static final int robotMemorySize = 10;
+	public final int robotMemorySize = 10;
 	
 	/***
 	 * C - Capacity of each base in number of ore samples.
 	 */
-	public static final int baseCapacity = 200;
+	public final int baseCapacity = 200;
 	
 	/***
 	 * W - Maximal number of ore a robot can grab and/or carry.
 	 */
-	public static final int transporterOreCapacity = 8;
+	public final int transporterOreCapacity = 8;
 	
 	/***
 	 * maxSimulationTime  - Maximal number of cycles.
 	 */
-	public static final int maxSimulationTime = 10000;
+	public final int maxSimulationTime = 10000;
 	
 	/***
 	 * movingCost - The cost to make one patch move
 	 */
-	public static final int movingCost = 4;
+	public final int movingCost = 4;
 	
 	/***
 	 * is wrap on
 	 */
-	public static final boolean wrapOn = true;
+	public  final boolean wrapOn = true;
 }

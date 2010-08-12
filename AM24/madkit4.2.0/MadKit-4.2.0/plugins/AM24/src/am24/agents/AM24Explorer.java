@@ -37,6 +37,7 @@ public class AM24Explorer extends Turtle
 	private double energyLeft = 0;
 	private ArrayBlockingQueue<AM24QueueObject> jobList = null;
 	AM24BasePos basePos;
+	private AM24Constraints cunts;
 
 	public AM24Explorer(){
 		super();
@@ -46,11 +47,12 @@ public class AM24Explorer extends Turtle
 	{super(s);}
 
 	public void setup(){
+		cunts = new AM24Constraints();
 		randomHeading();
 		setColor(Color.RED);
 		playRole("explorer");
-		jobList = new ArrayBlockingQueue<AM24QueueObject>(AM24Constraints.robotMemorySize-AM24Constraints.nbOfBases);
-		energyLeft = AM24Constraints.robotEnergy;
+		jobList = new ArrayBlockingQueue<AM24QueueObject>(cunts.robotMemorySize-1);//AM24Constraints.nbOfBases);
+		energyLeft = cunts.robotEnergy;
 		AM24BasePos basePos = new AM24BasePos(xcor(), ycor());
 		xBase = basePos.getBasePosX();
 		yBase = basePos.getBasePosY();
@@ -66,8 +68,8 @@ public class AM24Explorer extends Turtle
 		}
 		else
 			fd(1);
-		energyLeft = energyLeft-AM24Constraints.movingCost;
-		if((distance(xBase,yBase))*AM24Constraints.movingCost < energyLeft){
+		energyLeft = energyLeft-cunts.movingCost;
+		if((distance(xBase,yBase))*cunts.movingCost < energyLeft){
 		if (count < 0) {
 			count = (int) (Math.random()*90);
 			checkPerceptionScope(Color.pink);
@@ -77,7 +79,7 @@ public class AM24Explorer extends Turtle
 		else {
 			count--;
 			checkPerceptionScope(Color.pink);
-			energyLeft = energyLeft-(AM24Constraints.robotPerceptionScope*AM24Constraints.robotPerceptionScope+1);
+			energyLeft = energyLeft-(cunts.robotPerceptionScope*cunts.robotPerceptionScope+1);
 			return ("walk");
 		}
 		}
@@ -98,10 +100,10 @@ public class AM24Explorer extends Turtle
 		
 	}
 	public String moveRobot(){
-		if((distance(xBase,yBase))*AM24Constraints.movingCost < energyLeft){
+		if((distance(xBase,yBase))*cunts.movingCost < energyLeft){
 			fd(1);
-			AM24Base.addToTotalEnergyUsed(AM24Constraints.movingCost);
-			energyLeft = energyLeft-AM24Constraints.movingCost;
+			AM24Base.addToTotalEnergyUsed(cunts.movingCost);
+			energyLeft = energyLeft-cunts.movingCost;
 			if(xBase!=xcor()||yBase!=ycor())
 				return ("moveRobot");
 		} 
@@ -110,14 +112,14 @@ public class AM24Explorer extends Turtle
 
 	private void checkPerceptionScope(Color c)
 	{
-		int pScope = AM24Constraints.robotPerceptionScope;
+		int pScope = cunts.robotPerceptionScope;
 		int gWidth = getWorldWidth();
 		int gHeight = getWorldHeight();
-		energyLeft=energyLeft-(2*AM24Constraints.robotPerceptionScope+1);
-		AM24Base.addToTotalEnergyUsed(2*AM24Constraints.robotPerceptionScope+1);
+		energyLeft=energyLeft-(2*cunts.robotPerceptionScope+1);
+		AM24Base.addToTotalEnergyUsed(2*cunts.robotPerceptionScope+1);
 		
 		//check if we wrap is on
-		if (AM24Constraints.wrapOn)
+		if (cunts.wrapOn)
 		{
 
 			for (int i = xcor() - pScope; i <= xcor()+ pScope; i++)
@@ -145,20 +147,20 @@ public class AM24Explorer extends Turtle
 							j = gHeight + j;
 						}
 						if (j >= 0 && j < gHeight) { // check y boundaries
-							println("For ITeration Loop(x,y): " + i + ","+ j+" " +xcor()+","+ycor());
+							//println("For ITeration Loop(x,y): " + i + ","+ j+" " +xcor()+","+ycor());
 							if (checkPathFor(c, i, j)) {
 
 								try 
 								{
 									if (jobList.offer(new AM24Job(i, j)))
 									{
-										println("found ore at(x,y): " + i + ","+ j+" " +xcor()+","+ycor());
+										//println("found ore at(x,y): " + i + ","+ j+" " +xcor()+","+ycor());
 									}
 									else
 									{
 
 										// memory is full go home
-										println("Memory is full go home to base");
+										//println("Memory is full go home to base");
 										fullQueue = true;
 										break;
 									}
@@ -176,7 +178,7 @@ public class AM24Explorer extends Turtle
 	private Boolean checkPathFor(Color c, int xcor, int ycor) {
 
 		if (getPatchColorAt(xcor-xcor(), ycor-ycor()) == c) {
-			setPatchColorAt(Color.YELLOW,xcor-xcor(),ycor-ycor());
+			//setPatchColorAt(Color.YELLOW,xcor-xcor(),ycor-ycor());
 			return true;
 		} else {
 			return false;
@@ -206,22 +208,22 @@ public class AM24Explorer extends Turtle
 			energyLeft = energyLeft-1;
 
 			AM24Job job = (AM24Job) jobList.poll();
-			println("Job: "+jobList.size());
+			//println("Job: "+jobList.size());
 			AM24Message ExplorerMessage = new AM24Message(job);
 			Random rand = new Random();		
 			Turtle[] ts = turtlesAt(xBase-xcor(),yBase-ycor());//turtlesAt(xBase,yBase);
-			println("Base position: "+xBase+","+yBase);
+			//println("Base position: "+xBase+","+yBase);
 			
-			print("TurtlesAt: ");
+			/*print("TurtlesAt: ");
 			for(Turtle t: ts) {
 				print(t.getName()+" ");
 			}
-			println("");
+			println("");*/
 			
 			int tsRand = 0;
-			println("Send Message!!!");
+			//println("Send Message!!!");
 			if (ts != null)
-				tsRand = rand.nextInt(ts.length);
+				//tsRand = rand.nextInt(ts.length);
 				//println("RandomTransporter: "+tsRand);
 				/*for (int i=0; i < ts.length;i++)
 					if (ts[i].getColor() == Color.blue)
@@ -231,7 +233,7 @@ public class AM24Explorer extends Turtle
 						 sendMessage(ts[i].getAddress(),ExplorerMessage);
 		//return("sendToAgent");
 		}
-		energyLeft = AM24Constraints.robotEnergy;
+		energyLeft = cunts.robotEnergy;
 		return ("walk");
 	}
 }
