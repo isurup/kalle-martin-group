@@ -71,9 +71,7 @@ import turtlekit.kernel.Turtle;
 	 
 	 public void BaseFull(){
 		 if(thisBaseCapacity<=0){
-			 println("Total energy used: "+totalEnergyUsed);
-			 println("Total time used: "+simCounter);
-			 println("Base: "+getColor().toString());
+			 println("Total energy used: "+totalEnergyUsed+" "+"Total time used: "+simCounter);
 		 }
 	 }
 	 

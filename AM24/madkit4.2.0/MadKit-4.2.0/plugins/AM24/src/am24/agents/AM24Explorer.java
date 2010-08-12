@@ -229,8 +229,10 @@ public class AM24Explorer extends Turtle
 					if (ts[i].getColor() == Color.blue)
 						sendMessage(ts[i].getAddress(),ExplorerMessage);*/
 			for (int i=0; i < ts.length;i++)
+				
 			if (ts[i].getColor() == Color.BLUE)
-						 sendMessage(ts[i].getAddress(),ExplorerMessage);
+				tsRand = rand.nextInt(ts.length);
+						 sendMessage(ts[tsRand].getAddress(),ExplorerMessage);
 		//return("sendToAgent");
 		}
 		energyLeft = cunts.robotEnergy;

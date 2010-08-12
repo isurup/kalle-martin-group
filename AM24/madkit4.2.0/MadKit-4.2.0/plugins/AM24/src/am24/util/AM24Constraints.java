@@ -10,7 +10,7 @@ public class AM24Constraints {
 	/***
 	 * nbOfBases - Number of bases.
 	 */
-	public final int nbOfBases = 10;
+	public final int nbOfBases = 1;
 	
 	/***
 	 * oreDensity - Density of ore.
@@ -37,17 +37,17 @@ public class AM24Constraints {
 	/*** 
 	 * nbOfExplorers - Number of explorers per base.
 	 */
-	public  final int nbOfExplorers = 13;
+	public  final int nbOfExplorers = 10;
 
 	/***
 	 * nbOfTransporter - Number of transporters per base.
 	 */
-	public final int nbOfTransporter = 7;
+	public final int nbOfTransporter = 10;
 	
 	/***
 	 * robotPerceptionScope
 	 */
-	public final int robotPerceptionScope = 2;
+	public final int robotPerceptionScope = 7;
 	
 	/***
 	 * I - fixed communication scope.
