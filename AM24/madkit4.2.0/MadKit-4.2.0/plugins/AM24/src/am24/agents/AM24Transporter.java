@@ -100,7 +100,7 @@ public class AM24Transporter extends Turtle {
 			if(getPatchColor()==Color.PINK){
 				capacity--;
 				//println("Collecting Ore at patch: "+xOre  +","+yOre);
-				//setPatchColor(Color.black);
+				setPatchColor(Color.black);
 			}
 		return ("walk");
 	}
