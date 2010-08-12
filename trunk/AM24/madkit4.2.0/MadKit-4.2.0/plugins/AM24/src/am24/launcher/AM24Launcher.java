@@ -33,36 +33,39 @@ public class AM24Launcher extends Launcher {
 	
 
 	private ACLMessage messages;
+	private AM24Constraints cunts;
 
 	public AM24Launcher() {
 		setSimulationName("AM24Planet");
-		setHeight(AM24Constraints.gridSizeHeight);
-		setWidth(AM24Constraints.gridSizeWidth);
+		setup();
 	}
 
 	public void setup() {
-		setWrapModeOn(AM24Constraints.wrapOn);
+		cunts = new AM24Constraints();
+		setWrapModeOn(cunts.wrapOn);
+		setHeight(cunts.gridSizeHeight);
+		setWidth(cunts.gridSizeWidth);
 			
 	}
 
 	public void addSimulationAgents() {
 		
-		for (int i = 0; i < AM24Constraints.nbOfBases; i++) {
+		for (int i = 0; i < cunts.nbOfBases; i++) {
 
-			Turtle nt = new AM24Base();
+			Turtle nt = new AM24Base("Counter");
 			//int basePosX = (int) Math.random()* getWidth();
 			Random r = new Random();
 			int basePosX = r.nextInt(getWidth());
 			int basePosY = r.nextInt(getHeight());
-			addTurtle(new AM24Base(), basePosX, basePosY);
+			addTurtle(nt, basePosX, basePosY);
 
 			// deploy Explorers
-			for (int e = 0; e < AM24Constraints.nbOfExplorers; e++) {
+			for (int e = 0; e < cunts.nbOfExplorers; e++) {
 				addTurtle(new AM24Explorer("walk"), basePosX, basePosY);
 			}
 
 			// deploy Transportes
-			for (int t = 0; t < AM24Constraints.nbOfTransporter; t++) {
+			for (int t = 0; t < cunts.nbOfTransporter; t++) {
 				addTurtle(new AM24Transporter("walk"), basePosX, basePosY);
 			}
 
@@ -70,7 +73,7 @@ public class AM24Launcher extends Launcher {
 
 		addViewer(3);
 		// Set the enviroment variable
-		addObserver(new AM24PatchInit(AM24Constraints.oreDensity), false);
+		addObserver(new AM24PatchInit(cunts.oreDensity), false);
 	}
 
 }
