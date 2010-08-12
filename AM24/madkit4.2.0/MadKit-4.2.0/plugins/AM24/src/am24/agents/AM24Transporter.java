@@ -90,12 +90,12 @@ public class AM24Transporter extends Turtle {
 			energyLeft = energyLeft-cunts.movingCost;
 			return("executeJob");
 		}
-		int xTmp = xcor()-xOre;
+		/*int xTmp = xcor()-xOre;
 		int yTmp = ycor()-yOre;
 		if(xTmp!=0 && yTmp!=0){
 			setHeading(towards((xcor()+xTmp),(ycor()+yTmp)));
 			fd(1);
-		}
+		}*/
 		
 			if(getPatchColor()==Color.PINK){
 				capacity--;
