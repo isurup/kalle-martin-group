@@ -37,17 +37,17 @@ public class AM24Constraints {
 	/*** 
 	 * nbOfExplorers - Number of explorers per base.
 	 */
-	public  final int nbOfExplorers = 10;
+	public  final int nbOfExplorers = 5;
 
 	/***
 	 * nbOfTransporter - Number of transporters per base.
 	 */
-	public final int nbOfTransporter = 10;
+	public final int nbOfTransporter = 15;
 	
 	/***
 	 * robotPerceptionScope
 	 */
-	public final int robotPerceptionScope = 7;
+	public final int robotPerceptionScope = 1;
 	
 	/***
 	 * I - fixed communication scope.
@@ -57,7 +57,7 @@ public class AM24Constraints {
 	/***
 	 * robotMemorySize
 	 */
-	public final int robotMemorySize = 10;
+	public final int robotMemorySize = 15;
 	
 	/***
 	 * C - Capacity of each base in number of ore samples.
