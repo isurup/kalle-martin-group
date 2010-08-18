@@ -15,5 +15,10 @@ namespace SSE3
         {
             InitializeComponent();
         }
+
+        private void START_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
