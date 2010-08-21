@@ -77,9 +77,9 @@
             // 
             // searchTweets
             // 
-            this.searchTweets.Location = new System.Drawing.Point(540, 37);
+            this.searchTweets.Location = new System.Drawing.Point(557, 37);
             this.searchTweets.Name = "searchTweets";
-            this.searchTweets.Size = new System.Drawing.Size(434, 20);
+            this.searchTweets.Size = new System.Drawing.Size(417, 20);
             this.searchTweets.TabIndex = 4;
             // 
             // label1
@@ -94,7 +94,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(502, 40);
+            this.label2.Location = new System.Drawing.Point(522, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 6;
