@@ -43,9 +43,9 @@
             // 
             // Retrive
             // 
-            this.Retrive.Location = new System.Drawing.Point(400, 12);
+            this.Retrive.Location = new System.Drawing.Point(386, 12);
             this.Retrive.Name = "Retrive";
-            this.Retrive.Size = new System.Drawing.Size(90, 23);
+            this.Retrive.Size = new System.Drawing.Size(104, 23);
             this.Retrive.TabIndex = 0;
             this.Retrive.Text = "Retrive Tweets";
             this.Retrive.UseVisualStyleBackColor = true;
@@ -119,7 +119,7 @@
             // 
             // Clear
             // 
-            this.Clear.Location = new System.Drawing.Point(319, 12);
+            this.Clear.Location = new System.Drawing.Point(305, 12);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(75, 23);
             this.Clear.TabIndex = 10;
