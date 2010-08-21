@@ -53,9 +53,9 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(63, 37);
+            this.textBox1.Location = new System.Drawing.Point(77, 37);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(427, 20);
+            this.textBox1.Size = new System.Drawing.Size(413, 20);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "http://twitter.com/oprah";
             // 
@@ -85,7 +85,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 40);
+            this.label1.Location = new System.Drawing.Point(32, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 5;
@@ -128,7 +128,7 @@
             // 
             // Crawl
             // 
-            this.Crawl.Location = new System.Drawing.Point(63, 12);
+            this.Crawl.Location = new System.Drawing.Point(77, 12);
             this.Crawl.Name = "Crawl";
             this.Crawl.Size = new System.Drawing.Size(113, 23);
             this.Crawl.TabIndex = 11;
