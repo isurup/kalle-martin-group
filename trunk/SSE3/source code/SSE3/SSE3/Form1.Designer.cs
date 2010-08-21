@@ -41,7 +41,7 @@
             // 
             // Retrive
             // 
-            this.Retrive.Location = new System.Drawing.Point(400, 8);
+            this.Retrive.Location = new System.Drawing.Point(400, 12);
             this.Retrive.Name = "Retrive";
             this.Retrive.Size = new System.Drawing.Size(90, 23);
             this.Retrive.TabIndex = 0;
@@ -100,7 +100,7 @@
             // 
             // Sort
             // 
-            this.Sort.Location = new System.Drawing.Point(899, 11);
+            this.Sort.Location = new System.Drawing.Point(899, 12);
             this.Sort.Name = "Sort";
             this.Sort.Size = new System.Drawing.Size(75, 23);
             this.Sort.TabIndex = 8;
