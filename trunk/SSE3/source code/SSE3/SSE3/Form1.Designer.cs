@@ -37,6 +37,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Sort = new System.Windows.Forms.Button();
             this.feedback = new System.Windows.Forms.ListBox();
+            this.Clear = new System.Windows.Forms.Button();
+            this.Crawl = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Retrive
@@ -115,11 +117,31 @@
             this.feedback.Size = new System.Drawing.Size(478, 82);
             this.feedback.TabIndex = 9;
             // 
+            // Clear
+            // 
+            this.Clear.Location = new System.Drawing.Point(319, 12);
+            this.Clear.Name = "Clear";
+            this.Clear.Size = new System.Drawing.Size(75, 23);
+            this.Clear.TabIndex = 10;
+            this.Clear.Text = "Clear";
+            this.Clear.UseVisualStyleBackColor = true;
+            // 
+            // Crawl
+            // 
+            this.Crawl.Location = new System.Drawing.Point(63, 12);
+            this.Crawl.Name = "Crawl";
+            this.Crawl.Size = new System.Drawing.Size(113, 23);
+            this.Crawl.TabIndex = 11;
+            this.Crawl.Text = "Crawl Twitter";
+            this.Crawl.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 467);
+            this.Controls.Add(this.Crawl);
+            this.Controls.Add(this.Clear);
             this.Controls.Add(this.feedback);
             this.Controls.Add(this.Sort);
             this.Controls.Add(this.label2);
@@ -147,6 +169,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Sort;
         private System.Windows.Forms.ListBox feedback;
+        private System.Windows.Forms.Button Clear;
+        private System.Windows.Forms.Button Crawl;
     }
 }
 
