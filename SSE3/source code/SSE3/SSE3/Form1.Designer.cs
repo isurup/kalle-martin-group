@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             this.Retrive = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.incomingTweets = new System.Windows.Forms.ListBox();
-            this.sortedTweets = new System.Windows.Forms.ListBox();
+            this.TwitterUrl = new System.Windows.Forms.TextBox();
             this.searchTweets = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,7 +37,8 @@
             this.Clear = new System.Windows.Forms.Button();
             this.Crawl = new System.Windows.Forms.Button();
             this.feedback = new System.Windows.Forms.TextBox();
-            this.feedTweets = new System.Windows.Forms.RichTextBox();
+            this.sortTweets = new System.Windows.Forms.RichTextBox();
+            this.incomingTweets = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // Retrive
@@ -52,31 +51,13 @@
             this.Retrive.UseVisualStyleBackColor = true;
             this.Retrive.Click += new System.EventHandler(this.Retrive_Click);
             // 
-            // textBox1
+            // TwitterUrl
             // 
-            this.textBox1.Location = new System.Drawing.Point(77, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(413, 20);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "http://twitter.com/CNNbrk";
-            // 
-            // incomingTweets
-            // 
-            this.incomingTweets.FormattingEnabled = true;
-            this.incomingTweets.Location = new System.Drawing.Point(12, 63);
-            this.incomingTweets.Name = "incomingTweets";
-            this.incomingTweets.ScrollAlwaysVisible = true;
-            this.incomingTweets.Size = new System.Drawing.Size(478, 303);
-            this.incomingTweets.TabIndex = 2;
-            // 
-            // sortedTweets
-            // 
-            this.sortedTweets.FormattingEnabled = true;
-            this.sortedTweets.Location = new System.Drawing.Point(496, 63);
-            this.sortedTweets.Name = "sortedTweets";
-            this.sortedTweets.ScrollAlwaysVisible = true;
-            this.sortedTweets.Size = new System.Drawing.Size(478, 173);
-            this.sortedTweets.TabIndex = 3;
+            this.TwitterUrl.Location = new System.Drawing.Point(77, 37);
+            this.TwitterUrl.Name = "TwitterUrl";
+            this.TwitterUrl.Size = new System.Drawing.Size(413, 20);
+            this.TwitterUrl.TabIndex = 1;
+            this.TwitterUrl.Text = "http://twitter.com/CNNbrk";
             // 
             // searchTweets
             // 
@@ -138,23 +119,35 @@
             this.feedback.Size = new System.Drawing.Size(478, 83);
             this.feedback.TabIndex = 12;
             // 
-            // feedTweets
+            // sortTweets
             // 
-            this.feedTweets.BackColor = System.Drawing.SystemColors.Window;
-            this.feedTweets.Location = new System.Drawing.Point(496, 242);
-            this.feedTweets.Name = "feedTweets";
-            this.feedTweets.ReadOnly = true;
-            this.feedTweets.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.feedTweets.Size = new System.Drawing.Size(477, 213);
-            this.feedTweets.TabIndex = 13;
-            this.feedTweets.Text = "";
+            this.sortTweets.BackColor = System.Drawing.SystemColors.Window;
+            this.sortTweets.Location = new System.Drawing.Point(496, 63);
+            this.sortTweets.Name = "sortTweets";
+            this.sortTweets.ReadOnly = true;
+            this.sortTweets.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.sortTweets.Size = new System.Drawing.Size(477, 392);
+            this.sortTweets.TabIndex = 13;
+            this.sortTweets.Text = "";
+            // 
+            // incomingTweets
+            // 
+            this.incomingTweets.BackColor = System.Drawing.SystemColors.Window;
+            this.incomingTweets.Location = new System.Drawing.Point(12, 63);
+            this.incomingTweets.Name = "incomingTweets";
+            this.incomingTweets.ReadOnly = true;
+            this.incomingTweets.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.incomingTweets.Size = new System.Drawing.Size(477, 303);
+            this.incomingTweets.TabIndex = 14;
+            this.incomingTweets.Text = "";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 467);
-            this.Controls.Add(this.feedTweets);
+            this.Controls.Add(this.incomingTweets);
+            this.Controls.Add(this.sortTweets);
             this.Controls.Add(this.feedback);
             this.Controls.Add(this.Crawl);
             this.Controls.Add(this.Clear);
@@ -162,9 +155,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.searchTweets);
-            this.Controls.Add(this.sortedTweets);
-            this.Controls.Add(this.incomingTweets);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TwitterUrl);
             this.Controls.Add(this.Retrive);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form1";
@@ -177,9 +168,7 @@
         #endregion
 
         private System.Windows.Forms.Button Retrive;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListBox incomingTweets;
-        private System.Windows.Forms.ListBox sortedTweets;
+        private System.Windows.Forms.TextBox TwitterUrl;
         private System.Windows.Forms.TextBox searchTweets;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -187,7 +176,8 @@
         private System.Windows.Forms.Button Clear;
         private System.Windows.Forms.Button Crawl;
         private System.Windows.Forms.TextBox feedback;
-        private System.Windows.Forms.RichTextBox feedTweets;
+        private System.Windows.Forms.RichTextBox sortTweets;
+        private System.Windows.Forms.RichTextBox incomingTweets;
     }
 }
 
