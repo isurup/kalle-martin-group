@@ -19,3 +19,31 @@ namespace SSE3
         }
     }
 }
+
+//using System;
+//using System.Text;
+//using CsharpTwitt;
+//using System.IO;
+
+//namespace TwitterTest
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Twitter.PublicTwitt publicTwitter = new Twitter.PublicTwitt();
+
+//            string timeline = publicTwitter.ShowUser("CNNbrk", Twitter.OutputFormatType.xml);
+
+//            StreamWriter writer = new StreamWriter("file.xml");
+//            writer.WriteLine(timeline);
+//            writer.Close();
+
+
+//            // DO SOMETHING WITH THE FILE OR timeline STRING...
+
+//            Console.WriteLine("done");
+
+//            Console.ReadLine();
+//        }
+//    }

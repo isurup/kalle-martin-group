@@ -18,7 +18,16 @@ namespace SSE3
 
         private void Retrive_Click(object sender, EventArgs e)
         {
-            incomingTweets.Items.Add("hello world");
+            incomingTweets.Items.Add("hello world aaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaa");
+
+            feedback.AppendText("hello world aaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaa\n");
+
+            //feedTweets.AppendText("hello world aaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaa\n");
+
+            feedTweets.SelectionFont = new Font("Arial", (float)8.75, FontStyle.Bold);
+            feedTweets.SelectionColor = Color.DarkBlue;
+            feedTweets.SelectedText += "Hello World -- ";
+            
         }
     }
 }
