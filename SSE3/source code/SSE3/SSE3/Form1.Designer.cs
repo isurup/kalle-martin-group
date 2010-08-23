@@ -36,9 +36,9 @@
             this.Sort = new System.Windows.Forms.Button();
             this.Clear = new System.Windows.Forms.Button();
             this.Crawl = new System.Windows.Forms.Button();
-            this.feedback = new System.Windows.Forms.TextBox();
             this.sortTweets = new System.Windows.Forms.RichTextBox();
             this.incomingTweets = new System.Windows.Forms.RichTextBox();
+            this.feedback = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // Retrive
@@ -111,14 +111,6 @@
             this.Crawl.Text = "Crawl Twitter";
             this.Crawl.UseVisualStyleBackColor = true;
             // 
-            // feedback
-            // 
-            this.feedback.Location = new System.Drawing.Point(12, 372);
-            this.feedback.Multiline = true;
-            this.feedback.Name = "feedback";
-            this.feedback.Size = new System.Drawing.Size(478, 83);
-            this.feedback.TabIndex = 12;
-            // 
             // sortTweets
             // 
             this.sortTweets.BackColor = System.Drawing.SystemColors.Window;
@@ -141,14 +133,25 @@
             this.incomingTweets.TabIndex = 14;
             this.incomingTweets.Text = "";
             // 
+            // feedback
+            // 
+            this.feedback.BackColor = System.Drawing.SystemColors.Window;
+            this.feedback.Location = new System.Drawing.Point(12, 372);
+            this.feedback.Name = "feedback";
+            this.feedback.ReadOnly = true;
+            this.feedback.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.feedback.Size = new System.Drawing.Size(477, 83);
+            this.feedback.TabIndex = 15;
+            this.feedback.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 467);
+            this.Controls.Add(this.feedback);
             this.Controls.Add(this.incomingTweets);
             this.Controls.Add(this.sortTweets);
-            this.Controls.Add(this.feedback);
             this.Controls.Add(this.Crawl);
             this.Controls.Add(this.Clear);
             this.Controls.Add(this.Sort);
@@ -175,9 +178,9 @@
         private System.Windows.Forms.Button Sort;
         private System.Windows.Forms.Button Clear;
         private System.Windows.Forms.Button Crawl;
-        private System.Windows.Forms.TextBox feedback;
         private System.Windows.Forms.RichTextBox sortTweets;
         private System.Windows.Forms.RichTextBox incomingTweets;
+        private System.Windows.Forms.RichTextBox feedback;
     }
 }
 

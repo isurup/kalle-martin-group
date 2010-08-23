@@ -19,7 +19,7 @@ namespace SSE3
         private void Retrive_Click(object sender, EventArgs e)
         {
             incomingTweets.SelectedText += "Hello World - ";
-            feedback.AppendText("Hello World \n");
+            feedback.SelectedText += "Hello World - ";
 
             sortTweets.SelectionFont = new Font("Arial", (float)7.75, FontStyle.Bold);
             sortTweets.SelectionColor = Color.DarkBlue;
