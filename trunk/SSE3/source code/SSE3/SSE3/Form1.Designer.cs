@@ -39,6 +39,7 @@
             this.sortTweets = new System.Windows.Forms.RichTextBox();
             this.incomingTweets = new System.Windows.Forms.RichTextBox();
             this.feedback = new System.Windows.Forms.RichTextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Retrive
@@ -144,11 +145,21 @@
             this.feedback.TabIndex = 15;
             this.feedback.Text = "";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(429, 258);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(95, 52);
+            this.textBox1.TabIndex = 16;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 467);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.feedback);
             this.Controls.Add(this.incomingTweets);
             this.Controls.Add(this.sortTweets);
@@ -181,6 +192,7 @@
         private System.Windows.Forms.RichTextBox sortTweets;
         private System.Windows.Forms.RichTextBox incomingTweets;
         private System.Windows.Forms.RichTextBox feedback;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
