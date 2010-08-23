@@ -36,9 +36,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Sort = new System.Windows.Forms.Button();
-            this.feedback = new System.Windows.Forms.ListBox();
             this.Clear = new System.Windows.Forms.Button();
             this.Crawl = new System.Windows.Forms.Button();
+            this.feedback = new System.Windows.Forms.TextBox();
+            this.feedTweets = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // Retrive
@@ -57,7 +58,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(413, 20);
             this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "http://twitter.com/oprah";
+            this.textBox1.Text = "http://twitter.com/CNNbrk";
             // 
             // incomingTweets
             // 
@@ -74,7 +75,7 @@
             this.sortedTweets.Location = new System.Drawing.Point(496, 63);
             this.sortedTweets.Name = "sortedTweets";
             this.sortedTweets.ScrollAlwaysVisible = true;
-            this.sortedTweets.Size = new System.Drawing.Size(478, 394);
+            this.sortedTweets.Size = new System.Drawing.Size(478, 173);
             this.sortedTweets.TabIndex = 3;
             // 
             // searchTweets
@@ -111,15 +112,6 @@
             this.Sort.Text = "Sort";
             this.Sort.UseVisualStyleBackColor = true;
             // 
-            // feedback
-            // 
-            this.feedback.FormattingEnabled = true;
-            this.feedback.Location = new System.Drawing.Point(12, 375);
-            this.feedback.Name = "feedback";
-            this.feedback.ScrollAlwaysVisible = true;
-            this.feedback.Size = new System.Drawing.Size(478, 82);
-            this.feedback.TabIndex = 9;
-            // 
             // Clear
             // 
             this.Clear.Location = new System.Drawing.Point(305, 12);
@@ -138,14 +130,34 @@
             this.Crawl.Text = "Crawl Twitter";
             this.Crawl.UseVisualStyleBackColor = true;
             // 
+            // feedback
+            // 
+            this.feedback.Location = new System.Drawing.Point(12, 372);
+            this.feedback.Multiline = true;
+            this.feedback.Name = "feedback";
+            this.feedback.Size = new System.Drawing.Size(478, 83);
+            this.feedback.TabIndex = 12;
+            // 
+            // feedTweets
+            // 
+            this.feedTweets.BackColor = System.Drawing.SystemColors.Window;
+            this.feedTweets.Location = new System.Drawing.Point(496, 242);
+            this.feedTweets.Name = "feedTweets";
+            this.feedTweets.ReadOnly = true;
+            this.feedTweets.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.feedTweets.Size = new System.Drawing.Size(477, 213);
+            this.feedTweets.TabIndex = 13;
+            this.feedTweets.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 467);
+            this.Controls.Add(this.feedTweets);
+            this.Controls.Add(this.feedback);
             this.Controls.Add(this.Crawl);
             this.Controls.Add(this.Clear);
-            this.Controls.Add(this.feedback);
             this.Controls.Add(this.Sort);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -172,9 +184,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Sort;
-        private System.Windows.Forms.ListBox feedback;
         private System.Windows.Forms.Button Clear;
         private System.Windows.Forms.Button Crawl;
+        private System.Windows.Forms.TextBox feedback;
+        private System.Windows.Forms.RichTextBox feedTweets;
     }
 }
 
