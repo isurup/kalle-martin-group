@@ -1,0 +1,39 @@
+/*if (info.Key != ConsoleKey.Backspace && t == null)
+                {
+                    password += info.KeyChar;
+                    Console.Write("*");
+                }
+                else if (info.Key != ConsoleKey.Backspace && t != null)
+                {
+                    string toAdd = string.Empty;
+                    toAdd += info.KeyChar;
+                    if (duplicates != string.Empty && duplicates.Contains(toAdd))
+                    {
+                        duplicates = duplicates.Remove(duplicates.IndexOf(info.KeyChar), 1);
+                    }
+                    else
+                    {
+                        duplicates += info.KeyChar;
+                        password += info.KeyChar;
+                        Console.Write("*");
+                    }
+                }
+                else if (info.Key == ConsoleKey.Backspace && t != null)
+                {
+                    if (delete && password.Length > 0)
+                    {
+                        delete = false;
+                        password = password.Substring(0, password.Length - 1);
+                        Console.Write("\b \b");
+                    }
+                    else
+                        delete = true;
+                }
+                else
+                {
+                    if (password.Length > 0)
+                    {
+                        password = password.Substring(0, password.Length - 1);
+                        Console.Write("\b \b");
+                    }
+                }*/
