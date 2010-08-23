@@ -16,9 +16,9 @@ namespace SSE3
             InitializeComponent();
         }
 
-        private void START_Click(object sender, EventArgs e)
+        private void Retrive_Click(object sender, EventArgs e)
         {
-
+            incomingTweets.Items.Add("hello world");
         }
     }
 }

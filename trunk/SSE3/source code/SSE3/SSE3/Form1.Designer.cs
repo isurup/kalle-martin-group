@@ -49,7 +49,7 @@
             this.Retrive.TabIndex = 0;
             this.Retrive.Text = "Retrive Tweets";
             this.Retrive.UseVisualStyleBackColor = true;
-            this.Retrive.Click += new System.EventHandler(this.START_Click);
+            this.Retrive.Click += new System.EventHandler(this.Retrive_Click);
             // 
             // textBox1
             // 
@@ -64,6 +64,7 @@
             this.incomingTweets.FormattingEnabled = true;
             this.incomingTweets.Location = new System.Drawing.Point(12, 63);
             this.incomingTweets.Name = "incomingTweets";
+            this.incomingTweets.ScrollAlwaysVisible = true;
             this.incomingTweets.Size = new System.Drawing.Size(478, 303);
             this.incomingTweets.TabIndex = 2;
             // 
@@ -72,6 +73,7 @@
             this.sortedTweets.FormattingEnabled = true;
             this.sortedTweets.Location = new System.Drawing.Point(496, 63);
             this.sortedTweets.Name = "sortedTweets";
+            this.sortedTweets.ScrollAlwaysVisible = true;
             this.sortedTweets.Size = new System.Drawing.Size(478, 394);
             this.sortedTweets.TabIndex = 3;
             // 
@@ -114,6 +116,7 @@
             this.feedback.FormattingEnabled = true;
             this.feedback.Location = new System.Drawing.Point(12, 375);
             this.feedback.Name = "feedback";
+            this.feedback.ScrollAlwaysVisible = true;
             this.feedback.Size = new System.Drawing.Size(478, 82);
             this.feedback.TabIndex = 9;
             // 
@@ -151,6 +154,7 @@
             this.Controls.Add(this.incomingTweets);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Retrive);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form1";
             this.Text = "Twitter Social Network Analysis";
             this.ResumeLayout(false);
