@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Text;
+using CsharpTwitt;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using System.Windows.Forms;
 
 namespace SSE3
