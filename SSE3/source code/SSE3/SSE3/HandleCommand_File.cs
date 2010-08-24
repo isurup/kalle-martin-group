@@ -253,7 +253,7 @@ namespace SSE3
         {
             System.Configuration.ExeConfigurationFileMap fileMap = new System.Configuration.ExeConfigurationFileMap()
             {
-                ExeConfigFilename = System.IO.Path.Combine(Environment.CurrentDirectory, "TrixiTweet.exe.config")
+                ExeConfigFilename = System.IO.Path.Combine(Environment.CurrentDirectory, "SSE3.config")
             };
             System.Configuration.Configuration appconfig = System.Configuration.ConfigurationManager.OpenMappedExeConfiguration(fileMap, System.Configuration.ConfigurationUserLevel.None);
             TwitterStatusCollection col = null;
