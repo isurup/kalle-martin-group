@@ -28,11 +28,11 @@ namespace SSE3
                 ExeConfigFilename = Path.Combine(Environment.CurrentDirectory, "SSE3.exe.config")
             };
             System.Configuration.Configuration appConfig = System.Configuration.ConfigurationManager.OpenMappedExeConfiguration(fileMap, System.Configuration.ConfigurationUserLevel.None);
-            if (appConfig.AppSettings.Settings["TrixiTweet.UserId"] == null)
+            if (appConfig.AppSettings.Settings["Tweet.UserId"] == null)
             {
                 OAuthTokenResponse requestAccessTokens = OAuthUtility.GetRequestToken(
-                    System.Configuration.ConfigurationManager.AppSettings["TrixiTweet.ConsumerKey"],
-                    System.Configuration.ConfigurationManager.AppSettings["TrixiTweet.ConsumerSecret"]);
+                    System.Configuration.ConfigurationManager.AppSettings["Tweet.ConsumerKey"],
+                    System.Configuration.ConfigurationManager.AppSettings["Tweet.ConsumerSecret"]);
 
                 string requestToken = requestAccessTokens.Token;
                 //Console.WriteLine("Please go to \n {0}", OAuthUtility.BuildAuthorizationUri(requestAccessTokens.Token).AbsoluteUri);
@@ -54,22 +54,22 @@ namespace SSE3
                 }
                 string s_token = requestAccessTokens.Token;
                 OAuthTokenResponse accessTokens = OAuthUtility.GetAccessToken(
-                    System.Configuration.ConfigurationManager.AppSettings["TrixiTweet.ConsumerKey"],
-                    System.Configuration.ConfigurationManager.AppSettings["TrixiTweet.ConsumerSecret"],
+                    System.Configuration.ConfigurationManager.AppSettings["Tweet.ConsumerKey"],
+                    System.Configuration.ConfigurationManager.AppSettings["Tweet.ConsumerSecret"],
                     s_token,
                     s_pin);
-                appConfig.AppSettings.Settings.Add("TrixiTweet.AccessToken", accessTokens.Token);
-                appConfig.AppSettings.Settings.Add("TrixiTweet.AccessTokenSecret", accessTokens.TokenSecret);
-                appConfig.AppSettings.Settings.Add("TrixiTweet.UserId", accessTokens.UserId.ToString(System.Globalization.CultureInfo.CurrentCulture));
-                appConfig.AppSettings.Settings.Add("TrixiTweet.ScreenName", accessTokens.ScreenName);
+                appConfig.AppSettings.Settings.Add("Tweet.AccessToken", accessTokens.Token);
+                appConfig.AppSettings.Settings.Add("Tweet.AccessTokenSecret", accessTokens.TokenSecret);
+                appConfig.AppSettings.Settings.Add("Tweet.UserId", accessTokens.UserId.ToString(System.Globalization.CultureInfo.CurrentCulture));
+                appConfig.AppSettings.Settings.Add("Tweet.ScreenName", accessTokens.ScreenName);
                 appConfig.Save();
                 System.Configuration.ConfigurationManager.RefreshSection("appSettings");
             }
             tokens = new OAuthTokens();
-            tokens.AccessToken = appConfig.AppSettings.Settings["TrixiTweet.AccessToken"].Value;
-            tokens.AccessTokenSecret = appConfig.AppSettings.Settings["TrixiTweet.AccessTokenSecret"].Value;
-            tokens.ConsumerKey = appConfig.AppSettings.Settings["TrixiTweet.ConsumerKey"].Value;
-            tokens.ConsumerSecret = appConfig.AppSettings.Settings["TrixiTweet.ConsumerSecret"].Value;
+            tokens.AccessToken = appConfig.AppSettings.Settings["Tweet.AccessToken"].Value;
+            tokens.AccessTokenSecret = appConfig.AppSettings.Settings["Tweet.AccessTokenSecret"].Value;
+            tokens.ConsumerKey = appConfig.AppSettings.Settings["Tweet.ConsumerKey"].Value;
+            tokens.ConsumerSecret = appConfig.AppSettings.Settings["Tweet.ConsumerSecret"].Value;
         }
 
         public void run()

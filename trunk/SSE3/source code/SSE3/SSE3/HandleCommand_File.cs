@@ -4,6 +4,15 @@ using System.Linq;
 using System.Text;
 using Twitterizer;
 
+namespace Global
+{
+    public class Vars
+    {
+
+        public const string APPSOURCE = "MrtAfterDarkTweet";
+    }
+}
+
 namespace SSE3
 {
     class CommandHandler
