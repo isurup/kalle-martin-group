@@ -1,0 +1,15 @@
+Collaborations[No]=new Collaboration();
+{
+Collaborations[No-1].include(new BotMethod.botMove(),Bot.bots[25]);
+Collaborations[No-1].include(new BotMethod.botWork(),Bot.bots[1]);
+Collaborations[No-1].include(new BotMethod.botMove(),Bot.bots[2]);
+}
+Collaborations[No]=new Collaboration();
+{
+Collaborations[No-1].include(new BotMethod.botMove(),Bot.bots[22]);
+Collaborations[No-1].include(new BotMethod.botWork(),Bot.bots[21]);
+}
+Collaborations[No]=new Collaboration();
+{
+Collaborations[No-1].include(new BotMethod.botMove(),Bot.bots[32]);
+}

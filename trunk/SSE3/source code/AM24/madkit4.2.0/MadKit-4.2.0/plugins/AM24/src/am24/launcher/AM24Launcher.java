@@ -1,0 +1,79 @@
+/*
+ * AM24Launcher.java -TurtleKit - A 'star logo' in MadKit
+ * Copyright (C) 2000-2002 Fabien Michel
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ */
+package am24.launcher;
+
+import java.util.Random;
+
+import turtlekit.kernel.Launcher;
+import turtlekit.kernel.Turtle;
+import madkit.kernel.Message;
+import madkit.lib.messages.ACLMessage;
+import am24.agents.*;
+import am24.util.AM24Constraints;
+
+
+public class AM24Launcher extends Launcher {
+
+	
+
+	private ACLMessage messages;
+	private AM24Constraints cunts;
+
+	public AM24Launcher() {
+		setSimulationName("AM24Planet");
+		setup();
+	}
+
+	public void setup() {
+		cunts = new AM24Constraints();
+		setWrapModeOn(cunts.wrapOn);
+		setHeight(cunts.gridSizeHeight);
+		setWidth(cunts.gridSizeWidth);
+			
+	}
+
+	public void addSimulationAgents() {
+		
+		for (int i = 0; i < cunts.nbOfBases; i++) {
+
+			Turtle nt = new AM24Base("Counter");
+			//int basePosX = (int) Math.random()* getWidth();
+			Random r = new Random();
+			int basePosX = r.nextInt(getWidth());
+			int basePosY = r.nextInt(getHeight());
+			addTurtle(nt, basePosX, basePosY);
+
+			// deploy Explorers
+			for (int e = 0; e < cunts.nbOfExplorers; e++) {
+				addTurtle(new AM24Explorer("walk"), basePosX, basePosY);
+			}
+
+			// deploy Transportes
+			for (int t = 0; t < cunts.nbOfTransporter; t++) {
+				addTurtle(new AM24Transporter("walk"), basePosX, basePosY);
+			}
+
+		}
+
+		addViewer(3);
+		// Set the enviroment variable
+		addObserver(new AM24PatchInit(cunts.oreDensity), false);
+	}
+
+}
