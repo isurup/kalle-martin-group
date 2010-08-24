@@ -161,7 +161,7 @@ namespace SSE3
             };
             System.Configuration.Configuration appconfig = System.Configuration.ConfigurationManager.OpenMappedExeConfiguration(fileMap, System.Configuration.ConfigurationUserLevel.None);
             TwitterStatusCollection col = null;
-            TwitterDirectMessageCollection dmcol = null;
+            //TwitterDirectMessageCollection dmcol = null;
             TwitterUser user = new TwitterUser();
 
             int i = 2;
