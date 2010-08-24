@@ -45,8 +45,6 @@ namespace SSE3
             string[] command = new string[1];
             CommandForm(command, tokens);
 
-            incomingTweets.SelectedText += "Hello World - ";
-
         }
 
         private void Crawl_Click(object sender, EventArgs e)
@@ -89,212 +87,13 @@ namespace SSE3
             TwitterStatusCollection col = null;
             TwitterDirectMessageCollection dmcol = null;
             TwitterUser user = new TwitterUser();
+
+            int i = 2;
+            StringBuilder s = new StringBuilder();
+            TwitterStatus repname = TwitterStatus.Show(tokens, decimal.Parse(args[1]));
+
             switch (args[0].ToLower())
             {
-                case "reply":
-                    int i = 2;
-                    StringBuilder s = new StringBuilder();
-                    TwitterStatus repname = TwitterStatus.Show(tokens, decimal.Parse(args[1]));
-                    for (; i < args.Length; i++)
-                    {
-                        s.Append(args[i]);
-                        if (i != args.Length - 1)
-                        {
-                            s.Append(" ");
-                        }
-                    }
-                    try
-                    {
-                        int formattingBuffer = 6; //This is used to make the string look nicer in twitter.
-                        int MAXLENGTH = 140;//Maximum length of twitter string is 140
-                        if (s.Length > MAXLENGTH)
-                        {
-                            int multiplier = 0;
-                            int to_check;
-                            string to_continue;
-                            Console.WriteLine("The message is too long and will be truncated on Twitter.");
-                            Console.Write("Continue? (y, n)");
-                            to_continue = Console.ReadLine();
-                            if (char.ToLower(to_continue[0]) == 'n')
-                                break;
-                            string currentString;
-                            do
-                            {
-                                to_check = MAXLENGTH - formattingBuffer - multiplier.ToString().Length;
-                                currentString = s.ToString().Substring(multiplier * to_check, to_check);
-                                multiplier += 1;
-                                StringBuilder chunkStatus = new StringBuilder();
-                                chunkStatus.Append("{");
-                                chunkStatus.Append(multiplier.ToString());
-                                chunkStatus.Append("} ");
-                                chunkStatus.Append(currentString);
-                                chunkStatus.Append("...");
-                                StatusUpdateOptions suoptions = new StatusUpdateOptions();
-                                suoptions.InReplyToStatusId = decimal.Parse(args[1]);
-                                TwitterStatus newstatus = TwitterStatus.Update(tokens, chunkStatus.ToString(), suoptions);
-                                Console.WriteLine("Reply sent with status {0}", newstatus.RequestStatus.Status);
-                            } while (s.ToString().Substring(multiplier * to_check).Length > to_check);
-                            if (s.ToString().Substring(multiplier * to_check).Length > 0)
-                            {
-                                currentString = s.ToString().Substring(multiplier * to_check);
-                                multiplier += 1;
-                                StringBuilder chunkStatus = new StringBuilder();
-                                chunkStatus.Append("{");
-                                chunkStatus.Append(multiplier.ToString());
-                                chunkStatus.Append("} ");
-                                chunkStatus.Append(currentString);
-                                TwitterStatus newstatus = TwitterStatus.Update(tokens, chunkStatus.ToString());
-                                Console.WriteLine("Reply sent with status {0}", newstatus.RequestStatus.Status);
-                            }
-
-                            Console.WriteLine("Updated with multiple tweets: {0}", s.ToString());
-
-                            break;
-                        }
-
-                        if (user != null)
-                        {
-                            StatusUpdateOptions reply = new StatusUpdateOptions();
-                            reply.InReplyToStatusId = decimal.Parse(args[1]);
-                            TwitterStatus newstatus = TwitterStatus.Update(tokens, "@" + repname.User.ScreenName + " " + s.ToString(), reply);
-                            Console.WriteLine("Replied to {0} with: {1}", repname.User.ScreenName, s.ToString());
-                        }
-                        else
-                        {
-                            Console.Write("\nError: reply had incorrect format.\n");
-                        }
-                    }
-                    catch (TwitterizerException e)
-                    {
-                        if (!e.Message.Contains("404"))
-                        {
-                            Console.WriteLine(e.Message);
-                            Console.ReadLine();
-                            throw new Exception("Failed");
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e.Message);
-                        Console.ReadLine();
-                        throw new Exception("Failed");
-                    }
-                    break;
-                case "status":
-                    user = null;
-                    i = 1;
-                    s = new StringBuilder();
-                    if (args[i][0] == '@')
-                    {
-                        user.Name = args[1].Substring(1);
-                    }
-                    for (; i < args.Length; i++)
-                    {
-                        s.Append(args[i]);
-                        if (i != args.Length - 1)
-                        {
-                            s.Append(" ");
-                        }
-                    }
-                    try
-                    {
-                        int formattingBuffer = 6; //This is used to make the string look nicer in twitter.
-                        int MAXLENGTH = 140;//Maximum length of twitter string is 140
-                        if (s.Length > MAXLENGTH)
-                        {
-                            int multiplier = 0;
-                            int to_check;
-                            string to_continue;
-                            feedback.Text += "The message is too long and will be truncated on Twitter.";
-                            Console.WriteLine("The message is too long and will be truncated on Twitter.");
-                            Console.Write("Continue? (y, n)");
-                            to_continue = Console.ReadLine();
-                            if (char.ToLower(to_continue[0]) == 'n')
-                                break;
-                            string currentString;
-                            do
-                            {
-                                to_check = MAXLENGTH - formattingBuffer - multiplier.ToString().Length;
-                                currentString = s.ToString().Substring(multiplier * to_check, to_check);
-                                multiplier += 1;
-                                StringBuilder chunkStatus = new StringBuilder();
-                                chunkStatus.Append("{");
-                                chunkStatus.Append(multiplier.ToString());
-                                chunkStatus.Append("} ");
-                                chunkStatus.Append(currentString);
-                                chunkStatus.Append("...");
-                                TwitterStatus newstatus = TwitterStatus.Update(tokens, chunkStatus.ToString());
-                            } while (s.ToString().Substring(multiplier * to_check).Length > to_check);
-                            if (s.ToString().Substring(multiplier * to_check).Length > 0)
-                            {
-                                currentString = s.ToString().Substring(multiplier * to_check);
-                                multiplier += 1;
-                                StringBuilder chunkStatus = new StringBuilder();
-                                chunkStatus.Append("{");
-                                chunkStatus.Append(multiplier.ToString());
-                                chunkStatus.Append("} ");
-                                chunkStatus.Append(currentString);
-                                TwitterStatus newstatus = TwitterStatus.Update(tokens, chunkStatus.ToString());
-                            }
-
-                            Console.WriteLine("Updated with multiple tweets: {0}", s.ToString());
-
-                            break;
-                        }
-
-                        if (user != null)
-                        {
-                            Twitterizer.StatusUpdateOptions reply = new StatusUpdateOptions();
-                            reply.InReplyToStatusId = user.Id;
-                            TwitterUser reply_to = TwitterUser.Show(user.Status.Id);
-                            string response = string.Empty;
-                            if (reply_to.Status != null)
-                            {
-                                Console.Write("Is this in reply to: {0} ? (y, n)", reply_to.Status.Text);
-                                response = Console.ReadLine();
-                            }
-                            else
-                                response = "n";
-
-                            if (char.ToLower(response[0]) == 'y')
-                            {
-                                TwitterStatus newstatus = TwitterStatus.Update(tokens, s.ToString(), reply);
-                            }
-                            else
-                            {
-                                TwitterStatus newstatus = TwitterStatus.Update(tokens, s.ToString());
-                            }
-                            s = s.Remove(0, args[1].Length + 1);
-                            Console.WriteLine("Replied to {0} with: {1}", user, s.ToString());
-                        }
-                        else
-                        {
-                            TwitterStatus newstatus = TwitterStatus.Update(tokens, s.ToString());
-                            Console.WriteLine("Updated with: {0}", s.ToString());
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e.Message);
-                        Console.ReadLine();
-                        throw new Exception("Failed");
-                    }
-                    break;
-                case "friends":
-                    // request friends timeline from twitter
-                    Console.WriteLine("Downloading timeline from Twitter...");
-                    try
-                    {
-                        TimelineOptions toptions = new TimelineOptions();
-                        toptions.IncludeRetweets = true;
-                        col = TwitterTimeline.FriendTimeline(tokens, toptions);
-                    }
-                    catch
-                    {
-                        Console.WriteLine("Cannot get Timeline: {0}", RequestStatus.LastRequestStatus.ErrorDetails.ErrorMessage);
-                    }
-                    printList(col, args, false);
-                    break;
                 case "show":
                     if (args.Length != 2)
                     {
@@ -371,18 +170,6 @@ namespace SSE3
                     }
                     printList(col, args, hasUser);
                     break;
-                case "delete":
-                    TwitterStatus status = TwitterStatus.Show(decimal.Parse(args[1]));
-                    try
-                    {
-                        TwitterStatus.Delete(tokens, decimal.Parse(args[1]));
-                        Console.WriteLine("Deleted {0}", status.Text);
-                    }
-                    catch
-                    {
-                        Console.WriteLine("Cannot delete status: {0}", RequestStatus.LastRequestStatus.ErrorDetails.ErrorMessage);
-                    }
-                    break;
                 case "everyone":
                     // request everyone's timeline from twitter
                     Console.WriteLine("Downloading timeline from Twitter...");
@@ -396,165 +183,6 @@ namespace SSE3
                     }
 
                     printList(col, args, false);
-                    break;
-                case "direct":
-                    try
-                    {
-                        dmcol = TwitterDirectMessage.DirectMessages(tokens);
-                    }
-                    catch
-                    {
-                        Console.WriteLine("Cannot get Timeline: {0}", RequestStatus.LastRequestStatus.ErrorDetails.ErrorMessage);
-                    }
-                    dmprintList(dmcol, args);
-                    break;
-                case "directsent":
-                    try
-                    {
-                        dmcol = TwitterDirectMessage.DirectMessagesSent(tokens);
-                    }
-                    catch
-                    {
-                        Console.WriteLine("Cannot get Timeline: {0}", RequestStatus.LastRequestStatus.ErrorDetails.ErrorMessage);
-                    }
-                    dmsprintList(dmcol, args);
-                    break;
-                case "cls":
-                    Console.Clear();
-                    break;
-                case "directmessage":
-                    TwitterUser dmuser = TwitterUser.Search(tokens, args[1])[0];
-                    s = new StringBuilder();
-                    i = 2;
-                    for (; i < args.Length; i++)
-                    {
-                        s.Append(args[i]);
-                        if (i != args.Length - 1)
-                        {
-                            s.Append(" ");
-                        }
-                    }
-                    try
-                    {
-                        int formattingBuffer = 6; //This is used to make the string look nicer in twitter.
-                        int MAXLENGTH = 140;//Maximum length of twitter string is 140
-                        if (s.Length > MAXLENGTH)
-                        {
-                            int multiplier = 0;
-                            int to_check;
-                            string to_continue;
-                            Console.WriteLine("The message is too long and will be truncated on Twitter.");
-                            Console.Write("Continue? (y, n)");
-                            to_continue = Console.ReadLine();
-                            if (char.ToLower(to_continue[0]) == 'n')
-                                break;
-                            string currentString;
-                            do
-                            {
-                                to_check = MAXLENGTH - formattingBuffer - multiplier.ToString().Length;
-                                currentString = s.ToString().Substring(multiplier * to_check, to_check);
-                                multiplier += 1;
-                                StringBuilder chunkStatus = new StringBuilder();
-                                chunkStatus.Append("{");
-                                chunkStatus.Append(multiplier.ToString());
-                                chunkStatus.Append("} ");
-                                chunkStatus.Append(currentString);
-                                chunkStatus.Append("...");
-                                TwitterDirectMessage tdm = TwitterDirectMessage.Send(tokens, dmuser.Id, chunkStatus.ToString());
-                                Console.WriteLine("Direct Message sent with status {0}", tdm.RequestStatus.Status);
-                            } while (s.ToString().Substring(multiplier * to_check).Length > to_check);
-                            if (s.ToString().Substring(multiplier * to_check).Length > 0)
-                            {
-                                currentString = s.ToString().Substring(multiplier * to_check);
-                                multiplier += 1;
-                                StringBuilder chunkStatus = new StringBuilder();
-                                chunkStatus.Append("{");
-                                chunkStatus.Append(multiplier.ToString());
-                                chunkStatus.Append("} ");
-                                chunkStatus.Append(currentString);
-
-                                TwitterDirectMessage tdm = TwitterDirectMessage.Send(tokens, dmuser.Id, chunkStatus.ToString());
-                                Console.WriteLine("Direct Message sent with status {0}", tdm.RequestStatus.Status);
-                            }
-
-                            Console.WriteLine("Updated with multiple messages: {0}", s.ToString());
-
-                            break;
-                        }
-
-                        if (dmuser != null)
-                        {
-                            TwitterDirectMessage tdm = TwitterDirectMessage.Send(tokens, dmuser.Id, s.ToString());
-                            Console.WriteLine("Direct Message sent with status {0}", tdm.RequestStatus.Status);
-                        }
-                        else
-                        {
-                            Console.Write("\nError: reply had incorrect format.\n");
-                        }
-                    }
-                    catch (TwitterizerException e)
-                    {
-                        Console.WriteLine("Could not send message because: {0}", e.Message);
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine("Could not send message because: {0}", ex.Message);
-                    }
-                    break;
-                case "unfollow":
-                    if (args.Length > 1)
-                    {
-                        TwitterUser tfunuser = TwitterUser.Search(tokens, args[1])[0];
-                        if (tfunuser.IsFollowing.Value)
-                        {
-                            TwitterFriendship.Delete(tokens, tfunuser.Id);
-                            Console.WriteLine("You are no longer following {0}", tfunuser.ScreenName);
-                        }
-                        else
-                        {
-                            Console.WriteLine("You must be following the user to unfollow them.");
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("You must include a username.");
-                    }
-                    break;
-                case "retweet":
-                    status = TwitterStatus.Show(decimal.Parse(args[1]));
-                    try
-                    {
-                        TwitterStatus.Retweet(tokens, decimal.Parse(args[1]));
-                        Console.WriteLine("Retweeted {0}'s status {1}.", status.User.ScreenName, status.Text);
-                    }
-                    catch
-                    {
-                    }
-                    break;
-                case "follow":
-                    if (args.Length > 1)
-                    {
-                        TwitterUser twfuser = TwitterUser.Search(tokens, args[1])[0];
-                        if (twfuser.IsFollowing.Value)
-                        {
-                            Console.WriteLine("You are already following that person.");
-                            break;
-                        }
-                        try
-                        {
-                            TwitterFriendship.Create(tokens, twfuser.Id);
-                            Console.WriteLine("You are now following {0}", twfuser.ScreenName);
-                        }
-                        catch
-                        {
-                            Console.WriteLine("Could not follow because: {0}", RequestStatus.LastRequestStatus.ErrorDetails);
-                            break;
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("You must supply a username.");
-                    }
                     break;
                 case "searchusers":
                     s = new StringBuilder();
@@ -601,42 +229,11 @@ namespace SSE3
                         break;
                     }
                     break;
-
-                case "help":
-                    Console.WriteLine("List of commands:");
-                    Console.WriteLine("\tCOMMAND\t\t\t\tDESCRIPTION");
-                    Console.WriteLine();
-                    Console.WriteLine("\tstatus <message>\t\tUpdate status.");
-                    Console.WriteLine("\treply [ID] <message>\t\tReply to @User.");
-                    Console.Write("\tuser <user> [latest/oldest]\tGet Your or <user's> Updates,\n\t\t\t");
-                    Console.WriteLine("\t\t\t<user> is optional.");
-                    Console.WriteLine("\tfriends [latest/oldest]\t\tGet Friends updates");
-                    Console.WriteLine("\teveryone [latest/oldest]\tGet Everyone's updates");
-                    Console.WriteLine("\treplies [latest/oldest]\t\tGet replies to you.");
-                    Console.WriteLine("\tdirect [latest/oldest]\t\tGet direct messages to you.");
-                    Console.WriteLine("\tdirectsent [latest/oldest]\tGet direct messages from you.");
-                    Console.WriteLine("\tshow <username>\t\t\tShow information about <username>");
-                    Console.WriteLine("\texit\t\t\t\tQuits the application");
-                    Console.WriteLine("\tcls\t\t\t\tClears the screen");
-                    Console.WriteLine("\tdirectmessage <user>\t\tSends a Direct Message to <user>.");
-                    Console.WriteLine("\tfollow <user>\t\t\tBegin following <user>.");
-                    Console.WriteLine("\tunfollow <user>\t\t\tStop following <user>.");
-                    Console.WriteLine("\tsearchusers <name>\t\tSearch twitter users for a name.");
-                    Console.WriteLine("\tdelete [ID]\t\t\tDelete a status.");
-                    Console.WriteLine("\tretweet [ID]\t\t\tRetweet a status.");
-                    Console.WriteLine();
-                    Console.WriteLine("[<command>] means the <command> inside the brackets is optional");
-                    Console.WriteLine("<info> is the information provided by the user.");
-                    Console.WriteLine();
-                    break;
-                case "exit":
-                    break;
                 default:
-                    Console.WriteLine("That command is invalid.");
+                    feedback.Text += "That command is invalid.";
                     break;
             }
         }
 
     }
-    }
-}
+ }
