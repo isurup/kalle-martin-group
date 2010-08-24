@@ -57,27 +57,27 @@
             // 
             // TwitterUrl
             // 
-            this.TwitterUrl.Location = new System.Drawing.Point(77, 37);
+            this.TwitterUrl.Location = new System.Drawing.Point(173, 37);
             this.TwitterUrl.Name = "TwitterUrl";
-            this.TwitterUrl.Size = new System.Drawing.Size(413, 20);
+            this.TwitterUrl.Size = new System.Drawing.Size(316, 20);
             this.TwitterUrl.TabIndex = 1;
-            this.TwitterUrl.Text = "http://twitter.com/CNNbrk";
+            this.TwitterUrl.Text = "CNNbrk";
             // 
             // searchTweets
             // 
             this.searchTweets.Location = new System.Drawing.Point(557, 37);
             this.searchTweets.Name = "searchTweets";
-            this.searchTweets.Size = new System.Drawing.Size(417, 20);
+            this.searchTweets.Size = new System.Drawing.Size(416, 20);
             this.searchTweets.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 40);
+            this.label1.Location = new System.Drawing.Point(41, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.Size = new System.Drawing.Size(135, 13);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Twitter :";
+            this.label1.Text = "Twitter : http://twitter.com/";
             // 
             // label2
             // 
@@ -112,9 +112,9 @@
             // 
             this.Crawl.Location = new System.Drawing.Point(77, 12);
             this.Crawl.Name = "Crawl";
-            this.Crawl.Size = new System.Drawing.Size(113, 23);
+            this.Crawl.Size = new System.Drawing.Size(137, 23);
             this.Crawl.TabIndex = 11;
-            this.Crawl.Text = "Crawl Twitter";
+            this.Crawl.Text = "Crawl Twitter*";
             this.Crawl.UseVisualStyleBackColor = true;
             this.Crawl.Click += new System.EventHandler(this.Crawl_Click);
             // 
