@@ -45,6 +45,8 @@ namespace SSE3
             string[] command = new string[1];
             CommandHandler.CommandForm(command, tokens);
 
+            incomingTweets.SelectedText += "Hello World - ";
+
         }
 
         private void Crawl_Click(object sender, EventArgs e)
