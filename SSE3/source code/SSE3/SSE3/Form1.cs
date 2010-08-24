@@ -74,6 +74,85 @@ namespace SSE3
             sortTweets.Clear();
         }
 
+        private static void printList(TwitterStatusCollection col, string[] args, bool containsUser)
+        {
+            int lengthToCheck = 1;
+            string source = string.Empty;
+            if (containsUser)
+                lengthToCheck++;
+            if (args.Length > lengthToCheck)
+            {
+                if (args[lengthToCheck] == "latest")
+                {
+                    TwitterStatus status = col[0];
+
+                    if (status.Source != string.Empty && status.Source.LastIndexOf('<') - status.Source.IndexOf('>') - 1 >= 0)
+                        source = status.Source.Substring(status.Source.IndexOf('>') + 1, status.Source.LastIndexOf('<') - status.Source.IndexOf('>') - 1);
+                    // print out user status messages
+                    if (source != string.Empty)
+                    {
+                        Console.WriteLine("{0} /{1}/ [{2}] ID# {3}:\t\n{4} \nfrom {5}", status.User.ScreenName,
+                            status.User.Name, status.CreatedDate.ToLongTimeString(), status.Id, status.Text, source);
+                    }
+                    else
+                    {
+                        Console.WriteLine("{0} /{1}/ [{2}] ID# {3}:\t\n{4}", status.User.ScreenName,
+                            status.User.Name, status.CreatedDate.ToLongTimeString(), status.Id, status.Text);
+                    }
+
+                    Console.WriteLine();
+                }
+                else if (args[lengthToCheck] == "oldest")
+                {
+                    TwitterStatus status = col[col.Count - 1];
+                    if (status.Source != string.Empty && status.Source.LastIndexOf('<') - status.Source.IndexOf('>') - 1 >= 0)
+                        source = status.Source.Substring(status.Source.IndexOf('>') + 1, status.Source.LastIndexOf('<') - status.Source.IndexOf('>') - 1);
+                    // print out user status messages
+                    if (source != string.Empty)
+                    {
+                        Console.WriteLine("{0} /{1}/ [{2}] ID# {3}:\t\n{4} \nfrom {5}", status.User.ScreenName,
+                            status.User.Name, status.Id, status.CreatedDate.ToLongTimeString(), status.Text, source);
+                    }
+                    else
+                    {
+                        Console.WriteLine("{0} /{1}/ [{2}] ID# {3}:\t\n{4}", status.User.ScreenName,
+                            status.User.Name, status.CreatedDate.ToLongTimeString(), status.Id, status.Text);
+                    }
+
+                    Console.WriteLine();
+                }
+                else
+                {
+                    Console.WriteLine("That command is invalid.");
+                }
+            }
+            else
+            {
+                //foreach (TwitterStatus status in col)
+                for (int i = col.Count - 1; i >= 0; i--)
+                {
+                    TwitterStatus status = col[i];
+                    if (status.Source != string.Empty && status.Source.LastIndexOf('<') - status.Source.IndexOf('>') - 1 >= 0)
+                        source = status.Source.Substring(status.Source.IndexOf('>') + 1, status.Source.LastIndexOf('<') - status.Source.IndexOf('>') - 1);
+                    else if (status.Source == "web")
+                        source = "web";
+                    // print out user status messages
+                    if (source != string.Empty)
+                    {
+                        Console.WriteLine("{0} /{1}/ [{2}] ID# {3}:\t\n{4} \nfrom {5}", status.User.ScreenName,
+                            status.User.Name, status.CreatedDate.ToLongTimeString(), status.Id, status.Text, source);
+                    }
+                    else
+                    {
+                        Console.WriteLine("{0} /{1}/ [{2}] ID# {3}:\t\n{4}", status.User.ScreenName,
+                            status.User.Name, status.CreatedDate.ToLongTimeString(), status.Id, status.Text);
+                    }
+
+                    Console.WriteLine();
+                }
+            }
+        }
+
         public void CommandForm(string[] args, OAuthTokens tokens)
         {
             System.Configuration.ExeConfigurationFileMap fileMap = new System.Configuration.ExeConfigurationFileMap()
