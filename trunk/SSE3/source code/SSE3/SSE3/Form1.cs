@@ -29,11 +29,6 @@ namespace SSE3
             sortTweets.SelectedText += "Hello World - ";
         }
 
-        private void Clear_Click(object sender, EventArgs e)
-        {
-            incomingTweets.Clear();
-        }
-
         private void Crawl_Click(object sender, EventArgs e)
         {
 
@@ -47,6 +42,16 @@ namespace SSE3
         private void timer1_Tick(object sender, EventArgs e)
         {
 
+        }
+
+        private void ClearTweet_Click(object sender, EventArgs e)
+        {
+            incomingTweets.Clear();
+        }
+
+        private void ClearSort_Click(object sender, EventArgs e)
+        {
+            sortTweets.Clear();
         }
     }
 }
