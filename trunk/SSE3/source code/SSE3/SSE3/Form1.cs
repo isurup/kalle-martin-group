@@ -39,10 +39,11 @@ namespace SSE3
         }
 
         public OAuthTokens tokens = new OAuthTokens();
+
         private void Retrive_Click(object sender, EventArgs e)
         {
             string[] command = new string[1];
-            CommandHandler.HandleCommand(command, tokens);
+            CommandHandler.CommandForm(command, tokens);
 
         }
 
