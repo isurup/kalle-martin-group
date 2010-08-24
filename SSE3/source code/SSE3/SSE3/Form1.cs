@@ -26,5 +26,20 @@ namespace SSE3
             sortTweets.SelectionColor = Color.DarkBlue;
             sortTweets.SelectedText += "Hello World - ";
         }
+
+        private void Clear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Crawl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Sort_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

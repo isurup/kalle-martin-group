@@ -93,6 +93,7 @@
             this.Sort.TabIndex = 8;
             this.Sort.Text = "Sort";
             this.Sort.UseVisualStyleBackColor = true;
+            this.Sort.Click += new System.EventHandler(this.Sort_Click);
             // 
             // Clear
             // 
@@ -102,6 +103,7 @@
             this.Clear.TabIndex = 10;
             this.Clear.Text = "Clear";
             this.Clear.UseVisualStyleBackColor = true;
+            this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
             // Crawl
             // 
@@ -111,6 +113,7 @@
             this.Crawl.TabIndex = 11;
             this.Crawl.Text = "Crawl Twitter";
             this.Crawl.UseVisualStyleBackColor = true;
+            this.Crawl.Click += new System.EventHandler(this.Crawl_Click);
             // 
             // sortTweets
             // 
@@ -147,7 +150,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(429, 258);
+            this.textBox1.Location = new System.Drawing.Point(848, 387);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
