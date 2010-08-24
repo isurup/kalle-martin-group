@@ -1,0 +1,12 @@
+C:\Documents and Settings\benjaminp\My Documents\Visual Studio 2005\Projects\TrixiTweet\TrixiTweet\obj\Debug\TrixiTweet.exe
+C:\Documents and Settings\benjaminp\My Documents\Visual Studio 2005\Projects\TrixiTweet\TrixiTweet\obj\Debug\TrixiTweet.pdb
+C:\Documents and Settings\benjaminp\My Documents\Visual Studio 2005\Projects\TrixiTweet\TrixiTweet\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\benjaminp\My Documents\Visual Studio 2005\Projects\TrixiTweet\TrixiTweet\bin\Debug\TrixiTweet.exe
+C:\Documents and Settings\benjaminp\My Documents\Visual Studio 2005\Projects\TrixiTweet\TrixiTweet\bin\Debug\TrixiTweet.pdb
+C:\Documents and Settings\benjaminp\My Documents\Visual Studio 2005\Projects\TrixiTweet\TrixiTweet\bin\Debug\Twitterizer.Framework.dll
+C:\Documents and Settings\benjaminp\My Documents\Visual Studio 2005\Projects\TrixiTweet\TrixiTweet\bin\Release\TrixiTweet.exe
+C:\Documents and Settings\benjaminp\My Documents\Visual Studio 2005\Projects\TrixiTweet\TrixiTweet\bin\Release\TrixiTweet.pdb
+C:\Documents and Settings\benjaminp\My Documents\Visual Studio 2005\Projects\TrixiTweet\TrixiTweet\bin\Release\Twitterizer.Framework.dll
+C:\Documents and Settings\benjaminp\My Documents\Visual Studio 2005\Projects\TrixiTweet\TrixiTweet\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\benjaminp\My Documents\Visual Studio 2005\Projects\TrixiTweet\TrixiTweet\obj\Release\TrixiTweet.exe
+C:\Documents and Settings\benjaminp\My Documents\Visual Studio 2005\Projects\TrixiTweet\TrixiTweet\obj\Release\TrixiTweet.pdb
