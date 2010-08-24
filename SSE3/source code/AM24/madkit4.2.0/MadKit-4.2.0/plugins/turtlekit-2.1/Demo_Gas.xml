@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- XML Standard Simulation Template. (Random moving turtles emitting flavors + an advanced viewer + a gradient builder + a flavor cleaner -->
+<Simulation Name="Gas Demo" Width="150" Height="300" TorusMode="false" Refresh="100" CyclePause="50">
+		<Flavors>
+		</Flavors>
+		<Agents>
+			 <Agent AgentClass="turtlekit2.demos.Gas" NbAgents="1800">
+        			 <Parameters wall="30"/>
+			 </Agent>
+		</Agents>
+		<Viewers>
+			<Viewer ViewerClass="turtlekit2.tools.Viewer2D" CellSize="3"/>
+			<Viewer ViewerClass="turtlekit2.tools.Viewer3D" CellSize="3"/>
+		</Viewers>
+		<Observers>
+			<Observer ObserverClass="turtlekit2.demos.GasObserver" holesize="4" wall="30"/>
+		</Observers>
+</Simulation>

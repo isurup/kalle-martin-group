@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- XML Standard Simulation Template. (Random moving turtles emitting flavors + an advanced viewer + a gradient builder + a flavor cleaner -->
+<Simulation Name="Epidemic Demo" Width="100" Height="100" TorusMode="true" Refresh="100" CyclePause="50">
+		<Flavors>
+		</Flavors>
+		<Agents>
+			 
+			 <Agent AgentClass="turtlekit2.demos.Virus" NbAgents="100">
+        			 <Parameters infection="red"/>
+			 </Agent>
+			 
+			 <Agent AgentClass="turtlekit2.demos.Virus2" NbAgents="100">
+        			 <Parameters infection="green"/>
+			 </Agent>
+			 
+			 <Agent AgentClass="turtlekit2.demos.Virus2" NbAgents="100">
+        			 <Parameters infection="red"/>
+			 </Agent>
+			 
+			 <Agent AgentClass="turtlekit2.demos.Virus" NbAgents="100">
+        			 <Parameters infection="green"/>
+			 </Agent>
+		</Agents>
+		<Viewers>
+			<Viewer ViewerClass="turtlekit2.tools.Viewer2D" CellSize="3"/>
+			<Viewer ViewerClass="turtlekit2.tools.Viewer3D" CellSize="3"/>	
+		</Viewers>
+		<Observers>
+		</Observers>
+</Simulation>
