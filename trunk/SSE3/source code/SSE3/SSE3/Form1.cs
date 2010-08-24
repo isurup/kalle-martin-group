@@ -43,8 +43,9 @@ namespace SSE3
         private void Retrive_Click(object sender, EventArgs e)
         {
             string[] command = new string[1];
-            //CommandForm(command, tokens);
-
+            string getCmd = "user " + (string) TwitterUrl.Text;
+            command = getCmd.Split(' ');
+            CommandForm(command, tokens);
         }
 
         private void Crawl_Click(object sender, EventArgs e)
@@ -74,7 +75,7 @@ namespace SSE3
             sortTweets.Clear();
         }
 
-        private static void printList(TwitterStatusCollection col, string[] args, bool containsUser)
+        private void printList(TwitterStatusCollection col, string[] args, bool containsUser)
         {
             int lengthToCheck = 1;
             string source = string.Empty;
@@ -100,7 +101,7 @@ namespace SSE3
                             status.User.Name, status.CreatedDate.ToLongTimeString(), status.Id, status.Text);
                     }
 
-                    Console.WriteLine();
+                    incomingTweets.Text += "\n";
                 }
                 else if (args[lengthToCheck] == "oldest")
                 {
@@ -119,11 +120,11 @@ namespace SSE3
                             status.User.Name, status.CreatedDate.ToLongTimeString(), status.Id, status.Text);
                     }
 
-                    Console.WriteLine();
+                    incomingTweets.Text += "\n";
                 }
                 else
                 {
-                    Console.WriteLine("That command is invalid.");
+                    incomingTweets.Text += "That command is invalid.";
                 }
             }
             else
@@ -148,7 +149,7 @@ namespace SSE3
                             status.User.Name, status.CreatedDate.ToLongTimeString(), status.Id, status.Text);
                     }
 
-                    Console.WriteLine();
+                    incomingTweets.Text += "\n";
                 }
             }
         }
@@ -166,7 +167,7 @@ namespace SSE3
 
            // int i = 2;
             StringBuilder s = new StringBuilder();
-            TwitterStatus repname = TwitterStatus.Show(tokens, decimal.Parse(args[1]));
+            //TwitterStatus repname = TwitterStatus.Show(tokens, decimal.Parse(args[1]));
 
             switch (args[0].ToLower())
             {
