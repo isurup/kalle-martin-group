@@ -35,13 +35,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Sort = new System.Windows.Forms.Button();
-            this.Clear = new System.Windows.Forms.Button();
+            this.ClearTweet = new System.Windows.Forms.Button();
             this.Crawl = new System.Windows.Forms.Button();
             this.sortTweets = new System.Windows.Forms.RichTextBox();
             this.incomingTweets = new System.Windows.Forms.RichTextBox();
             this.feedback = new System.Windows.Forms.RichTextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.ClearSort = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Retrive
@@ -97,15 +98,15 @@
             this.Sort.UseVisualStyleBackColor = true;
             this.Sort.Click += new System.EventHandler(this.Sort_Click);
             // 
-            // Clear
+            // ClearTweet
             // 
-            this.Clear.Location = new System.Drawing.Point(305, 12);
-            this.Clear.Name = "Clear";
-            this.Clear.Size = new System.Drawing.Size(75, 23);
-            this.Clear.TabIndex = 10;
-            this.Clear.Text = "Clear";
-            this.Clear.UseVisualStyleBackColor = true;
-            this.Clear.Click += new System.EventHandler(this.Clear_Click);
+            this.ClearTweet.Location = new System.Drawing.Point(305, 12);
+            this.ClearTweet.Name = "ClearTweet";
+            this.ClearTweet.Size = new System.Drawing.Size(75, 23);
+            this.ClearTweet.TabIndex = 10;
+            this.ClearTweet.Text = "Clear";
+            this.ClearTweet.UseVisualStyleBackColor = true;
+            this.ClearTweet.Click += new System.EventHandler(this.ClearTweet_Click);
             // 
             // Crawl
             // 
@@ -165,17 +166,28 @@
             this.timer1.Interval = 5000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // ClearSort
+            // 
+            this.ClearSort.Location = new System.Drawing.Point(818, 12);
+            this.ClearSort.Name = "ClearSort";
+            this.ClearSort.Size = new System.Drawing.Size(75, 23);
+            this.ClearSort.TabIndex = 17;
+            this.ClearSort.Text = "Clear";
+            this.ClearSort.UseVisualStyleBackColor = true;
+            this.ClearSort.Click += new System.EventHandler(this.ClearSort_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 467);
+            this.Controls.Add(this.ClearSort);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.feedback);
             this.Controls.Add(this.incomingTweets);
             this.Controls.Add(this.sortTweets);
             this.Controls.Add(this.Crawl);
-            this.Controls.Add(this.Clear);
+            this.Controls.Add(this.ClearTweet);
             this.Controls.Add(this.Sort);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -198,13 +210,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Sort;
-        private System.Windows.Forms.Button Clear;
+        private System.Windows.Forms.Button ClearTweet;
         private System.Windows.Forms.Button Crawl;
         private System.Windows.Forms.RichTextBox sortTweets;
         private System.Windows.Forms.RichTextBox incomingTweets;
         private System.Windows.Forms.RichTextBox feedback;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button ClearSort;
     }
 }
 
