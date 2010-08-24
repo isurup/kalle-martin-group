@@ -92,13 +92,11 @@ namespace SSE3
                     // print out user status messages
                     if (source != string.Empty)
                     {
-                        Console.WriteLine("{0} /{1}/ [{2}] ID# {3}:\t\n{4} \nfrom {5}", status.User.ScreenName,
-                            status.User.Name, status.CreatedDate.ToLongTimeString(), status.Id, status.Text, source);
+                        incomingTweets.Text += status.User.ScreenName + "/" + status.User.Name + "/ [" + status.CreatedDate.ToLongTimeString() + "] / ID# " + status.Id + ": / \n" + status.Text + "/ \n" + source;
                     }
                     else
                     {
-                        Console.WriteLine("{0} /{1}/ [{2}] ID# {3}:\t\n{4}", status.User.ScreenName,
-                            status.User.Name, status.CreatedDate.ToLongTimeString(), status.Id, status.Text);
+                        incomingTweets.Text += status.User.ScreenName + "/" + status.User.Name + "/ [" + status.CreatedDate.ToLongTimeString() + "] / ID# " + status.Id + ": / \n" + status.Text;
                     }
 
                     incomingTweets.Text += "\n";
@@ -111,13 +109,11 @@ namespace SSE3
                     // print out user status messages
                     if (source != string.Empty)
                     {
-                        Console.WriteLine("{0} /{1}/ [{2}] ID# {3}:\t\n{4} \nfrom {5}", status.User.ScreenName,
-                            status.User.Name, status.Id, status.CreatedDate.ToLongTimeString(), status.Text, source);
+                        incomingTweets.Text += status.User.ScreenName + "/" + status.User.Name + "/ [" + status.CreatedDate.ToLongTimeString() + "] / ID# " + status.Id + ": / \n" + status.Text + "/ \n" + source;
                     }
                     else
                     {
-                        Console.WriteLine("{0} /{1}/ [{2}] ID# {3}:\t\n{4}", status.User.ScreenName,
-                            status.User.Name, status.CreatedDate.ToLongTimeString(), status.Id, status.Text);
+                        incomingTweets.Text += status.User.ScreenName + "/" + status.User.Name + "/ [" + status.CreatedDate.ToLongTimeString() + "] / ID# " + status.Id + ": / \n" + status.Text;
                     }
 
                     incomingTweets.Text += "\n";
@@ -140,13 +136,11 @@ namespace SSE3
                     // print out user status messages
                     if (source != string.Empty)
                     {
-                        Console.WriteLine("{0} /{1}/ [{2}] ID# {3}:\t\n{4} \nfrom {5}", status.User.ScreenName,
-                            status.User.Name, status.CreatedDate.ToLongTimeString(), status.Id, status.Text, source);
+                        incomingTweets.Text += status.User.ScreenName + "/" + status.User.Name + "/ [" + status.CreatedDate.ToLongTimeString() + "] / ID# " + status.Id + ": / \n" + status.Text + "/ \n" + source;
                     }
                     else
                     {
-                        Console.WriteLine("{0} /{1}/ [{2}] ID# {3}:\t\n{4}", status.User.ScreenName,
-                            status.User.Name, status.CreatedDate.ToLongTimeString(), status.Id, status.Text);
+                        incomingTweets.Text += status.User.ScreenName + "/" + status.User.Name + "/ [" + status.CreatedDate.ToLongTimeString() + "] / ID# " + status.Id + ": / \n" + status.Text;
                     }
 
                     incomingTweets.Text += "\n";
