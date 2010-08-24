@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="Twitterizer.Framework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Twitterizer.Framework.dll</HintPath>
+      <HintPath>.\Twitterizer.Framework.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
