@@ -94,24 +94,28 @@ namespace SSE3
                 case "show": //show <username> Show information about <username>
                     if (args.Length != 2)
                     {
-                        feedback.Text += "Incorrect number of parameters for \"show\".";
+                        feedback.Text += "Incorrect number of parameters for \"show\"." + "\n";
                         break;
                     }
                     TwitterUser userThis = TwitterUser.Search(tokens, args[1])[0];
-                    incomingTweets.Text += userThis.Name + " " + userThis.ScreenName;
+                    incomingTweets.Text += userThis.Name + " " + userThis.ScreenName + "\n";
+
                     if (userThis.Status != null)
-                        incomingTweets.Text += "Status: " + userThis.Status.Text;
+                        incomingTweets.Text += "Status: " + userThis.Status.Text + "\n";
 
-                    Console.WriteLine("Location {0}", userThis.Location);
-                    Console.WriteLine("{0}", userThis.Website);
+                    incomingTweets.Text += "Location: " + userThis.Location + "\n";
+
+                    incomingTweets.Text += "Status: " + userThis.Website + "\n";
+
                     if (userThis.IsProtected)
-                        Console.WriteLine("ID = {0}, Protected Updates: {1}", userThis.Status.Id, "Yes");
+                        incomingTweets.Text += "ID = " + userThis.Status.Id + "Protected Updates: Yes" + "\n";
                     else
-                        Console.WriteLine("ID = {0}, Protected Updates: {1}", userThis.Status.Id, "No");
+                        incomingTweets.Text += "ID = " + userThis.Status.Id + "Protected Updates: No" + "\n";
 
-                    Console.WriteLine("Friends = {0}, Followers = {1}", userThis.NumberOfFriends, userThis.NumberOfFollowers);
-                    Console.WriteLine("Desc: {0}", userThis.Description);
-                    Console.WriteLine();
+                    incomingTweets.Text += "Friends = " + userThis.NumberOfFriends + "Followers = " + userThis.NumberOfFollowers + "\n";
+                    incomingTweets.Text += "Desc: " + userThis.Description + "\n";
+                    
+                    incomingTweets.Text += "\n";
 
                     break;
                 case "replies": //replies [latest/oldest] Get replies to you
@@ -121,7 +125,7 @@ namespace SSE3
                     }
                     catch
                     {
-                        Console.WriteLine("Cannot get Timeline: {0}", RequestStatus.LastRequestStatus.ErrorDetails.ErrorMessage);
+                        incomingTweets.Text += "Cannot get Timeline: " + RequestStatus.LastRequestStatus.ErrorDetails.ErrorMessage + "\n";
                     }
 
                     printList(col, args, false);
