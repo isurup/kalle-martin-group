@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using Twitterizer;
 using System.Configuration;
 using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace SSE3
 {
@@ -22,13 +23,13 @@ namespace SSE3
         {
             TwitterConsole tc = new TwitterConsole();
             tc.init();
-            tc.run();
 
+            Thread t = new Thread(tc.run);
+            t.Start();
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-
-            
         }
     }
 }

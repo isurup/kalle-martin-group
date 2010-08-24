@@ -22,14 +22,14 @@ namespace SSE3
             incomingTweets.SelectedText += "Hello World - ";
             feedback.SelectedText += "Hello World - ";
 
-            sortTweets.SelectionFont = new Font("Arial", (float)7.75, FontStyle.Bold);
-            sortTweets.SelectionColor = Color.DarkBlue;
+            sortTweets.SelectionFont = new Font("Arial", (float)7.0, FontStyle.Bold);
+            sortTweets.SelectionColor = Color.Blue;
             sortTweets.SelectedText += "Hello World - ";
         }
 
         private void Clear_Click(object sender, EventArgs e)
         {
-
+            incomingTweets.Clear();
         }
 
         private void Crawl_Click(object sender, EventArgs e)
