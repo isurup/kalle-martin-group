@@ -219,7 +219,7 @@ namespace SSE3
                     {
                         user.ScreenName = args[1];
                     }
-                    Console.WriteLine("Downloading user timeline from Twitter...");
+                    incomingTweets.Text += "Downloading user timeline from Twitter...\n";
                     try
                     {
                         if (user.ScreenName != null)
@@ -230,7 +230,7 @@ namespace SSE3
                         }
                         else
                         {
-                            TwitterUser usr = TwitterUser.Search(tokens, appconfig.AppSettings.Settings["TrixiTweet.ScreenName"].Value)[0];
+                            TwitterUser usr = TwitterUser.Search(tokens, appconfig.AppSettings.Settings["Tweet.ScreenName"].Value)[0];
                             utloptions.ScreenName = usr.ScreenName;
                             try
                             {
@@ -238,77 +238,77 @@ namespace SSE3
                             }
                             catch
                             {
-                                Console.WriteLine("Cannot get Timeline: {0}", RequestStatus.LastRequestStatus.ErrorDetails.ErrorMessage);
+                                incomingTweets.Text += "Cannot get Timeline: " + RequestStatus.LastRequestStatus.ErrorDetails.ErrorMessage + "\n";
                             }
                         }
                     }
                     catch (System.Net.WebException e)
                     {
-                        Console.WriteLine(e.Message);
-                        Console.ReadLine();
+                        incomingTweets.Text += e.Message + "\n";
                         throw new Exception("Failed");
                     }
                     printList(col, args, hasUser);
                     break;
                 case "everyone": // everyone [latest/oldest] Get Everyone's updates
                     // request everyone's timeline from twitter
-                    Console.WriteLine("Downloading timeline from Twitter...");
+                    incomingTweets.Text += "Downloading timeline from Twitter...\n";
                     try
                     {
                         col = TwitterTimeline.PublicTimeline(tokens);
                     }
                     catch
                     {
-                        Console.WriteLine("Cannot get Timeline: {0}", RequestStatus.LastRequestStatus.ErrorDetails.ErrorMessage);
+                        incomingTweets.Text += "Cannot get Timeline: " + RequestStatus.LastRequestStatus.ErrorDetails.ErrorMessage + "\n";
                     }
 
                     printList(col, args, false);
                     break;
-                case "searchusers": // searchusers <name> Search twitter users for a name
-                    s = new StringBuilder();
-                    i = 1;
-                    for (; i < args.Length; i++)
-                    {
-                        s.Append(args[i]);
-                        if (i != args.Length - 1)
-                        {
-                            s.Append(" ");
-                        }
-                    }
-                    if (args.Length > 1)
-                    {
-                        Console.WriteLine("Searching for {0}", s.ToString());
-                        TwitterUserCollection tuc = TwitterUser.Search(tokens, s.ToString());
-                        foreach (TwitterUser tu in tuc)
-                        {
-                            Console.WriteLine("Would you like to start following:\n{0} /{1}/ Created: {2} Followers: {3} Following: {4}(Y=yes, N=no, Quit Search=Q)?", tu.ScreenName, tu.Name, tu.CreatedDate, tu.NumberOfFollowers, tu.NumberOfFriends);
-                            string ans = Console.ReadLine();
-                            ans = ans.ToLower();
-                            if (ans.Contains("y"))
-                            {
-                                if (tu.IsFollowing.Value)
-                                {
-                                    Console.WriteLine("You are already following that person.");
-                                }
-                                else
-                                {
-                                    TwitterFriendship.Create(tokens, tu.Id);
-                                    Console.WriteLine("{0} has been added.", tu.ScreenName);
-                                }
-                            }
-                            else if (ans.Contains("q"))
-                            {
-                                Console.WriteLine("Quitting Search...");
-                                break;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("You must supply the name of the person.");
-                        break;
-                    }
-                    break;
+                //case "searchusers": // searchusers <name> Search twitter users for a name
+                //    s = new StringBuilder();
+                //    i = 1;
+                //    for (; i < args.Length; i++)
+                //    {
+                //        s.Append(args[i]);
+                //        if (i != args.Length - 1)
+                //        {
+                //            s.Append(" ");
+                //        }
+                //    }
+                //    if (args.Length > 1)
+                //    {
+                //        incomingTweets.Text += "Searching for " + s.ToString() + "\n";
+                //        TwitterUserCollection tuc = TwitterUser.Search(tokens, s.ToString());
+                //        foreach (TwitterUser tu in tuc)
+                //        {
+                //            incomingTweets.Text += "";
+                //            Console.WriteLine("Would you like to start following:\n{0} /{1}/ Created: {2} Followers: {3} Following: {4}(Y=yes, N=no, Quit Search=Q)?", tu.ScreenName, tu.Name, tu.CreatedDate, tu.NumberOfFollowers, tu.NumberOfFriends);
+                //            string ans = Console.ReadLine();
+                //            ans = ans.ToLower();
+                //            if (ans.Contains("y"))
+                //            {
+                //                if (tu.IsFollowing.Value)
+                //                {
+                //                    Console.WriteLine("You are already following that person.");
+                //                }
+                //                else
+                //                {
+                //                    TwitterFriendship.Create(tokens, tu.Id);
+                //                    Console.WriteLine("{0} has been added.", tu.ScreenName);
+                //                }
+                //            }
+                //            else if (ans.Contains("q"))
+                //            {
+                //                Console.WriteLine("Quitting Search...");
+                //                break;
+                //            }
+                //        }
+                //    }
+                //    else
+                //    {
+                //        Console.WriteLine("You must supply the name of the person.");
+                //        break;
+                //    }
+                //break;
                 default:
                     feedback.Text += "That command is invalid.";
                     break;
