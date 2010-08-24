@@ -91,7 +91,7 @@ namespace SSE3
 
             switch (args[0].ToLower())
             {
-                case "show":
+                case "show": //show <username> Show information about <username>
                     if (args.Length != 2)
                     {
                         feedback.Text += "Incorrect number of parameters for \"show\".";
@@ -114,7 +114,7 @@ namespace SSE3
                     Console.WriteLine();
 
                     break;
-                case "replies":
+                case "replies": //replies [latest/oldest] Get replies to you
                     try
                     {
                         col = TwitterTimeline.Mentions(tokens);
@@ -126,7 +126,7 @@ namespace SSE3
 
                     printList(col, args, false);
                     break;
-                case "user":
+                case "user": //user <user> [latest/oldest] Get Your or <user's> Updates
                     // request users's timeline from twitter
                     user = new TwitterUser();
                     bool hasUser = false;
@@ -167,7 +167,7 @@ namespace SSE3
                     }
                     printList(col, args, hasUser);
                     break;
-                case "everyone":
+                case "everyone": // everyone [latest/oldest] Get Everyone's updates
                     // request everyone's timeline from twitter
                     Console.WriteLine("Downloading timeline from Twitter...");
                     try
