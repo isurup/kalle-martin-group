@@ -82,7 +82,7 @@ namespace SSE3
                 command = getCmd.Split(' ');
                 try
                 {
-                    CommandHandler.HandleCommand(command, tokens);
+                    CommandHandler.CommandConsole(command, tokens);
                 }
                 catch (Exception e)
                 {
