@@ -18,7 +18,7 @@ namespace SSE3
 
         [DllImport("kernel32.dll")]
         public static extern Boolean FreeConsole();
-        OAuthTokens tokens;
+        public OAuthTokens tokens;
         public void init()
         {
             AllocConsole();

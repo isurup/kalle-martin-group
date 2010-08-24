@@ -9,6 +9,10 @@ using System.Text.RegularExpressions;
 using System.IO;
 using System.Windows.Forms;
 
+using Twitterizer;
+using System.Configuration;
+using System.Runtime.InteropServices;
+
 
 namespace SSE3
 {
@@ -17,9 +21,32 @@ namespace SSE3
         public Form1()
         {
             InitializeComponent();
+
+            System.Configuration.ExeConfigurationFileMap fileMap = new System.Configuration.ExeConfigurationFileMap()
+            {
+                ExeConfigFilename = Path.Combine(Environment.CurrentDirectory, "SSE3.exe.config")
+            };
+
+            System.Configuration.Configuration appConfig = System.Configuration.ConfigurationManager.OpenMappedExeConfiguration(fileMap, System.Configuration.ConfigurationUserLevel.None);
+            while(appConfig.AppSettings.Settings["Tweet.UserId"] == null)
+            {
+
+            }
+            tokens.AccessToken = appConfig.AppSettings.Settings["Tweet.AccessToken"].Value;
+            tokens.AccessTokenSecret = appConfig.AppSettings.Settings["Tweet.AccessTokenSecret"].Value;
+            tokens.ConsumerKey = appConfig.AppSettings.Settings["Tweet.ConsumerKey"].Value;
+            tokens.ConsumerSecret = appConfig.AppSettings.Settings["Tweet.ConsumerSecret"].Value;
         }
 
+        public OAuthTokens tokens = new OAuthTokens();
         private void Retrive_Click(object sender, EventArgs e)
+        {
+            string[] command = new string[1];
+            CommandHandler.HandleCommand(command, tokens);
+
+        }
+
+        private void Crawl_Click(object sender, EventArgs e)
         {
             incomingTweets.SelectedText += "Hello World - ";
             feedback.SelectedText += "Hello World - ";
@@ -27,11 +54,6 @@ namespace SSE3
             sortTweets.SelectionFont = new Font("Arial", (float)7.0, FontStyle.Bold);
             sortTweets.SelectionColor = Color.Blue;
             sortTweets.SelectedText += "Hello World - ";
-        }
-
-        private void Crawl_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Sort_Click(object sender, EventArgs e)
