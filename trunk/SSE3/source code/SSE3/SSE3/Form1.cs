@@ -164,7 +164,7 @@ namespace SSE3
             //TwitterDirectMessageCollection dmcol = null;
             TwitterUser user = new TwitterUser();
 
-            int i = 2;
+           // int i = 2;
             StringBuilder s = new StringBuilder();
             TwitterStatus repname = TwitterStatus.Show(tokens, decimal.Parse(args[1]));
 
