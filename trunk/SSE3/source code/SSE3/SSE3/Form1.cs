@@ -181,7 +181,7 @@ namespace SSE3
 
                     printList(col, args, false);
                     break;
-                case "searchusers":
+                case "searchusers": // searchusers <name> Search twitter users for a name
                     s = new StringBuilder();
                     i = 1;
                     for (; i < args.Length; i++)
