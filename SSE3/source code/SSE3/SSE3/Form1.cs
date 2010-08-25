@@ -99,6 +99,11 @@ namespace SSE3
                         incomingTweets.Text += status.User.ScreenName + "/" + status.User.Name + "/ [" + status.CreatedDate.ToLongTimeString() + "] / ID# " + status.Id + ": / \n" + status.Text;
                     }
 
+
+                    if (status.Text.Contains(searchTweets.Text))
+                    {
+                        sortTweets.Text += status.Text;
+                    }
                     incomingTweets.Text += "\n";
                 }
                 else if (args[lengthToCheck] == "oldest")
@@ -116,6 +121,11 @@ namespace SSE3
                         incomingTweets.Text += status.User.ScreenName + "/" + status.User.Name + "/ [" + status.CreatedDate.ToLongTimeString() + "] / ID# " + status.Id + ": / \n" + status.Text;
                     }
 
+
+                    if (status.Text.Contains(searchTweets.Text))
+                    {
+                        sortTweets.Text += status.Text;
+                    }
                     incomingTweets.Text += "\n";
                 }
                 else
@@ -143,6 +153,10 @@ namespace SSE3
                         incomingTweets.Text += status.User.ScreenName + "/" + status.User.Name + "/ [" + status.CreatedDate.ToLongTimeString() + "] / ID# " + status.Id + ": / \n" + status.Text;
                     }
 
+                    if (status.Text.Contains(searchTweets.Text))
+                    {
+                        sortTweets.Text += status.Text;
+                    }
                     incomingTweets.Text += "\n";
                 }
             }
