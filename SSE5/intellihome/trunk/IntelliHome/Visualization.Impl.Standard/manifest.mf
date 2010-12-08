@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+OpenIDE-Module: dk.sdu.mmmi.intellihome.visualization.impl.standard
+OpenIDE-Module-Layer: dk/sdu/mmmi/intellihome/visualization/impl/standard/layer.xml
+OpenIDE-Module-Localizing-Bundle: dk/sdu/mmmi/intellihome/visualization/impl/standard/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

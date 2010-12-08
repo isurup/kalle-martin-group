@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN" "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<filesystem>
+    <folder name="Actions">
+        <folder name="Window">
+            <file name="dk-sdu-mmmi-intellihome-visualization-impl-standard-DeviceListAction.instance">
+                <attr name="component" methodvalue="dk.sdu.mmmi.intellihome.visualization.impl.standard.DeviceListTopComponent.findInstance"/>
+                <attr name="displayName" bundlevalue="dk.sdu.mmmi.intellihome.visualization.impl.standard.Bundle#CTL_DeviceListAction"/>
+                <attr name="instanceCreate" methodvalue="org.openide.windows.TopComponent.openAction"/>
+            </file>
+            <file name="dk-sdu-mmmi-intellihome-visualization-impl-standard-GraphAreaAction.instance">
+                <attr name="component" methodvalue="dk.sdu.mmmi.intellihome.visualization.impl.standard.GraphAreaTopComponent.findInstance"/>
+                <attr name="displayName" bundlevalue="dk.sdu.mmmi.intellihome.visualization.impl.standard.Bundle#CTL_GraphAreaAction"/>
+                <attr name="instanceCreate" methodvalue="org.openide.windows.TopComponent.openAction"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Menu">
+        <folder name="Window">
+            <file name="DeviceListAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Window/dk-sdu-mmmi-intellihome-visualization-impl-standard-DeviceListAction.instance"/>
+            </file>
+            <file name="GraphAreaAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Window/dk-sdu-mmmi-intellihome-visualization-impl-standard-GraphAreaAction.instance"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Windows2">
+        <folder name="Components">
+            <file name="DeviceListTopComponent.settings" url="DeviceListTopComponentSettings.xml"/>
+            <file name="GraphAreaTopComponent.settings" url="GraphAreaTopComponentSettings.xml"/>
+        </folder>
+        <folder name="Modes">
+            <folder name="editor">
+                <file name="GraphAreaTopComponent.wstcref" url="GraphAreaTopComponentWstcref.xml"/>
+            </folder>
+            <folder name="leftSlidingSide">
+                <file name="DeviceListTopComponent.wstcref" url="DeviceListTopComponentWstcref.xml"/>
+            </folder>
+        </folder>
+    </folder>
+</filesystem>

@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+OpenIDE-Module: dk.sdu.mmmi.intellihome.dataconfiguration
+OpenIDE-Module-Install: dk/sdu/mmmi/intellihome/dataconfiguration/AutoRun.class
+OpenIDE-Module-Localizing-Bundle: dk/sdu/mmmi/intellihome/dataconfiguration/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

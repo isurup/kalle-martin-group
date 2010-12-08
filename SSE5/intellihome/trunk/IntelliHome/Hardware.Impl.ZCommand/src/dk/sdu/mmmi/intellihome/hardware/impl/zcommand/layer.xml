@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN" "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<filesystem>
+    <folder name="Actions">
+        <folder name="Tools">
+            <file name="dk-sdu-mmmi-intellihome-hardware-impl-zcommand-gui-FakeLightToggleAction.instance">
+                <attr name="delegate" newvalue="dk.sdu.mmmi.intellihome.hardware.impl.zcommand.gui.FakeLightToggleAction"/>
+                <attr name="displayName" bundlevalue="dk.sdu.mmmi.intellihome.hardware.impl.zcommand.gui.Bundle#CTL_FakeLightToggleAction"/>
+                <attr name="instanceCreate" methodvalue="org.openide.awt.Actions.alwaysEnabled"/>
+                <attr name="noIconInMenu" boolvalue="false"/>
+            </file>
+            <file name="dk-sdu-mmmi-intellihome-hardware-impl-zcommand-gui-ShowZCommandSettingsDialogAction.instance">
+                <attr name="delegate" newvalue="dk.sdu.mmmi.intellihome.hardware.impl.zcommand.gui.ShowZCommandSettingsDialogAction"/>
+                <attr name="displayName" bundlevalue="dk.sdu.mmmi.intellihome.hardware.impl.zcommand.gui.Bundle#CTL_ShowZCommandSettingsDialogAction"/>
+                <attr name="instanceCreate" methodvalue="org.openide.awt.Actions.alwaysEnabled"/>
+                <attr name="noIconInMenu" boolvalue="false"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Menu">
+        <folder name="Tools">
+            <file name="dk-sdu-mmmi-intellihome-hardware-impl-zcommand-gui-FakeLightToggleAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Tools/dk-sdu-mmmi-intellihome-hardware-impl-zcommand-gui-FakeLightToggleAction.instance"/>
+                <attr name="position" intvalue="-100"/>
+            </file>
+            <file name="dk-sdu-mmmi-intellihome-hardware-impl-zcommand-gui-ShowZCommandSettingsDialogAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Tools/dk-sdu-mmmi-intellihome-hardware-impl-zcommand-gui-ShowZCommandSettingsDialogAction.instance"/>
+                <attr name="position" intvalue="50"/>
+            </file>
+        </folder>
+    </folder>
+</filesystem>

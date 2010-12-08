@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN" "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<filesystem>
+    <folder name="Actions">
+        <folder name="Tools">
+            <file name="dk-sdu-mmmi-intellihome-persistance-impl-mysql-gui-ShowDBSettingsDialogAction.instance">
+                <attr name="delegate" newvalue="dk.sdu.mmmi.intellihome.persistance.impl.mysql.gui.ShowDBSettingsDialogAction"/>
+                <attr name="displayName" bundlevalue="dk.sdu.mmmi.intellihome.persistance.impl.mysql.gui.Bundle#CTL_ShowDBSettingsDialogAction"/>
+                <attr name="instanceCreate" methodvalue="org.openide.awt.Actions.alwaysEnabled"/>
+                <attr name="noIconInMenu" boolvalue="false"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Menu">
+        <folder name="Tools">
+            <file name="dk-sdu-mmmi-intellihome-persistance-impl-mysql-gui-ShowDBSettingsDialogAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Tools/dk-sdu-mmmi-intellihome-persistance-impl-mysql-gui-ShowDBSettingsDialogAction.instance"/>
+                <attr name="position" intvalue="0"/>
+            </file>
+        </folder>
+    </folder>
+</filesystem>

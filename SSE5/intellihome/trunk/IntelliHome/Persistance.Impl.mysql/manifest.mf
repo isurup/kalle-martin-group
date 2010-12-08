@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+OpenIDE-Module: dk.sdu.mmmi.intellihome.persistance.impl.mysql
+OpenIDE-Module-Layer: dk/sdu/mmmi/intellihome/persistance/impl/mysql/layer.xml
+OpenIDE-Module-Localizing-Bundle: dk/sdu/mmmi/intellihome/persistance/impl/mysql/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+OpenIDE-Module: dk.sdu.mmmi.intellihome.synthetic.simple
+OpenIDE-Module-Layer: dk/sdu/mmmi/intellihome/synthetic/simple/layer.xml
+OpenIDE-Module-Localizing-Bundle: dk/sdu/mmmi/intellihome/synthetic/simple/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+
