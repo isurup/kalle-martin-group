@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+OpenIDE-Module: dk.sdu.mmmi.intellihome.visualization
+OpenIDE-Module-Localizing-Bundle: dk/sdu/mmmi/intellihome/visualization/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+
